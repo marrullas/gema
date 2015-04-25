@@ -1,0 +1,6 @@
+{
+  "name": "media",
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "~4.7.14"
+  }
+}
