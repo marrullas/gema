@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Laravel</title>
+		<title>GEMA Gestión Misional</title>
 
         {!!Html::style('/css/assets/css/bootstrap.css')!!}
 		
