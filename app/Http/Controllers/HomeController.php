@@ -37,12 +37,15 @@ class HomeController extends Controller {
                 return view('admin.users.home');
             break;
             case 'user':
+                return view('user.home');
+            case 'instructor':
                 return view('instructor.home');
-
-
+            default:
+                 return view('auth.login');
 
 
         }
+
 
    /*     if(\Auth::user()->type == 'admin')
             return view('admin.users.home');

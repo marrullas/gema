@@ -172,7 +172,6 @@ class UserController extends Controller {
                 'id'=>$user->id,
                 'message'=>$message
             ]);
-
         }
 
         //User::destroy($id); eliminar directamente

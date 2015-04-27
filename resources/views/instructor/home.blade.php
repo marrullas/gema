@@ -1,5 +1,8 @@
 @extends('app')
 
+@section('menu')
+    @include('instructor.partials.menu')
+@endsection
 @section('content')
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >

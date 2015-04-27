@@ -9,7 +9,6 @@
                     @if(Session::has('message'))
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif
-
                     <div class="panel-body">
                         {!! Form::model(['name'=>$name,'type'=>$type],['route'=> 'admin.users.index', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
                             <div class="form-group">
