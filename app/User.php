@@ -6,46 +6,55 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+{
 
-	use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword;
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'users';
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = ['first_name', 'last_name', 'telefono1','telefono2', 'email', 'password', 'type', 'last_login'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['first_name', 'last_name', 'full_name','documento', 'telefono1', 'telefono2', 'email', 'email2', 'titulo', 'profesion','fecha_nac','ciudad','password', 'type', 'last_login'];
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = ['password', 'remember_token'];
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $hidden = ['password', 'remember_token'];
 
     public function bio()
     {
-        $this->hasOne('app\Bio');
+        return $this->hasOne('app\Bio');
     }
 
     public function eventos()
     {
-        Return $this->hasMany('app\Evento');
+        return $this->hasMany('app\Evento');
     }
 
-
-    public function getFullNameAttribute()
+    public function muros()
+    {
+        return $this->hasMany('app\Muro');
+    }
+    public function fichas()
+    {
+        return $this->hasMany('app\Ficha');
+    }
+// inhabilitado interfiere cuando se intenta mostar el nombre en formulario ficha
+/*    public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;
-    }
+    }*/
 
     /**
      * encripta la contraseña del usuario
@@ -61,6 +70,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public static function filtroPaginación($name, $type)
     {
+
         return User::name($name)
             ->type($type)
             ->orderBy('id','ASC')

@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder {
         $this->call('IesTableSeeder');
         $this->call('ProgramasTableSeeder');
         $this->call('FichasTableSeeder');
-        $this->call('EventosTableSeeder');
+        //$this->call('EventosTableSeeder');
+        $this->call('MuroTableSeeder');
 	}
 
 }

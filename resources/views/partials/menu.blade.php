@@ -39,7 +39,7 @@ font-size: 16px;"> Ultimo Acceso : {{Auth::user()->last_login}} &nbsp; <a href="
                 <a   href="#"><i class="fa fa-bar-chart-o fa-3x"></i> Informes</a>
             </li>
             <li  >
-                <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Calendario</a>
+                <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Mi Calendario</a>
             </li>
             <li  >
                 <a  href="#"><i class="fa fa-edit fa-3x"></i> Documentos </a>

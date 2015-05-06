@@ -18,10 +18,12 @@ class CreateFichasTable extends Migration {
             $table->string('codigo')->unique();
             $table->date('fecha_ini');
             $table->date('fecha_fin')->nullable();
+            $table->string('grado')->nullable();
             $table->integer('user_id')->unsigned();
             $table->enum('estado',['activa','inactiva'])->default('activa');
             $table->integer('ie_id')->unsigned(); //llave con la tabla ies (instituciones educativas)
             $table->integer('programa_id')->unsigned(); //llave con la tabla ies (programa de formacion)
+            $table->string('full_name');
             $table->timestamps();
 
             $table->foreign('user_id')

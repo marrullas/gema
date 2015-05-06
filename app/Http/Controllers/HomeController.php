@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Muro;
+
 class HomeController extends Controller {
 
 	/*
@@ -31,15 +33,21 @@ class HomeController extends Controller {
 	public function index()
 	{
 
-        switch(\Auth::user()->type)
+        $entradasMuro = Muro::getEntradas();
+        $anunciosMuro = Muro::getAnuncios();
+        $user = \Auth::user();
+
+        //dd($entradasMuro);
+
+        switch($user->type)
         {
             case 'admin':
-                return view('admin.users.home');
+                return view('admin.users.home',compact('entradasMuro','anunciosMuro','user'));
             break;
             case 'user':
-                return view('user.home');
+                return view('user.home',compact('entradasMuro','anunciosMuro','user'));
             case 'instructor':
-                return view('instructor.home');
+                return view('instructor.home',compact('entradasMuro','anunciosMuro','user'));
             default:
                  return view('auth.login');
 

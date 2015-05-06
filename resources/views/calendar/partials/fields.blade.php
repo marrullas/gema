@@ -27,5 +27,5 @@
 </div>
 <div class="form-group">
     {!! Form::label('descripcion', 'Descripción') !!}
-    {!! Form::textarea('descripcion', null,['class'=>'form-control'])!!}
+    {!! Form::textarea('descripcion', null,['class'=>'form-control textarea'])!!}
 </div>

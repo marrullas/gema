@@ -29,10 +29,19 @@ class PasswordController extends Controller {
 	 */
 	public function __construct(Guard $auth, PasswordBroker $passwords)
 	{
+
 		$this->auth = $auth;
 		$this->passwords = $passwords;
 
-		$this->middleware('guest');
+		//$this->middleware('guest'); se comenta para que cualquier usuario pueda cambiar el correo
+
+
 	}
+
+    public function getChange()
+    {
+        //dd('me asome');
+        return view('auth.password');
+    }
 
 }

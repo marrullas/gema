@@ -9,8 +9,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\EditUserRequest;
 use App\Evento;
 use App\Ficha;
+use App\Muro;
 use App\User;
 use Illuminate\Support\Facades\Session;
 
@@ -22,6 +24,7 @@ class UserController extends Controller{
 
     public function __construct(\Illuminate\Http\Request $request)
     {
+        $this->middleware('auth');
         $this->request = $request;
     }
 
@@ -89,7 +92,27 @@ class UserController extends Controller{
         $calendar = Evento::getCalendar($this->request->user(),$user_id);
         $calId = $calendar->getId();
 
-        return view('calendar', compact('calendar', 'calId','user_id','fichas','nombreuser'));
+        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser'));
     }
+
+
+    public function edit($id)
+    {
+        $user = User::findOrfail($id);
+
+        return view('user.edit',compact('user'));
+    }
+
+    public function update(EditUserRequest $request,$id)
+    {
+        $user = User::findOrfail($id);
+
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect()->back();
+    }
+
+
 
 }

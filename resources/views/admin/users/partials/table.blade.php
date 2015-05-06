@@ -13,7 +13,7 @@
     @foreach($users as $user)
         <tr data-id="{{$user->id}}">
             <th scope="row">{{$user->id}}</th>
-            <td>{{$user->fullname}}</td>
+            <td>{{$user->full_name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->telefono1}}</td>
             <td>{{Lang::get('typeuser.'.$user->type)}}</td>

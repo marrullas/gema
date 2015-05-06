@@ -10,6 +10,32 @@ return array(
         'instructor'=> 'Instructor',
         'ie'        => 'Funcionario I.E.',
         'lider'     => 'Lider'
-    ]
+    ],
+    'tiposie' =>
+    [
+        'publica' => 'Publica',
+        'privada' => 'Privada'
+    ],
+
+    'modalidad' =>
+    [
+       'tecnica' => 'Tecnica',
+       'academica' => 'Academica'
+    ],
+
+    'activo-inactivo'=>
+    [
+        'activa'    => 'Activo',
+        'inactiva'  => 'Inactivo'
+    ],
+
+    'grado'=>
+        [
+            'decimo'    => 'Decimo',
+            'once'  => 'Once'
+        ]
+
+
+
 );
 

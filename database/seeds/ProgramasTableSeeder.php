@@ -13,12 +13,20 @@ class ProgramasTableSeeder extends Seeder{
 
     public function run()
     {
-        \DB::table('programas')->insert(array(
+/*        \DB::table('programas')->insert(array(
             'nombre'    => 'Tecnico en sistemas',
             'codigo'    => '229185',
             'version'   => 'v.1',
             'linea'     => null,
-            'red'       => null,//nombre rector, coordinador, docente tecnico, telefons de C/U            ));
+            'red'       => null,
+        ));*/
+
+        \DB::table('programas')->insert(array(
+            'nombre'    => 'Tecnico en programación de software',
+            'codigo'    => '229185',
+            'version'   => 'v.1',
+            'linea'     => null,
+            'red'       => null,
         ));
     }
 

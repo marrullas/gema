@@ -19,7 +19,17 @@ Route::get('calendar','UserController@calendar');
 
 Route::get('eventos/edit/{id}','EventosController@edit');
 
+Route::post('muro/crearmuro/','MuroController@crearmuro');
+Route::post('muro/crearanuncio/','MuroController@crearanuncio');
+
+//Route::get('users/perfil','UserController@perfil');
+Route::resource('users','UserController');
+
 Route::resource('eventos', 'EventosController');
+
+Route::resource('muro','MuroController');
+
+
 
 Route::controllers([
     'eventos' => 'EventosController',
@@ -27,6 +37,8 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
 
 Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' => 'Admin'],   function() {
 
@@ -42,7 +54,17 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
         'as' => 'misevento', 'uses' => 'UserController@misevento'
     ]);
 
+    Route::get('muro/',[
+        'as' => 'muro', 'uses' =>'UserController@muro'
+    ]);
+
     Route::resource('users','UserController');
+
+    Route::resource('programas','ProgramaController');
+
+    Route::resource('ies', 'IeController');
+
+    Route::resource('fichas', 'FichaController');
 
 
 });

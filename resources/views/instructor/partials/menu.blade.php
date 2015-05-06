@@ -9,10 +9,7 @@
         </button>
         <a class="navbar-brand" href="{{ url('/') }}">GEMA admin</a>
     </div>
-    <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;"> Ultimo Acceso : {{Auth::user()->last_login}} &nbsp; <a href="{{ url('/auth/logout') }}" class="btn btn-danger square-btn-adjust">Desconectarse</a> </div>
+@include('partials.menuuser')
 </nav>
 <!-- /. NAV TOP  -->
 <nav class="navbar-default navbar-side" role="navigation">

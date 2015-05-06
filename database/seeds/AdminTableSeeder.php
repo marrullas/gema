@@ -15,6 +15,7 @@ class AdminTableSeeder extends Seeder{
         \DB::table('users')->insert(array(
             'first_name'    => 'Mauricio',
             'last_name'     => 'Fernandez',
+            'documento'     =>'6445797',
             'telefono1'     => '2238649',
             'telefono2'     => '3156436246',
             'email'         => 'marrullas@gmail.com',
@@ -22,6 +23,17 @@ class AdminTableSeeder extends Seeder{
             'password'      => \Hash::make('secret'),
             'full_name'     => 'Mauricio Fernandez'
             ));
+        \DB::table('users')->insert(array(
+            'first_name'    => 'Andres',
+            'last_name'     => 'Prieto',
+            'documento'     => '11111111',
+            'telefono1'     => '2238649',
+            'telefono2'     => '3156436246',
+            'email'         => 'aprieto@misena.edu.co',
+            'type'          =>'lider',
+            'password'      => \Hash::make('secret'),
+            'full_name'     => 'Andres Prieto'
+        ));
     }
 
 }

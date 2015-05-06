@@ -1,5 +1,7 @@
 @extends('app')
-
+@section('menu')
+    @include('admin.partials.menu')
+@endsection
 @section('content')
     <div id="page-wrapper">
         <div class="row">

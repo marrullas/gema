@@ -3,6 +3,7 @@
 use App\Evento;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Muro;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
 use MaddHatter\LaravelFullcalendar\Event as Event;
@@ -42,6 +43,7 @@ class UserController extends Controller {
 
         $this->request = $request;
     }
+
 
     public function index()
 	{
@@ -192,6 +194,7 @@ class UserController extends Controller {
      */
     public function calendar($user_id = null )
     {
+
         if(empty($user_id))
         {
             Session::flash('message','Debe selecionar algun usuario');
@@ -217,7 +220,26 @@ class UserController extends Controller {
         $calendar = Evento::getCalendar($this->request->user(),$user_id);
         $calId = $calendar->getId();
 
-        return view('calendar', compact('calendar', 'calId','user_id','fichas','nombreuser'));
+        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser'));
+    }
+
+
+    public function muro()
+    {
+        $entradasMuro = Muro::getEntradas();
+        $anunciosMuro = Muro::getAnuncios();
+
+        return view('admin.users.muro',compact('entradasMuro','anunciosMuro'));
+    }
+
+    /**
+     *funcion que se encarga de almacenar un mensaje la tabla de anuncios
+     */
+    public function crearmuro(){
+
+        dd('llegue');
+
+
     }
 
 

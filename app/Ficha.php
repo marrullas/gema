@@ -17,32 +17,53 @@ class Ficha extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['codigo', 'fecha_ini', 'fecha_fin','user_id', 'estado', 'ie_id', 'programa_id'];
+	protected $fillable = ['codigo', 'fecha_ini', 'fecha_fin','grado','user_id', 'estado', 'ie_id', 'programa_id','full_name'];
 
 
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
     public function eventos()
     {
         Return $this->hasMany('app\Evento');
     }
 
-
-
-    public static function filtroPaginación($codigo, $type)
+    public function ie()
     {
-        return User::codigo($codigo)
-            ->type($type)
+        return $this->belongsTo('App\Ie');
+    }
+    public function programa()
+    {
+        return $this->belongsTo('App\Programa');
+    }
+
+
+
+    public static function filtroPaginación($codigo)
+    {
+        return Ficha::with(['user','ie','programa'])->codigo($codigo)
+            //->type($type)
             ->orderBy('id','ASC')
             ->paginate();
     }
 
-
-/*    public function scopeType($query, $type)
+/*    public function getUserName()
     {
-        $types = config('options.types');
-
-        if(!empty($type) && isset($types[$type]))
-            $query->where('type','=',$type);
-
-
+        return
     }*/
+
+
+
+
+    public function scopeCodigo($query, $codigo)    {
+
+
+        if(!empty($codigo))
+            $query->where('codigo','=',$codigo);
+
+
+    }
+
+
 }
