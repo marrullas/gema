@@ -19,7 +19,7 @@
     {!! Form::label('telefono2', 'Telefono fijo') !!}
     {!! Form::text('telefono2', null, [ 'class' => 'form-control', 'placeholder' => 'Ingrese telefono fijo' ] ) !!}
 </div>
-@if($user->isAdminOrLider())
+@if(Auth::user()->isAdminOrLider())
 <div class="form-group">
     {!! Form::label('email', 'E-Mail o correo electronico') !!}
     {!! Form::text('email', null, [ 'class' => 'form-control', 'placeholder' => 'Ingrese el email principal' ] ) !!}
@@ -28,6 +28,7 @@
     <div class="form-group">
         {!! Form::label('email', 'E-Mail o correo electronico') !!}
         {!! Form::text('email', null, [ 'class' => 'form-control','disabled', 'placeholder' => 'Ingrese el email principal' ] ) !!}
+        {!! Form::hidden('email',null) !!}
     </div>
 
 @endif
@@ -49,23 +50,25 @@
     {!! Form::text('fecha_nac', null, [ 'class' => 'form-control','disabled', 'placeholder' => 'Ingrese fecha nacimientol' ] ) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('ciudad', 'Ciudad de residencia') !!}
-    {!! Form::text('ciudad', null, [ 'class' => 'form-control','disabled', 'placeholder' => 'Ingrese ciudad de residencia' ] ) !!}
+    {!! Form::label('ciudad', 'Ciudad') !!}
+    {!! Form::select('ciudad', $ciudades, null, [ 'class' => 'form-control'] ) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('passwprd', 'Contraseña ') !!}
     {!! Form::password('password', [ 'class' => 'form-control', 'placeholder' => 'Ingrese su contraseña' ] ) !!}
 </div>
-@if($user->isAdminOrLider())
+@if(Auth::User()->isAdminOrLider())
 <div class="form-group">
     {!! Form::label('type', 'Tipo de usuario ') !!}
     {!! Form::select('type',config('options.types'), null, [ 'class' => 'form-control', 'placeholder' => 'Escoja el tipo de usuario' ] ) !!}
+
 </div>
 @else
     <div class="form-group">
         {!! Form::label('type', 'Tipo de usuario ') !!}
         {!! Form::select('type',config('options.types'), null, [ 'class' => 'form-control', 'disabled', 'placeholder' => 'Escoja el tipo de usuario' ] ) !!}
+        {!! Form::hidden('type',null) !!}
     </div>
 
 @endif

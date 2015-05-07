@@ -23,6 +23,9 @@ class CreateIeRequest extends Request {
 	{
 		return [
 			//
+            'nombre'    =>  'required',
+            'email'     =>  'required',
+
 		];
 	}
 

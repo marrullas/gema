@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\ciudad;
 use App\Http\Requests\EditUserRequest;
 use App\Evento;
 use App\Ficha;
@@ -99,8 +100,9 @@ class UserController extends Controller{
     public function edit($id)
     {
         $user = User::findOrfail($id);
+        $ciudades = Ciudad::lists('full_name','codigo');
 
-        return view('user.edit',compact('user'));
+        return view('user.edit',compact('user','ciudades'));
     }
 
     public function update(EditUserRequest $request,$id)

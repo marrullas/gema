@@ -1,5 +1,6 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php namespace App\Http\Controllers\admin;
 
+use App\ciudad;
 use App\Evento;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -66,7 +67,10 @@ class UserController extends Controller {
 	public function create()
 	{
 		//
-        return view ('admin.users.create');
+        $user = Auth::user();
+        $ciudades = Ciudad::lists('full_name','codigo');
+
+        return view ('admin.users.create',compact('user','ciudades'));
 	}
 
     /**
@@ -137,8 +141,9 @@ class UserController extends Controller {
 	public function edit($id)
 	{
 		$user = User::findOrfail($id);
+        $ciudades = Ciudad::lists('full_name','codigo');
 
-        return view('admin.users.edit',compact('user'));
+        return view('admin.users.edit',compact('user','ciudades'));
 	}
 
 	/**

@@ -51,7 +51,6 @@
                                                         <i class="fa fa-clock-o fa-fw"></i>{{$entradaMuro->created_at}}
                                                     </small>
                                                     <p>
-                                                        otra prueba
                                                         {!!$entradaMuro->mensaje!!}
                                                     </p>
                                                 </div>
@@ -96,8 +95,7 @@
                                             <small class="pull-right text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i>{{$entradaMuro->created_at}}
                                             </small>
-                                            preuba
-                                            {{{$anuncioMuro->mensaje}}}
+                                            {!!$anuncioMuro->mensaje!!}
 
                                         </li>
                                         @endforeach

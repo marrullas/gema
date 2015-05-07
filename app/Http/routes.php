@@ -40,7 +40,7 @@ Route::controllers([
 
 
 
-Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' => 'Admin'],   function() {
+Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' => 'admin'],   function() {
 
     Route::get('users/calendar/{id?}', [
         'as' => 'calendar', 'uses' => 'UserController@calendar'

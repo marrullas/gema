@@ -24,9 +24,10 @@ class CreateUserRequest extends Request {
 		return [
             'first_name'=>'required',
             'last_name'=>'required',
+            'documento'=>'required|unique:users',
             'telefono1'=>'required',
-            'telefono2'=>'required',
             'email'=>'required|unique:users,email',
+            'email2'=>'required|unique:users,email2',
             'password'=>'required',
             'type'=>array('required','in:user,admin,instructor,ie,lider')
 			//

@@ -17,7 +17,7 @@ class IesTableSeeder extends Seeder{
 
             'nombre'    => 'JAA',
             'ciudad'    => 'San pedro',
-            'dirección' => 'Crr 6 # 1-65',
+            'direccion' => 'Crr 6 # 1-65',
             'telefono'  => '2268649',
             'mapa'      => null,
             'detalles'  => null,//nombre rector, coordinador, docente tecnico, telefons de C/U            ));
