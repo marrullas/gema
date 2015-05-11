@@ -11,7 +11,7 @@ class Tipoactividad extends Model {
 
     public function eventos()
     {
-        return $this->hasMany('App\Evento');
+        return $this->hasMany('\App\Evento','title','id');
     }
 
 }

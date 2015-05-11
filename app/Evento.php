@@ -112,46 +112,42 @@ class Evento extends Model implements Event
         $events = [];
         $tipoadmin = array('admin' => 'administrador', 'lider' => 'lider'); //si es admin o lider puede ver cualquier calendario
         if (isset($tipoadmin[$usertype]) && !empty($userCalendar)) {
-
+            // ojo se debio invertir los datos de title y actividad para poder cargar los eventos en el objeto del calendario
+            // solo porque el componente pide el nombre tal cual y el campo title es la llave foranea de tipoactividad.
             $eventos = Evento::where('user_id', $userCalendar)
                 //->with('tipoactividad')
-                ->select(['actividad as title', 'all_day', 'start', 'end', 'id'])
+                ->select(['actividad as title', 'all_day', 'start', 'end', 'id','title as actividad'])
                 ->get();
             //dd($eventos->first()->tipoactividad()->first()->nombre);
         } else {
             $eventos = Evento::where('user_id', $userId)
-                ->select(['actividad as title', 'all_day', 'start', 'end', 'id'])
+                //->with('tipoactividad')
+                ->select(['actividad as title', 'all_day', 'start', 'end', 'id','title as actividad'])
                 ->get();
 
         }
 
-        //$calendar  =  new \Calendar();
-
-/*        foreach ($eventos as $evento) {
-            $events[] = \Calendar::event(
-                $evento['title'], //event title
-                $evento['all_day'], //full day event?
-                $evento['start'], //start time (you can also use Carbon instead of DateTime)
-                $evento['end'], //end time (you can also use Carbon instead of DateTime)
-                $evento['id']
-            );*/
-                foreach ($eventos as $evento) {
-                    //dd($evento->all());
-                    $event = \Calendar::event(
-                        $evento['title'], //event title
-                        $evento['all_day'], //full day event?
-                        $evento['start'], //start time (you can also use Carbon instead of DateTime)
-                        $evento['end'], //end time (you can also use Carbon instead of DateTime)
-                        $evento['id']
-                    );
-
-            if($evento['id']== 4)
-                $calendar = \Calendar::addEvent($event,['color'=>'#800']);
-            else
-            $calendar = \Calendar::addEvent($event);
+        if($eventos->count() >= 1) {
+            foreach ($eventos as $evento) {
+                //dd($evento->all());
+                $event = \Calendar::event(
+                    $evento['title'], //event title
+                    $evento['all_day'], //full day event?
+                    $evento['start'], //start time (you can also use Carbon instead of DateTime)
+                    $evento['end'], //end time (you can also use Carbon instead of DateTime)
+                    $evento['id']
+                );
+                //se busca el color del tipo de actividad (revisar para traer directamente el color desde  la relacion)
+                $color = Tipoactividad::find($evento->actividad)->color;
+                //dd($color);
+                $calendar = \Calendar::addEvent($event, ['color' => $color]);
+                //$calendar = \Calendar::addEvent($event);
 
 
+            }
         }
+        else
+            $calendar  =  \Calendar::addEvents($events);
         //return $events;
         return $calendar;
     }
@@ -329,7 +325,7 @@ class Evento extends Model implements Event
 
     public function tipoactividad()
     {
-        return $this->belongsTo('\App\TipoActividad','title','id');
+        return $this->belongsTo('\App\Tipoactividad','title','id');
     }
 
 }
