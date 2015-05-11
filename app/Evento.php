@@ -314,7 +314,7 @@ class Evento extends Model implements Event
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('\App\User');
     }
 
     public function ficha()
@@ -329,7 +329,7 @@ class Evento extends Model implements Event
 
     public function tipoactividad()
     {
-        return $this->belongsTo('App\TipoActividad','title','id');
+        return $this->belongsTo('\App\TipoActividad','title','id');
     }
 
 }
