@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\ciudad;
 use App\Http\Requests\EditUserRequest;
 use App\Evento;
 use App\Ficha;

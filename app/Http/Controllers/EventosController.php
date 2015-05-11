@@ -87,7 +87,7 @@ class EventosController extends Controller {
         $evento->end = new \DateTime($data['end']);*/
         //$evento->end = \Carbon\Carbon::parse($data['end'])->toIso8601String();
         //dd($evento);
-        $evento->actividad =  Tipoactividad::find($data['title']);
+        $evento->actividad =  Tipoactividad::find($data['title'])->nombre;
 
         $evento->save();
 
