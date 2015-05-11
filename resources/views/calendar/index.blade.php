@@ -12,6 +12,37 @@
 @endsection
 
 @section('content')
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+
+                    <dl class="dl-horizontal">
+                        <dt>Actividad</dt>
+                        <dd><span id="actividad"></span></dd>
+                        <dt>Institución</dt>
+                        <dd><span id="ie"></span></dd>
+                        <dt>Ficha</dt>
+                        <dd><span id="ficha"></span></dd>
+                        <dt>Ciudad</dt>
+                        <dd><span id="ciudad"></span></dd>
+                        <dt>Horas reportadas</dt>
+                        <dd><span id="horas"></span></dd>
+                    </dl>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <a href="#" id="editarEvento" type="button" class="btn btn-primary">Editar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="page-wrapper">
         <div id="page-inner">

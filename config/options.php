@@ -33,7 +33,13 @@ return array(
         [
             'decimo'    => 'Decimo',
             'once'  => 'Once'
-        ]
+        ],
+    'tipoevento' => [
+        ''              => 'Escoja tipo de actividad',
+        'formacion'     => 'Formación',
+        'asesoria pedagogica' => 'Asesoria Pedagógica',
+        'reunion articulacion' => 'Reunión articulación'
+    ]
 
 
 

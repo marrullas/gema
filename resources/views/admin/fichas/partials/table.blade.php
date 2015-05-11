@@ -19,7 +19,7 @@
             <td>{{$ficha->codigo}}</td>
             <td>{{$ficha->fecha_ini}}</td>
             <td>{{$ficha->fecha_fin}}</td>
-            <td>{{$ficha->user->FullName}}</td>
+            <td>{{$ficha->user->full_name}}</td>
             <td>{{$ficha->ie->nombre}}</td>
             <td>{{$ficha->estado}}</td>
             <td>{{$ficha->programa->nombre}}</td>

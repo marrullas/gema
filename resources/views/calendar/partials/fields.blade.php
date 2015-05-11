@@ -1,10 +1,10 @@
 <div class="form-group">
-    {!! Form::label('title', 'Titulo') !!}
-    {!! Form::text('title', null, [ 'class' => 'form-control', 'placeholder' => 'Digite el nombre' ] ) !!}
+    {!! Form::label('title', 'Actividad') !!}
+    {!! Form::select('title',$tipoactividades,null,['class'=> 'form-control', 'placeholder' => 'Escoja tipo de actividad' ])!!}
 </div>
 <div class="form-group">
     {!! Form::label('ficha', 'ficha') !!}
-    {!! Form::select('ficha_id', $fichas, null, [ 'class' => 'form-control'] ) !!}
+    {!! Form::select('ficha_id', [null=>'Ninguna'] + $fichas, null, [ 'class' => 'form-control'] ) !!}
 </div>
 
 <div class="form-group">

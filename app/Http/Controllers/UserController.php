@@ -9,11 +9,11 @@
 namespace App\Http\Controllers;
 
 
-use App\ciudad;
 use App\Http\Requests\EditUserRequest;
 use App\Evento;
 use App\Ficha;
 use App\Muro;
+use App\Tipoactividad;
 use App\User;
 use Illuminate\Support\Facades\Session;
 
@@ -77,7 +77,7 @@ class UserController extends Controller{
 
             try{
 
-                $nombreuser = User::findOrfail($user_id)->fullname;
+                $nombreuser = User::findOrfail($user_id)->full_name;
             }
             catch(ModelNotFoundException $e){
                 Session::flash('message',$e->getMessage());
@@ -89,11 +89,12 @@ class UserController extends Controller{
 
         }
 
-        $fichas = Ficha::where('user_id',$user_id)->lists('full_name','id');
+        $fichas = Ficha::where('user_id',$user_id)->where('estado','activa')->lists('full_name','id');
         $calendar = Evento::getCalendar($this->request->user(),$user_id);
+        $tipoactividades = Tipoactividad::all()->lists('nombre','id');
         $calId = $calendar->getId();
 
-        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser'));
+        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser','tipoactividades'));
     }
 
 

@@ -26,7 +26,7 @@ class Ficha extends Model {
     }
     public function eventos()
     {
-        Return $this->hasMany('app\Evento');
+        Return $this->hasMany('App\Evento');
     }
 
     public function ie()
@@ -37,7 +37,10 @@ class Ficha extends Model {
     {
         return $this->belongsTo('App\Programa');
     }
-
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
 
 
     public static function filtroPaginación($codigo)

@@ -14,7 +14,7 @@ class Evento extends Model implements Event
     protected $dates = ['start', 'end'];
 
 
-    protected $fillable = ['title', 'start', 'all_day', 'end', 'user_id', 'ficha_id', 'descripcion'];
+    protected $fillable = ['title', 'start', 'all_day', 'end', 'user_id', 'ficha_id', 'descripcion','nombre_ficha','horas','actividad'];
 
 
     public function setStartAttribute($value)
@@ -88,6 +88,16 @@ class Evento extends Model implements Event
         return $this->end;
     }
 
+    public function getNombreFicha()
+    {
+        $this->ficha->codigo;
+    }
+
+    public function getHoras()
+    {
+        $this->ficha->horas;
+    }
+
     /**
      *
      * retorna array con los eventos de un usuario
@@ -104,43 +114,75 @@ class Evento extends Model implements Event
         if (isset($tipoadmin[$usertype]) && !empty($userCalendar)) {
 
             $eventos = Evento::where('user_id', $userCalendar)
-                ->select(['title', 'all_day', 'start', 'end', 'id'])
+                //->with('tipoactividad')
+                ->select(['actividad as title', 'all_day', 'start', 'end', 'id'])
                 ->get();
+            //dd($eventos->first()->tipoactividad()->first()->nombre);
         } else {
             $eventos = Evento::where('user_id', $userId)
-                ->select(['title', 'all_day', 'start', 'end', 'id'])
+                ->select(['actividad as title', 'all_day', 'start', 'end', 'id'])
                 ->get();
 
         }
 
-        foreach ($eventos as $evento) {
+        //$calendar  =  new \Calendar();
+
+/*        foreach ($eventos as $evento) {
             $events[] = \Calendar::event(
                 $evento['title'], //event title
                 $evento['all_day'], //full day event?
                 $evento['start'], //start time (you can also use Carbon instead of DateTime)
                 $evento['end'], //end time (you can also use Carbon instead of DateTime)
                 $evento['id']
-            );
+            );*/
+                foreach ($eventos as $evento) {
+                    //dd($evento->all());
+                    $event = \Calendar::event(
+                        $evento['title'], //event title
+                        $evento['all_day'], //full day event?
+                        $evento['start'], //start time (you can also use Carbon instead of DateTime)
+                        $evento['end'], //end time (you can also use Carbon instead of DateTime)
+                        $evento['id']
+                    );
+
+            if($evento['id']== 4)
+                $calendar = \Calendar::addEvent($event,['color'=>'#800']);
+            else
+            $calendar = \Calendar::addEvent($event);
 
 
         }
-        return $events;
+        //return $events;
+        return $calendar;
     }
 
     public static function getCalendar($user=null, $userCalendar = null)
     {
+        //dd('prueba');
+        //$events = Evento::getArrayEventos($user,$userCalendar);
+        $calendar = Evento::getArrayEventos($user,$userCalendar);
+        //dd($events);
 
-        $events = Evento::getArrayEventos($user,$userCalendar);
-
-
-
-        $calendar = \Calendar::addEvents($events)  //add an array with addEvents
-        ->setOptions([ //set fullcalendar options
+        //$calendar = \Calendar::addEvents($events);  //add an array with addEvents
+        //$calendar->addEvent($pruebaevento,['color'=>'#800']);
+        $calendar->setOptions([ //set fullcalendar options
             //'firstDay' => 1,
             'lang' => 'es',
             'selectable'=> 'true',
         ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
-            'viewRender' => 'function() { console.log("Callbacks!");}',
+            'viewRender' => 'function() { console.log("Callbacks!");
+                        $("#myModal").on("hidden.bs.modal", function (e) {
+                            // do something...
+                            //alert("cerro modal");
+                                $("#actividad").text(" ");
+                                $("#ficha").text(" ");
+                                $("#ciudad").text(" ");
+                                $("#ie").text(" ");
+                                $("#horas").text(" ");
+
+
+                        });
+                        }',
             'select' => 'function(start, end, date) {
                         var myCal = $("#calendar-'.\Calendar::getId().'");
                         myCal.fullCalendar("gotoDate",start);
@@ -156,8 +198,108 @@ class Evento extends Model implements Event
             'eventClick'=>" function(calEvent,jsEvent,view){
 
                         var url = '".Url::to('eventos/edit',['id'=>''])."';
+                        var idEvento = calEvent.id;
+                        var urleditar = url+'/'+calEvent.id;
+                        $('#editarEvento').attr('href', urleditar);
 
-                        window.location.href = url+'/'+calEvent.id;
+                        //window.location.href = url+'/'+calEvent.id;
+
+                        $.ajax({
+                                type: 'GET',
+                                url: '/eventos/show/'+idEvento,
+                                //data: { id: idEvento }
+                            }).done(function( msg ) {
+                                var id = msg;
+                                //console.log(id);
+                                //alert( 'the messageis ' +  id.tipoactividad.nombre);
+                                $('#actividad').text(id.actividad);
+                                $('#ficha').text(id.ficha.codigo);
+                                $('#horas').text(id.horas);
+                                $('#ciudad').text(id.ficha.ie.ciudad);
+                                $('#ie').text(id.ficha.ie.nombre);
+
+
+                                $('#myModal').modal('show');
+
+                            });
+
+
+            }"
+
+
+
+        ]);
+
+        //dd($calendar);
+
+        return $calendar;
+    }
+    public static function getCalendar2($user=null, $userCalendar = null)
+    {
+
+        $events = Evento::getArrayEventos($user,$userCalendar);
+
+
+
+        $calendar = \Calendar::addEvents($events)  //add an array with addEvents
+        ->setOptions([ //set fullcalendar options
+            //'firstDay' => 1,
+            'lang' => 'es',
+            'selectable'=> 'true',
+        ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
+            'viewRender' => 'function() { console.log("Callbacks!");
+                        $("#myModal").on("hidden.bs.modal", function (e) {
+                            // do something...
+                            //alert("cerro modal");
+                                $("#actividad").text("");
+                                $("#ficha").text("");
+                                $("#ciudad").text("");
+                                $("#ie").text("");
+                                $("#horas").text("");
+
+
+                        });
+                        }',
+            'select' => 'function(start, end, date) {
+                        var myCal = $("#calendar-'.\Calendar::getId().'");
+                        myCal.fullCalendar("gotoDate",start);
+                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm A"));
+                         $("#datetimepicker2").data("DateTimePicker").date(moment(end).format("MM/DD/YYYY hh:mm A"));
+                        }',
+            'dayClick'=> "function(date, allDay, jsEvent, view) {
+
+                        $(this).parent().siblings().removeClass('week-highlight');
+                        $(this).parent().addClass('week-highlight')
+
+                        }",
+            'eventClick'=>" function(calEvent,jsEvent,view){
+
+                        var url = '".Url::to('eventos/edit',['id'=>''])."';
+                        var idEvento = calEvent.id;
+                        var urleditar = url+'/'+calEvent.id;
+                        $('#editarEvento').attr('href', urleditar);
+
+                        //window.location.href = url+'/'+calEvent.id;
+
+                        $.ajax({
+                                type: 'GET',
+                                url: '/eventos/show/'+idEvento,
+                                //data: { id: idEvento }
+                            }).done(function( msg ) {
+                                var id = msg;
+                                //console.log(id);
+                                alert( 'the messageis ' +  id.tipoactividad.nombre);
+                                $('#actividad').text(id.tipoactividad.nombre);
+                                $('#ficha').text(id.ficha.codigo);
+                                $('#horas').text(id.horas);
+                                $('#ciudad').text(id.ficha.ie.ciudad);
+                                $('#ie').text(id.ficha.ie.nombre);
+
+
+                                $('#myModal').modal('show');
+
+                            });
+
 
             }"
 
@@ -177,9 +319,17 @@ class Evento extends Model implements Event
 
     public function ficha()
     {
-        return $this->belongsTo('\app\Ficha');
+        return $this->belongsTo('\App\Ficha');
     }
 
+    public function ie()
+    {
+        return $this->belongsTo('\App\Ie');
+    }
 
+    public function tipoactividad()
+    {
+        return $this->belongsTo('App\TipoActividad','title','id');
+    }
 
 }

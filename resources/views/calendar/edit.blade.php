@@ -1,5 +1,13 @@
 @extends('app')
+@section('menu')
+    @if(Session::get('tipouser')== 'user' || Session::get('tipouser')== 'instructor')
 
+        @include('instructor.partials.menu')
+    @else
+
+        @include('admin.partials.menu')
+
+    @endif
 @section('content')
     <div class="container" id="page-wrapper">
         <div class="row">

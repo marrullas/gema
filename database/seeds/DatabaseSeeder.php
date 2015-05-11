@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('FichasTableSeeder');
         //$this->call('EventosTableSeeder');
         $this->call('MuroTableSeeder');
+        $this->call('TipoactividadTableSeeder');
 	}
 
 }

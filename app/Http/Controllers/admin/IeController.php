@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\Admin;
 
+use App\ciudad;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -39,8 +40,10 @@ class IeController extends Controller {
 	public function create()
 	{
 		//
+        $ciudades = Ciudad::lists('full_name','codigo');
 
-        return view('admin.ies.create');
+
+        return view('admin.ies.create',compact('ciudades'));
 	}
 
     /**
@@ -78,8 +81,9 @@ class IeController extends Controller {
 	public function edit($id)
 	{
 		//
+        $ciudades = Ciudad::lists('full_name','codigo');
         $ie = Ie::findOrFail($id);
-        return view('admin.ies.edit',compact('ie'));
+        return view('admin.ies.edit',compact('ie','ciudades'));
 	}
 
 	/**

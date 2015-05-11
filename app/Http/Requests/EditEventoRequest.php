@@ -23,7 +23,6 @@ class EditEventoRequest extends Request {
 	{
 
         $this->merge(['all_day' => $this->input('all_day', 0)]);
-
         return [
             'title' => 'required',
             'start' => 'required',
@@ -31,5 +30,12 @@ class EditEventoRequest extends Request {
 
         ];
 	}
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Debe ingresar el tipo de actividad',
+        ];
+    }
 
 }

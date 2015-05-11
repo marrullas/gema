@@ -21,7 +21,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('ciudad', 'Ciudad') !!}
-    {!! Form::text('ciudad', null, [ 'class' => 'form-control', 'disabled','placeholder' => 'Ingrese ciudad' ] ) !!}
+    {!! Form::select('ciudad', $ciudades, null, [ 'class' => 'form-control'] ) !!}
 </div>
 <div class="form-group">
     {!! Form::label('direccion', 'Dirección') !!}

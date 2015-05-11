@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="form-group">
-    {!! Form::label('fecha_fin', 'Fecha terinación') !!}
+    {!! Form::label('fecha_fin', 'Fecha terminación') !!}
     <div class="input-group date" id="datetimepicker2">
         {!! Form::text('fecha_fin', null, ['class' => 'form-control' ]) !!}
         <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>

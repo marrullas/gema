@@ -64,7 +64,10 @@ class FichaController extends Controller {
 		//
         $data = $request->all();
 
+        $nombreIe = Ie::find($data['ie_id'])->nombre;
+
         $ficha = new Ficha($data);
+        $ficha->full_name = $data['codigo'] . ' - ' . $nombreIe;
         $ficha->save();
         return redirect()->route('admin.fichas.index');
 

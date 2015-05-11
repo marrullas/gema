@@ -5,7 +5,11 @@ use App\Ficha;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\CreateEventoRequest;
 use App\Http\Requests\EditEventoRequest;
+use App\Tipoactividad;
+use Carbon\Carbon;
+use GuzzleHttp\Message\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -48,11 +52,29 @@ class EventosController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CreateEventoRequest $request)
 	{
-		$data = $this->request->all();
+		$data = $request->all();
 
         $evento = new Evento($data);
+
+        if (!$this->request->get('all_day') ) {
+            $evento->all_day = 0;
+            //calcular numero de horas
+            $fecha_ini = new Carbon($data['start']);
+            $fecha_fin = new Carbon($data['end']);
+            $numeroHoras = $fecha_ini->diffInHours($fecha_fin);
+            $evento->horas = ($numeroHoras > 8)
+                ? 8
+                : $numeroHoras;
+
+        }
+        else {
+            $evento->all_day = 1;
+            $evento->horas = 8;
+        }
+
+
         //dd($evento);
 
         //dd(\Carbon\Carbon::parse($data['start'])->toIso8601String());
@@ -65,7 +87,7 @@ class EventosController extends Controller {
         $evento->end = new \DateTime($data['end']);*/
         //$evento->end = \Carbon\Carbon::parse($data['end'])->toIso8601String();
         //dd($evento);
-
+        $evento->actividad =  Tipoactividad::find($data['title']);
 
         $evento->save();
 
@@ -84,8 +106,13 @@ class EventosController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
-        dd('prueba exitosa');
+
+        $evento = Evento::with(['ficha','ficha.ie','tipoactividad'])->findOrfail($id);
+        if ($this->request->ajax()) {
+        return $evento->toArray();
+        }
+        dd($evento->toArray());
+
 	}
 
 	/**
@@ -103,13 +130,14 @@ class EventosController extends Controller {
 
         $evento = Evento::findOrfail($id);
         $isAdminOrLider = $this->request->user()->isAdminOrLider();
+        $tipoactividades = Tipoactividad::all()->lists('nombre','id');
 
 
         if($this->request->user()->id == $evento->user_id || $isAdminOrLider)         //validar tipos de usuario
         {
 
             $fichas = Ficha::lists('codigo', 'id');
-            return view('calendar.edit', compact('evento', 'fichas','isAdminOrLider'));
+            return view('calendar.edit', compact('evento', 'fichas','isAdminOrLider','tipoactividades'));
         }
         else{
             Session::flash('message','Error al editar evento, no puede editar eventos de otros usuarios');
@@ -126,16 +154,30 @@ class EventosController extends Controller {
 	 */
     public function update(EditEventoRequest $request,$id)
     {
-        //dd($this->request->get('all_day'));
+        //dd($request->all());
+        $data = $request->all();
         $evento = Evento::findOrfail($id);
+        $evento->fill($data);
 
-        $evento->fill($this->request->all());
-        if (!$this->request->get('all_day') )
+        if (!$this->request->get('all_day') ) {
             $evento->all_day = 0;
-        else
+            //calcular numero de horas
+            $fecha_ini = new Carbon($data['start']);
+            $fecha_fin = new Carbon($data['end']);
+            $numeroHoras = $fecha_ini->diffInHours($fecha_fin);
+            $evento->horas = ($numeroHoras > 8)
+                            ? 8
+                            : $numeroHoras;
+
+        }
+        else {
             $evento->all_day = 1;
+            $evento->horas = 8;
+        }
 
+        $evento->actividad =  Tipoactividad::find($data['title'])->nombre;
 
+        //dd($evento);
 
 
         $evento->save();

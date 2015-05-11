@@ -1,6 +1,7 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use App\User;
 use Illuminate\Routing\Route;
 
 class EditUserRequest extends Request {
@@ -38,10 +39,12 @@ class EditUserRequest extends Request {
 	 */
 	public function rules()
 	{
+
 		return [
 			//
             'first_name'=>'required',
             'last_name'=>'required',
+            'documento'=>'required|unique:users,documento,'.$this->user()->id,
             'telefono1'=>'required',
             'telefono2'=>'required',
             'email'=>'required|unique:users,email,'.$this->route->getParameter('users'),

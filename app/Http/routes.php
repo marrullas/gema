@@ -18,6 +18,7 @@ Route::get('home', 'HomeController@index');
 Route::get('calendar','UserController@calendar');
 
 Route::get('eventos/edit/{id}','EventosController@edit');
+Route::get('eventos/show/{id}','EventosController@show');
 
 Route::post('muro/crearmuro/','MuroController@crearmuro');
 Route::post('muro/crearanuncio/','MuroController@crearanuncio');

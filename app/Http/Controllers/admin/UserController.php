@@ -5,6 +5,7 @@ use App\Evento;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Muro;
+use App\Tipoactividad;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
 use MaddHatter\LaravelFullcalendar\Event as Event;
@@ -200,6 +201,7 @@ class UserController extends Controller {
     public function calendar($user_id = null )
     {
 
+
         if(empty($user_id))
         {
             Session::flash('message','Debe selecionar algun usuario');
@@ -209,7 +211,8 @@ class UserController extends Controller {
 
             try{
 
-                $nombreuser = User::findOrfail($user_id)->fullname;
+                $nombreuser = User::findOrfail($user_id)->full_name;
+
             }
             catch(ModelNotFoundException $e){
                 Session::flash('message',$e->getMessage());
@@ -221,11 +224,15 @@ class UserController extends Controller {
 
         }
 
+
+
         $fichas = Ficha::lists('full_name','id');
         $calendar = Evento::getCalendar($this->request->user(),$user_id);
+        $tipoactividades = Tipoactividad::all()->lists('nombre','id');
         $calId = $calendar->getId();
 
-        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser'));
+
+        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser','tipoactividades'));
     }
 
 
