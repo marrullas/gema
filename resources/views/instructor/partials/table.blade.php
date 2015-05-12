@@ -1,26 +1,29 @@
 <table class="table table-striped">
-    <caption>Total registros : {{$users->total()}} </caption>
+    <caption>Total fichas asignadas : {{$fichasasignadas->count()}} </caption>
     <thead>
     <tr>
         <th>#</th>
         <th>Nombre</th>
-        <th>Email</th>
-        <th>Telefono</th>
-        <th>Tipo</th>
+        <th>Programa</th>
+        <th>Grado</th>
+        <th>Ciudad</th>
     </tr>
     </thead>
     <tbody>
-    @foreach($users as $user)
-        <tr data-id="{{$user->id}}">
-            <th scope="row">{{$user->id}}</th>
-            <td>{{$user->full_name}}</td>
-            <td>{{$user->email}}</td>
-            <td>{{$user->telefono1}}</td>
-            <td>{{Lang::get('typeuser.'.$user->type)}}</td>
+
+    @foreach($fichasasignadas as $ficha)
+            <tr data-id="{{$ficha->id}}">
+            <th scope="row">{{$ficha->id}}</th>
+            <td>{{$ficha->full_name}}</td>
+            <td>{{$ficha->programa->nombre}}</td>
+            <td>{{$ficha->grado}}</td>
+            <td>{{$ficha->ie->ciudad->nombre    }}</td>
+
             <td>
-                <a class="btn btn-warning btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$user->id) }}">Programación</a>
-                <a class="btn btn-info btn-xs" href="{{ route('admin.users.edit', $user) }}">Editar</a>
-                <!--<a href="#!" class="btn btn-danger btn-xs">Eliminar</a> -->
+                <!--
+                <a class="btn btn-warning btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$ficha->id) }}">Programación</a>
+                <a class="btn btn-info btn-xs" href="{{ route('admin.users.edit', $ficha) }}">Editar</a>
+               <a href="#!" class="btn btn-danger btn-xs">Eliminar</a> -->
 
             </td>
         </tr>

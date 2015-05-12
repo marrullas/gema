@@ -20,7 +20,7 @@ class CreateIesTable extends Migration {
             $table->enum('tipo',['publica','privada'])->default('publica');
             $table->enum('modalidad',['tecnica','academica'])->default('tecnica');
             $table->text('email')->nullable();
-            $table->string('ciudad');
+            $table->string('ciudad_id');
             $table->string('direccion')->nullable();
             $table->string('telefono');
             $table->string('nombre_rector')->nullable();

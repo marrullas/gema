@@ -18,7 +18,7 @@
             <td>{{$user->telefono1}}</td>
             <td>{{Lang::get('typeuser.'.$user->type)}}</td>
             <td>
-                <a class="btn btn-warning btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('admin/users/calendar/'.$user->id) }}">Programación</a>
+                <a class="btn btn-warning btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$user->id) }}">Programación</a>
                 <a class="btn btn-info btn-xs" href="{{ route('admin.users.edit', $user) }}">Editar</a>
                 <!--<a href="#!" class="btn btn-danger btn-xs">Eliminar</a> -->
 

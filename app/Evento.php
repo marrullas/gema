@@ -207,11 +207,11 @@ class Evento extends Model implements Event
                             }).done(function( msg ) {
                                 var id = msg;
                                 //console.log(id);
-                                //alert( 'the messageis ' +  id.tipoactividad.nombre);
+                                //alert( 'the messageis ' +  id.ficha.ie.ciudad.nombre);
                                 $('#actividad').text(id.actividad);
                                 $('#ficha').text(id.ficha.codigo);
                                 $('#horas').text(id.horas);
-                                $('#ciudad').text(id.ficha.ie.ciudad);
+                                $('#ciudad').text(id.ficha.ie.ciudad.nombre);
                                 $('#ie').text(id.ficha.ie.nombre);
 
 
@@ -288,7 +288,7 @@ class Evento extends Model implements Event
                                 $('#actividad').text(id.tipoactividad.nombre);
                                 $('#ficha').text(id.ficha.codigo);
                                 $('#horas').text(id.horas);
-                                $('#ciudad').text(id.ficha.ie.ciudad);
+                                $('#ciudad').text(id.ficha.ie.ciudad.nombre);
                                 $('#ie').text(id.ficha.ie.nombre);
 
 

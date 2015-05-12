@@ -34,21 +34,21 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function bio()
     {
-        return $this->hasOne('app\Bio');
+        return $this->hasOne('\App\Bio');
     }
 
     public function eventos()
     {
-        return $this->hasMany('app\Evento');
+        return $this->hasMany('\App\Evento');
     }
 
     public function muros()
     {
-        return $this->hasMany('app\Muro');
+        return $this->hasMany('\App\Muro');
     }
     public function fichas()
     {
-        return $this->hasMany('app\Ficha');
+        return $this->hasMany('\App\Ficha');
     }
 // inhabilitado interfiere cuando se intenta mostar el nombre en formulario ficha
 /*    public function getFullNameAttribute()
@@ -103,5 +103,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
 
         return $this->type === 'admin' || $this->type === 'lider';
+    }
+
+    public function FichasAsignadas()
+    {
+        return $this->fichas->all();
     }
 }

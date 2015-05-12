@@ -20,8 +20,8 @@
     {!! Form::text('email', null, [ 'class' => 'form-control', 'placeholder' => 'Digite correo' ] ) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('ciudad', 'Ciudad') !!}
-    {!! Form::select('ciudad', $ciudades, null, [ 'class' => 'form-control'] ) !!}
+    {!! Form::label('ciudad_id', 'Ciudad') !!}
+    {!! Form::select('ciudad_id', $ciudades, null, [ 'class' => 'form-control'] ) !!}
 </div>
 <div class="form-group">
     {!! Form::label('direccion', 'Dirección') !!}

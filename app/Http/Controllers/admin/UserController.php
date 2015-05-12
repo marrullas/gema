@@ -226,7 +226,8 @@ class UserController extends Controller {
 
 
 
-        $fichas = Ficha::lists('full_name','id');
+        //$fichas = Ficha::lists('full_name','id');
+        $fichas = Ficha::where('user_id',$user_id)->where('estado','activa')->lists('full_name','id');
         $calendar = Evento::getCalendar($this->request->user(),$user_id);
         $tipoactividades = Tipoactividad::all()->lists('nombre','id');
         $calId = $calendar->getId();

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateEventoRequest;
 use App\Http\Requests\EditEventoRequest;
 use App\Tipoactividad;
+use App\User;
 use Carbon\Carbon;
 use GuzzleHttp\Message\Response;
 use Illuminate\Http\Request;
@@ -32,9 +33,56 @@ class EventosController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($userID = null)
 	{
 		//
+        //validar que el calendario pertenesca al usuario o que sea un admistrador
+
+
+
+
+        if(empty($userID)) {
+            $user_id = $this->request->user()->id;
+            $userID = $user_id;
+        }
+        else
+            $user_id = $userID;
+
+        if($userID != $this->request->user()->id && !$this->request->user()->isAdminOrlider())
+        {
+            Session::flash('message','Error, prohibido acceso a otros calendarios');
+            return Redirect::back();
+        }
+
+        //dd($userID);
+
+        if(empty($user_id))
+        {
+            Session::flash('message','Debe selecionar algun usuario');
+            return redirect()->route('users.index');
+
+        }else {
+
+            try{
+
+                $nombreuser = User::findOrfail($user_id)->full_name;
+            }
+            catch(ModelNotFoundException $e){
+                Session::flash('message',$e->getMessage());
+                return redirect()->route('users.index');
+
+            }
+
+
+
+        }
+
+        $fichas = Ficha::where('user_id',$user_id)->where('estado','activa')->lists('full_name','id');
+        $calendar = Evento::getCalendar($this->request->user(),$user_id);
+        $tipoactividades = Tipoactividad::all()->lists('nombre','id');
+        $calId = $calendar->getId();
+
+        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser','tipoactividades'));
 	}
 
 	/**
@@ -107,10 +155,12 @@ class EventosController extends Controller {
 	public function show($id)
 	{
 
-        $evento = Evento::with(['ficha','ficha.ie','tipoactividad'])->findOrfail($id);
+        $evento = Evento::with(['ficha','ficha.ie','ficha.ie.ciudad','tipoactividad'])->findOrfail($id);
         if ($this->request->ajax()) {
         return $evento->toArray();
         }
+        //dd($evento->ficha()->first()->ie()->first()->ciudad()->first()->nombre);
+
         dd($evento->toArray());
 
 	}
@@ -124,7 +174,6 @@ class EventosController extends Controller {
 	public function edit($id)
 	{
 
-        //dd($this->request->user()->id);
 
         //validar que sea un evento del usuario o que sea un usuario admin o lider
 
@@ -136,7 +185,8 @@ class EventosController extends Controller {
         if($this->request->user()->id == $evento->user_id || $isAdminOrLider)         //validar tipos de usuario
         {
 
-            $fichas = Ficha::lists('codigo', 'id');
+            //$fichas = Ficha::lists('codigo', 'id');
+            $fichas = Ficha::where('user_id',$this->request->user()->id)->where('estado','activa')->lists('full_name','id');
             return view('calendar.edit', compact('evento', 'fichas','isAdminOrLider','tipoactividades'));
         }
         else{

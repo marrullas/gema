@@ -18,7 +18,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title" id="myModalLabel">Detalle de la actividad</h4>
                 </div>
                 <div class="modal-body">
 
@@ -66,7 +66,7 @@
                                 <div class="collapse" id="collapseExample">
                                     <div class="well">
                                         <div class="panel-group ">
-                                            {!! Form::open(['route'  => 'eventos.store', 'method' => 'POST','class'=>'form']) !!}
+                                            {!! Form::open(['route'  => 'calendar.store', 'method' => 'POST','class'=>'form']) !!}
                                             {!! Form::hidden('user_id',$user_id) !!}
                                             @include('calendar.partials.fields')
                                             <!-- falta la marca para todo el dia y el boton de guardar -->

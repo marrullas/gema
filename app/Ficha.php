@@ -22,20 +22,20 @@ class Ficha extends Model {
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('\App\User');
     }
     public function eventos()
     {
-        Return $this->hasMany('App\Evento');
+        Return $this->hasMany('\App\Evento');
     }
 
     public function ie()
     {
-        return $this->belongsTo('App\Ie');
+        return $this->belongsTo('\App\Ie');
     }
     public function programa()
     {
-        return $this->belongsTo('App\Programa');
+        return $this->belongsTo('\App\Programa');
     }
     public function getCodigo()
     {

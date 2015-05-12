@@ -8,4 +8,10 @@ class ciudad extends Model {
 
     protected $table = 'ciudades';
 
+
+    public function ies()
+    {
+        return $this->hasMany('\App\Ie');
+    }
+
 }

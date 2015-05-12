@@ -19,7 +19,7 @@
                     @endif
                     <div class="panel-body">
                         @include('admin.partials.messages')
-                        {!! Form::model($evento,['route'=> ['eventos.update', $evento], 'method' => 'PUT' ]) !!}
+                        {!! Form::model($evento,['route'=> ['calendar.update', $evento], 'method' => 'PUT' ]) !!}
                         @include('calendar.partials.fields')
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Actualizar evento</button>

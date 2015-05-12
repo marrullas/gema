@@ -15,10 +15,12 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('calendar','UserController@calendar');
+//Route::get('calendar','UserController@calendar');
 
 Route::get('eventos/edit/{id}','EventosController@edit');
 Route::get('eventos/show/{id}','EventosController@show');
+Route::get('calendar/{id}','EventosController@index');
+
 
 Route::post('muro/crearmuro/','MuroController@crearmuro');
 Route::post('muro/crearanuncio/','MuroController@crearanuncio');
@@ -26,11 +28,11 @@ Route::post('muro/crearanuncio/','MuroController@crearanuncio');
 //Route::get('users/perfil','UserController@perfil');
 Route::resource('users','UserController');
 
-Route::resource('eventos', 'EventosController');
+Route::resource('calendar', 'EventosController');
 
 Route::resource('muro','MuroController');
 
-
+//Route::resource('calendar','Even')
 
 Route::controllers([
     'eventos' => 'EventosController',
@@ -43,13 +45,13 @@ Route::controllers([
 
 Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' => 'admin'],   function() {
 
-    Route::get('users/calendar/{id?}', [
+/*    Route::get('users/calendar/{id?}', [
         'as' => 'calendar', 'uses' => 'UserController@calendar'
     ]);
 
     Route::post('users/calendar/', [
         'as' => 'calendar', 'uses' => 'UserController@calendar'
-    ]);
+    ]);*/
 
     Route::get('users/misevento/{id?}', [
         'as' => 'misevento', 'uses' => 'UserController@misevento'

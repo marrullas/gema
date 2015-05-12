@@ -15,8 +15,7 @@
                 </div>
                 <!-- /. ROW  -->
                 <hr />
-
-
+                @include('instructor.partials.table')
                     <!-- /. ROW  -->
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-xs-12">
