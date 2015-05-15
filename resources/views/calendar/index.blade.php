@@ -33,7 +33,15 @@
                         <dd><span id="ciudad"></span></dd>
                         <dt>Horas reportadas</dt>
                         <dd><span id="horas"></span></dd>
+                        <dt>Hora inicial</dt>
+                        <dd><span id="hora_ini"></span></dd>
+                        <dt>Hora final</dt>
+                        <dd><span id="hora_fin"></span></dd>
+                        <dt>Detalle actividad</dt>
+                        <dd><span id="DetActividad"></span></dd>
+
                     </dl>
+
 
                 </div>
                 <div class="modal-footer">
@@ -92,6 +100,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.0/moment-with-locales.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang-all.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js"></script>
+    <link media="all" type="text/css" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.css">
 
     {!! HTML::script('/bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}
     {!!Html::style('/bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')!!}

@@ -19,7 +19,28 @@
         });
     });
 
-
+    function GetTime(date) {
+        var currentTime = (new Date(date))
+        var hours = currentTime.getHours()
+        //Note: before converting into 12 hour format
+        var suffix = "";
+        if (hours > 11) {
+            suffix += "PM";
+        } else {
+            suffix += "AM";
+        }
+        var minutes = currentTime.getMinutes()
+        if (minutes < 10) {
+            minutes = "0" + minutes
+        }
+        if (hours > 12) {
+            hours -= 12;
+        } else if (hours === 0) {
+            hours = 12;
+        }
+        var time = hours + ":" + minutes + " " + suffix;
+        return time;
+    }
 </script>
 
 {!! HTML::script('/css/assets/js/jquery.metisMenu.js') !!}

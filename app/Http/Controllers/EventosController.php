@@ -21,6 +21,7 @@ class EventosController extends Controller {
 
     function __construct(\Illuminate\Http\Request $request)
     {
+        $this->middleware('auth');
         $this->request = $request;
         //$this->user_logged = $this->request->user()->id;
 
@@ -244,6 +245,22 @@ class EventosController extends Controller {
 	public function destroy($id)
 	{
 		//
+
+
+        $evento = Evento::findOrfail($id);
+        $evento->delete();
+        $message = trans('validation.attributes.userdelete').' : '.$evento->title;
+        if($this->request->ajax()){
+
+            return response()->json([
+                'id'=>$evento->id,
+                'message'=>$message
+            ]);
+        }
+
+        //User::destroy($id); eliminar directamente
+        Session::flash('message',$message);
+        return redirect()->route('calendar.index');
 	}
 
 }

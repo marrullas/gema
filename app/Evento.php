@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Model;
 use MaddHatter\LaravelFullcalendar\Event as Event;
@@ -75,7 +76,9 @@ class Evento extends Model implements Event
      */
     public function getStart()
     {
-        return $this->start;
+        //return $this->start;
+        return Carbon::parse($this->start)->format('d/m/Y');
+
     }
 
     /**
@@ -93,10 +96,14 @@ class Evento extends Model implements Event
         $this->ficha->codigo;
     }
 
-    public function getHoras()
+    public function getHoraEventosAttribute()
     {
-        $this->ficha->horas;
+        //$this->ficha->horas;
+        dd($this);
+        return $this->horas;
+
     }
+
 
     /**
      *
@@ -114,15 +121,19 @@ class Evento extends Model implements Event
         if (isset($tipoadmin[$usertype]) && !empty($userCalendar)) {
             // ojo se debio invertir los datos de title y actividad para poder cargar los eventos en el objeto del calendario
             // solo porque el componente pide el nombre tal cual y el campo title es la llave foranea de tipoactividad.
-            $eventos = Evento::where('user_id', $userCalendar)
-                //->with('tipoactividad')
-                ->select(['actividad as title', 'all_day', 'start', 'end', 'id','title as actividad'])
+            $eventos = Evento::where('eventos.user_id', $userCalendar)
+                ->join('fichas','eventos.ficha_id','=','fichas.id')
+                ->join('ies','ies.id','=','fichas.ie_id')
+                ->select(['actividad as title', 'all_day', 'start', 'end', 'eventos.id','title as actividad','descripcion','fichas.codigo','ies.nombre'])
                 ->get();
-            //dd($eventos->first()->tipoactividad()->first()->nombre);
+            //dd($eventos->all());
         } else {
             $eventos = Evento::where('user_id', $userId)
-                //->with('tipoactividad')
-                ->select(['actividad as title', 'all_day', 'start', 'end', 'id','title as actividad'])
+                //->with('ficha')
+                //->select(['actividad as title', 'all_day', 'start', 'end', 'id','title as actividad'])
+                ->join('fichas','eventos.ficha_id','=','fichas.id')
+                ->join('ies','ies.id','=','fichas.ie_id')
+                ->select(['actividad as title', 'all_day', 'start', 'end', 'eventos.id','title as actividad','descripcion','fichas.codigo','ies.nombre'])
                 ->get();
 
         }
@@ -140,7 +151,16 @@ class Evento extends Model implements Event
                 //se busca el color del tipo de actividad (revisar para traer directamente el color desde  la relacion)
                 $color = Tipoactividad::find($evento->actividad)->color;
                 //dd($color);
-                $calendar = \Calendar::addEvent($event, ['color' => $color]);
+                //$calendar = \Calendar::addEvent($event, ['color' => $color,'data-toggle'=>'tooltip','data-placement'=>'top','title'=>'Tooltip on top']);
+                $tooltip = "<div class='tooltiptext'>
+                            <dl>
+                            <dt>Ficha :</dt><dd>".$evento['codigo'] . "</dd>
+                            <dt>IE :</dt><dd>".$evento['nombre'] . "</dd>
+                            <dt>Actividad :</dt><dd>".trim($evento['title']) . "</dd>
+                            <dt>Objetivo :</dt><dd>".strip_tags($evento['descripcion']) . "</dd>
+                            </dl>
+                            </div>";
+                $calendar = \Calendar::addEvent($event, ['color' => $color,'description'=>$tooltip]);
                 //$calendar = \Calendar::addEvent($event);
 
 
@@ -165,8 +185,12 @@ class Evento extends Model implements Event
             //'firstDay' => 1,
             'lang' => 'es',
             'selectable'=> 'true',
+            'data-toggle'=>'tooltip',
+            'data-placement'=>'top',
+            'title'=>'Tooltip on top'
         ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
             'viewRender' => 'function() { console.log("Callbacks!");
+                        $(\'[data-toggle="tooltip"]\').tooltip()
                         $("#myModal").on("hidden.bs.modal", function (e) {
                             // do something...
                             //alert("cerro modal");
@@ -175,10 +199,13 @@ class Evento extends Model implements Event
                                 $("#ciudad").text(" ");
                                 $("#ie").text(" ");
                                 $("#horas").text(" ");
-
-
+                                $("#hora_ini").text(" ");
+                                $("#hora_fin").text(" ");
                         });
-                        }',
+                        }
+
+
+                        ',
             'select' => 'function(start, end, date) {
                         var myCal = $("#calendar-'.\Calendar::getId().'");
                         myCal.fullCalendar("gotoDate",start);
@@ -213,14 +240,24 @@ class Evento extends Model implements Event
                                 $('#horas').text(id.horas);
                                 $('#ciudad').text(id.ficha.ie.ciudad.nombre);
                                 $('#ie').text(id.ficha.ie.nombre);
-
-
+                                var fDate = new Date(id.start)
+                                $('#hora_ini').text(GetTime(fDate));
+                                var fDate = new Date(id.end)
+                                $('#hora_fin').text(GetTime(fDate));
+                                var html = id.descripcion;
+                                $('#DetActividad').text($(html).text().substring(0, 50)+'...');
                                 $('#myModal').modal('show');
 
                             });
 
 
-            }"
+            }",
+            'eventRender'=> "function(event, element) {
+        //element.attr('title', event.tooltip);
+        element.qtip({
+            content: event.description
+        });
+        }"
 
 
 

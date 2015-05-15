@@ -110,7 +110,7 @@ class UserController extends Controller{
     public function update(EditUserRequest $request,$id)
     {
         $user = User::findOrfail($id);
-
+        $user->full_name =  "$user->first_name $user->last_name";
         $user->fill($request->all());
         $user->save();
 

@@ -24,7 +24,7 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Actualizar evento</button>
                             @if($isAdminOrLider)
-                            <a class="btn btn-info" href="{{ \Illuminate\Support\Facades\URL::to('/admin/users/calendar/'.$evento->user_id) }}" role="button">Volver</a>
+                            <a class="btn btn-info" href="{{ \Illuminate\Support\Facades\URL::to('/calendar/'.$evento->user_id) }}" role="button">Volver</a>
                             @else
                                 <a class="btn btn-info" href="{{ \Illuminate\Support\Facades\URL::to('/calendar/') }}" role="button">Volver</a>
                             @endif
@@ -33,6 +33,7 @@
 --}}
                         </div>
                         {!! Form::close() !!}
+                        @include('calendar.partials.delete')
 
 
                     </div>
@@ -46,8 +47,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang-all.js"></script>
 
-    <script type="text/javascript" src="http://mediat.com/bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" href="http://mediat.com/bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <!--<script type="text/javascript" src="http://mediat.com/bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>-->
+    {!! HTML::script('/bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}
+    <!--<link rel="stylesheet" href="http://mediat.com/bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />-->
+    {!!Html::style('/bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')!!}
 
     <script type="text/javascript">
         $(function () {
@@ -68,7 +71,9 @@
             });
         });
     </script>
-    <link rel="stylesheet" href="http://mediat.com/css/fullcalendar.css">
+    <!--<link rel="stylesheet" href="http://mediat.com/css/fullcalendar.css">-->
+    {!!Html::style('/css/fullcalendar.css')!!}
+
     <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.print.css"/> !-->
 
 

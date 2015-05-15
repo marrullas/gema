@@ -39,18 +39,22 @@ class EditUserRequest extends Request {
 	 */
 	public function rules()
 	{
+         $user = $this->route('users');
+        return [
+            //
+            'first_name' => 'required',
+            'last_name' => 'required',
+            //'documento' => 'required|unique:users,documento,' . $this->user()->id,
+            'documento' => 'required|unique:users,documento,' . $user,
 
-		return [
-			//
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'documento'=>'required|unique:users,documento,'.$this->user()->id,
-            'telefono1'=>'required',
-            'telefono2'=>'required',
-            'email'=>'required|unique:users,email,'.$this->route->getParameter('users'),
-            'password'=>'',
-            'type'=>'required|in:user,admin,instructor,ie,lider'
-		];
+            'telefono1' => 'required',
+            'telefono2' => 'required',
+            //'email' => 'required|unique:users,email,' . $this->route->getParameter('users'),
+            'email' => 'required|unique:users,email,' . $user,
+            'email2' => 'required|unique:users,email2,' . $user,
+            'password' => '',
+            'type' => 'required|in:user,admin,instructor,ie,lider'
+        ];
 	}
 
 }

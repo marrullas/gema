@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -108,5 +109,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function FichasAsignadas()
     {
         return $this->fichas->all();
+    }
+
+    public function getHorasAcumuladasAttribute()
+    {
+        $horas = $this->hasMany('\App\Evento')
+            ->selectRaw('sum(horas) as horas')
+            ->where('start', '>=', Carbon::now()->startOfMonth())//acumla solamente lo de este mes
+            ->groupBy('user_id')
+            ->get();
+        //dd($horas->all()->horas);
+        return $horas;
     }
 }

@@ -33,7 +33,7 @@ class PasswordController extends Controller {
 		$this->auth = $auth;
 		$this->passwords = $passwords;
 
-		//$this->middleware('guest'); se comenta para que cualquier usuario pueda cambiar el correo
+		//$this->middleware('guest'); //se comenta para que cualquier usuario pueda cambiar el correo
 
 
 	}

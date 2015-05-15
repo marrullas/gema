@@ -1,4 +1,4 @@
-umm@extends('loginapp')
+@extends('loginapp')
 
 @section('content')
 <div class="container-fluid" id="page-wrapper">
@@ -46,7 +46,7 @@ umm@extends('loginapp')
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
-									Reset Password
+									Restablecer Password
 								</button>
 							</div>
 						</div>

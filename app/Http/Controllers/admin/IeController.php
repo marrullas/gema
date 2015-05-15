@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Ie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class IeController extends Controller {
 
@@ -116,6 +117,20 @@ class IeController extends Controller {
 	public function destroy($id)
 	{
 		//
+        $ie = Ie::findOrfail($id);
+        $ie->delete();
+        $message = trans('validation.attributes.userdelete').' : '.$ie->nombre;
+        if($this->request->ajax()){
+
+            return response()->json([
+                'id'=>$ie->id,
+                'message'=>$message
+            ]);
+        }
+
+        //User::destroy($id); eliminar directamente
+        Session::flash('message',$message);
+        return redirect()->route('admin.ies.index');
 	}
 
 

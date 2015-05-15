@@ -1,23 +1,28 @@
 <table class="table table-striped">
-    <caption>Total fichas asignadas : {{$fichasasignadas->count()}} </caption>
+    <caption>Total Eventos reportados : {{$fichasasignadas->count()}} </caption>
     <thead>
     <tr>
-        <th>#</th>
+
         <th>Nombre</th>
         <th>Programa</th>
         <th>Grado</th>
         <th>Ciudad</th>
+        <th>Horas </th>
+        <th>Fecha evento</th>
     </tr>
     </thead>
     <tbody>
 
     @foreach($fichasasignadas as $ficha)
+
             <tr data-id="{{$ficha->id}}">
-            <th scope="row">{{$ficha->id}}</th>
-            <td>{{$ficha->full_name}}</td>
-            <td>{{$ficha->programa->nombre}}</td>
-            <td>{{$ficha->grado}}</td>
-            <td>{{$ficha->ie->ciudad->nombre    }}</td>
+            <td>{{$ficha->ficha->full_name}}</td>
+            <td>{{$ficha->ficha->programa->nombre}}</td>
+            <td>{{$ficha->ficha->grado}}</td>
+            <td>{{$ficha->ficha->ie->ciudad->nombre    }}</td>
+                {{--<td>{{$ficha->ficha->horas_acumuladas->first()['horas']   }}</td>--}}
+                <td>{{$ficha->horas   }}</td>
+                <td>{{ \Carbon\Carbon::parse($ficha->start)->format('Y/m/d')   }}</td>
 
             <td>
                 <!--
@@ -28,5 +33,15 @@
             </td>
         </tr>
     @endforeach
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+
+    <td><b>Total de horas mes</b></td>
+        <td><b>{{$totalhorasmes}}</b></td>
+
+    </tr>
     </tbody>
 </table>
