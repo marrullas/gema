@@ -53,7 +53,7 @@ class HomeController extends Controller {
             //->join('fichas','fichas.id','=','eventos.ficha_id')
             ->where('eventos.user_id',$user->id)
             ->where('eventos.start', '>=', Carbon::now()->startOfMonth())
-            //->groupBy('ficha_id')
+            //si->groupBy('ficha_id')
             ->orderBy('eventos.start','')
             ->get();
 

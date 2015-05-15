@@ -128,7 +128,7 @@ class Evento extends Model implements Event
                 ->get();
             //dd($eventos->all());
         } else {
-            $eventos = Evento::where('user_id', $userId)
+            $eventos = Evento::where('eventos.user_id', $userId)
                 //->with('ficha')
                 //->select(['actividad as title', 'all_day', 'start', 'end', 'id','title as actividad'])
                 ->join('fichas','eventos.ficha_id','=','fichas.id')
@@ -141,13 +141,18 @@ class Evento extends Model implements Event
         if($eventos->count() >= 1) {
             foreach ($eventos as $evento) {
                 //dd($evento->all());
+                $all_day = true;
+                if($evento['all_day']==0)
+                    $all_day=false;
+
                 $event = \Calendar::event(
                     $evento['title'], //event title
-                    $evento['all_day'], //full day event?
+                    $evento['allday']=$all_day, //full day event?
                     $evento['start'], //start time (you can also use Carbon instead of DateTime)
                     $evento['end'], //end time (you can also use Carbon instead of DateTime)
                     $evento['id']
                 );
+                //dd($event);
                 //se busca el color del tipo de actividad (revisar para traer directamente el color desde  la relacion)
                 $color = Tipoactividad::find($evento->actividad)->color;
                 //dd($color);
@@ -185,9 +190,6 @@ class Evento extends Model implements Event
             //'firstDay' => 1,
             'lang' => 'es',
             'selectable'=> 'true',
-            'data-toggle'=>'tooltip',
-            'data-placement'=>'top',
-            'title'=>'Tooltip on top'
         ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
             'viewRender' => 'function() { console.log("Callbacks!");
                         $(\'[data-toggle="tooltip"]\').tooltip()

@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d142de50-26bb-499a-a683-c13bb5101efb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/calendar/partials/delete.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/EditUserRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/EditUserRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Evento.php" afterPath="$PROJECT_DIR$/app/Evento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EventosController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ficha.php" afterPath="$PROJECT_DIR$/app/Ficha.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/admin/IeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/IeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/admin/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/calendar/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/calendar/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php" afterPath="$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/footerapp.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/footerapp.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/instructor/partials/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/instructor/partials/table.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="media.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reset.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reset.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/auth/reset.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9076752" vertical-offset="0" max-vertical-offset="1105">
+            <state vertical-scroll-proportion="-32.64" vertical-offset="0" max-vertical-offset="1105">
               <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
               <folding />
             </state>
@@ -110,16 +94,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Evento.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Evento.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Evento.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0925927" vertical-offset="2428" max-vertical-offset="6341">
-              <caret line="159" column="40" selection-start-line="159" selection-start-column="40" selection-end-line="159" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.40023336" vertical-offset="2241" max-vertical-offset="6375">
+              <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
               <folding>
                 <element signature="e#22#40#0#PHP" expanded="true" />
-                <marker date="1431656497259" expanded="true" signature="4710:4821" placeholder="..." />
-                <marker date="1431656497259" expanded="true" signature="4710:5033" placeholder="..." />
-                <marker date="1431656497259" expanded="true" signature="4710:5146" placeholder="..." />
+                <marker date="1431662186872" expanded="true" signature="4868:4979" placeholder="..." />
+                <marker date="1431662186872" expanded="true" signature="4868:5191" placeholder="..." />
+                <marker date="1431662186872" expanded="true" signature="4868:5304" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -128,13 +112,13 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.6" vertical-offset="470" max-vertical-offset="1717">
-              <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+            <state vertical-scroll-proportion="-27.28" vertical-offset="253" max-vertical-offset="1717">
+              <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
               <folding>
                 <element signature="e#39#54#0#PHP" expanded="true" />
-                <marker date="1431571345252" expanded="true" signature="1227:1284" placeholder="select sum(h..eventos..." />
-                <marker date="1431571345252" expanded="true" signature="1227:1290" placeholder="select sum(h..eventos..." />
-                <marker date="1431571345252" expanded="true" signature="1227:1363" placeholder="select sum(h..eventos..." />
+                <marker date="1431661704028" expanded="true" signature="1227:1284" placeholder="select sum(h..eventos..." />
+                <marker date="1431661704028" expanded="true" signature="1227:1290" placeholder="select sum(h..eventos..." />
+                <marker date="1431661704028" expanded="true" signature="1227:1363" placeholder="select sum(h..eventos..." />
               </folding>
             </state>
           </provider>
@@ -212,16 +196,16 @@
         <option value="$PROJECT_DIR$/resources/views/partials/footerapp.blade.php" />
         <option value="$PROJECT_DIR$/app/Ficha.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/instructor/partials/table.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/admin/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/EditUserRequest.php" />
-        <option value="$PROJECT_DIR$/app/Evento.php" />
         <option value="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/reset.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/app/Evento.php" />
       </list>
     </option>
   </component>
@@ -1013,32 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.6" vertical-offset="470" max-vertical-offset="1717">
-          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-          <folding>
-            <element signature="e#39#54#0#PHP" expanded="true" />
-            <marker date="1431571345252" expanded="true" signature="1227:1284" placeholder="select sum(h..eventos..." />
-            <marker date="1431571345252" expanded="true" signature="1227:1290" placeholder="select sum(h..eventos..." />
-            <marker date="1431571345252" expanded="true" signature="1227:1363" placeholder="select sum(h..eventos..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Evento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0925927" vertical-offset="2428" max-vertical-offset="6341">
-          <caret line="159" column="40" selection-start-line="159" selection-start-column="40" selection-end-line="159" selection-end-column="40" />
-          <folding>
-            <element signature="e#22#40#0#PHP" expanded="true" />
-            <marker date="1431656497259" expanded="true" signature="4710:4821" placeholder="..." />
-            <marker date="1431656497259" expanded="true" signature="4710:5033" placeholder="..." />
-            <marker date="1431656497259" expanded="true" signature="4710:5146" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/calendar/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.8" vertical-offset="1498" max-vertical-offset="2397">
@@ -1081,9 +1039,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/reset.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9076752" vertical-offset="0" max-vertical-offset="1105">
+        <state vertical-scroll-proportion="-32.64" vertical-offset="0" max-vertical-offset="1105">
           <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.28" vertical-offset="253" max-vertical-offset="1717">
+          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
+          <folding>
+            <element signature="e#39#54#0#PHP" expanded="true" />
+            <marker date="1431661704028" expanded="true" signature="1227:1284" placeholder="select sum(h..eventos..." />
+            <marker date="1431661704028" expanded="true" signature="1227:1290" placeholder="select sum(h..eventos..." />
+            <marker date="1431661704028" expanded="true" signature="1227:1363" placeholder="select sum(h..eventos..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Evento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40023336" vertical-offset="2241" max-vertical-offset="6375">
+          <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
+          <folding>
+            <element signature="e#22#40#0#PHP" expanded="true" />
+            <marker date="1431662186872" expanded="true" signature="4868:4979" placeholder="..." />
+            <marker date="1431662186872" expanded="true" signature="4868:5191" placeholder="..." />
+            <marker date="1431662186872" expanded="true" signature="4868:5304" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
