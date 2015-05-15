@@ -149,8 +149,8 @@ class Evento extends Model implements Event
                     $evento['title'], //event title
                     $evento['allday']=$all_day, //full day event?
                     $evento['start'], //start time (you can also use Carbon instead of DateTime)
-                    $evento['end'], //end time (you can also use Carbon instead of DateTime)
-                    $evento['id']
+                    $evento['end'] //end time (you can also use Carbon instead of DateTime)
+                    //$evento['id']
                 );
                 //dd($event);
                 //se busca el color del tipo de actividad (revisar para traer directamente el color desde  la relacion)
@@ -165,7 +165,7 @@ class Evento extends Model implements Event
                             <dt>Objetivo :</dt><dd>".strip_tags($evento['descripcion']) . "</dd>
                             </dl>
                             </div>";
-                $calendar = \Calendar::addEvent($event, ['color' => $color,'description'=>$tooltip]);
+                $calendar = \Calendar::addEvent($event, ['color' => $color,'description'=>$tooltip,'id'=>$evento['id']]);
                 //$calendar = \Calendar::addEvent($event);
 
 
