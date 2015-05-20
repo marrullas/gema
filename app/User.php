@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -64,8 +65,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function setPasswordAttribute($value)
     {
         /** @var TYPE_NAME $value */
-        if(!empty($value))
-            $this->attributes['password'] = bcrypt($value);
+        if(!empty($value)) {
+            if (Hash::needsRehash($value)) {//valida aun no este encriptada
+                $this->attributes['password'] = bcrypt($value);
+            }
+
+        }
     }
 
 

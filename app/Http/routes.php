@@ -33,6 +33,10 @@ Route::resource('calendar', 'EventosController');
 Route::resource('muro','MuroController');
 
 //Route::resource('calendar','Even')
+Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
+Route::get('contact', ['as' => 'contact', 'uses' => 'MailController@index'] );
+
+
 
 Route::controllers([
     'eventos' => 'EventosController',
