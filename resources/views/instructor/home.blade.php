@@ -45,7 +45,7 @@
                                                         @endif
                                         <?php $counter++; ?>
                                                 <div class="chat-body">
-                                                    <strong >{{$entradaMuro->user->fullname}}</strong>
+                                                    <strong >{{$entradaMuro->user->full_name}}</strong>
                                                     <small class="pull-right text-muted">
                                                         <i class="fa fa-clock-o fa-fw"></i>{{$entradaMuro->created_at}}
                                                     </small>

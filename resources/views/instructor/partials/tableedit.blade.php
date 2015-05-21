@@ -1,5 +1,5 @@
 <table class="table table-striped">
-    <caption>Eventos reportados a   <b class="badge">{{$fichasasignadas->count()}}</b> fichas</caption>
+    <caption>Eventos reportados :   <b class="badge">{{$fichasasignadas->count()}}</b></caption>
     <thead>
     <tr>
 
@@ -7,8 +7,9 @@
         <th>Programa</th>
         <th>Grado</th>
         <th>Ciudad</th>
+        <th>Inicio</th>
         <th>Horas </th>
-        {{--<th>Fecha evento</th>--}}
+        <th>Fecha evento</th>
     </tr>
     </thead>
     <tbody>
@@ -20,11 +21,13 @@
             <td>{{$ficha->ficha->programa->nombre}}</td>
             <td>{{$ficha->ficha->grado}}</td>
             <td>{{$ficha->ficha->ie->ciudad->nombre    }}</td>
+            <td>{{ \Carbon\Carbon::parse($ficha->start)->format('h:i')   }}</td>
                 {{--<td>{{$ficha->ficha->horas_acumuladas->first()['horas']   }}</td>--}}
-                <td>{{$ficha->horas_fichames   }}</td>
-                {{--<td>{{ \Carbon\Carbon::parse($ficha->start)->format('Y/m/d')   }}</td>--}}
+                <td>{{$ficha->horas   }}</td>
+                <td>{{ \Carbon\Carbon::parse($ficha->start)->format('Y/m/d')   }}</td>
 
             <td>
+                <a class="btn btn-info btn-xs" href="{{ url('eventos/edit', $ficha) }}">Editar</a>
                 <!--
                 <a class="btn btn-warning btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$ficha->id) }}">Programación</a>
                 <a class="btn btn-info btn-xs" href="{{ route('admin.users.edit', $ficha) }}">Editar</a>
@@ -35,6 +38,7 @@
     @endforeach
 
     <tr>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>

@@ -20,6 +20,8 @@ Route::get('home', 'HomeController@index');
 Route::get('eventos/edit/{id}','EventosController@edit');
 Route::get('eventos/show/{id}','EventosController@show');
 Route::get('calendar/{id}','EventosController@index');
+Route::get('eventos/agenda','EventosController@agenda');
+Route::get('eventos/agenda/{id}','EventosController@agenda');
 
 
 Route::post('muro/crearmuro/','MuroController@crearmuro');

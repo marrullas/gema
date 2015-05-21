@@ -37,7 +37,6 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-
         $entradasMuro = Muro::getEntradas();
         $anunciosMuro = Muro::getAnuncios();
         $user = \Auth::user();
@@ -53,14 +52,18 @@ class HomeController extends Controller {
             //->join('fichas','fichas.id','=','eventos.ficha_id')
             ->where('eventos.user_id',$user->id)
             ->where('eventos.start', '>=', Carbon::now()->startOfMonth())
-            //si->groupBy('ficha_id')
+            ->groupBy('ficha_id')
             ->orderBy('eventos.start','')
             ->get();
+
+
 
 
         $horasUser = User::find($user->id)->horas_acumuladas;
 
         $totalhorasmes = $horasUser->first()->horas;
+
+        //dd($fichasasignadas->first()->horas_fichames()->horas);
 
         //dd($fichasasignadas->all());
         //$fichasasignadas = Ficha::where('user_id',$user->id)->get();
@@ -86,10 +89,39 @@ class HomeController extends Controller {
         }
 
 
-   /*     if(\Auth::user()->type == 'admin')
-            return view('admin.users.home');
-        else
-            return view('home');*/
 	}
+    public function vereventos()
+    {
+        $user = \Auth::user();
+        $fichasasignadas = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
+            //->join('fichas','fichas.id','=','eventos.ficha_id')
+            ->where('eventos.user_id',$user->id)
+            ->where('eventos.start', '>=', Carbon::now()->startOfMonth())
+            //->groupBy('ficha_id')
+            ->orderBy('eventos.start','')
+            ->get();
+
+
+
+
+        $horasUser = User::find($user->id)->horas_acumuladas;
+
+        $totalhorasmes = $horasUser->first()->horas;
+
+        switch($user->type)
+        {
+            case 'admin':
+                return view('admin.users.home',compact('user','fichasasignadas'));
+                break;
+            case 'user':
+                return view('user.home',compact('user','fichasasignadas'));
+            case 'instructor':
+                return view('instructor.eventos',compact('user','fichasasignadas','totalhorasmes'));
+            default:
+                return view('auth.login');
+
+
+        }
+    }
 
 }

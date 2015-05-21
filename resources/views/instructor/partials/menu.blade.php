@@ -35,6 +35,14 @@
             <li  >
                 <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Calendario</a>
             </li>
+            <li>
+                <a href="#"><i class="fa fa-sitemap fa-3x"></i> Informes<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('/eventos/agenda') }}">Agenda</a>
+                    </li>
+                </ul>
+            </li>
             <!--
             <li  >
                 <a   href="#"><i class="fa fa-bar-chart-o fa-3x"></i> Informes</a>

@@ -23,14 +23,17 @@
                         @include('calendar.partials.fields')
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Actualizar evento</button>
+
                             @if($isAdminOrLider)
                             <a class="btn btn-info" href="{{ \Illuminate\Support\Facades\URL::to('/calendar/'.$evento->user_id) }}" role="button">Volver</a>
+                            @elseif(Session::get('regresar') == 'eventos')
+                                <a class="btn btn-info" href="{{ \Illuminate\Support\Facades\URL::to('/eventos/agenda') }}" role="button">Volver</a>
                             @else
                                 <a class="btn btn-info" href="{{ \Illuminate\Support\Facades\URL::to('/calendar/') }}" role="button">Volver</a>
                             @endif
-{{--
-                            {!! link_to(URL::previous(), 'Regresar', ['class' => 'btn btn-info']) !!}
---}}
+
+                            {{--{!! link_to(URL::previous(), 'Regresar', ['class' => 'btn btn-info']) !!}--}}
+
                         </div>
                         {!! Form::close() !!}
                         @include('calendar.partials.delete')

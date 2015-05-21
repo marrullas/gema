@@ -39,8 +39,7 @@ class EventosController extends Controller {
 		//
         //validar que el calendario pertenesca al usuario o que sea un admistrador
 
-
-
+        Session::put('regresar', 'calendario');
 
         if(empty($userID)) {
             $user_id = $this->request->user()->id;
@@ -83,7 +82,7 @@ class EventosController extends Controller {
         $tipoactividades = Tipoactividad::all()->lists('nombre','id');
         $calId = $calendar->getId();
 
-        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser','tipoactividades'));
+        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser','tipoactividades','regresar'));
 	}
 
 	/**
@@ -176,8 +175,16 @@ class EventosController extends Controller {
 	{
 
 
-        //validar que sea un evento del usuario o que sea un usuario admin o lider
+        if(!empty($this->request['regresar']))
+            $regresar = $this->request['regresar'];
+        else
+            $regresar = $this->request->segment(1);
 
+        //dd($regresar);
+
+        //$regresar = $this->request->header('referer');
+        //validar que sea un evento del usuario o que sea un usuario admin o lider
+        $volverlista = true;
         $evento = Evento::findOrfail($id);
         $isAdminOrLider = $this->request->user()->isAdminOrLider();
         $tipoactividades = Tipoactividad::all()->lists('nombre','id');
@@ -188,7 +195,7 @@ class EventosController extends Controller {
 
             //$fichas = Ficha::lists('codigo', 'id');
             $fichas = Ficha::where('user_id',$this->request->user()->id)->where('estado','activa')->lists('full_name','id');
-            return view('calendar.edit', compact('evento', 'fichas','isAdminOrLider','tipoactividades'));
+            return view('calendar.edit', compact('evento', 'fichas','isAdminOrLider','tipoactividades','volverlista','regresar'));
         }
         else{
             Session::flash('message','Error al editar evento, no puede editar eventos de otros usuarios');
@@ -262,5 +269,47 @@ class EventosController extends Controller {
         Session::flash('message',$message);
         return redirect()->route('calendar.index');
 	}
+
+    public function agenda($userId = null)
+    {
+
+        Session::put('regresar', 'eventos');
+
+        if(empty($userId))
+            $user = \Auth::user();
+        else
+            $user = User::find($userId);
+
+        Session::flash('regresar', 'eventos');
+
+
+        $fichasasignadas = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
+            //->join('fichas','fichas.id','=','eventos.ficha_id')
+            ->where('eventos.user_id',$user->id)
+            ->where('eventos.start', '>=', Carbon::now()->startOfMonth())
+            //->groupBy('ficha_id')
+            ->orderBy('eventos.start','')
+            ->get();
+
+        $horasUser = User::find($user->id)->horas_acumuladas;
+
+        $totalhorasmes = $horasUser->first()->horas;
+
+
+        switch($user->type)
+        {
+            case 'admin':
+                return view('admin.users.home',compact('user','fichasasignadas'));
+                break;
+            case 'user':
+                return view('user.home',compact('user','fichasasignadas'));
+            case 'instructor':
+                return view('instructor.eventos',compact('user','fichasasignadas','totalhorasmes'));
+            default:
+                return view('auth.login');
+
+
+        }
+    }
 
 }

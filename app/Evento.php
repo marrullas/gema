@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use MaddHatter\LaravelFullcalendar\Event as Event;
 use Illuminate\Support\Facades\URL;
 
@@ -99,8 +100,26 @@ class Evento extends Model implements Event
     public function getHoraEventosAttribute()
     {
         //$this->ficha->horas;
-        dd($this);
+        //dd($this);
         return $this->horas;
+
+    }
+    public function getHorasFichamesAttribute($mes = null)
+    {
+        if(empty($mes))
+            $mes = Carbon::now()->startOfMonth();
+
+        $horas = Evento::selectRaw('sum(horas) as horas')
+            ->where('start', '>=', $mes)//acumla solamente lo de este mes
+            ->where('ficha_id','=',$this->ficha_id)
+            ->where('user_id','=',$this->user_id)
+            ->groupBy('ficha_id')
+            ->get();
+
+
+
+        return $horas->first()->horas;
+        //dd($horas->first()->horas);
 
     }
 
@@ -211,8 +230,8 @@ class Evento extends Model implements Event
             'select' => 'function(start, end, date) {
                         var myCal = $("#calendar-'.\Calendar::getId().'");
                         myCal.fullCalendar("gotoDate",start);
-                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm A"));
-                         $("#datetimepicker2").data("DateTimePicker").date(moment(end).format("MM/DD/YYYY hh:mm A"));
+                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm P"));
+                         $("#datetimepicker2").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm P"));
                         }',
             'dayClick'=> "function(date, allDay, jsEvent, view) {
 
@@ -298,8 +317,9 @@ class Evento extends Model implements Event
             'select' => 'function(start, end, date) {
                         var myCal = $("#calendar-'.\Calendar::getId().'");
                         myCal.fullCalendar("gotoDate",start);
-                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm A"));
-                         $("#datetimepicker2").data("DateTimePicker").date(moment(end).format("MM/DD/YYYY hh:mm A"));
+                        alert("aloha");
+                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm P"));
+                         $("#datetimepicker2").data("DateTimePicker").date(moment(end).format("MM/DD/YYYY hh:mm P"));
                         }',
             'dayClick'=> "function(date, allDay, jsEvent, view) {
 
