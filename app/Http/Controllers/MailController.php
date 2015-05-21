@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MailController extends Controller {
 
@@ -29,6 +30,11 @@ class MailController extends Controller {
 		//
         return view('contact');
 	}
+
+    public function feedback()
+    {
+        return view('emails.feedback');
+    }
 
 	/**
 	 * Show the form for creating a new resource.
@@ -106,7 +112,10 @@ class MailController extends Controller {
             $message->from($request->email, $request->name);
 
             //asunto
-            $message->subject($request->subject);
+            if(!Auth::check())
+                $message->subject($request->subject);
+            else
+                $message->subject('feedback - '.$request->subject); //marco el mensaje como feedback
 
             //receptor
             $email = 'marrullas@gmail.com';
@@ -116,7 +125,10 @@ class MailController extends Controller {
             $message->to($email, $contacto);
 
         });
-        return \View::make('emails.success');
+        if(!Auth::check())
+            return \View::make('emails.success');
+
+        return \View::make('emails.successfb');
     }
 
 

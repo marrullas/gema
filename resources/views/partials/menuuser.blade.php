@@ -12,6 +12,9 @@ font-size: 16px;">  {{--<a href="{{ url('/auth/logout') }}" class="btn btn-dange
             <li>
                 <a href="{{ route('users.edit', Auth::user()) }}"><i class="fa fa-fw fa-user"></i> Perfil</a>
             </li>
+            <li>
+                <a href="{{ url('feedback') }}"><i class="fa fa-fw fa-info-circle"></i> FeedBack</a>
+            </li>
             {{--                <li>
                                 <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                             </li>

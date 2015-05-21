@@ -51,19 +51,19 @@
             <a class="btn btn-info" href="{{ url('#') }}">Información</a>
             <a class="btn btn-info" href="{{ url('/contact') }}">Contacto</a>
 
-                           <div class="panel panel-primary">
-                                 <div class="panel-title"><b>Resultado del envio</b></div>
-                                 <div class="panel-body ">
-                        <h4>Tu mensaje ha sido enviado, pronto responderemos a tu solicitud.</h4>
-                    </div>
-                    <div class="panel-footer">
-                        <a href="{{ route('contact') }}" class="btn btn-primary btn-xs">Volver</a>
-                    </div>
-                                     </div>
-                               </div>
+                       <div class="panel panel-primary">
+                             <div class="panel-title"><b>Resultado del envio</b></div>
+                             <div class="panel-body ">
+                    <h4>Tu mensaje ha sido enviado, pronto responderemos a tu solicitud.</h4>
+                </div>
+                <div class="panel-footer">
+                    <a href="{{ route('contact') }}" class="btn btn-primary btn-xs">Volver</a>
+                </div>
+                             </div>
+                       </div>
 
-                    </div>
-           </div>
+                </div>
+       </div>
 </div>
 </body>
 </html>
