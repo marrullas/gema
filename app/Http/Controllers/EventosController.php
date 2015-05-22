@@ -297,7 +297,8 @@ class EventosController extends Controller {
 
         $horasUser = User::find($user->id)->horas_acumuladas;
 
-        $totalhorasmes = $horasUser->first()->horas;
+        $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
+        //$totalhorasmes = $horasUser->first()->horas;
 
 
         switch($user->type)
