@@ -59,9 +59,14 @@ class HomeController extends Controller {
 
 
 
+
         $horasUser = User::find($user->id)->horas_acumuladas;
 
-        $totalhorasmes = $horasUser->first()->horas;
+        //dd($horasUser->first());
+
+        $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
+
+        //dd($totalhorasmes);
 
         //dd($fichasasignadas->first()->horas_fichames()->horas);
 

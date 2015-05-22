@@ -175,11 +175,13 @@ class EventosController extends Controller {
 	{
 
 
-        if(!empty($this->request['regresar']))
+        //dd(Session::get('regresar') );
+        //Session::put('regresar', Session::get('regresar'));
+       /* if(!empty($this->request['regresar']))
             $regresar = $this->request['regresar'];
         else
             $regresar = $this->request->segment(1);
-
+*/
         //dd($regresar);
 
         //$regresar = $this->request->header('referer');
@@ -212,7 +214,9 @@ class EventosController extends Controller {
 	 */
     public function update(EditEventoRequest $request,$id)
     {
-        //dd($request->all());
+
+        //Session::put('regresar', Session::get('regresar'));
+        //dd(Session  ::get('regresar'));
         $data = $request->all();
         $evento = Evento::findOrfail($id);
         $evento->fill($data);
@@ -280,7 +284,7 @@ class EventosController extends Controller {
         else
             $user = User::find($userId);
 
-        Session::flash('regresar', 'eventos');
+        //Session::flash('regresar', 'eventos');
 
 
         $fichasasignadas = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
