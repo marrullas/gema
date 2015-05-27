@@ -122,9 +122,14 @@ class EventosController extends Controller {
             $evento->horas = 8;
         }
 
+/*
+        $ficha = Evento::where('ficha_id','=',$data['ficha_id'])
+            ->whereBetween('start',[$data['start'],$data['end']])
+            ->get();
 
-        //dd($evento);
+        dd($ficha);
 
+*/
         //dd(\Carbon\Carbon::parse($data['start'])->toIso8601String());
         /*
         $evento = new Evento();
@@ -256,7 +261,6 @@ class EventosController extends Controller {
 	public function destroy($id)
 	{
 		//
-
 
         $evento = Evento::findOrfail($id);
         $evento->delete();

@@ -1,6 +1,8 @@
 <?php namespace App\Providers;
 
+use App\Services\ValidarHoras;
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -12,6 +14,10 @@ class AppServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		//
+        $this->app->validator->resolver(function($translator, $data, $rules, $messages)
+        {
+            return new ValidarHoras($translator, $data, $rules, $messages);
+        });
 	}
 
 	/**
@@ -30,5 +36,15 @@ class AppServiceProvider extends ServiceProvider {
 			'App\Services\Registrar'
 		);
 	}
+
+    protected function registerValidationRules(Factory $validator)
+    {
+        $validator->extend('zip', 'Gvt\Support\Validators\GvtRuleValidator@validateZip');
+        $validator->extend('state', 'Gvt\Support\Validators\GvtRuleValidator@validateStateCode');
+        $validator->extend('phone', 'Gvt\Support\Validators\GvtRuleValidator@validatePhone');
+        $validator->extend('county', 'Gvt\Support\Validators\GvtRuleValidator@validateCounty');
+        $validator->extend('party', 'Gvt\Support\Validators\GvtRuleValidator@validateParty');
+        $validator->extend('ballot_style', 'Gvt\Support\Validators\GvtRuleValidator@validateBallotStyle');
+    }
 
 }

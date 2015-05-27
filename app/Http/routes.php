@@ -22,7 +22,7 @@ Route::get('eventos/show/{id}','EventosController@show');
 Route::get('calendar/{id}','EventosController@index');
 Route::get('eventos/agenda','EventosController@agenda');
 Route::get('eventos/agenda/{id}','EventosController@agenda');
-
+//Route::get('eventos/destroy/{id}','EventosController@destroy');
 
 Route::post('muro/crearmuro/','MuroController@crearmuro');
 Route::post('muro/crearanuncio/','MuroController@crearanuncio');

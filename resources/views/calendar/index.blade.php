@@ -66,6 +66,7 @@
                             @endif
 
                             <div class="panel-body">
+                                @include('admin.partials.messages')
                                 <div class="panel-group">
                                 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Agregar Evento
@@ -126,6 +127,7 @@
     {!!Html::style('css/fullcalendar.css')!!}
     <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.print.css"/> !-->
     {!! $calendar->script() !!}
+
 
 
 @endsection

@@ -209,8 +209,9 @@ class Evento extends Model implements Event
             //'firstDay' => 1,
             'lang' => 'es',
             'selectable'=> 'true',
+            'weekend'=>'false',
         ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
-            'viewRender' => 'function() { console.log("Callbacks!");
+            'viewRender' => 'function() {
                         $(\'[data-toggle="tooltip"]\').tooltip()
                         $("#myModal").on("hidden.bs.modal", function (e) {
                             // do something...
@@ -232,6 +233,9 @@ class Evento extends Model implements Event
                         myCal.fullCalendar("gotoDate",start);
                         $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm P"));
                          $("#datetimepicker2").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm P"));
+                         $("#calendar").fullCalendar("option", "weekends", false);
+
+
                         }',
             'dayClick'=> "function(date, allDay, jsEvent, view) {
 

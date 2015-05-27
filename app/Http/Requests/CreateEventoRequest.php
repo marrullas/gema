@@ -21,15 +21,24 @@ class CreateEventoRequest extends Request {
 	 */
 	public function rules()
 	{
+        //dd($this);
         //soluciona problema del checkbox vacio
         $this->merge(['all_day' => $this->input('all_day', 0)]);
         return [
             'title' => 'required',
-            'start' => 'required',
+            'start' => 'required|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day'),
             'end'   => 'required',
 		];
 
 
 	}
+
+    public function messages()
+    {
+        return [
+            'start.solapada' => 'Hora solapada',
+            'title.required' => 'Debe ingresar el tipo de actividad',
+        ];
+    }
 
 }
