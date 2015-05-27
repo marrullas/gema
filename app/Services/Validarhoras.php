@@ -48,6 +48,7 @@ class ValidarHoras extends Validator{
             //valida si hay un evento marcado para todo el dia en la misma fecha
             $ficha = Evento::where('all_day', '=', true)
                 ->where('id','!=',$id_evento)
+                ->where('user_id', '=', Auth::user()->id)
                 ->whereIn('ficha_id', $fichasxuser)
                 ->whereRaw('date(start) = ?', [$fecha_ini->format('Y-m-d')])
                 ->get();
@@ -59,6 +60,7 @@ class ValidarHoras extends Validator{
             //valida que exista un evento para esa fecha
             $ficha = Evento::where('all_day', '=', false)
                 ->where('id','!=',$id_evento)
+                ->where('user_id', '=', Auth::user()->id)
                 ->whereRaw('date(start) = ?', [$fecha_ini->format('Y-m-d')])
                 //->whereRaw('date(start) = ?', [$fecha_ini->format('Y-m-d')])
                 ->get();
@@ -69,6 +71,7 @@ class ValidarHoras extends Validator{
 
             //busca si existen eventos las mismas horas que esta tratanto de crear
             $ficha = Evento::where('id','!=',$id_evento)
+                ->where('user_id', '=', Auth::user()->id)
                 ->where(function($query) use ($fecha_ini,$fecha_fin){
                     $query->WhereBetween('start', [$fecha_ini, $fecha_fin]);
                     $query->OrWhereBetween('end', [$fecha_ini, $fecha_fin]);
@@ -93,6 +96,7 @@ class ValidarHoras extends Validator{
 
             //valida si hay un evento marcado para todo el dia en la misma fecha
             $ficha = Evento::where('all_day', '=', true)
+                ->where('user_id', '=', Auth::user()->id)
                 ->whereIn('ficha_id', $fichasxuser)
                 ->whereRaw('date(start) = ?', [$fecha_ini->format('Y-m-d')])
                 ->get();
@@ -103,6 +107,7 @@ class ValidarHoras extends Validator{
 
             //valida que exista un evento para esa fecha
             $ficha = Evento::where('all_day', '=', false)
+                ->where('user_id', '=', Auth::user()->id)
                 ->whereRaw('date(start) = ?', [$fecha_ini->format('Y-m-d')])
                 //->whereRaw('date(start) = ?', [$fecha_ini->format('Y-m-d')])
                 ->get();
@@ -113,6 +118,7 @@ class ValidarHoras extends Validator{
 
             //busca si existen eventos las mismas horas que esta tratanto de crear
             $ficha = Evento::WhereBetween('start', [$fecha_ini, $fecha_fin])
+                ->where('user_id', '=', Auth::user()->id)
                 ->OrWhereBetween('end', [$fecha_ini, $fecha_fin])
                 ->OrWhereRaw("? between start and end",[$fecha_ini])
                 //->whereRaw('date(start) = ?', [$fecha_ini->format('Y-m-d')])
