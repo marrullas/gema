@@ -208,10 +208,12 @@ class Evento extends Model implements Event
         $calendar->setOptions([ //set fullcalendar options
             //'firstDay' => 1,
             'lang' => 'es',
-            'selectable'=> 'true',
-            'weekend'=>'false',
+            'selectable'=> true,
+            'weekends'=>false,
         ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
             'viewRender' => 'function() {
+
+
                         $(\'[data-toggle="tooltip"]\').tooltip()
                         $("#myModal").on("hidden.bs.modal", function (e) {
                             // do something...

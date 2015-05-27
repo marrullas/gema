@@ -1,5 +1,6 @@
 <?php namespace App\Providers;
 
+use App\Services\isWeekend;
 use App\Services\ValidarHoras;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +19,8 @@ class AppServiceProvider extends ServiceProvider {
         {
             return new ValidarHoras($translator, $data, $rules, $messages);
         });
+
+
 	}
 
 	/**

@@ -36,7 +36,7 @@ class EditEventoRequest extends Request {
         return [
             'title' => 'required',
             //'start' => 'required',
-            'start' => 'required|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day').','.$id,
+            'start' => 'required|isweekend|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day').','.$id,
             'end'   => 'required'
 
         ];
@@ -49,6 +49,7 @@ class EditEventoRequest extends Request {
         return [
             'title.required' => 'Debe ingresar el tipo de actividad',
             'start.solapada' => 'Hora solapada',
+            'start.isweekend' => 'no esta permitido programar horas los fines de semana',
         ];
     }
 

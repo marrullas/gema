@@ -139,4 +139,14 @@ class ValidarHoras extends Validator{
         }
         return true;
     }
+
+    public function Validateisweekend($attribute, $value, $parameters)
+    {
+        $start = new Carbon($value);
+        if($start->isWeekend())
+            return false;
+
+        return true;
+
+    }
 }

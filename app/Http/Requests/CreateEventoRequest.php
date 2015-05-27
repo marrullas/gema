@@ -26,7 +26,7 @@ class CreateEventoRequest extends Request {
         $this->merge(['all_day' => $this->input('all_day', 0)]);
         return [
             'title' => 'required',
-            'start' => 'required|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day'),
+            'start' => 'required|isweeken|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day'),
             'end'   => 'required',
 		];
 
@@ -38,6 +38,7 @@ class CreateEventoRequest extends Request {
         return [
             'start.solapada' => 'Hora solapada',
             'title.required' => 'Debe ingresar el tipo de actividad',
+            'start.isweekend' => 'no esta permitido programar horas los fines de semana',
         ];
     }
 
