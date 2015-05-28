@@ -16,6 +16,8 @@ use App\Ficha;
 use App\Muro;
 use App\Tipoactividad;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller{
@@ -102,6 +104,13 @@ class UserController extends Controller{
     public function edit($id)
     {
         $user = User::findOrfail($id);
+
+        if(Auth::user()->id != $id && !Auth::user()->isAdminOrlider())
+        {
+            Session::flash('message','Error, prohibido acceso a otros perfiles');
+            return Redirect::back();
+        }
+
         $ciudades = Ciudad::lists('full_name','codigo');
 
         return view('user.edit',compact('user','ciudades'));

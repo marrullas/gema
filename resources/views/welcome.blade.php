@@ -47,7 +47,7 @@
 
                 <div class="row">
                     <a class="btn btn-default" href="{{ url('/home') }}">Inicio</a>
-                    <a class="btn btn-info" href="{{ url('#') }}">Información</a>
+                    <a class="btn btn-info" href="https://www.youtube.com/channel/UCvwxhTT1LpdziA-afoakv1g/videos">Información</a>
                     <a class="btn btn-info" href="{{ url('/contact') }}">Contacto</a>
                 </div>
             </div>

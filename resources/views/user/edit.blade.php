@@ -13,6 +13,12 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h3>Editar usuario</div></h3>
 
+                    @if(Session::has('message'))
+                        <p class="alert-success">{{ Session::get('message') }}</p>
+
+
+                    @endif
+
                     <div class="panel-body">
                         @include('admin.partials.messages')
                         {!! Form::model($user,['route'=> ['users.update', $user], 'method' => 'PUT' ]) !!}
