@@ -26,7 +26,7 @@ class CreateEventoRequest extends Request {
         $this->merge(['all_day' => $this->input('all_day', 0)]);
         return [
             'title' => 'required',
-            'start' => 'required|isweeken|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day'),
+            'start' => 'required|isweekend|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day'),
             'end'   => 'required',
 		];
 

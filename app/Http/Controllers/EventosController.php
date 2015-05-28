@@ -264,7 +264,7 @@ class EventosController extends Controller {
 
         $evento = Evento::findOrfail($id);
         $evento->delete();
-        $message = trans('validation.attributes.userdelete').' : '.$evento->title;
+        $message = trans('validation.attributes.eventodelete').' : '.$evento->actividad . ' para la fecha: ' . $evento->start;
         if($this->request->ajax()){
 
             return response()->json([

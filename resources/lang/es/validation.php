@@ -107,6 +107,7 @@ return [
         'userdelete'=>'Se elimino el registro del usuario',
         'email'=>'Correo electronico',
         'password'=> 'Contraseña',
+        'eventodelete'=>'Se elimino el evento exitosamente'
 
     ),
 
