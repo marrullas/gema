@@ -151,6 +151,7 @@ return [
 
         /*provider de calendario full-calendar*/
         'MaddHatter\LaravelFullcalendar\ServiceProvider',
+        'Barryvdh\Snappy\ServiceProvider',
 
 	],
 
@@ -208,6 +209,9 @@ return [
         /* alias para el calendario full-calendar"*/
 
         'Calendar' => 'MaddHatter\LaravelFullcalendar\Facades\Calendar',
+        'PDF' => 'Barryvdh\Snappy\Facades\SnappyPdf',
+        'Image' => 'Barryvdh\Snappy\Facades\SnappyImage',
+
 
 
 	],

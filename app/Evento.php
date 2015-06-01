@@ -209,7 +209,8 @@ class Evento extends Model implements Event
             //'firstDay' => 1,
             'lang' => 'es',
             'selectable'=> true,
-            'weekends'=>false,
+            //'weekends'=>false,
+            //'hiddenDays'=>[0],
         ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
             'viewRender' => 'function() {
 

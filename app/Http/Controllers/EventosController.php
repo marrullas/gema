@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Bitacora;
 use App\Evento;
 use App\Ficha;
 use App\Http\Requests;
@@ -12,6 +13,7 @@ use App\User;
 use Carbon\Carbon;
 use GuzzleHttp\Message\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
@@ -224,6 +226,12 @@ class EventosController extends Controller {
         //dd(Session  ::get('regresar'));
         $data = $request->all();
         $evento = Evento::findOrfail($id);
+
+        $hoy = Carbon::now();
+        //$fechaevento = Carbon::create($evento->start);
+        if($hoy->diffInDays($evento->start,false)<0)//si modifica datos de fechas anteriores almacena el cambio
+            $this->addbitacora(\Auth::user()->id,'actualizar',$evento);
+
         $evento->fill($data);
 
         if (!$this->request->get('all_day') ) {
@@ -263,6 +271,9 @@ class EventosController extends Controller {
 		//
 
         $evento = Evento::findOrfail($id);
+        $hoy = Carbon::now();
+        if($hoy->diffInDays($evento->start,false)<0)//si borra datos de fechas anteriores almacena el cambio
+            $this->addbitacora(\Auth::user()->id,'borrar',$evento);
         $evento->delete();
         $message = trans('validation.attributes.eventodelete').' : '.$evento->actividad . ' para la fecha: ' . $evento->start;
         if($this->request->ajax()){
@@ -319,6 +330,40 @@ class EventosController extends Controller {
 
 
         }
+    }
+
+    public function addbitacora($user, $action, $data)
+    {
+        $bitacora = new bitacora();
+
+        //dd($data);
+
+        $usuario = User::select('full_name')
+                    ->where('id','=',$user)
+                    ->get()->toArray();
+        $ficha = Ficha::select('full_name')
+            ->where('id','=',$data->ficha_id)
+        ->get()->toArray();
+
+        //dd($ficha[0]['full_name']);
+
+        $datos = 'Usuario: '.$usuario[0]['full_name'].
+                 '<br> Ficha: '.$ficha[0]['full_name'].
+                 '<br> inicio: '.$data->start.
+                 '<br> final: '.$data->end.
+                 '<br> horas: '.$data->horas.
+                 '<br> todo_dia: '.$data->all_day;
+
+        //dd($datos);
+
+        $bitacora->user_id = $user;
+        $bitacora->action = $action;
+        $bitacora->evento_id = $data->id;
+        $bitacora->olddata = $datos;
+
+        $bitacora->save();
+
+        //dd($bitacora);
     }
 
 }
