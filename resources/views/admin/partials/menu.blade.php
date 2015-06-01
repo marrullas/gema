@@ -38,7 +38,16 @@
                 <a   href="#"><i class="fa fa-bar-chart-o fa-3x"></i> Informes</a>
             </li>
             <li  >
-                <a  href="{{ url('/admin/users') }}"><i class="fa fa-users fa-3x"></i> Usuarios</a>
+                <a  href="#"><i class="fa fa-users fa-3x"></i> Usuarios</a>
+                <ul class="nav nav-second-level">
+                    <li>
+                    <a  href="{{ url('/admin/users') }}"><i class="fa fa-users fa-3x"></i> Usuarios</a>
+                    </li>
+                    <li>
+                    <a  href="{{ url('/admin/resumen') }}"><i class="fa fa-users fa-3x"></i> Resumen</a>
+                    </li>
+                </ul>
+
             </li>
             <li  >
                 <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Mi Calendario</a>

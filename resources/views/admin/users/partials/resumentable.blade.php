@@ -4,9 +4,10 @@
     <tr>
         <th>#</th>
         <th>Nombre</th>
-        <th>Email</th>
-        <th>Telefono</th>
-        <th>Tipo</th>
+        <th>horas</th>
+        <th>eventos</th>
+        <th>dias</th>
+
     </tr>
     </thead>
     <tbody>
@@ -14,9 +15,10 @@
         <tr data-id="{{$user->id}}">
             <th scope="row">{{$user->id}}</th>
             <td>{{$user->full_name}}</td>
-            <td>{{$user->email}}</td>
-            <td>{{$user->telefono1}}</td>
-            <td>{{Lang::get('typeuser.'.$user->type)}}</td>
+            <td>{{$user->horas}}</td>
+            <td>{{$user->nueventos}}</td>
+            <td>{{$user->dias}}</td>
+
             <td>
                 <a class="btn btn-warning btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$user->id) }}">Programación</a>
                 <a class="btn btn-info btn-xs" href="{{ route('admin.users.edit', $user) }}">Editar</a>

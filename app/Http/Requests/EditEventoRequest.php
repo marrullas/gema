@@ -36,7 +36,8 @@ class EditEventoRequest extends Request {
         return [
             'title' => 'required',
             //'start' => 'required',
-            'start' => 'required|isweekend|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day').','.$id,
+            //'start' => 'required|isweekend|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day').','.$id,
+            'start' => 'required',
             'end'   => 'required'
 
         ];

@@ -67,6 +67,9 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     Route::get('muro/',[
         'as' => 'muro', 'uses' =>'UserController@muro'
     ]);
+    Route::get('resumen',[
+        'as' => 'resumen', 'uses' =>'UserController@resumen'
+    ]);
 
     Route::resource('users','UserController');
 

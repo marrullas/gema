@@ -366,4 +366,9 @@ class EventosController extends Controller {
         //dd($bitacora);
     }
 
+    public function resumen()
+    {
+
+    }
+
 }

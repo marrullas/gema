@@ -249,13 +249,27 @@ class UserController extends Controller {
     /**
      *funcion que se encarga de almacenar un mensaje la tabla de anuncios
      */
-    public function crearmuro(){
+    public function resumen(){
 
-        dd('llegue');
+        //dd('al menos vine');
+        //dd($this->request->get('periodo'));
+
+        $programacion = $this->request->get('sinprogramacion');
+        $periodo = $this->request->get('periodo');
+        $name =  $this->request->get('name');
+        $type = $this->request->get('type');
+        $page = $this->request->get('page');
+        $users = User::FiltroResumen($name,$type,$periodo,$programacion);
+
+        return view('admin.users.resumen', compact('users','name','type','page','periodo'));
 
 
     }
 
+    public function detalleresumen($user=null)
+    {
+
+    }
 
 
 }

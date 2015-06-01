@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
@@ -82,7 +83,30 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             ->orderBy('id','ASC')
             ->paginate();
     }
+    public static function filtroResumen($name, $type, $periodo,$programacion)
+    {
 
+        if(empty($programacion)) {
+            $result = User::name($name)->with('eventos')
+                ->type($type)
+                ->periodo($periodo)
+                ->orderBy('users.id', 'ASC')
+                ->groupBy('users.id')
+                ->select(DB::raw('SUM(horas) as horas, count(eventos.user_id) as nueventos,count(DISTINCT date(start)) as dias'), 'users.full_name', 'users.id')
+                ->paginate();
+        }else{
+            $result = User::name($name)->with('eventos')
+                ->type($type)
+                ->sinprogramacion($periodo)
+                ->orderBy('users.id', 'ASC')
+                ->groupBy('users.id')
+                ->select(DB::raw('0 as horas, 0 as nueventos,0 as dias'), 'users.full_name', 'users.id')
+                ->paginate();
+        }
+
+        //dd($result);
+        return $result;
+    }
     public function scopeName($query, $name)
     {
         if(!empty($name))
@@ -96,6 +120,73 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
         if(!empty($type) && isset($types[$type]))
             $query->where('type','=',$type);
+
+
+    }
+
+    public  function scopePeriodo($query, $periodo)
+    {
+
+            switch($periodo){
+
+                case ('mes'):
+                    $rango1 = Carbon::now()->startOfMonth();
+                    $rango2 = Carbon::now()->endOfMonth();
+                break;
+                case ('semana'):
+                    $rango1 = Carbon::now()->startOfWeek();
+                    $rango2 = Carbon::now()->endOfWeek();
+                break;
+                case ('anterior'):
+                    $rango1 = Carbon::now()->startOfMonth()->subMonth();
+                    $rango2 = Carbon::now()->endOfMonth()->subMonth();
+                    break;
+
+                default:
+                    $rango1 = Carbon::now()->startOfMonth();
+                    $rango2 = Carbon::now()->endOfMonth();
+                break;
+
+            }
+
+            $query->join('eventos','eventos.user_id','=','users.id')
+                ->whereBetween('start',[$rango1, $rango2]);
+
+
+    }
+
+    public  function scopeSinprogramacion($query, $periodo)
+    {
+
+        switch($periodo){
+
+            case ('mes'):
+                $rango1 = Carbon::now()->startOfMonth();
+                $rango2 = Carbon::now()->endOfMonth();
+                break;
+            case ('semana'):
+                $rango1 = Carbon::now()->startOfWeek();
+                $rango2 = Carbon::now()->endOfWeek();
+                break;
+            case ('anterior'):
+                $rango1 = Carbon::now()->startOfMonth()->subMonth();
+                $rango2 = Carbon::now()->endOfMonth()->subMonth();
+                break;
+
+            default:
+                $rango1 = Carbon::now()->startOfMonth();
+                $rango2 = Carbon::now()->endOfMonth();
+                break;
+
+        }
+
+        $query->whereNotIn('users.id',function($q) use ($rango1,$rango2){
+                $q->select('users.id')
+                    ->from('users')
+                    ->join('eventos','eventos.user_id','=','users.id')
+                    ->whereBetween('start',[$rango1, $rango2]);
+            });
+
 
 
     }
