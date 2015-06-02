@@ -25,7 +25,7 @@
                 </div>
         @include('admin.fichas.partials.table')
 
-        {!! $fichas->appends(['codigo'=>$codigo])->render() !!}
+        {!! $fichas->appends(['codigo'=>$codigo,'ie'=>$ie])->render() !!}
             </div>||
         </div>
     </div>
