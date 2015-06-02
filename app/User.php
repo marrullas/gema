@@ -80,7 +80,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
         return User::name($name)
             ->type($type)
-            ->orderBy('id','ASC')
+            ->orderBy('full_name','ASC')
             ->paginate();
     }
     public static function filtroResumen($name, $type, $periodo,$programacion)

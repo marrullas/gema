@@ -12,7 +12,7 @@
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif
                     <div class="panel-body">
-                        {!! Form::model(['codigo'=>$codigo],['route'=> 'admin.fichas.index', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
+                        {!! Form::model(['codigo'=>$codigo,'ie'=>$ie],['route'=> 'admin.fichas.index', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
                             <div class="form-group">
                                 {!! Form::text('ie', null, ['class' => 'form-control', 'placeholder'=>'Buscar por ie']) !!}
                                 {!! Form::text('codigo', null, ['class' => 'form-control', 'placeholder'=>'Buscar por codigo']) !!}
