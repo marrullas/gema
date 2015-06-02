@@ -33,11 +33,12 @@ class FichaController extends Controller {
 	{
 		//
         $codigo = $this->request->get('codigo');
+        $ie = $this->request->get('ie');
         $page = $this->request->get('page');
-        $fichas = Ficha::filtroPaginación($codigo);
+        $fichas = Ficha::filtroPaginación($codigo,$ie);
         //dd($fichas->codigo);
 
-        return view('admin.fichas.index',compact('codigo','page','fichas'));
+        return view('admin.fichas.index',compact('codigo','page','fichas','ie'));
 	}
 
 	/**

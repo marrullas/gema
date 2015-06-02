@@ -13,20 +13,25 @@
                     @endif
                     <div class="panel-body">
                         {!! Form::model(['name'=>$name,'type'=>$type],['action'=> 'admin\UserController@resumen', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
-                            <div class="form-group">
-                                {!! Form::label('mes', 'Mes Anterior') !!}
-                                {!! Form::radio('periodo', 'anterior',('anterior' == $periodo)) !!}
-                                {!! Form::label('semana', 'Semana') !!}
-                                {!! Form::radio('periodo', 'semana',('semana'== $periodo)) !!}
-                                {!! Form::label('mes', 'Mes Actual') !!}
-                                {!! Form::radio('periodo', 'mes', ('mes'==$periodo)) !!}
-                                {!! Form::label('sinprogramacion', 'sin programación') !!}
-                                {!! Form::checkbox('sinprogramacion', null,false, [ 'class' => 'form-control'] ) !!}
 
-                            </div>
                             <div class="form-group">
+                                <div class="form-control">
+                                    {!! Form::label('mes', 'Mes Anterior') !!}
+                                    {!! Form::radio('periodo', 'anterior',('anterior' == $periodo)) !!}
+                                    {!! Form::label('semana', 'Semana') !!}
+                                    {!! Form::radio('periodo', 'semana',('semana'== $periodo)) !!}
+                                    {!! Form::label('mes', 'Mes Actual') !!}
+                                    {!! Form::radio('periodo', 'mes', ('mes'==$periodo)) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('sinprogramacion', 'sin programación') !!}
+                                    {!! Form::checkbox('sinprogramacion', null,$sinprogramacion, [ 'class' => 'form-control'] ) !!}
+                                </div>
+
+                                <div class="form-group">
                                 {!! Form::text('name', null, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
                                 {!! Form::select('type', config('options.types'),null, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-default">Buscar</button>
                         {!! Form::close() !!}

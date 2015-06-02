@@ -254,14 +254,14 @@ class UserController extends Controller {
         //dd('al menos vine');
         //dd($this->request->get('periodo'));
 
-        $programacion = $this->request->get('sinprogramacion');
+        $sinprogramacion = $this->request->get('sinprogramacion');
         $periodo = $this->request->get('periodo');
         $name =  $this->request->get('name');
         $type = $this->request->get('type');
         $page = $this->request->get('page');
-        $users = User::FiltroResumen($name,$type,$periodo,$programacion);
+        $users = User::FiltroResumen($name,$type,$periodo,$sinprogramacion);
 
-        return view('admin.users.resumen', compact('users','name','type','page','periodo'));
+        return view('admin.users.resumen', compact('users','name','type','page','periodo','sinprogramacion'));
 
 
     }

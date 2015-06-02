@@ -19,7 +19,7 @@ class Ficha extends Model
      *
      * @var array
      */
-    protected $fillable = ['codigo', 'fecha_ini', 'fecha_fin', 'grado', 'user_id', 'estado', 'ie_id', 'programa_id', 'full_name','horasacumuladas'];
+    protected $fillable = ['codigo', 'fecha_ini', 'fecha_fin', 'grado', 'user_id', 'estado', 'ie_id', 'programa_id', 'full_name', 'horasacumuladas'];
 
     protected $appends = ['horas_acumuladas'];
 
@@ -50,9 +50,9 @@ class Ficha extends Model
 
     public function getHorasAcumuladasAttribute()
     {
-         $horas = $this->hasMany('\App\Evento')
+        $horas = $this->hasMany('\App\Evento')
             ->selectRaw('sum(horas) as horas')
-             ->where('start', '>=', Carbon::now()->startOfMonth())//acumla solamente lo de este mes
+            ->where('start', '>=', Carbon::now()->startOfMonth())//acumla solamente lo de este mes
             ->groupBy('ficha_id')
             ->get();
         //dd($horas->all()->horas);
@@ -60,29 +60,37 @@ class Ficha extends Model
     }
 
 
-    public static function filtroPaginación($codigo)
+    public static function filtroPaginación($codigo,$ie)
     {
-        return Ficha::with(['user','ie','programa'])->codigo($codigo)
-            //->type($type)
-            ->orderBy('id','ASC')
+        return Ficha::with(['user', 'ie', 'programa'])->codigo($codigo)
+            ->ie($ie)
+            ->orderBy('codigo', 'ASC')
             ->paginate();
     }
 
-/*    public function getUserName()
+    /*    public function getUserName()
+        {
+            return
+        }*/
+
+
+    public function scopeCodigo($query, $codigo)
     {
-        return
-    }*/
 
 
+        if (!empty($codigo))
+            $query->where('codigo', '=', $codigo);
 
 
-    public function scopeCodigo($query, $codigo)    {
+    }
 
-
-        if(!empty($codigo))
-            $query->where('codigo','=',$codigo);
-
-
+    public function scopeIe($query, $ie)
+    {
+        if(!empty($ie))
+        {
+            $query->join('ies','ies.id','=','fichas.ie_id')
+                ->where('ies.nombre', "LIKE","%$ie%");
+        }
     }
 
 
