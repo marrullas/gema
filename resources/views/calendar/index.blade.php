@@ -112,15 +112,40 @@
 
             $('#datetimepicker1').datetimepicker({
                 locale: 'es',
-                format: 'MM/DD/YYYY hh:mm A'
+                format: 'MM/DD/YYYY HH:mm'
 
             });
             $('#datetimepicker2').datetimepicker({
                 locale: 'es',
-                format: 'MM/DD/YYYY hh:mm A'
+                format: 'MM/DD/YYYY HH:mm'
+                //pick12HourFormat: false
+
                 //widgetPositioning: {horizontal: 'right', vertical:'bottom'}
 
 
+
+            });
+            var d = new Date();
+            d.setHours(12,00,00);
+
+            $("#datetimepicker1").data("DateTimePicker").date(moment(d).format("MM/DD/YYYY HH:mm"));
+            $("#datetimepicker2").data("DateTimePicker").date(moment(d).format("MM/DD/YYYY HH:mm"));
+
+            $("#all_day").change(function() {
+                if($('#all_day').prop('checked')) {
+
+                    var d = new Date($('#start').val());
+                    d.setHours(12,00,00);
+
+                    $('#start').prop( "disabled", true);
+                    $('#end').prop( "disabled", true );
+                    $("#datetimepicker1").data("DateTimePicker").date(moment(d).format("MM/DD/YYYY HH:mm"));
+                    $("#datetimepicker2").data("DateTimePicker").date(moment(d).format("MM/DD/YYYY HH:mm"));
+
+                } else {
+                    $('#start').prop( "disabled", false);
+                    $('#end').prop( "disabled", false );
+                }
             });
         });
     </script>

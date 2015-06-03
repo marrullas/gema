@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d142de50-26bb-499a-a683-c13bb5101efb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/CreateEventoRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateEventoRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php" afterPath="$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="media.iws" />
@@ -76,11 +75,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditEventoRequest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditEventoRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5677201" vertical-offset="126" max-vertical-offset="1037">
+            <state vertical-scroll-proportion="-20.12" vertical-offset="126" max-vertical-offset="1037">
               <caret line="38" column="155" selection-start-line="38" selection-start-column="155" selection-end-line="38" selection-end-column="155" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/calendar/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.62180203" vertical-offset="1753" max-vertical-offset="2856">
+              <caret line="136" column="54" selection-start-line="136" selection-start-column="54" selection-end-line="136" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fields.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.88" vertical-offset="0" max-vertical-offset="612">
+              <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -123,14 +142,12 @@
         <option value="$PROJECT_DIR$/resources/views/instructor/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/muro.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/instructor/eventos.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/instructor/partials/tableedit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/instructor/partials/table.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Services/Validarhoras.php" />
         <option value="$PROJECT_DIR$/resources/views/calendar/partials/delete.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/calendar/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Services/Services.php" />
         <option value="$PROJECT_DIR$/app/Services/isWeekend.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
@@ -143,7 +160,6 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_05_31_210405_create_bitacoras_table.php" />
-        <option value="$PROJECT_DIR$/app/Evento.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EventosController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/partials/menu.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
@@ -158,6 +174,9 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateEventoRequest.php" />
         <option value="$PROJECT_DIR$/app/Services/ValidarHoras.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Evento.php" />
       </list>
     </option>
   </component>
@@ -658,7 +677,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16044776" sideWeight="0.49837837" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16044776" sideWeight="0.49837837" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20073763" sideWeight="0.5016216" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -841,13 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/calendar/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.748307" vertical-offset="374" max-vertical-offset="2431">
-          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="65" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.92" vertical-offset="0" max-vertical-offset="782">
@@ -940,14 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Evento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-46.84" vertical-offset="1549" max-vertical-offset="6749">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/users/partials/fields.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44130924" vertical-offset="0" max-vertical-offset="1377">
@@ -959,13 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="578">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8" vertical-offset="0" max-vertical-offset="612">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -1065,8 +1062,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5677201" vertical-offset="126" max-vertical-offset="1037">
+        <state vertical-scroll-proportion="-20.12" vertical-offset="126" max-vertical-offset="1037">
           <caret line="38" column="155" selection-start-line="38" selection-start-column="155" selection-end-line="38" selection-end-column="155" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Evento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14905451" vertical-offset="3793" max-vertical-offset="6749">
+          <caret line="236" column="24" selection-start-line="236" selection-start-column="24" selection-end-line="236" selection-end-column="24" />
+          <folding>
+            <marker date="1433301918935" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433301918935" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/calendar/partials/fields.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.88" vertical-offset="0" max-vertical-offset="612">
+          <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/calendar/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62180203" vertical-offset="1753" max-vertical-offset="2856">
+          <caret line="136" column="54" selection-start-line="136" selection-start-column="54" selection-end-line="136" selection-end-column="54" />
           <folding />
         </state>
       </provider>
