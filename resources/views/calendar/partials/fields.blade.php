@@ -14,14 +14,14 @@
 <div class="form-group">
     {!! Form::label('start', 'Inicia') !!}
     <div class="input-group date" id="datetimepicker1">
-        {!! Form::text('start', null, ['class' => 'form-control', 'disabled' ]) !!}
+        {!! Form::text('start', null, ['class' => 'form-control']) !!}
         <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>
     </div>
 </div>
 <div class="form-group">
     {!! Form::label('end', 'Finaliza') !!}
     <div class="input-group date" id="datetimepicker2">
-        {!! Form::text('end', null, ['class' => 'form-control', 'disabled' ]) !!}
+        {!! Form::text('end', null, ['class' => 'form-control' ]) !!}
         <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>
     </div>
 </div>
