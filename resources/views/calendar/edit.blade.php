@@ -60,13 +60,13 @@
 
             $('#datetimepicker1').datetimepicker({
                 locale: 'es',
-                format: 'MM/DD/YYYY hh:mm A',
+                format: 'MM/DD/YYYY HH:mm',
                 date: '{{$evento->start}}'
 
             });
             $('#datetimepicker2').datetimepicker({
                 locale: 'es',
-                format: 'MM/DD/YYYY hh:mm A',
+                format: 'MM/DD/YYYY HH:mm',
                 date: '{{$evento->end}}'
                 //widgetPositioning: {horizontal: 'right', vertical:'bottom'}
 
