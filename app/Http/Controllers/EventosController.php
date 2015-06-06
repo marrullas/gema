@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EventosController extends Controller {
 
@@ -302,36 +303,68 @@ class EventosController extends Controller {
         //Session::flash('regresar', 'eventos');
 
 
-        $fichasasignadas = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
-            //->join('fichas','fichas.id','=','eventos.ficha_id')
-            ->where('eventos.user_id',$user->id)
-            ->where('eventos.start', '>=', Carbon::now()->startOfMonth())
-            //->groupBy('ficha_id')
-            ->orderBy('eventos.start','')
-            ->get();
+        $fichasasignadas = Evento::fichasAsignadas($user->id);
 
         $horasUser = User::find($user->id)->horas_acumuladas;
 
         $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
         //$totalhorasmes = $horasUser->first()->horas;
-
+        $reporte = false;
 
         switch($user->type)
         {
             case 'admin':
-                return view('admin.users.home',compact('user','fichasasignadas'));
+                //return view('admin.users.home',compact('user','fichasasignadas'));
+                return view('instructor.eventos',compact('user','fichasasignadas','totalhorasmes','reporte'));
                 break;
             case 'user':
                 return view('user.home',compact('user','fichasasignadas'));
             case 'instructor':
-                return view('instructor.eventos',compact('user','fichasasignadas','totalhorasmes'));
+                return view('instructor.eventos',compact('user','fichasasignadas','totalhorasmes','reporte'));
             default:
                 return view('auth.login');
 
 
         }
     }
+    public function agendaexcel($userId = null)
+    {
 
+        if(empty($userId))
+            $user = \Auth::user();
+        else
+            $user = User::find($userId);
+
+        //Session::flash('regresar', 'eventos');
+        $horasUser = User::find($user->id)->horas_acumuladas;
+
+        $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
+
+        $fichasasignadas = Evento::fichasAsignadas($user->id);
+
+        Excel::create('reporte agenda', function($excel) use($fichasasignadas,$horasUser,$totalhorasmes){
+
+            $excel->sheet('agenda', function($sheet) use($fichasasignadas,$horasUser,$totalhorasmes){
+
+                $sheet->loadView('instructor.partials.tableedit',['fichasasignadas'=>$fichasasignadas,
+                    'horasUser'=>$horasUser,'totalhorasmes'=>$totalhorasmes,'reporte'=>true]);
+
+            });
+
+        })->export('xls');
+
+/*        if(!empty($user)) {
+                Excel::create('Informe agenda', function ($excel) use($fichasasignadas){
+
+                    $excel->sheet('agenda', function ($sheet) use($fichasasignadas){
+                        $datos = $fichasasignadas;
+                        $sheet->fromArray($datos);
+                    });
+                })->export('xls');
+        }*/
+
+
+    }
     public function addbitacora($user, $action, $data)
     {
         $bitacora = new bitacora();

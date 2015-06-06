@@ -27,7 +27,9 @@
                 <td>{{ \Carbon\Carbon::parse($ficha->start)->format('Y/m/d')   }}</td>
 
             <td>
-                <a class="btn btn-info btn-xs" href="{{ url('eventos/edit', $ficha) }}">Editar</a>
+                @if(!$reporte)
+                    <a class="btn btn-info btn-xs" href="{{ url('eventos/edit', $ficha) }}">Editar</a>
+                @endif
                 <!--
                 <a class="btn btn-warning btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$ficha->id) }}">Programación</a>
                 <a class="btn btn-info btn-xs" href="{{ route('admin.users.edit', $ficha) }}">Editar</a>

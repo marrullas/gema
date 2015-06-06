@@ -34,7 +34,9 @@ class Muro extends Model  {
     public static function getEntradas()
     {
         return Muro::where('tipo','!=','anuncio')
-            ->orderBy('created_at','desc')->get();
+            ->orderBy('created_at','desc')
+            ->limit(20)
+            ->get();
 
     }
 
@@ -42,6 +44,7 @@ class Muro extends Model  {
     {
         return Muro::where('tipo','anuncio')
                     ->orderBy('created_at','desc')
+                    ->limit(20)
                     ->get();
     }
 

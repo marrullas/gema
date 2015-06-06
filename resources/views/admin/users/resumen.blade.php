@@ -34,6 +34,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-default">Buscar</button>
+                        <a class="btn btn-success btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/admin/resumen/excel') }}">Exportar excel</a>
                         {!! Form::close() !!}
 
                     </div>
@@ -46,6 +47,7 @@
     </div>
     {!! Form::open(['route'=> ['admin.users.destroy',':USER_ID'], 'method' => 'DELETE', 'id'=>'form-delete' ]) !!}
     {!! Form::close() !!}
+
 @endsection
 
 @section('scripts')

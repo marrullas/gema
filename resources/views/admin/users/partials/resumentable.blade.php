@@ -20,9 +20,21 @@
             <td>{{$user->dias}}</td>
 
             <td>
-                <a class="btn btn-warning btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$user->id) }}">Programación</a>
-                <a class="btn btn-info btn-xs" href="{{ route('admin.users.edit', $user) }}">Editar</a>
-                <!--<a href="#!" class="btn btn-danger btn-xs">Eliminar</a> -->
+                @if(!$reporte)
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                            Acciones
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$user->id) }}">Programacion</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/agenda/'.$user->id) }}">Agenda</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.users.edit', $user) }}">Editar</a></li>
+                        </ul>
+                    </div>
+                    <!--<a href="#!" class="btn btn-danger btn-xs">Eliminar</a> -->
+                @endif
 
             </td>
         </tr>

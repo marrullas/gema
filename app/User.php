@@ -107,6 +107,30 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         //dd($result);
         return $result;
     }
+    public static function resumen($name, $type, $periodo,$programacion)
+    {
+
+        if(empty($programacion)) {
+            $result = User::name($name)->with('eventos')
+                ->type($type)
+                ->periodo($periodo)
+                ->orderBy('users.full_name', 'ASC')
+                ->groupBy('users.id')
+                ->select(DB::raw('SUM(horas) as horas, count(eventos.user_id) as numero_eventos,count(DISTINCT date(start)) as dias'), 'users.full_name as nombre', 'users.id')
+                ->get();
+        }else{
+            $result = User::name($name)->with('eventos')
+                ->type($type)
+                ->sinprogramacion($periodo)
+                ->orderBy('users.id', 'ASC')
+                ->groupBy('users.id')
+                ->select(DB::raw('0 as horas, 0 as numero_eventos,0 as dias'), 'users.full_name as nombre', 'users.id')
+                ->get();
+        }
+
+        //dd($result);
+        return $result;
+    }
     public function scopeName($query, $name)
     {
         if(!empty($name))

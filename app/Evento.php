@@ -394,4 +394,17 @@ class Evento extends Model implements Event
         return $this->belongsTo('\App\Tipoactividad','title','id');
     }
 
+    public static function fichasAsignadas($userId=null)
+    {
+        $fichasasignadas = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
+            //->join('fichas','fichas.id','=','eventos.ficha_id')
+            ->where('eventos.user_id',$userId)
+            ->where('eventos.start', '>=', Carbon::now()->startOfMonth())
+            //->groupBy('ficha_id')
+            ->orderBy('eventos.start','')
+            ->get();
+        return $fichasasignadas;
+    }
+
+
 }

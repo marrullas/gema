@@ -8,6 +8,7 @@ use App\Muro;
 use App\Tipoactividad;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
+use Maatwebsite\Excel\Facades\Excel;
 use MaddHatter\LaravelFullcalendar\Event as Event;
 //use Illuminate\Http\Request;
 use App\Http\Requests\CreateUserRequest;
@@ -249,10 +250,12 @@ class UserController extends Controller {
     /**
      *funcion que se encarga de almacenar un mensaje la tabla de anuncios
      */
-    public function resumen(){
+    public function resumen($descargar = null){
 
         //dd('al menos vine');
         //dd($this->request->get('periodo'));
+
+        //dd($descargar);
 
         $sinprogramacion = $this->request->get('sinprogramacion');
         $periodo = $this->request->get('periodo');
@@ -260,8 +263,29 @@ class UserController extends Controller {
         $type = $this->request->get('type');
         $page = $this->request->get('page');
         $users = User::FiltroResumen($name,$type,$periodo,$sinprogramacion);
+        $reporte = false;
 
-        return view('admin.users.resumen', compact('users','name','type','page','periodo','sinprogramacion'));
+        if(!empty($descargar)) {
+            if ($descargar == 'excel') {
+                $userExcel = User::resumen($name,$type,$periodo,$sinprogramacion);
+                //dd($userExcel);
+                Excel::create('Informe resumen', function ($excel) use($users){
+
+                    $excel->sheet('resumen', function ($sheet) use($users){
+
+
+                        //$datos = $userExcel;
+
+                        //$sheet->fromArray($datos);
+                        $sheet->loadView('admin.users.partials.resumentable',['users'=>$users,'reporte'=>true]);
+
+                    });
+                })->export('xls');
+            }
+        }
+
+
+        return view('admin.users.resumen', compact('users','name','type','page','periodo','sinprogramacion','reporte'));
 
 
     }

@@ -153,6 +153,9 @@ return [
         'MaddHatter\LaravelFullcalendar\ServiceProvider',
         'Barryvdh\Snappy\ServiceProvider',
 
+        /*librerias excel*/
+        'Maatwebsite\Excel\ExcelServiceProvider',
+
 	],
 
 	/*
@@ -211,6 +214,7 @@ return [
         'Calendar' => 'MaddHatter\LaravelFullcalendar\Facades\Calendar',
         'PDF' => 'Barryvdh\Snappy\Facades\SnappyPdf',
         'Image' => 'Barryvdh\Snappy\Facades\SnappyImage',
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
 
 
 
