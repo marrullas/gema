@@ -1,5 +1,5 @@
 <table class="table table-striped">
-<caption>Total registros : {{$users->total()}} </caption>
+<caption>Total registros : {{$users->count()}} </caption>
     <thead>
     <tr>
         <th>#</th>

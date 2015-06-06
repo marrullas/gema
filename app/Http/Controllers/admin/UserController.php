@@ -265,19 +265,21 @@ class UserController extends Controller {
         $users = User::FiltroResumen($name,$type,$periodo,$sinprogramacion);
         $reporte = false;
 
+
+
         if(!empty($descargar)) {
             if ($descargar == 'excel') {
                 $userExcel = User::resumen($name,$type,$periodo,$sinprogramacion);
                 //dd($userExcel);
-                Excel::create('Informe resumen', function ($excel) use($users){
+                Excel::create('Informe resumen', function ($excel) use($userExcel){
 
-                    $excel->sheet('resumen', function ($sheet) use($users){
+                    $excel->sheet('resumen', function ($sheet) use($userExcel){
 
 
                         //$datos = $userExcel;
 
                         //$sheet->fromArray($datos);
-                        $sheet->loadView('admin.users.partials.resumentable',['users'=>$users,'reporte'=>true]);
+                        $sheet->loadView('admin.users.partials.resumentable',['users'=>$userExcel,'reporte'=>true]);
 
                     });
                 })->export('xls');

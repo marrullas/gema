@@ -116,7 +116,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 ->periodo($periodo)
                 ->orderBy('users.full_name', 'ASC')
                 ->groupBy('users.id')
-                ->select(DB::raw('SUM(horas) as horas, count(eventos.user_id) as numero_eventos,count(DISTINCT date(start)) as dias'), 'users.full_name as nombre', 'users.id')
+                ->select(DB::raw('SUM(horas) as horas, count(eventos.user_id) as nueventos,count(DISTINCT date(start)) as dias'), 'users.full_name', 'users.id')
                 ->get();
         }else{
             $result = User::name($name)->with('eventos')
@@ -124,7 +124,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 ->sinprogramacion($periodo)
                 ->orderBy('users.id', 'ASC')
                 ->groupBy('users.id')
-                ->select(DB::raw('0 as horas, 0 as numero_eventos,0 as dias'), 'users.full_name as nombre', 'users.id')
+                ->select(DB::raw('0 as horas, 0 as nueventos,0 as dias'), 'users.full_name', 'users.id')
                 ->get();
         }
 
