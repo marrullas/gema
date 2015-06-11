@@ -1,5 +1,10 @@
 <table class="table table-striped">
-<caption>Total registros : {{$users->count()}} </caption>
+    @if(!$reporte)
+        <caption>Total registros : {{$users->total()}} </caption>
+    @else
+        <caption>Total registros : {{$users->count()}} </caption>
+    @endif
+
     <thead>
     <tr>
         <th>#</th>

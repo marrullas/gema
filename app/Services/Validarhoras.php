@@ -32,6 +32,8 @@ class ValidarHoras extends Validator{
         $fecha_ini = new Carbon($parameters[1]);
         $fecha_fin = new Carbon($parameters[2]);
 
+        //dd($fecha_ini);
+
         $mes = Carbon::now()->startOfMonth();
         //dd($parameters);
         if(count($parameters)>4) { //edicion de evento
@@ -107,7 +109,7 @@ class ValidarHoras extends Validator{
                 return false;
 
 
-            //valida que exista un evento para esa fecha
+            //valida que exista un evento para esa fecha y venga marcado para todo el dia
             $ficha = Evento::where('all_day', '=', false)
                 ->where('user_id', '=', Auth::user()->id)
                 ->where(function($query) use ($fecha_ini) {
@@ -123,7 +125,7 @@ class ValidarHoras extends Validator{
             //busca si existen eventos las mismas horas que esta tratanto de crear
             $ficha = Evento::WhereBetween('start', [$fecha_ini, $fecha_fin])
                 ->where('user_id', '=', Auth::user()->id)
-                ->where(function($query) use ($fecha_ini,$fecha_fin) {
+                ->OrWhere(function($query) use ($fecha_ini,$fecha_fin) {
                     $query->OrWhereBetween('end', [$fecha_ini, $fecha_fin]);
                     $query->OrWhereRaw("? between start and end", [$fecha_ini]);
                 })

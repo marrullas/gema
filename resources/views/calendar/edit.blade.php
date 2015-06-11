@@ -60,13 +60,15 @@
 
             $('#datetimepicker1').datetimepicker({
                 locale: 'es',
-                format: 'MM/DD/YYYY HH:mm',
+                format: 'DD/MM/YYYY HH:mm',
+                sideBySide:true,
                 date: '{{$evento->start}}'
 
             });
             $('#datetimepicker2').datetimepicker({
                 locale: 'es',
-                format: 'MM/DD/YYYY HH:mm',
+                format: 'DD/MM/YYYY HH:mm',
+                sideBySide:true,
                 date: '{{$evento->end}}'
                 //widgetPositioning: {horizontal: 'right', vertical:'bottom'}
 

@@ -21,15 +21,33 @@ class CreateEventoRequest extends Request {
 	 */
 	public function rules()
 	{
-        //dd($this);
+
         //soluciona problema del checkbox vacio
         $this->merge(['all_day' => $this->input('all_day', 0)]);
+        if(!empty($this->input('start') && !empty($this->input('end')))) {
+            $fechastart = \Carbon\carbon::createFromFormat('d/m/Y H:i', $this->input('start'));
+            $fechasend = \Carbon\carbon::createFromFormat('d/m/Y H:i', $this->input('end'));
+
+
+            //dd($fechasend);
+            return [
+                'title' => 'required',
+                'start' => 'required|solapada:' . $this->input('ficha_id') . ',' . $fechastart .
+                    ',' . $fechasend .
+                    ',' . $this->input('all_day'),
+
+                /*            'start' => 'required|solapada:'. $this->input('ficha_id').','.new \Carbon\carbon($this->input('start')).
+                                ','.new \Carbon\carbon($this->input('end')).
+                                ','.$this->input('all_day'),*/
+                //'start' => 'required',
+                'end' => 'required',
+            ];
+        }
         return [
             'title' => 'required',
-            'start' => 'required|solapada:'.$this->input('ficha_id').','.$this->input('start').','.$this->input('end').','.$this->input('all_day'),
-            //'start' => 'required',
-            'end'   => 'required',
-		];
+            'start' => 'required',
+            'end' => 'required',
+        ];
 
 
 	}

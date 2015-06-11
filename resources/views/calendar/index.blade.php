@@ -112,20 +112,22 @@
 
             $('#datetimepicker1').datetimepicker({
                 locale: 'es',
-                format: 'MM/DD/YYYY HH:mm'
+                format: 'DD/MM/YYYY HH:mm',
+                sideBySide:true
 
             });
             $('#datetimepicker2').datetimepicker({
                 locale: 'es',
-                format: 'MM/DD/YYYY HH:mm'
+                format: 'DD/MM/YYYY HH:mm',
+                sideBySide:true
 
             });
 
             var d = new Date();
             d.setHours(12,00,00);
 
-            $("#datetimepicker1").data("DateTimePicker").date(moment(d).format("MM/DD/YYYY HH:mm"));
-            $("#datetimepicker2").data("DateTimePicker").date(moment(d).format("MM/DD/YYYY HH:mm"));
+            //$("#datetimepicker1").data("DateTimePicker").date(moment(d));
+            //$("#datetimepicker2").data("DateTimePicker").date(moment(d));
 
             $("#all_day").change(function() {
                 if($('#all_day').prop('checked')) {
@@ -135,8 +137,8 @@
 
                     //$('#start').prop( "disabled", true);
                     //$('#end').prop( "disabled", true );
-                    $("#datetimepicker1").data("DateTimePicker").date(moment(d).format("MM/DD/YYYY HH:mm"));
-                    $("#datetimepicker2").data("DateTimePicker").date(moment(d).format("MM/DD/YYYY HH:mm"));
+                    $("#datetimepicker1").data("DateTimePicker").date(moment(d).format("DD/MM/YYYY HH:mm"));
+                    $("#datetimepicker2").data("DateTimePicker").date(moment(d).format("DD/MM/YYYY HH:mm"));
 
                 }
             });

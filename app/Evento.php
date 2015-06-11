@@ -21,16 +21,15 @@ class Evento extends Model implements Event
 
     public function setStartAttribute($value)
     {
-        $this->attributes['start'] = new \DateTime($value);
+
+        $fecha =  \Carbon\carbon::createFromFormat('d/m/Y H:i',$value);
+        //dd($fecha);
+        //dd(Carbon::parse($value)->format('m/d/Y H:i'));
+        //$this->attributes['start'] = new \DateTime($value);
+        $this->attributes['start'] = $fecha;
+        //$this->attributes['start'] = Carbon::parse($value)->format('m/d/Y H:i');
     }
 
-    /*public function setAllDayAttribute($value)
-    {
-        if(!empty($value))
-            dd($value);
-        else
-            dd('sin dato');
-    }*/
 
     /**
      * retorna fecha con parametros correctos
@@ -38,7 +37,10 @@ class Evento extends Model implements Event
      */
     public function setEndAttribute($value)
     {
-        $this->attributes['end'] = new \DateTime($value);
+        $fecha =  \Carbon\carbon::createFromFormat('d/m/Y H:i',$value);
+        $this->attributes['end'] = $fecha;
+        //$this->attributes['end'] = new \DateTime($value);
+        //$this->attributes['end'] = Carbon::parse($value)->format('m/d/Y H:i');
     }
 
     /**
@@ -234,8 +236,8 @@ class Evento extends Model implements Event
             'select' => 'function(start, end, date) {
                         var myCal = $("#calendar-'.\Calendar::getId().'");
                         myCal.fullCalendar("gotoDate",start);
-                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm P"));
-                         $("#datetimepicker2").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm P"));
+                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("DD/MM/YYYY hh:mm P"));
+                         $("#datetimepicker2").data("DateTimePicker").date(moment(start).format("DD/MM/YYYY hh:mm P"));
                          $("#calendar").fullCalendar("option", "weekends", false);
 
 
@@ -325,7 +327,7 @@ class Evento extends Model implements Event
                         var myCal = $("#calendar-'.\Calendar::getId().'");
                         myCal.fullCalendar("gotoDate",start);
                         alert("aloha");
-                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("MM/DD/YYYY hh:mm P"));
+                        $("#datetimepicker1").data("DateTimePicker").date(moment(start).format("DD/MM/YYYY hh:mm P"));
                          $("#datetimepicker2").data("DateTimePicker").date(moment(end).format("MM/DD/YYYY hh:mm P"));
                         }',
             'dayClick'=> "function(date, allDay, jsEvent, view) {

@@ -112,8 +112,8 @@ class EventosController extends Controller {
         if (!$this->request->get('all_day') ) {
             $evento->all_day = 0;
             //calcular numero de horas
-            $fecha_ini = new Carbon($data['start']);
-            $fecha_fin = new Carbon($data['end']);
+            $fecha_ini = new Carbon(\Carbon\carbon::createFromFormat('d/m/Y H:i',$data['start']));
+            $fecha_fin = new Carbon(\Carbon\carbon::createFromFormat('d/m/Y H:i',$data['end']));
             $numeroHoras = $fecha_ini->diffInHours($fecha_fin);
             $evento->horas = ($numeroHoras > 8)
                 ? 8
@@ -238,8 +238,8 @@ class EventosController extends Controller {
         if (!$this->request->get('all_day') ) {
             $evento->all_day = 0;
             //calcular numero de horas
-            $fecha_ini = new Carbon($data['start']);
-            $fecha_fin = new Carbon($data['end']);
+            $fecha_ini = new Carbon(\Carbon\carbon::createFromFormat('d/m/Y H:i',$data['start']));
+            $fecha_fin = new Carbon(\Carbon\carbon::createFromFormat('d/m/Y H:i',$data['end']));
             $numeroHoras = $fecha_ini->diffInHours($fecha_fin);
             $evento->horas = ($numeroHoras > 8)
                             ? 8

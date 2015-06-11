@@ -4,7 +4,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('ficha', 'ficha') !!}
-    {!! Form::select('ficha_id', [null=>'Ninguna'] + $fichas, null, [ 'class' => 'form-control'] ) !!}
+    {!! Form::select('ficha_id', [null=>'Ninguna'] + $fichas->toArray(), null, [ 'class' => 'form-control'] ) !!}
 </div>
 
 <div class="form-group">
