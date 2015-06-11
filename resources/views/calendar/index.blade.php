@@ -79,7 +79,7 @@
                                             {!! Form::hidden('user_id',$user_id) !!}
                                             @include('calendar.partials.fields')
                                             <!-- falta la marca para todo el dia y el boton de guardar -->
-                                            <button type="submit" class="btn btn-default">Registrar</button>
+                                            <button type="submit" class="btn btn-primary">Registrar</button>
                                                 {!!Form::close()!!}
                                         </div>
                                     </div>

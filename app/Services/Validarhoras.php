@@ -123,9 +123,15 @@ class ValidarHoras extends Validator{
                 return false;
 
             //busca si existen eventos las mismas horas que esta tratanto de crear
-            $ficha = Evento::WhereBetween('start', [$fecha_ini, $fecha_fin])
+/*            $ficha = Evento::WhereBetween('startt', [$fecha_ini, $fecha_fin])
                 ->where('user_id', '=', Auth::user()->id)
                 ->OrWhere(function($query) use ($fecha_ini,$fecha_fin) {
+                    $query->OrWhereBetween('end', [$fecha_ini, $fecha_fin]);
+                    $query->OrWhereRaw("? between start and end", [$fecha_ini]);
+                })*/
+            $ficha = Evento::where('user_id', '=', Auth::user()->id)
+                ->where(function($query) use ($fecha_ini,$fecha_fin) {
+                    $query->whereBetween('start', [$fecha_ini, $fecha_fin]);
                     $query->OrWhereBetween('end', [$fecha_ini, $fecha_fin]);
                     $query->OrWhereRaw("? between start and end", [$fecha_ini]);
                 })
