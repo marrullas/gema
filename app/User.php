@@ -236,14 +236,26 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->fichas->all();
     }
 
-    public function getHorasAcumuladasAttribute()
+    public function getHorasAcumuladasAttribute($fechas=null)
     {
+        //dd($fechas);
+        if(empty($fechas)) {
+            $horas = $this->hasMany('\App\Evento')
+                ->selectRaw('sum(horas) as horas')
+                ->where('start', '>=', Carbon::now()->startOfMonth())//acumla solamente lo de este mes
+                ->groupBy('user_id')
+                ->get();
+            return $horas;
+        }
+        $rango = array('fecha_ini'=>Carbon::createFromFormat('d/m/Y', $fechas[0])->toDateTimeString(),'fecha_fin'=>Carbon::createFromFormat('d/m/Y', $fechas[1])->toDateTimeString());
+        dd($rango);
         $horas = $this->hasMany('\App\Evento')
             ->selectRaw('sum(horas) as horas')
-            ->where('start', '>=', Carbon::now()->startOfMonth())//acumla solamente lo de este mes
+            //->where('start', '>=', Carbon::now()->startOfMonth())//acumla solamente lo de este mes
+            ->WhereBetween('start',[$rango['fecha_ini'],$rango['fecha_fin']])
             ->groupBy('user_id')
             ->get();
-        //dd($horas->all()->horas);
         return $horas;
     }
+
 }

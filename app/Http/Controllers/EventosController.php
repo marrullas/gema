@@ -365,6 +365,115 @@ class EventosController extends Controller {
 
 
     }
+
+    public function actividades($userId = null)
+    {
+
+        //Session::put('regresar', 'eventos');
+        $userId = $this->request->get('userId');
+
+        if(empty($userId))
+            $user = \Auth::user();
+        else
+            $user = User::find($userId);
+
+        //Session::flash('regresar', 'eventos');
+
+        $start =  $this->request->get('start');
+        $end = $this->request->get('end');
+        if(!empty($start) && !empty($end))
+        {
+            $actividades = Evento::actividadesxmes($user->id,[$start,$end]);
+            $actividadestotal = Evento::actividadesxmestotal($user->id,[$start,$end]);
+            $horasUser = Evento::HorasAcumuladas($user->id,[$start,$end]);
+
+        }
+        else {
+            $actividades = Evento::actividadesxmes($user->id);
+            $actividadestotal = Evento::actividadesxmestotal($user->id);
+            $horasUser = User::find($user->id)->horas_acumuladas;
+        }
+
+        //$horasUser = User::find($user->id)->horas_acumuladas;
+
+        $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
+        //$totalhorasmes = $horasUser->first()->horas;
+        $reporte = false;
+
+        switch($user->type)
+        {
+            case 'admin':
+                //return view('admin.users.home',compact('user','fichasasignadas'));
+                return view('instructor.actividades',compact('user','actividades','actividadestotal','totalhorasmes','reporte','start','end'));
+                break;
+            case 'user':
+                return view('user.home',compact('user','actividades'));
+            case 'instructor':
+                return view('instructor.actividades',compact('user','actividades','actividadestotal','totalhorasmes','reporte','start','end'));
+            default:
+                return view('auth.login');
+
+
+        }
+    }
+    public function actividadesexcel($userId = null)
+    {
+
+        if(empty($userId))
+            $user = \Auth::user();
+        else
+            $user = User::find($userId);
+
+        $start =  $this->request->get('start');
+        $end = $this->request->get('end');
+        if(!empty($start) && !empty($end))
+        {
+            $actividades = Evento::actividadesxmes($user->id,[$start,$end]);
+            $actividadestotal = Evento::actividadesxmestotal($user->id,[$start,$end]);
+            $horasUser = Evento::HorasAcumuladas($user->id,[$start,$end]);
+
+        }
+        else {
+            $actividades = Evento::actividadesxmes($user->id);
+            $actividadestotal = Evento::actividadesxmestotal($user->id);
+            $horasUser = User::find($user->id)->horas_acumuladas;
+        }
+        //$horasUser = User::find($user->id)->horas_acumuladas;
+
+        $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
+
+        Excel::create('reporte actividades', function($excel) use($actividades,$actividadestotal,$horasUser,$totalhorasmes){
+
+            $excel->sheet('actividadesxficha', function($sheet) use($actividades,$horasUser,$totalhorasmes){
+
+/*                $sheet->row(1, array(
+                    'test1', 'test2'
+                ));*/
+
+                $sheet->loadView('instructor.partials.tableactividades',['actividades'=>$actividades,
+                    'horasUser'=>$horasUser,'totalhorasmes'=>$totalhorasmes,'reporte'=>true]);
+
+            });
+            $excel->sheet('actividades_acumulado', function($sheet) use($actividadestotal,$horasUser,$totalhorasmes){
+                $sheet->loadView('instructor.partials.tableactividadestotal',['actividadestotal'=>$actividadestotal,
+                    'horasUser'=>$horasUser,'totalhorasmes'=>$totalhorasmes,'reporte'=>true]);
+
+            });
+
+        })->export('xls');
+
+        /*        if(!empty($user)) {
+                        Excel::create('Informe agenda', function ($excel) use($fichasasignadas){
+
+                            $excel->sheet('agenda', function ($sheet) use($fichasasignadas){
+                                $datos = $fichasasignadas;
+                                $sheet->fromArray($datos);
+                            });
+                        })->export('xls');
+                }*/
+
+
+    }
     public function addbitacora($user, $action, $data)
     {
         $bitacora = new bitacora();

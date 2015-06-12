@@ -408,5 +408,76 @@ class Evento extends Model implements Event
         return $fichasasignadas;
     }
 
+    public static function actividadesxmes($userId=null,$fechas = null)
+    {
 
+        if(empty($fechas))
+        {
+            //$mes = Carbon::now();
+            $rango["fecha_ini"] = Carbon::now()->startOfMonth();
+            $rango["fecha_fin"]=Carbon::now()->endOfMonth();
+        }
+        else
+        {
+            $rango = array('fecha_ini'=>Carbon::createFromFormat('d/m/Y', $fechas[0])->toDateTimeString(),'fecha_fin'=>Carbon::createFromFormat('d/m/Y', $fechas[1])->toDateTimeString());
+        }
+
+        //dd($rango);
+
+        $actividades = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
+            ->join('fichas','fichas.id','=','eventos.ficha_id')
+            ->select(DB::raw('*,sum(eventos.horas) as horas'))
+            ->where('eventos.user_id',$userId)
+            ->WhereBetween('eventos.start', [$rango['fecha_ini'],$rango['fecha_fin']])
+            ->groupBy('actividad','fichas.codigo')
+            ->orderBy('fichas.codigo','actividad')
+            ->get();
+
+       // dd($actividades);
+        return $actividades;
+    }
+    public static function actividadesxmestotal($userId=null,$fechas = null)
+    {
+
+        if(empty($fechas))
+        {
+            //$mes = Carbon::now();
+            $rango["fecha_ini"] = Carbon::now()->startOfMonth();
+            $rango["fecha_fin"]=Carbon::now()->endOfMonth();
+        }
+        else
+        {
+
+            $rango = array('fecha_ini'=>Carbon::createFromFormat('d/m/Y', $fechas[0])->toDateTimeString(),'fecha_fin'=>Carbon::createFromFormat('d/m/Y', $fechas[1])->toDateTimeString());
+        }
+
+        //dd($rango);
+
+        $actividades = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
+            //->join('fichas','fichas.id','=','eventos.ficha_id')
+            ->select(DB::raw('*,sum(eventos.horas) as horas'))
+            ->where('eventos.user_id',$userId)
+            ->WhereBetween('eventos.start', [$rango['fecha_ini'],$rango['fecha_fin']])
+            ->groupBy('actividad')
+            ->orderBy('actividad')
+            ->get();
+
+        // dd($actividades);
+        return $actividades;
+    }
+
+    public static function HorasAcumuladas($userID, $fechas=null)
+    {
+        //dd($fechas);
+
+        $rango = array('fecha_ini'=>Carbon::createFromFormat('d/m/Y', $fechas[0])->toDateTimeString(),'fecha_fin'=>Carbon::createFromFormat('d/m/Y', $fechas[1])->toDateTimeString());
+        //dd($rango);
+        $horas = Evento::selectRaw('sum(horas) as horas')
+            //->where('start', '>=', Carbon::now()->startOfMonth())//acumla solamente lo de este mes
+            ->where('user_id','=',$userID)
+            ->WhereBetween('start',[$rango['fecha_ini'],$rango['fecha_fin']])
+            ->groupBy('user_id')
+            ->get();
+        return $horas;
+    }
 }

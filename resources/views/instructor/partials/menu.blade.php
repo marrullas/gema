@@ -41,6 +41,9 @@
                     <li>
                         <a href="{{ url('/eventos/agenda') }}">Agenda</a>
                     </li>
+                    <li>
+                        <a href="{{ url('/eventos/actividades') }}">Actividades</a>
+                    </li>
                 </ul>
             </li>
             <!--

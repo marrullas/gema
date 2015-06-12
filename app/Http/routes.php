@@ -25,6 +25,12 @@ Route::get('eventos/agenda/{id}','EventosController@agenda');
 Route::get('eventos/agendaexcel','EventosController@agendaexcel');
 Route::get('eventos/agendaexcel/{id}','EventosController@agendaexcel');
 
+Route::get('eventos/actividades','EventosController@actividades');
+Route::post('eventos/actividades','EventosController@actividades');
+//Route::get('eventos/actividades/{id}','EventosController@actividades');
+Route::get('eventos/actividadesexcel','EventosController@actividadesexcel');
+Route::get('eventos/actividadesexcel/{id}','EventosController@actividadesexcel');
+
 //Route::get('eventos/destroy/{id}','EventosController@destroy');
 
 Route::post('muro/crearmuro/','MuroController@crearmuro');

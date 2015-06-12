@@ -148,6 +148,23 @@ class ValidarHoras extends Validator{
         return true;
     }
 
+    /**
+     * valida que la fecha final sea mayor que la incial
+     * @param $attribute
+     * @param $value
+     * @param $parameters
+     * @return bool
+     */
+    public function validateEndAfter($attribute, $value, $parameters) {
+
+
+        $start_date = $this->getValue($parameters[0]); // get the value of the parameter (start_date)
+        //dd(strtotime(Carbon::createFromFormat('d/m/Y H:i', $value)->toDateTimeString()));
+        //dd(Carbon::parse($value)->format('d/m/Y'));
+        return (strtotime(Carbon::createFromFormat('d/m/Y H:i', $value)->toDateTimeString()) >= strtotime(Carbon::createFromFormat('d/m/Y H:i', $start_date)->toDateTimeString()));
+    }
+
+
     public function Validateisweekend($attribute, $value, $parameters)
     {
         $start = new Carbon($value);

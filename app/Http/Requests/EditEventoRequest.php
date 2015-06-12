@@ -50,7 +50,7 @@ class EditEventoRequest extends Request {
                                 ','.new \Carbon\carbon($this->input('end')).
                                 ','.$this->input('all_day'),*/
                 //'start' => 'required',
-                'end' => 'required',
+                'end' => 'required|end_after:start',
             ];
         }
         return [
@@ -75,6 +75,7 @@ class EditEventoRequest extends Request {
             'title.required' => 'Debe ingresar el tipo de actividad',
             'start.solapada' => 'Hora solapada',
             'start.isweekend' => 'no esta permitido programar horas los fines de semana',
+            'end.end_after'=>'Hora final no debe ser menor que la hora inicial',
         ];
     }
 

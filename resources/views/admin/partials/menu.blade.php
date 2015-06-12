@@ -44,7 +44,7 @@
                     <a  href="{{ url('/admin/users') }}"><i class="fa fa-users fa-3x"></i> Usuarios</a>
                     </li>
                     <li>
-                    <a  href="{{ url('/admin/resumen') }}"><i class="fa fa-users fa-3x"></i> Resumen</a>
+                    <a  href="{{ url('/admin/resumen') }}"><i class="fa fa-users fa-3x"></i> Programación</a>
                     </li>
                 </ul>
 
