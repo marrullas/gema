@@ -80,12 +80,14 @@ class EventosController extends Controller {
 
         }
 
+        $user = User::find($user_id);
+
         $fichas = Ficha::where('user_id',$user_id)->where('estado','activa')->lists('full_name','id');
         $calendar = Evento::getCalendar($this->request->user(),$user_id);
         $tipoactividades = Tipoactividad::all()->lists('nombre','id');
         $calId = $calendar->getId();
 
-        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser','tipoactividades','regresar'));
+        return view('calendar.index', compact('calendar', 'calId','user_id','fichas','nombreuser','tipoactividades','regresar','user'));
 	}
 
 	/**

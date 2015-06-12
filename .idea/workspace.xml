@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d142de50-26bb-499a-a683-c13bb5101efb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/instructor/actividades.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/instructor/partials/tableactividades.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/instructor/partials/tableactividadestotal.blade.php" />
-      <change type="MOVED" beforePath="C:\Users\ticbox\Google Drive\htdocs\media\app\Services\Validarhoras.php" afterPath="$PROJECT_DIR$/app/Services/ValidarHoras.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/CreateEventoRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateEventoRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Evento.php" afterPath="$PROJECT_DIR$/app/Evento.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EventosController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/partials/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/partials/menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/instructor/partials/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/instructor/partials/menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/partials/resumentable.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/partials/resumentable.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/partials/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/partials/table.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/instructor/actividades.blade.php" afterPath="$PROJECT_DIR$/resources/views/instructor/actividades.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/instructor/eventos.blade.php" afterPath="$PROJECT_DIR$/resources/views/instructor/eventos.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
     </list>
     <ignored path="media.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,28 +39,38 @@
       <file leaf-file-name="actividades.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/instructor/actividades.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.24" vertical-offset="0" max-vertical-offset="2091">
-              <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
+            <state vertical-scroll-proportion="-15.64" vertical-offset="0" max-vertical-offset="2295">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="33" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resumen.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/users/resumen.blade.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/calendar/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="1479">
-              <caret line="14" column="201" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="201" />
+            <state vertical-scroll-proportion="-19.04" vertical-offset="935" max-vertical-offset="3026">
+              <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resumentable.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="eventos.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/instructor/eventos.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.04" vertical-offset="24" max-vertical-offset="1156">
+              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resumentable.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/users/partials/resumentable.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6523702" vertical-offset="0" max-vertical-offset="886">
-              <caret line="34" column="169" selection-start-line="34" selection-start-column="169" selection-end-line="34" selection-end-column="169" />
+            <state vertical-scroll-proportion="-19.04" vertical-offset="0" max-vertical-offset="884">
+              <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="38" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -107,11 +106,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventosController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EventosController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EventosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.12" vertical-offset="5899" max-vertical-offset="8602">
-              <caret line="372" column="45" selection-start-line="372" selection-start-column="45" selection-end-line="372" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.7816092" vertical-offset="561" max-vertical-offset="8636">
+              <caret line="89" column="132" selection-start-line="89" selection-start-column="132" selection-end-line="89" selection-end-column="132" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.84" vertical-offset="119" max-vertical-offset="1581">
+              <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -127,16 +136,6 @@
                 <marker date="1434075043324" expanded="true" signature="5748:6184" placeholder="..." />
                 <marker date="1434075043324" expanded="true" signature="5781:6149" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ValidarHoras.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/ValidarHoras.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.52" vertical-offset="2115" max-vertical-offset="3026">
-              <caret line="163" column="91" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="91" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -172,7 +171,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/admin/FichaController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/fichas/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/resumen.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/instructor/eventos.blade.php" />
         <option value="$PROJECT_DIR$/app/Muro.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/admin/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/instructor/partials/tableedit.blade.php" />
@@ -188,7 +186,6 @@
         <option value="$PROJECT_DIR$/resources/views/auth/password.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" />
         <option value="$PROJECT_DIR$/config/auth.php" />
-        <option value="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateEventoRequest.php" />
         <option value="$PROJECT_DIR$/app/Services/ValidarHoras.php" />
@@ -196,13 +193,15 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Evento.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EventosController.php" />
-        <option value="$PROJECT_DIR$/resources/views/instructor/actividades.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/partials/table.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/instructor/partials/tableactividades.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/instructor/partials/tableactividadestotal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/partials/menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/partials/resumentable.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/instructor/eventos.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/instructor/actividades.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EventosController.php" />
       </list>
     </option>
   </component>
@@ -1052,22 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/instructor/eventos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.52" vertical-offset="24" max-vertical-offset="935">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/calendar/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.52" vertical-offset="763" max-vertical-offset="2839">
-          <caret line="78" column="44" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/ValidarHoras.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.52" vertical-offset="2115" max-vertical-offset="3026">
@@ -1081,7 +1064,7 @@
         <state vertical-scroll-proportion="0.6930023" vertical-offset="3466" max-vertical-offset="4539">
           <caret line="240" column="10" selection-start-line="240" selection-start-column="10" selection-end-line="240" selection-end-column="10" />
           <folding>
-            <element signature="e#22#40#0#PHP" expanded="true" />
+            <element signature="e#22#40#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1090,14 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="1479">
           <caret line="14" column="201" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="201" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.84" vertical-offset="119" max-vertical-offset="1581">
-          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -1111,22 +1086,6 @@
             <marker date="1434075043324" expanded="true" signature="5748:6184" placeholder="..." />
             <marker date="1434075043324" expanded="true" signature="5781:6149" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EventosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.12" vertical-offset="5899" max-vertical-offset="8602">
-          <caret line="372" column="45" selection-start-line="372" selection-start-column="45" selection-end-line="372" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/instructor/actividades.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.24" vertical-offset="0" max-vertical-offset="2091">
-          <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,8 +1131,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/users/partials/resumentable.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6523702" vertical-offset="0" max-vertical-offset="886">
-          <caret line="34" column="169" selection-start-line="34" selection-start-column="169" selection-end-line="34" selection-end-column="169" />
+        <state vertical-scroll-proportion="-19.04" vertical-offset="0" max-vertical-offset="884">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/instructor/eventos.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.04" vertical-offset="24" max-vertical-offset="1156">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/instructor/actividades.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.64" vertical-offset="0" max-vertical-offset="2295">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/calendar/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.04" vertical-offset="935" max-vertical-offset="3026">
+          <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.84" vertical-offset="119" max-vertical-offset="1581">
+          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EventosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7816092" vertical-offset="561" max-vertical-offset="8636">
+          <caret line="89" column="132" selection-start-line="89" selection-start-column="132" selection-end-line="89" selection-end-column="132" />
           <folding />
         </state>
       </provider>

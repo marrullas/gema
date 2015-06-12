@@ -19,10 +19,22 @@
                     <div class="panel-heading"><h3>Acumulado actividades por ficha : <b>{{$user->full_name}}</b></h3></div>
 
                     <div class="panel-body">
-                        <div class="form-group">
-                            <a class="btn btn-success btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividadesexcel?userId='.$user->id.'&start='.$start.'&end='.$end) }}">Exportar excel</a>
+                        <div class="panel-group">
+                            <a class="btn btn-success btn-xs pull-right btn-sm RbtnMargin" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividadesexcel?userId='.$user->id.'&start='.$start.'&end='.$end) }}">Exportar excel</a>
+                            <div class="dropdown pull-right">
+                                <button class="btn btn-default dropdown-toggle btn-xs btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                    Enlaces rapidos
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/calendar/'.$user->id) }}">Calendario</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/agenda/'.$user->id) }}">Agenda</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividades?userId='.$user->id) }}">Actividades</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        {!! Form::model(['start'=>$start,'end'=>$end],['action'=> 'EventosController@actividades', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
+
+                        {!! Form::model(['start'=>$start,'end'=>$end],['action'=> 'EventosController@actividades', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right form-inline', 'role'=>'search' ]) !!}
                         {!! Form::hidden('userId',$user->id) !!}
                             <div class="form-group">
                                 {!! Form::label('start', 'Entre') !!}
