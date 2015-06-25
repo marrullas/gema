@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\CreateEventoRequest;
 use App\Http\Requests\EditEventoRequest;
+use App\Repositories\EventoRepository;
 use App\Tipoactividad;
 use App\User;
 use Carbon\Carbon;
@@ -21,14 +22,19 @@ use Maatwebsite\Excel\Facades\Excel;
 class EventosController extends Controller {
 
     protected $request, $user_logged;
+    /**
+     * @var EventoRepository
+     */
+    private $eventoRepository;
 
-    function __construct(\Illuminate\Http\Request $request)
+    function __construct(\Illuminate\Http\Request $request, EventoRepository $eventoRepository)
     {
         $this->middleware('auth');
         $this->request = $request;
         //$this->user_logged = $this->request->user()->id;
 
 
+        $this->eventoRepository = $eventoRepository;
     }
 
 
@@ -127,24 +133,6 @@ class EventosController extends Controller {
             $evento->horas = 8;
         }
 
-/*
-        $ficha = Evento::where('ficha_id','=',$data['ficha_id'])
-            ->whereBetween('start',[$data['start'],$data['end']])
-            ->get();
-
-        dd($ficha);
-
-*/
-        //dd(\Carbon\Carbon::parse($data['start'])->toIso8601String());
-        /*
-        $evento = new Evento();
-        $evento->user_id = 1;
-        $evento->title = $data['title'];
-        $evento->all_day = $data['all_day'];
-        $evento->start = new \DateTime($data['start']);
-        $evento->end = new \DateTime($data['end']);*/
-        //$evento->end = \Carbon\Carbon::parse($data['end'])->toIso8601String();
-        //dd($evento);
         $evento->actividad =  Tipoactividad::find($data['title'])->nombre;
 
         $evento->save();
@@ -183,21 +171,10 @@ class EventosController extends Controller {
 	 */
 	public function edit($id)
 	{
-
-
-        //dd(Session::get('regresar') );
-        //Session::put('regresar', Session::get('regresar'));
-       /* if(!empty($this->request['regresar']))
-            $regresar = $this->request['regresar'];
-        else
-            $regresar = $this->request->segment(1);
-*/
-        //dd($regresar);
-
-        //$regresar = $this->request->header('referer');
-        //validar que sea un evento del usuario o que sea un usuario admin o lider
         $volverlista = true;
         $evento = Evento::findOrfail($id);
+        //validar que sea un evento del usuario o que sea un usuario admin o lider
+
         $isAdminOrLider = $this->request->user()->isAdminOrLider();
         $tipoactividades = Tipoactividad::all()->lists('nombre','id');
 
@@ -476,6 +453,109 @@ class EventosController extends Controller {
 
 
     }
+
+
+    public function acumuladoxficha($userId = null)
+    {
+
+        $userId = $this->request->get('userId');
+
+        if(empty($userId))
+            $user = \Auth::user();
+        else
+            $user = User::find($userId);
+
+
+        $start =  $this->request->get('start');
+        $end = $this->request->get('end');
+        if(!empty($start) && !empty($end))
+        {
+/*            $actividades = Evento::actividadesxmes($user->id,[$start,$end]);
+            $actividadestotal = Evento::actividadesxmestotal($user->id,[$start,$end]);*/
+            $horasUser = $this->eventoRepository->HorasAcumuladas($user,[$start,$end]);
+
+            $fichasasignadas = $this->eventoRepository->acumuladoxficha($user,[$start,$end]);
+
+        }
+        else {
+/*            $actividades = Evento::actividadesxmes($user->id);
+            $actividadestotal = Evento::actividadesxmestotal($user->id);*/
+            $horasUser = $this->eventoRepository->HorasAcumuladas($user);
+            $fichasasignadas = $this->eventoRepository->acumuladoxficha($user);
+        }
+
+        //$horasUser = User::find($user->id)->horas_acumuladas;
+
+        $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
+        //$totalhorasmes = $horasUser->first()->horas;
+        $reporte = false;
+
+        switch($user->type)
+        {
+            case 'admin':
+                //return view('admin.users.home',compact('user','fichasasignadas'));
+                return view('instructor.acumuladoxficha',compact('user','fichasasignadas','totalhorasmes','reporte','start','end'));
+                break;
+            case 'user':
+                return view('user.home',compact('user','actividades'));
+            case 'instructor':
+                return view('instructor.acumuladoxficha',compact('user','fichasasignadas','totalhorasmes','reporte','start','end'));
+            default:
+                return view('auth.login');
+
+
+        }
+    }
+
+    public function acumuladoxfichaexcel($userId = null)
+    {
+
+        $userId = $this->request->get('userId');
+
+        if(empty($userId))
+            $user = \Auth::user();
+        else
+            $user = User::find($userId);
+
+
+        $start =  $this->request->get('start');
+        $end = $this->request->get('end');
+        if(!empty($start) && !empty($end))
+        {
+            /*            $actividades = Evento::actividadesxmes($user->id,[$start,$end]);
+                        $actividadestotal = Evento::actividadesxmestotal($user->id,[$start,$end]);*/
+            $horasUser = $this->eventoRepository->HorasAcumuladas($user,[$start,$end]);
+
+            $fichasasignadas = $this->eventoRepository->acumuladoxficha($user,[$start,$end]);
+
+        }
+        else {
+            /*            $actividades = Evento::actividadesxmes($user->id);
+                        $actividadestotal = Evento::actividadesxmestotal($user->id);*/
+            $horasUser = $this->eventoRepository->HorasAcumuladas($user);
+            $fichasasignadas = $this->eventoRepository->acumuladoxficha($user);
+        }
+
+        //$horasUser = User::find($user->id)->horas_acumuladas;
+
+        $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
+        //$totalhorasmes = $horasUser->first()->horas;
+        $reporte = false;
+
+        Excel::create('reporte acumulado x ficha', function($excel) use($fichasasignadas,$horasUser,$totalhorasmes){
+
+            $excel->sheet('reporte', function($sheet) use($fichasasignadas,$horasUser,$totalhorasmes){
+
+                $sheet->loadView('instructor.partials.table',['fichasasignadas'=>$fichasasignadas,
+                    'horasUser'=>$horasUser,'totalhorasmes'=>$totalhorasmes,'reporte'=>true]);
+
+            });
+
+        })->export('xls');
+    }
+
+
+
     public function addbitacora($user, $action, $data)
     {
         $bitacora = new bitacora();

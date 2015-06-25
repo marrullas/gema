@@ -132,6 +132,10 @@ class UserController extends Controller {
 	public function show($id)
 	{
 		//
+        $user = User::findOrfail($id);
+        $fichas = $user->fichas()->get();
+
+        return view('admin.users.show',compact('user','fichas'));
 	}
 
 	/**

@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\Evento;
-use App\Ficha;
+
 use App\Muro;
+use App\Repositories\EventoRepository;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -19,16 +20,21 @@ class HomeController extends Controller {
 	| controller as you wish. It is just here to get your app started!
 	|
 	*/
+    /**
+     * @var EventosRepositories
+     */
+    private $eventosRepository;
 
-	/**
+    /**
 	 * Create a new controller instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(EventoRepository $eventosRepository )
 	{
 		$this->middleware('auth');
-	}
+        $this->eventosRepository = $eventosRepository;
+    }
 
 	/**
 	 * Show the application dashboard to the user.
@@ -40,43 +46,9 @@ class HomeController extends Controller {
         $entradasMuro = Muro::getEntradas();
         $anunciosMuro = Muro::getAnuncios();
         $user = \Auth::user();
-/*        $fichasasignadas = Ficha::with('ie','ie.ciudad','programa','eventos')
-                            //->join('eventos','fichas.id','=','eventos.ficha_id')
-                            //->sum('horas')
-                            //    ->leftjoin(DB::raw('(select sum(horas) as horas from eventos GROUP BY ficha_id) as v'),',v.ficha_id', '=','fichas.id')
-                            //->where('eventos.user_id',$user->id)
-                            ->where('eventos.user_id',$user->id)
-                            ->groupBy('ficha_id')
-                            ->get();*/
-        $fichasasignadas = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
-            //->join('fichas','fichas.id','=','eventos.ficha_id')
-            ->where('eventos.user_id',$user->id)
-            ->where('eventos.start', '>=', Carbon::now()->startOfMonth())
-            ->groupBy('ficha_id')
-            ->orderBy('eventos.start','')
-            ->get();
-
-
-
-
-
-        $horasUser = User::find($user->id)->horas_acumuladas;
-
-        //dd($horasUser->first());
-
+        $fichasasignadas = $this->eventosRepository->acumuladoxficha($user);
+        $horasUser = $this->eventosRepository->HorasAcumuladas($user);
         $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
-
-        //dd($totalhorasmes);
-
-        //dd($fichasasignadas->first()->horas_fichames()->horas);
-
-        //dd($fichasasignadas->all());
-        //$fichasasignadas = Ficha::where('user_id',$user->id)->get();
-
-        //$fichasasignadas = $data->all();
-            //$user->FichasAsignadas();
-
-        //dd($fichasasignadas->first()->ie()->first()->ciudad()->first()->nombre);
 
         switch($user->type)
         {
@@ -98,17 +70,7 @@ class HomeController extends Controller {
     public function vereventos()
     {
         $user = \Auth::user();
-        $fichasasignadas = Evento::with('ficha','ficha.ie','ficha.ie.ciudad','ficha.programa')
-            //->join('fichas','fichas.id','=','eventos.ficha_id')
-            ->where('eventos.user_id',$user->id)
-            ->where('eventos.start', '>=', Carbon::now()->startOfMonth())
-            //->groupBy('ficha_id')
-            ->orderBy('eventos.start','')
-            ->get();
-
-
-
-
+        $fichasasignadas = $this->eventosRepository->vereventos($user);
         $horasUser = User::find($user->id)->horas_acumuladas;
 
         $totalhorasmes = $horasUser->first()->horas;

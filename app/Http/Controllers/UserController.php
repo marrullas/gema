@@ -45,27 +45,18 @@ class UserController extends Controller{
     }
 
 
-    public function getIndex(){
+    public function index()
+    {
+        //dd('vine!!!');
+        $name =  $this->request->get('name');
+        $type = $this->request->get('type');
+        $page = $this->request->get('page');
+        $users = User::FiltroPaginación($name,$type);
 
-    	dd('cambio');
-
-        $result = User::paginate();
-
-        return view('admin.users.index', compact($result));
-
-        /* Ejemplo
-        $result = \DB::table('users')
-            ->select('users.first_name','users.last_name')
-            ->where('first_name','Mauricio')
-            ->get();
-
-        dd($result);
-
-
-        return $result;
-        */
+        return view('users.index', compact('users','name','type','page'));
 
     }
+
 
     public function Calendar($user_id = null)
     {
@@ -126,6 +117,19 @@ class UserController extends Controller{
         return redirect()->back();
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        //
+        $user = User::findOrfail($id);
+        $fichas = $user->fichas()->get();
 
+        return view('users.show',compact('user','fichas'));
+    }
 
 }

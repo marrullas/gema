@@ -50,9 +50,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang-all.js"></script>
 
-    <!--<script type="text/javascript" src="http://mediat.com/bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>-->
+
     {!! HTML::script('/bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}
-    <!--<link rel="stylesheet" href="http://mediat.com/bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />-->
     {!!Html::style('/bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')!!}
 
     <script type="text/javascript">
@@ -76,11 +75,8 @@
             });
         });
     </script>
-    <!--<link rel="stylesheet" href="http://mediat.com/css/fullcalendar.css">-->
+
     {!!Html::style('/css/fullcalendar.css')!!}
-
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.print.css"/> !-->
-
-
+    {!! HTML::script('/css/assets/js/custom.js') !!}
 
 @endsection

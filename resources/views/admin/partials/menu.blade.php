@@ -9,8 +9,6 @@
         </button>
         <a class="navbar-brand" href="{{ url('/') }}">GEMA admin</a>
     </div>
-
-
 @include('partials.menuuser')
 </nav>
 <!-- /. NAV TOP  -->
@@ -20,25 +18,15 @@
             <li class="text-center">
                 {!! Html::image('/css/assets/img/find_user.png',null, ['class'=>'user-image img-responsive']) !!}
                 <h3 style="color: #ffffff   ">{{Auth::user()->full_name}}</h3>
-
-                {{--<img src="assets/img/find_user.png" class="user-image img-responsive"/>--}}
             </li>
-
-
             <li>
                 <a class="active-menu"  href="{{ url('/home') }}"><i class="fa fa-dashboard fa-3x"></i> Panel de control</a>
             </li>
-            {{--                   <li>
-                                   <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
-                               </li>
-                               <li>
-                                   <a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
-                               </li>--}}
-            <li  >
+            <li>
                 <a   href="#"><i class="fa fa-bar-chart-o fa-3x"></i> Informes</a>
             </li>
-            <li  >
-                <a  href="#"><i class="fa fa-users fa-3x"></i> Usuarios</a>
+            <li>
+                <a  href="#"><i class="fa fa-users fa-3x"></i> Usuarios <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                     <a  href="{{ url('/admin/users') }}"><i class="fa fa-users fa-3x"></i> Usuarios</a>
@@ -73,24 +61,6 @@
                     <li>
                         <a href="{{ url('/admin/programas') }}">Programas</a>
                     </li>
- <!--
-                    <li>
-                        <a href="#">Aprendices<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="{{ url('/ficha/758645') }}">758645</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/ficha/769899') }}">769899</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/ficha/935687') }}">935687</a>
-                            </li>
-
-                        </ul>
-
-                    </li>
--->
                 </ul>
             </li>
             <li >

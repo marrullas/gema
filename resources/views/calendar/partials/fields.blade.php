@@ -7,10 +7,10 @@
     {!! Form::select('ficha_id', [null=>'Ninguna'] + $fichas->toArray(), null, [ 'class' => 'form-control'] ) !!}
 </div>
 
-<div class="form-group">
+{{--<div class="form-group">
     {!! Form::label('all_day', 'Todo el dia') !!}
     {!! Form::checkbox('all_day', null, [ 'class' => 'form-control'] ) !!}
-</div>
+</div>--}}
 <div class="form-group">
     {!! Form::label('start', 'Inicia') !!}
     <div class="input-group date" id="datetimepicker1">

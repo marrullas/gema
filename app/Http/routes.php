@@ -27,7 +27,13 @@ Route::get('eventos/agendaexcel/{id}','EventosController@agendaexcel');
 
 Route::get('eventos/actividades','EventosController@actividades');
 Route::post('eventos/actividades','EventosController@actividades');
+Route::get('eventos/acumuladoxficha','EventosController@acumuladoxficha');
+Route::post('eventos/acumuladoxficha','EventosController@acumuladoxficha');
+Route::get('eventos/acumuladoxfichaexcel','EventosController@acumuladoxfichaexcel');
+
+
 //Route::get('eventos/actividades/{id}','EventosController@actividades');
+
 Route::get('eventos/actividadesexcel','EventosController@actividadesexcel');
 Route::get('eventos/actividadesexcel/{id}','EventosController@actividadesexcel');
 

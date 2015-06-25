@@ -29,6 +29,7 @@
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividades?userId='.$user->id) }}">Actividades</a></li>
                         <li role="presentation" class="divider"></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.users.edit', $user) }}">Editar</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.users.show', $user) }}">Detalles</a></li>
                     </ul>
                 </div>
 

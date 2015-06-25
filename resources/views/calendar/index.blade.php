@@ -162,7 +162,7 @@
     {!!Html::style('css/fullcalendar.css')!!}
     <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.print.css"/> !-->
     {!! $calendar->script() !!}
-
+    {!! HTML::script('/css/assets/js/custom.js') !!}
 
 
 @endsection

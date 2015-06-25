@@ -21,7 +21,7 @@
             <td>{{$ficha->ficha->grado}}</td>
             <td>{{$ficha->ficha->ie->ciudad->nombre    }}</td>
                 {{--<td>{{$ficha->ficha->horas_acumuladas->first()['horas']   }}</td>--}}
-                <td>{{$ficha->horas_fichames   }}</td>
+                <td>{{$ficha->horas   }}</td>
                 {{--<td>{{ \Carbon\Carbon::parse($ficha->start)->format('Y/m/d')   }}</td>--}}
 
             <td>

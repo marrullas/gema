@@ -1,5 +1,5 @@
 <table class="table table-striped">
-    <caption>Total registros : {{$fichas->total()}} </caption>
+    <caption>Total registros : {{$fichas->count()}} </caption>
     <thead>
     <tr>
         <th>#</th>
@@ -24,8 +24,10 @@
             <td>{{$ficha->estado}}</td>
             <td>{{$ficha->programa->nombre}}</td>
             <td>
+                @if(Session::get('tipouser')== 'admin')
                 <a class="btn btn-info btn-xs" href="{{ route('admin.fichas.edit', $ficha) }}">Editar</a>
                 <!--<a href="#!" class="btn btn-danger btn-xs">Eliminar</a> -->
+                @endif
 
             </td>
         </tr>
