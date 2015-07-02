@@ -24,7 +24,7 @@ class CreateMensajesTable extends Migration
             $table->integer('user_id')->unsigned(); //remitente que envia el mensaje
             $table->integer('destinatario'); ///codigo del usuario destinatario
             $table->text('destinatarios')->nullable(); ///lista user_id de usuarios a los que se envio el mensaje(1|40|17)
-            $table->dateTime('enviar')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('enviar');
             $table->boolean('respuesta')->default(false); //valida si el mensaje es un respuesta a un mensaje
             $table->timestamps();
             $table->foreign('user_id')
