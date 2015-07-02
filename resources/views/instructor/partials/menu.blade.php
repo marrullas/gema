@@ -40,6 +40,18 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
+
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('/message/') }}">Bandeja</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/message/create') }}">Crear</a>
+                    </li>
+                </ul>
+            </li>
 
             <li>
                 <a  href="#"><i class="fa fa-users fa-3x"></i> Usuarios <span class="fa arrow"></span></a>

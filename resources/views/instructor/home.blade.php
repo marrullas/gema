@@ -13,6 +13,21 @@
                         <h5>Bienvenido Instructor</h5>
                     </div>
                 </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-red set-icon">
+                    <i class="fa fa-envelope-o"></i>
+                </span>
+                            <div class="text-box" >
+                                <p class="main-text">{{$mensajes}} Nuevos</p>
+                                <p class="text-muted">Mensajes</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
                 <!-- /. ROW  -->
                 <hr />
                 @include('instructor.partials.table')

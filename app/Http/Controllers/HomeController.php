@@ -2,10 +2,12 @@
 
 use App\Evento;
 
+use App\Mensaje;
 use App\Muro;
 use App\Repositories\EventoRepository;
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller {
@@ -43,6 +45,11 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+
+        //$mensajes = Mensaje::Whereraw('FIND_IN_SET('.Auth::user()->id.', destinatarios)')
+        $mensajes = Mensaje::where('destinatario','=',Auth::user()->id)
+            ->where('status','=','enviado')
+            ->count();
         $entradasMuro = Muro::getEntradas();
         $anunciosMuro = Muro::getAnuncios();
         $user = \Auth::user();
@@ -53,12 +60,12 @@ class HomeController extends Controller {
         switch($user->type)
         {
             case 'admin':
-                return view('admin.users.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas'));
+                return view('admin.users.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','mensajes'));
             break;
             case 'user':
                 return view('user.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas'));
             case 'instructor':
-                return view('instructor.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','totalhorasmes'));
+                return view('instructor.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','totalhorasmes','mensajes'));
             default:
                  return view('auth.login');
 

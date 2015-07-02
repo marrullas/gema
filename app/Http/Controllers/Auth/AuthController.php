@@ -55,4 +55,9 @@ class AuthController extends Controller {
             return view('auth.login');
     }
 
+    public function check()
+    {
+        return ! is_null($this->user());
+    }
+
 }

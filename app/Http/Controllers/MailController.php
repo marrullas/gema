@@ -131,6 +131,37 @@ class MailController extends Controller {
         return \View::make('emails.successfb');
     }
 
+    public function SendMessage()
+    {
+        //guarda el valor de los campos enviados desde el form en un array
+        //$data = $request->all();
+        $user = User::findOrFail(Auth::user()->id);
+        //se envia el array y la vista lo recibe en llaves individuales {{ $email }} , {{ $subject }}...
+        \Mail::send('emails.message', ['user'=>$user], function($message) use ($user)
+        {
+            //remitente
+            $message->from($user->email2, $user->full_name);
+
+            //asunto
+/*            if(!Auth::check())
+                $message->subject($request->subject);
+            else*/
+                $message->subject('feedback - esto es una prueba'); //marco el mensaje como feedback
+
+            //receptor
+            $email = 'marrullas@gmail.com';
+            $contacto = 'Admin';
+
+            //$message->to(env('CONTACT_MAIL'), env('CONTACT_NAME'));
+            $message->to($email, $contacto);
+
+        });
+/*        if(!Auth::check())
+            return \View::make('emails.success');
+
+        return \View::make('emails.successfb');*/
+    }
+
 
 
 

@@ -4,6 +4,7 @@ use App\ciudad;
 use App\Evento;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Mensaje;
 use App\Muro;
 use App\Tipoactividad;
 use Illuminate\Support\Facades\Auth;
