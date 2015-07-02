@@ -55,7 +55,7 @@ class MessageController extends Controller
      *
      * @return Response
      */
-    public function create($id)
+    public function create()
     {
         //
         $respuesta =  false;
