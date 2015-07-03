@@ -21,7 +21,7 @@
                     <div class="chat-panel panel panel-default chat-boder chat-panel-head " >
                         <div class="panel-heading bg-color-green">
                             <i class="fa fa-comments fa-fw "></i>
-                            Recibidos
+                            Bandeja de mensajes
                         </div>
 
                         <div class="panel-body">
