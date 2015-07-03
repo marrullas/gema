@@ -1,7 +1,8 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-use Carbon\carbon;
+use Carbon\Carbon;
+
 
 class CreateEventoRequest extends Request {
 
@@ -26,8 +27,8 @@ class CreateEventoRequest extends Request {
         //soluciona problema del checkbox vacio
         $this->merge(['all_day' => $this->input('all_day', 0)]);
         if(!empty($this->input('start') && !empty($this->input('end')))) {
-            $fechastart = carbon::createFromFormat('d/m/Y H:i', $this->input('start'));
-            $fechasend = carbon::createFromFormat('d/m/Y H:i', $this->input('end'));
+            $fechastart = Carbon::createFromFormat('d/m/Y H:i', $this->input('start'));
+            $fechasend = Carbon::createFromFormat('d/m/Y H:i', $this->input('end'));
 
 
             //dd($fechasend);
