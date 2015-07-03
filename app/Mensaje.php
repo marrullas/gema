@@ -13,4 +13,9 @@ class Mensaje extends Model
     {
         return $this->belongsTo('\App\User');
     }
+
+    public function receptor()
+    {
+        return $this->belongsTo('\App\User','destinatario','id');
+    }
 }

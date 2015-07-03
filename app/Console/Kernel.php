@@ -34,14 +34,13 @@ class Kernel extends ConsoleKernel {
         $schedule->call(function(){
             $mensajes = Mensaje::where('sendmail','=','false')->get();
             foreach($mensajes as $mensaje) {
-                $receptor = User::findOrFail($mensaje->user_id);
-                $user = User::findOrFail($mensaje->destinatario);
+                $receptor = User::findOrFail($mensaje->destinatario);
+                $user = User::findOrFail($mensaje->user_id);
                 $link = "<br>";
                 $link .="<div class=".'alert alert-success'." role=".'alert'.">";
                 $link .= "<a href='".route('message.show',$mensaje)."'>";
                 $link .= " Ir al mensaje </a>";
                 $link .= "</div>";
-                //dd($link);
                 //se envia el array y la vista lo recibe en llaves individuales {{ $email }} , {{ $subject }}...
                 \Mail::send('emails.message',
                     [
@@ -55,18 +54,11 @@ class Kernel extends ConsoleKernel {
                     function ($message) use ($user,$receptor,$mensaje) {
                     //remitente
                     $message->from($user->email2, $user->full_name);
-
                     //asunto
-                    /*            if(!Auth::check())
-                                    $message->subject($request->subject);
-                                else*/
                     $message->subject($mensaje->titulo); //marco el mensaje como feedback
-
-
                     //receptor
                     $email = $receptor->email2;
                     $contacto = $receptor->full_name;
-
                     //$message->to(env('CONTACT_MAIL'), env('CONTACT_NAME'));
                     $message->to($email, $contacto);
 

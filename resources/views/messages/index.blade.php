@@ -50,6 +50,7 @@
                                                 <a href="{{ route('message.show',$mensaje) }}"><i class="fa fa-eye-slash"></i></a>
                                             </td>
                                             <td><strong>{{$mensaje->user->full_name}}</strong></td>
+                                            <td><strong>{{$mensaje->receptor->full_name}}</strong></td>
                                             @if($mensaje->respuesta)
                                             <td><span class="label label-info pull-right">{{str_limit($mensaje->titulo,30)}}</span></td>
                                             @else
