@@ -204,6 +204,7 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
         'Carbon'    => 'Carbon\Carbon',
+        'carbon'    => 'Carbon\Carbon',
 
         /* para que funcione el provider forms html*/
 
