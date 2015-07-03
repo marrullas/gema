@@ -133,7 +133,7 @@
 
 
     {!! HTML::script('/css/assets/js/custom.js') !!}
-    {{--{!! HTML::script('/bower_resources/wysihtml5x/dist/wysihtml5x-toolbar.min.js') !!}--}}
+   {{-- {!! HTML::script('/bower_resources/wysihtml5x/dist/wysihtml5x-toolbar.min.js') !!}--}}
 
 
 
