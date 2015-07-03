@@ -35,8 +35,8 @@ class EditEventoRequest extends Request {
         $this->merge(['all_day' => $this->input('all_day', 0)]);
 
         if(!empty($this->input('start') && !empty($this->input('end')))) {
-            $fechastart = \Carbon\carbon::createFromFormat('d/m/Y H:i', $this->input('start'));
-            $fechasend = \Carbon\carbon::createFromFormat('d/m/Y H:i', $this->input('end'));
+            $fechastart = \Carbon\Carbon::createFromFormat('d/m/Y H:i', $this->input('start'));
+            $fechasend = \Carbon\Carbon::createFromFormat('d/m/Y H:i', $this->input('end'));
 
 
             //dd($fechasend);
