@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> <!-- Fin moda -->
 
     <div id="page-wrapper">
         <div id="page-inner">

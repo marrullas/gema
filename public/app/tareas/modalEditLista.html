@@ -1,0 +1,20 @@
+<div ng-controller="tareasController">
+    <script type="text/ng-template" id="modalEditLista.html">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" ng-click="selectedLista.nombre.$rollbackViewValue();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Editar Lista</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-inline display-block">
+                <input type='text' ng-model="nombreLista" class="form-control">
+
+                <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary btn-md"  ng-click="ok()" data-dismiss="modal">Guardar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Cerrar</button>
+        </div>
+    </script>
+    <button class="btn btn-default" ng-click="open()">Open me!</button>
+</div>

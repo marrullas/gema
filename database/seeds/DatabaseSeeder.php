@@ -17,12 +17,14 @@ class DatabaseSeeder extends Seeder {
 		$this->call('AdminTableSeeder');
         $this->call('UserTableSeeder');
         $this->call('EstadosTableSeeder');
-        $this->call('IesTableSeeder');
+				$this->call('CiudadesTableSeeder');
+        //$this->call('IesTableSeeder');
         $this->call('ProgramasTableSeeder');
-        $this->call('FichasTableSeeder');
+        //$this->call('FichasTableSeeder');
         //$this->call('EventosTableSeeder');
         $this->call('MuroTableSeeder');
         $this->call('TipoactividadTableSeeder');
+				$this->call('ListasTableSeeder');
 	}
 
 }

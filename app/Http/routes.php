@@ -51,6 +51,20 @@ Route::resource('muro','MuroController');
 
 Route::resource('message','MessageController');
 
+
+Route::resource('tareas','TareaController');
+Route::resource('api/tareas','TareaController');
+Route::get('api/tareas','TareaController@tareas');
+Route::post('api/terminar/{id}','TareaController@terminar');
+Route::get('api/tareasxlista/{id}','TareaController@tareasxlista');
+Route::get('api/numerotareaxestado/{id}','TareaController@numerotareaxestado');
+
+
+Route::resource('api/listas','ListasController');
+Route::resource('listas','ListasController');
+Route::get('api/listastareas','ListasController@lista');
+
+
 //Route::resource('calendar','Even')
 Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
 Route::get('contact', ['as' => 'contact', 'uses' => 'MailController@index'] );
