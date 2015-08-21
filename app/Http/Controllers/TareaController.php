@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Files;
 use App\Tarea;
 use App\TareaxUsuario;
 use App\User;
@@ -48,21 +49,15 @@ class TareaController extends Controller
         $userID = Auth::user()->id;
 
 
-
-        $tareas = TareaxUsuario::join('tareas','tareas.id','=','tarea_id')
-            ->where('tareasxusuario.responsable','=',$userID)
+/*        $tareas = TareaxUsuario::join('tareas', 'tareas.id', '=', 'tarea_id')
+            ->where('tareasxusuario.responsable', '=', $userID)
+            ->where('activo', '=', true)
+            ->get();*/
+        $tareas = Tarea::where('responsable','=',$userID)
             ->where('activo','=',true)
 
             ->get();
-        //dd($tareas->tarea);
 
-
-/*            ->where('responsable','=',$userID)
-            ->OrWhere('creador','=',$userID)
-            //->groupBY('responsable','codigo')
-            ->orderBy('created_at','desc')
-            ->get();*/
-        //return view('tareas.index',compact('tareas','userID'));
         return view('tareas.index2');
     }
 
@@ -70,8 +65,8 @@ class TareaController extends Controller
         $userID = Auth::user()->id;
 
         $tareas = Tarea::with('creadopor')
-            ->join('tareasxusuario','tareasxusuario.tarea_id','=','tareas.id')
-            ->where('tareasxusuario.responsable','=',$userID)
+           // ->join('tareasxusuario','tareasxusuario.tarea_id','=','tareas.id')
+            ->where('tareas.responsable','=',$userID)
             //->where('tareasxusuario.hecho','=',false)
             ->where('activo','=',true)
             //->where('tareas.id','=', 2)
@@ -109,6 +104,8 @@ class TareaController extends Controller
         $tarea->creador = $userID;
         $tarea->envio = \Carbon\Carbon::now();//enviar
         $tarea->tareasdelusuario()->hecho = false;
+        $tarea->responsable = $userID;
+        $tarea->colaborador = false;
         $tarea->save();
 
 
@@ -126,16 +123,23 @@ class TareaController extends Controller
 
             }
         }
-        else{
+/*        else{
             $tareaxusuario = new TareaxUsuario();
             $tareaxusuario->tarea_id = $tarea->id;
             $tareaxusuario->responsable = $userID;
             $tareaxusuario->colaborador = false;
             $tareaxusuario->save();
-        }
+        }*/
 
-        $newtarea = Tarea::join('tareasxusuario','tareasxusuario.tarea_id','=','tareas.id')
+/*        $newtarea = Tarea::join('tareasxusuario','tareasxusuario.tarea_id','=','tareas.id')
             ->where('tareas.id','=',$tarea->id)
+            //->where('tareasxusuario.responsable','=',$userID)
+            ->where('lista','=',$tarea->lista)
+            //->where('tareasxusuario.hecho','=',false)
+            ->where('activo','=',true)
+            //->where('tareas.id','=', 2)
+            ->first();*/
+        $newtarea = Tarea::where('tareas.id','=',$tarea->id)
             //->where('tareasxusuario.responsable','=',$userID)
             ->where('lista','=',$tarea->lista)
             //->where('tareasxusuario.hecho','=',false)
@@ -179,19 +183,22 @@ class TareaController extends Controller
     public function update($id)
     {
         $data = $this->request->all();
+
+
+
         //dd($data);
         //$entrega = new Carbon(Carbon::createFromFormat('d/m/Y H:i',$data['entrega']));
         //$recordar = new Carbon(Carbon::createFromFormat('d/m/Y H:i',$data['recordar']));
         $tarea = Tarea::find($id);
         if($tarea->creador == Auth::user()->id) {//si la tarea pertenece a usuario logueado
-            $tareaxusuario = TareaxUsuario::where('tarea_id', '=', $id)->first();
+            //$tareaxusuario = TareaxUsuario::where('tarea_id', '=', $id)->first();
             //$tarea->done =  $this->request->input('done');
             $tarea->fill($data);
-            $tareaxusuario->fill($data);
+            //$tareaxusuario->fill($data);
             //$tarea->entrega = $entrega;
             //$tarea->recordar = $recordar;
             $tarea->save();
-            $tareaxusuario->save();
+            //$tareaxusuario->save();
             $respuesta['tarea'] = $tarea;
             $respuesta['mensaje'] = "Tarea actualizada correctamente";
 
@@ -218,6 +225,7 @@ class TareaController extends Controller
                     ->where('creador','=',Auth::user()->id)
             ->first();
         if($tarea->count() > 0) {
+            Files::destroyxtarea($tarea->id);
             $tarea->delete();
             $respuesta['tarea'] = $tarea;
             $respuesta['mensaje'] = "Tarea eliminada";
@@ -233,9 +241,11 @@ class TareaController extends Controller
         $tarea = Tarea::find($id);
         if($tarea->creador == Auth::user()->id) {//si la tarea pertenece a usuario logueado
             $data = $this->request->all();
-            $tareaxusuario = TareaxUsuario::where('tarea_id', '=', $id)->first();
-            $tareaxusuario->fill($data);
-            $tareaxusuario->save();
+            //$tareaxusuario = TareaxUsuario::where('tarea_id', '=', $id)->first();
+            //$tareaxusuario->fill($data);
+            //$tareaxusuario->save();
+            $tarea->fill($data);
+            $tarea->save();
             $respuesta['tarea'] = $tarea;
             $respuesta['mensaje'] = "Tarea actualizada correctamente";
         }
@@ -260,7 +270,7 @@ class TareaController extends Controller
 
         $tareas = Tarea::with('creadopor')
             ->where('lista','=',$id)
-            ->join('tareasxusuario','tareasxusuario.tarea_id','=','tareas.id')
+            //->join('tareasxusuario','tareasxusuario.tarea_id','=','tareas.id')
             //->where('tareasxusuario.responsable','=',$userID)
             //->where('tareasxusuario.hecho','=',false)
             ->where('activo','=',true)

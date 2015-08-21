@@ -30,7 +30,13 @@ class ListasController extends Controller
     function __construct(Request $request)
     {
         // TODO: Implement __construct() method.
+        $this->middleware('auth');
         $this->request = $request;
+        if(Auth::user())
+            $this->userID = Auth::user()->id;
+        else
+            redirect('/');
+
     }
 
 
@@ -66,9 +72,12 @@ class ListasController extends Controller
     //public function store(Request $request)
     public function store()
     {
-        //
+        //riesgo de seguridad que alguien cree una lista como procedimiento sin ser admin
+        //esto utilizan
 
         $data = $this->request->all();
+
+
 
         $userID = Auth::user()->id;
         $lista = new Lista($data);
@@ -76,8 +85,10 @@ class ListasController extends Controller
 
         $lista->save();
 
+        $respuesta['lista'] = $this->traerListaxid($lista->id);
+        $respuesta['mensaje'] = "Lista ingresada correctamente";
 
-        return $this->request->wantsJson() ? $lista : Redirect::back();
+        return $this->request->wantsJson() ? $respuesta : Redirect::back();
     }
 
     /**
@@ -117,7 +128,7 @@ class ListasController extends Controller
         if($lista->user_id == $userID){
             $lista->fill($data);
             $lista->save();
-            $respues['lista'] = $lista;
+            $respuesta['lista'] = $lista;
             $respuesta['mensaje'] = "Lista actualizada correctamente";
 
         }
@@ -173,7 +184,7 @@ class ListasController extends Controller
          */
         $userID =  Auth::user()->id;
 
-        $listatareas =  DB::table('listas')
+/*        $listatareas =  DB::table('listas')
             ->selectRaw('listas.*, (
                 SELECT COUNT( tareas.id )
                 FROM tareas, tareasxusuario
@@ -185,7 +196,39 @@ class ListasController extends Controller
             ->leftjoin('tareas','tareas.lista','=','listas.id')
             ->where('user_id','=', $userID)
             ->groupBy('listas.id')
+            ->get();*/
+        $listatareas =  DB::table('listas')
+            ->selectRaw('listas.*, (
+                SELECT COUNT( tareas.id )
+                FROM tareas
+                WHERE tareas.lista = listas.id
+                AND tareas.hecho =
+                FALSE
+                ) AS numero_tareas')
+            ->leftjoin('tareas','tareas.lista','=','listas.id')
+            ->where('user_id','=', $userID)
+            ->groupBy('listas.id')
             ->get();
+
+        return $listatareas;
+    }
+
+    public function traerListaxid($id)
+    {
+        //$userID =  Auth::user()->id;
+
+        $listatareas =  DB::table('listas')
+            ->selectRaw('listas.*, (
+                SELECT COUNT( tareas.id )
+                FROM tareas, tareasxusuario
+                WHERE tareas.lista = listas.id
+                AND tareas.hecho =
+                FALSE
+                ) AS numero_tareas')
+            ->leftjoin('tareas','tareas.lista','=','listas.id')
+            ->where('listas.id','=', $id)
+            ->groupBy('listas.id')
+            ->first();
 
         return $listatareas;
     }

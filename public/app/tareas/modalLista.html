@@ -7,14 +7,33 @@
                 <h4 class="modal-title" id="myModalLabel">Agregar Lista</h4>
             </div>
             <div class="modal-body">
-                    <div class="form-inline display-block">
-                        <input type='text' ng-model="lista.nombre" class="form-control">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <label class="control-label">Nombre</label>
+                            <input type='text' ng-model="lista.nombre" class="form-control">
 
-                        <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
+                            <span ng-show="isadmin">
+                                <div class="checkbox">
+                                    <label>
+                                    <input type='checkbox' ng-model="lista.es_procedimiento" ng-init="lista.es_procedimiento=false">
+                                     Procedimiento / Tareas globales
+                                    </label>
+                                </div>
+                           <div class="checkbox">
+                               <label>
+                                   <input type='checkbox' ng-model="lista.activo" ng-init="lista.activo=false">
+                                   activa
+                               </label>
+                           </div>
+                            </span>
+                        </div>
                     </div>
+                    <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
                 </div>
+            </div>
             <div class="modal-footer">
-                <button class="btn btn-primary btn-md"  ng-click="addLista(lista.nombre);hide()" data-dismiss="modal">Agregar</button>
+                <button class="btn btn-primary btn-md"  ng-click="addLista(lista)" data-dismiss="modal">Agregar</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
             </div>
         </div>

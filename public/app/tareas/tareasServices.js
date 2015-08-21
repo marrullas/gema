@@ -5,7 +5,8 @@ var app = angular.module('tareasApp');
 app.service('tareasService',function($http,$q){
     //var tareas = [];
     this.tareas = [];
-    this.listasTareas = [];
+    this.listaTareas = [];
+    this.files = [];
 
 
 
@@ -28,32 +29,23 @@ app.service('tareasService',function($http,$q){
         $http.post('/api/tareas', {
             nombre: tarea,
             lista: lista
-            //hecho: '0'
-            //done: this.tarea.done
         }).success(function(data, status, headers, config) {
             this.tareas.push(data);
             deferred.resolve(data);
-            //return data;
-           // this.tarea = '';
-            //console.log(data);
-            //this.tarea.hecho = 0;
-            //this.loading = false;
-
         });
         return deferred.promise;
     };
 
     this.updateTarea = function(tarea) {
         var deferred = $q.defer();
-        $http.put('/api/tareas/' + tarea.tarea_id, {
+        //console.info(tarea);
+        $http.put('/api/tareas/' + tarea.id, {
             nombre: tarea.nombre,
             descripcion: tarea.descripcion,
             entrega: tarea.entrega,
             recordar: tarea.recordar
-            //done: this.tarea.done
         }).success(function(data, status, headers, config) {
-            //tarea = data;
-            //console.log(data);
+
             deferred.resolve(data);
             console.log("tarea actualizada");
 
@@ -62,7 +54,7 @@ app.service('tareasService',function($http,$q){
     };
     this.terminarTarea = function(tarea) {
         var deferred = $q.defer();
-        $http.post('/api/terminar/' + tarea.tarea_id, {
+        $http.post('/api/terminar/' + tarea.id, {
             hecho: tarea.hecho
         }).success(function(data, status, headers, config) {
             deferred.resolve(data);
@@ -75,10 +67,18 @@ app.service('tareasService',function($http,$q){
 
      this.deleteTarea = function(tarea,idx) {
          var deferred = $q.defer();
-         $http.delete('/api/tareas/' + tarea.tarea_id)
+         console.log(tarea);
+         console.info(idx);
+         //this.tareas = this.tareas.filter('filter')(this.tareas, {id: tarea.id});
+
+         $http.delete('/api/tareas/' + tarea.id)
          .success(function(data) {
-            this.tareas.splice(idx,1);
+            //this.tareas.splice(idx,1);
             deferred.resolve(data);
+                 var index = this.tareas.indexOf(tarea);
+                 if (index != -1) {
+                     this.tareas.splice(index, 1);
+                 }
             console.log("Tarea eliminada")
 
          });
@@ -86,28 +86,22 @@ app.service('tareasService',function($http,$q){
      };
     this.getTareasxEstado = function(lista){
         return $http.get('api/numerotareaxestado/'+lista);
-    }
+    };
     /*
     *
     * SECCION DE LISTAS
     * */
 
     this.addLista = function(lista) {
-        this.loading = true;
         var deferred = $q.defer();
         console.log(lista);
         $http.post('/api/listas', {
-            nombre: lista
-            //hecho: '0'
-            //done: this.tarea.done
+            nombre: lista.nombre,
+            es_procedimiento: lista.es_procedimiento,
+            activo:lista.activo
         }).success(function(data, status, headers, config) {
-            this.listasTareas.push(data);
+            this.listaTareas.push(data.lista);
             deferred.resolve(data);
-            //return data;
-            // this.tarea = '';
-            //console.log(data);
-            //this.tarea.hecho = 0;
-            //this.loading = false;
 
         });
         return deferred.promise;
@@ -116,7 +110,7 @@ app.service('tareasService',function($http,$q){
         var deferred = $q.defer();
         $http.delete('api/listas/'+lista.id)
             .success(function(data){
-                this.listasTareas.splice(idx,1);
+                this.listaTareas.splice(idx,1);
                 deferred.resolve(data);
             });
         return deferred.promise;
@@ -126,7 +120,9 @@ app.service('tareasService',function($http,$q){
     this.updateLista = function(lista){
         var deferred = $q.defer();
         $http.put('api/listas/'+lista.id,{
-            nombre:lista.nombre
+            nombre:lista.nombre,
+            es_procedimiento:lista.es_procedimiento,
+            activo:lista.activo
         }).success(function(data){
                 deferred.resolve(data);
             });
@@ -136,8 +132,8 @@ app.service('tareasService',function($http,$q){
      this.getListas = function(){
        var deferred = $q.defer();
        $http.get('/api/listastareas')
-        .success(function(data){
-               this.listasTareas = data;
+        .success(function(data, status, headers, config){
+               this.listaTareas = data;
           deferred.resolve(data);
         });
         return deferred.promise;
@@ -160,20 +156,77 @@ app.service('tareasService',function($http,$q){
     };
 
     this.getTareasLista = function(lista){ // la primer carga de la pagina
-        //var deferred = $q.defer();
-         return $http.get('/api/tareasxlista/' + lista);//metodo para obligar a esperar la carga de los datos la primer vez
-            /*success(function(data, status, headers, config) {
+        var deferred = $q.defer();
+         $http.get('/api/tareasxlista/' + lista).//metodo para obligar a esperar la carga de los datos la primer vez
+            success(function(data, status, headers, config) {
                 this.tareas = data;
-                //deferred.resolve(data);
+                deferred.resolve(data);
 
-                console.log(this.tareas);
+                //console.log(this.tareas);
                 //console.log('los datos');
                 //this.this.envio = new Date(this.this.envio).toISOString();
                 //this.loading = false;
 
             });
-        return this.tareas;*/
-        //return deferred.promise;
+        //return this.tareas;
+        return deferred.promise;
+    };
+
+    /**
+     *
+     * ARCHIVOS
+     * @param tarea
+     * @returns {*}
+     */
+    //retorna los archivos de una tarea
+    this.getfilesxtarea = function(tarea){
+      var deferred = $q.defer();
+        $http.get('/api/filesxtarea/'+tarea).
+            success(function(data, status, headers, config){
+                deferred.resolve(data);
+            });
+        return deferred.promise;
+    };
+    //retorna todos los archivos de un usuario
+    this.getfilesxuser = function(){
+        var deferred = $q.defer();
+        $http.get('/api/files').
+            success(function(data, status, headers, config){
+                this.files = data;
+                deferred.resolve(data);
+            });
+        return deferred.promise;
+    };
+
+    this.deletefile = function(file){
+        var deferred = $q.defer();
+        $http.delete('api/files/'+file.id)
+            .success(function(data){
+                var index = this.files.indexOf(file);
+                if (index != -1) {
+                    this.files.splice(index, 1);
+                }
+                deferred.resolve(data);
+            });
+        return deferred.promise;
+    };
+
+    this.isadmin = function(){
+        var deferred = $q.defer();
+        $http.get('/api/isadmin')
+            .success(function(data){
+                deferred.resolve(data);
+            });
+            return deferred.promise;
+    };
+
+    this.getcsfr = function(){
+        var deferred = $q.defer();
+        $http.get('/auth/token')
+            .success(function(data){
+                deferred.resolve(data);
+            });
+        return deferred.promise;
     };
 
 

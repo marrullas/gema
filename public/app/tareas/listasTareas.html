@@ -8,18 +8,21 @@
             </div>
             <ul class="list-group">
                 <li ng-repeat="lista in listaTareas | orderBy : 'id'"
-                   ng-class="{'active':$index == selectedRowLista}"
+                   ng-class="{'active':$index == selectedRowLista , 'list-group-item-warning':lista.es_procedimiento==1,'list-group-item disabled':lista.activo==0}"
                    ng-click="setClickedRowLista($index,lista)"
                     class="list-group-item clearfix">
 
                     <% lista.nombre | limitTo:30%>...
                     <span class="pull-right">
                         <span class="badge"><% lista.numero_tareas %></span>
-                        <button class="btn btn-xs btn-info" ng-click="setClickedRowLista($index,lista);open()">
+                        <button class="btn btn-xs btn-info" ng-click="setClickedRowLista($index,lista);open()"
+                                ng-class="btn-warning"
+                                ng-hide="lista.es_procedimiento==1 && !isadmin">
                             <span class="glyphicon glyphicon-edit"></span>
                         </button>
                         <button class="btn btn-xs btn-warning" confirmed-click="deleteLista($index,lista)"
-                                ng-confirm-click="Confirma la eliminación de la lista?">
+                                ng-confirm-click="Confirma la eliminación de la lista?"
+                                ng-hide="lista.es_procedimiento==1 && !isadmin">
                             <span class="glyphicon glyphicon-trash"></span>
                         </button>
                     </span>

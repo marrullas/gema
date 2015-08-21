@@ -40,6 +40,9 @@
         var time = hours + ":" + minutes + " " + suffix;
         return time;
     }
+
+
+
 </script>
 
 {!! HTML::script('/css/assets/js/jquery.metisMenu.js') !!}
@@ -48,7 +51,7 @@
 
 {{--{!! HTML::script('/css/assets/js/custom.js') !!}--}}
 
-
+{{--{!! HTML::script('/bower_resources/ng-phpdebugbar/ng-phpdebugbar.js') !!}--}}
 
 </body>
 </html>

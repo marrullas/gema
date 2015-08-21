@@ -11,10 +11,9 @@
     @endif
 @endsection
 @section('content')
-{!! HTML::script('app/app.modules.js') !!}
-{!! HTML::script('app/common/commonFilters.js') !!}
-{!! HTML::script('app/tareas/tareasController.js') !!}
-{!! HTML::script('app/tareas/tareasServices.js') !!}
+
+
+
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
@@ -33,20 +32,30 @@
                             @include('admin.partials.messages')
 
                             <p ng-show="mensaje.length > 0" class="alert-success"><% mensaje %></p>
-                            <div class="row col-md-12">
+                            <div class="row">
 
-                            <div class="col-md-6">
 
-                            </div>
-                            <div class="col-md-6 panel pull-right">
-                                <h3>Agregar Tarea</h3>
 
-                                    <div class="form-inline display-block">
-                                        <input type='text' ng-model="tarea.nombre" class="form-control">
-                                        <button class="btn btn-primary btn-md"  ng-click="addTarea()">Agregar</button>
+                            <div class="col-md-12 panel ">
+
+
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="control-label">Agregar Tarea:</label>
+                                            <div class="input-group">
+                                                    <input type='text' ng-model="tarea.nombre" class="form-control">
+                                                                                                 <span class="input-group-btn">
+                                                     <button class="btn btn-primary btn-md"  ng-click="addTarea()">Agregar</button>
+                                                  </span>
+                                            </div>
+
+
+                                        </div>
+
                                         <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="row">
                               <div class="listasTareasDiv" ng-include="templateTareas.url"></div>
@@ -63,7 +72,7 @@
                                 </thead>
                                 <tbody>
                                 <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
-                                <tr ng-repeat="tarea in tareas | orderBy : 'id'  | filter:{hecho:0}"
+                                <tr ng-repeat="tarea in tareas | orderBy : 'id'  | hechoLista:selectedLista.id:0"
                                     ng-class="{'selected':$index == selectedRow}"
                                     ng-click="setClickedRow($index,tarea)">
                                     <td><input type="checkbox" ng-model ="tarea.hecho" ng-change="terminarTarea(tarea)"
@@ -100,7 +109,7 @@
                                             </thead>
                                             <tbody>
                                             <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
-                                            <tr ng-repeat="terminada in tareas | orderBy : 'id'  | filter:{hecho:1}"
+                                            <tr ng-repeat="terminada in tareas | orderBy : 'id'  | hechoLista:selectedLista.id:1"
                                                 ng-class="{'selected':$index == selectedRow}"
                                                 ng-click="setClickedRow($index,terminada)">
                                                 <td><input type="checkbox" ng-model ="terminada.hecho" ng-change="terminarTarea(terminada)"
@@ -127,7 +136,7 @@
                         </div>
                         {{--@include("partials.detallestarea")--}}
 
-                        <div class="detallesDiv" ng-include="template.url"></div>
+                        <div class="detallesDiv" ng-include src="template.url"></div>
                         <div class="modalListaDiv" ng-include="templatemodalLista.url"></div>
                         <div class="modalEditListaDiv" ng-include="templatemodalListaEdit.url"></div>
 
@@ -187,14 +196,23 @@
 
                     });*/
                 </script>
+            <!--AngularJS-->
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 
 
-                {!! HTML::script('/bower_resources/ng-phpdebugbar/ng-phpdebugbar.js') !!}
+
                 {!! HTML::script('/bower_resources/angular-bootstrap3-datepicker/dist/ng-bs3-datepicker.js') !!}
-                 {!! HTML::script('/bower_resources/angular-bootstrap/ui-bootstrap.min.js') !!}
-            <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.2.js"></script>
+                {!! HTML::script('/bower_resources/angular-bootstrap/ui-bootstrap.min.js') !!}
+                {!! HTML::script('/bower_resources/angular-file-upload/dist/angular-file-upload.min.js') !!}
+
+                 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.2.js"></script>
 
 
+            {!! HTML::script('app/app.modules.js') !!}
+            {!! HTML::script('app/common/commonFilters.js') !!}
+            {!! HTML::script('app/tareas/tareasController.js') !!}
+            {!! HTML::script('app/tareas/tareasServices.js') !!}
+            {!! HTML::script('app/tareas/tareasFilters.js') !!}
 
 
 

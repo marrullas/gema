@@ -32,6 +32,17 @@ class AddCamposTareasTable extends Migration
             $table->enum('ambito',['centro','ie','programa','ficha','aprendiz'])->nullable(); //es caso de ser procedimiento que paso es
             $table->boolean('dependiente')->default(false);//indica si este paso depende de uno anterior
             $table->boolean('vigente')->default(true);
+            /*campos que estaban en la tabla tareasxusuario*/
+            $table->integer('responsable')->nullable(); //llave foranea table usuario
+            $table->boolean('colaborador')->default(false); //determina si es colaborador
+            $table->dateTime('recordar')->nullable(); //fecha para crear un mensaje de recordatorio
+            $table->enum('estado',['enviado','publicada','pendiente', 'suspendida']); //es caso de ser procedimiento que paso es
+            $table->boolean('hecho')->default(false); //tarea terminada
+            $table->boolean('cancelado')->default(false); //solo el creador de la tarea la puede cancelar
+            $table->dateTime('termino')->nullable(); //fecha de terminada o cancelada
+            $table->boolean('auditado')->default(false);//marca para saber si fue auditada
+            $table->integer('auditor')->nullable(); //codigo del usuario que audito
+
             $table->timestamps();
         });
 

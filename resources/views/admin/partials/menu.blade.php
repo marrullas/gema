@@ -55,7 +55,18 @@
             <li  >
                 <a  href="{{ url('/admin/muro') }}"><i class="fa fa-comment fa-3x"></i> Muro / Anuncios</a>
             </li>
+            <li>
+                <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Tareas<span class="fa arrow"></span></a>
 
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('/tareas/') }}">Lista</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/tareas/create') }}">Crear</a>
+                    </li>
+                </ul>
+            </li>
             <li  >
                 <a  href="#"><i class="fa fa-edit fa-3x"></i> Documentos </a>
             </li>

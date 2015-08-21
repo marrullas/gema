@@ -58,4 +58,14 @@ class Tarea extends Model
         if($value)
             $this->attributes['recordar'] = new Carbon(Carbon::createFromFormat('d/m/Y H:i',$value));
     }
+
+    public function para()
+    {
+        return $this->belongsTo('\App\User','responsable','id');
+    }
+    public function auditor()
+    {
+        return $this->belongsTo('\App\User','auditor','id');
+    }
+
 }

@@ -15,6 +15,8 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('/auth/token', 'Auth\AuthController@token');
+
 //Route::get('calendar','UserController@calendar');
 
 Route::get('eventos/edit/{id}','EventosController@edit');
@@ -44,6 +46,7 @@ Route::post('muro/crearanuncio/','MuroController@crearanuncio');
 
 //Route::get('users/perfil','UserController@perfil');
 Route::resource('users','UserController');
+Route::get('api/isadmin','UserController@isadmin');
 
 Route::resource('calendar', 'EventosController');
 
@@ -79,6 +82,11 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+//manejo de archivos
+Route::resource('api/files','FilesController');
+Route::get('api/uploadfile','FilesController@upload');
+Route::post('api/uploadfile','FilesController@upload');
+Route::get('api/filesxtarea/{id}','FilesController@filesxtarea');
 
 
 Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' => 'admin'],   function() {
