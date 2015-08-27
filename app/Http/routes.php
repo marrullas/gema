@@ -43,7 +43,7 @@ Route::post('muro/crearmuro/','MuroController@crearmuro');
 Route::post('muro/crearanuncio/','MuroController@crearanuncio');
 
 //Route::get('users/perfil','UserController@perfil');
-Route::resource('users','UserController');
+
 
 Route::resource('calendar', 'EventosController');
 
@@ -51,19 +51,16 @@ Route::resource('muro','MuroController');
 
 Route::resource('message','MessageController');
 
+Route::get('actas/todas/','ActaController@todas');
+Route::resource('actas', 'ActaController');
+
+
 //Route::resource('calendar','Even')
 Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
 Route::get('contact', ['as' => 'contact', 'uses' => 'MailController@index'] );
 Route::get('feedback', ['as' => 'feedback', 'uses' => 'MailController@feedback'] );
 
 
-
-Route::controllers([
-    'eventos' => 'EventosController',
-    'users' => 'UserController',
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
 
 
 
@@ -101,4 +98,16 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
 
 
 });
+
+Route::get('download', function() {
+    return Response::download(Input::get('path'));
+});
+Route::resource('users','UserController');
+
+Route::controllers([
+    'eventos' => 'EventosController',
+    'users' => 'UserController',
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
 

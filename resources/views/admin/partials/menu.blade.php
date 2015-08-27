@@ -38,6 +38,18 @@
 
             </li>
             <li>
+                <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Actas<span class="fa arrow"></span></a>
+
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('/actas/') }}">Lista</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/actas/todas') }}">Ver todas</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">

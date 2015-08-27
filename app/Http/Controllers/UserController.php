@@ -104,7 +104,7 @@ class UserController extends Controller{
 
         $ciudades = Ciudad::lists('full_name','codigo');
 
-        return view('user.edit',compact('user','ciudades'));
+        return view('users.edit',compact('user','ciudades'));
     }
 
     public function update(EditUserRequest $request,$id)
