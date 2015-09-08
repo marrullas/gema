@@ -155,6 +155,7 @@ return [
 
         /*librerias excel*/
         'Maatwebsite\Excel\ExcelServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
 
 		/* foro */
 		'Socieboy\Forum\Providers\ForumServiceProvider',
@@ -209,6 +210,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
         'Carbon'    => 'Carbon\Carbon',
         'carbon'    => 'Carbon\Carbon',
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
         /* para que funcione el provider forms html*/
 

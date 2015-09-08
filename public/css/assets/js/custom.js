@@ -9,7 +9,7 @@
 
     100% To use For Personal And Commercial Use.
     IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
+
     ========================================================  */
 
 
@@ -19,7 +19,7 @@
 
         main_fun: function () {
             /*====================================
-            METIS MENU 
+            METIS MENU
             ======================================*/
             $('#main-menu').metisMenu();
 
@@ -198,8 +198,8 @@
                 hideHover: 'auto',
                 resize: true
             });*/
-           
-     
+
+
         },
 
         initialization: function () {
@@ -213,5 +213,6 @@
     $(document).ready(function () {
         mainApp.main_fun();
     });
+//funcionalidad para el menu listatareas
 
 }(jQuery));

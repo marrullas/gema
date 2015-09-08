@@ -132,4 +132,13 @@ class UserController extends Controller{
         return view('users.show',compact('user','fichas'));
     }
 
+    public function isadmin()
+    {
+        //dd(Auth::user());
+        if(Auth::user()->type === 'admin' || Auth::user()->type === 'lider')
+            return 1;
+        else
+            return 0;
+    }
+
 }

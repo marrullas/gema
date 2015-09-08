@@ -60,4 +60,10 @@ class AuthController extends Controller {
         return ! is_null($this->user());
     }
 
+	public function token()
+	{
+		return csrf_token();
+	}
+
+
 }

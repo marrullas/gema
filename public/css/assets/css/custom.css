@@ -360,10 +360,10 @@ line-height: 1.428571429;
                margin: 0 0 0 260px;
         padding: 15px 30px;
         min-height: 1200px;
-
+		
     }
-
-
+	
+	
     .navbar-side {
         z-index: 1;
         position: absolute;
@@ -371,9 +371,134 @@ line-height: 1.428571429;
     }
 
    .navbar {
- border-radius: 0px;
+ border-radius: 0px; 
+}
+   
 }
 
+/*==========================================================
+    ESTILOS PERSONALIZADOS
+    =================================================*/
+ .selected {
+     background-color:#39b3d7;
+     color:#000000;
+     font-weight:bold;
+ }
+
+
+/*==================================================
+animacion html cuando aparece
+*/
+
+.slide-animate-container {
+    position:relative;
+    background:white;
+    border:1px solid black;
+    /*height:40px;*/
+    overflow:hidden;
+}
+
+.slide-animate {
+    /*padding:inherit;*/
+}
+
+.slide-animate.ng-enter, .slide-animate.ng-leave {
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:block;
+    padding:10px;
+}
+
+.slide-animate.ng-enter {
+    top:-50px;
+}
+.slide-animate.ng-enter.ng-enter-active {
+    top:0;
+}
+
+.slide-animate.ng-leave {
+    top:0;
+}
+.slide-animate.ng-leave.ng-leave-active {
+    top:50px;
+}
+
+/*====================
+css para el menu de lista de tareas
+======================*/
+body
+{
+    padding-top: 20px;
+    background-color: #F7F7F7;
+}
+.panel > .list-group
+{
+    margin-bottom: 0;
+}
+.panel > .list-group .list-group-item
+{
+    border-width: 1px 0;
+}
+.panel > .list-group .list-group-item:first-child
+{
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.panel > .list-group .list-group-item:last-child
+{
+    border-bottom: 0;
+}
+.panel-heading + .list-group .list-group-item:first-child
+{
+    border-top-width: 0;
+}
+.panel-default .list-group-item.active
+{
+    color: #000;
+    background-color: #DDD;
+    border-color: #DDD;
+}
+.panel-primary .list-group-item.active
+{
+    color: #FFF;
+    background-color: #428BCA;
+    border-color: #428BCA;
+}
+.panel-success .list-group-item.active
+{
+    color: #3C763D;
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+}
+.panel-info .list-group-item.active
+{
+    color: #31708F;
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+}
+.panel-warning .list-group-item.active
+{
+    color: #8A6D3B;
+    background-color: #FCF8E3;
+    border-color: #FAEBCC;
+}
+.panel-danger .list-group-item.active
+{
+    color: #A94442;
+    background-color: #F2DEDE;
+    border-color: #EBCCD1;
+}
+.panel a.list-group-item.active:hover, a.list-group-item.active:focus
+{
+    color: #000;
+    background-color: #DDD;
+    border-color: #DDD;
 }
 
 /*================== step wizard*/

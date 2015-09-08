@@ -12,11 +12,11 @@ class CreateTareasTable extends Migration {
 	 */
 	public function up()
 	{
-/*		Schema::create('tareas', function(Blueprint $table)
+		Schema::create('tareas', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->timestamps();
-		});*/
+		});
 	}
 
 	/**
@@ -26,7 +26,7 @@ class CreateTareasTable extends Migration {
 	 */
 	public function down()
 	{
-		//Schema::drop('tareas');
+		Schema::drop('tareas');
 	}
 
 }
