@@ -38,6 +38,18 @@
 
             </li>
             <li>
+                <a href="#"><i class="fa fa-gears fa-3x"></i> SIGA<span class="fa arrow"></span></a>
+
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('/admin/procedimientos/') }}">Procedimeintos</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/admin/actividades/') }}">Actividades</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Actas<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
@@ -48,6 +60,9 @@
                         <a href="{{ url('/actas/todas') }}">Ver todas</a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a  href="{{ url('/forum') }}"><i class="fa fa-comments-o fa-3x"></i> Foro</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
@@ -62,7 +77,7 @@
                 </ul>
             </li>
             <li  >
-                <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Mi Calendario</a>
+                <a  href="{{ url('/calendar') }}"><i class="fa fa-calendar-o fa-3x"></i> Mi Calendario</a>
             </li>
             <li  >
                 <a  href="{{ url('/admin/muro') }}"><i class="fa fa-comment fa-3x"></i> Muro / Anuncios</a>

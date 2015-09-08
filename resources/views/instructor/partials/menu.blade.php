@@ -41,6 +41,9 @@
                 </ul>
             </li>
             <li>
+                <a  href="{{ url('/forum') }}"><i class="fa fa-table fa-3x"></i> Foro</a>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">

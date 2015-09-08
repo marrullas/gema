@@ -1,7 +1,12 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-clone": "^1.0.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-util": "^3.0.6",
     "laravel-elixir": "*"
   }
 }

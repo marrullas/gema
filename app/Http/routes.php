@@ -88,6 +88,10 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
         'as' => 'resumen', 'uses' =>'UserController@resumen'
     ]);
 
+    Route::get('actividades/create/{$id}',[
+        'as' => 'admin.actividades.create', 'uses' => 'ActividadController@create'
+    ]);
+
     Route::resource('users','UserController');
 
     Route::resource('programas','ProgramaController');
@@ -95,6 +99,10 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     Route::resource('ies', 'IeController');
 
     Route::resource('fichas', 'FichaController');
+
+    Route::resource('procedimientos','ProcedimientoController');
+    Route::resource('actividades','ActividadController');
+
 
 
 });

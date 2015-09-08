@@ -36,7 +36,7 @@
     {!! HTML::script('/bower_resources/bootstrap-select/js/bootstrap-select.js') !!}
     {!! HTML::script('/bower_resources/bootstrap-select/js/i18n/defaults-es_CL.js') !!}
     {!!Html::style('/bower_resources/bootstrap-select/css/bootstrap-select.min.css')!!}
-    {!!Html::style('/bower_resources/bootstrap-select/css/bootstrap-select.min.css')!!}
+
 
     <script type="text/javascript">
         $(function () {

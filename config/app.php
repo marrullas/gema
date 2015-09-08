@@ -156,6 +156,10 @@ return [
         /*librerias excel*/
         'Maatwebsite\Excel\ExcelServiceProvider',
 
+		/* foro */
+		'Socieboy\Forum\Providers\ForumServiceProvider',
+
+
 	],
 
 	/*

@@ -4,17 +4,17 @@
     <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GEMA - GestiÃ³n Misional</title>
+    <title>GEMA - Gestión Misional</title>
 
 
     {!!Html::style('/css/assets/css/bootstrap.css')!!}
     {!!Html::style('/css/assets/css/font-awesome.css')!!}
     {!!Html::style('/css/assets/js/morris/morris-0.4.3.min.css')!!}
-    <link href="{{ asset('css/forum.css') }}" rel="stylesheet">
+    {!!Html::style('/css/forum.css')!!}
     {!!Html::style('/css/assets/css/custom.css')!!}
 
 
-    <!-- Fonts -->
+            <!-- Fonts -->
 
     {{-- <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>--}}
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
@@ -40,7 +40,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Gestion Programa Media TÃ©cnica</a>
+				<a class="navbar-brand" href="#">Gestion Programa Media Técnica</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -61,7 +61,7 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
+        <li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
         <li class="dropdown">
@@ -76,3 +76,20 @@
 </div>
 </nav>
 -->
+@section('menu')
+    @if(Session::get('tipouser')== 'user' || Session::get('tipouser')== 'instructor')
+
+        @include('instructor.partials.menu')
+    @else
+
+        @include('admin.partials.menu')
+
+    @endif
+    <div id="page-wrapper" >
+        <div id="page-inner">
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+@endsection
+
+
