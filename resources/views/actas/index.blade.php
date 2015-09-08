@@ -73,5 +73,5 @@
 
         });
     </script>
-    {!! HTML::script('/css/assets/js/custom.js') !!}
+
 @endsection

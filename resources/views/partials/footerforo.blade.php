@@ -4,6 +4,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 @yield('scripts')
+{!! HTML::script('/css/assets/js/custom.js') !!}
 {!!Html::style('/bower_resources/wysihtml5/dist/bootstrap3-wysihtml5.css')!!}
 {!! HTML::script('/bower_resources/wysihtml5/dist/bootstrap3-wysihtml5.all.min.js') !!}
 
