@@ -5,7 +5,1005 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d142de50-26bb-499a-a683-c13bb5101efb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/2/31738.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/2/44958.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/13/52372.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/13/92437.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/font/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/src/nuget/NuGet.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/ZeroClipboard-1.1.7.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/ZeroClipboard-1.1.7.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/angular.min.js.gzip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/img/contribution-sample.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/ico/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/ico/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/font/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/font/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/font/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/img/fort_awesome.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/img/glyphicons-halflings-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/img/glyphicons-halflings.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/img/icon-flag.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/ng-phpdebugbar/ng-phpdebugbar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/ng-phpdebugbar/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/debugbar/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_07_08_195302_add_campos_tareas_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_07_11_093417_create_tareasxusuari_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_07_23_220126_create_listas_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_08_10_174107_create_files_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/src/nuget/Bootstrap.v3.Datetimepicker.CSS.nuspec" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/src/nuget/Bootstrap.v3.Datetimepicker.nuspec" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/CNAME" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/CNAME" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/services/FileDirective.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/directives/FileDrop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/services/FileDrop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/services/FileItem.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/services/FileLikeObject.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/directives/FileOver.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/services/FileOver.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/directives/FileSelect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/services/FileSelect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/services/FileUploader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Files.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilesController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/Gemfile.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/Gemfile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/Gruntfile.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/ng-phpdebugbar/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Lista.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListasController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/ListasTableSeeder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/ng-phpdebugbar/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Tarea.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/TareaController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/TareaxUsuario.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/ZeroClipboard-1.1.7.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/ZeroClipboard-1.1.7.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/_bootstrap.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/_config.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/_core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_extras.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/_extras.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_fixed-width.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_fixed-width.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_icons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/_icons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_icons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_larger.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_larger.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_path.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/_path.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_path.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_spinning.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_spinning.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_stacked.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_stacked.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/accordion.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/alerts.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/alerts.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/src/angular-bootstrap3-datepicker.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/angular-csp.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/dist/angular-file-upload.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/dist/angular-file-upload.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/js/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/angular.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/angular.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/app.modules.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ar-ma.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/backbone.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/backbone.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/badges.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_layouts/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/bg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/bootstrap-2.3.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/bootstrap-2.3.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/bootstrap-222.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/bootstrap-222.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/bootstrap-3.0.0.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/src/less/bootstrap-datetimepicker-build.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/build/css/bootstrap-datetimepicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/src/js/bootstrap-datetimepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/src/less/bootstrap-datetimepicker.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/build/js/bootstrap-datetimepicker.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/bootstrap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/bootstrap.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/bootstrap.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/bootstrap.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/bordered-pulled.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/bordered-pulled.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/bordered-pulled.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/ng-phpdebugbar/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/br.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/brand-license.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/brand.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/breadcrumbs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/breadcrumbs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/bs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/tasks/bump_version.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/button-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/button-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/bootstrap/buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/ads/carbon-dark-vertical.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/ads/carbon-light-horizontal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/ads/carbon-light-vertical.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/carbonad.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/carousel.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/carousel.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/cheatsheet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/close.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/close.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/code.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/code.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/common/commonController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/common/commonFilters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/common/commonServices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/common/commonView.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/community.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/component-animations.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/component-animations.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/config.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/core.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/core.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/core.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tareas/create.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/currency.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/custom.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/cv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/cy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/debugbar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tareas/partials/delete.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/demo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/design.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/design.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/tareas/detallesTareaView.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/partials/detallestarea.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/directional.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/dropdowns.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/dropdowns.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/el.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/en-au.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/en-ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/en-gb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/eo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/eu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/example-rating.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/examples.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/extras.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/extras.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/feature-list.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tareas/partials/fields.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/fixed-width.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/fixed-width.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/fixed-width.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/fo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/css/font-awesome-ie7.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/font-awesome-ie7.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/css/font-awesome-ie7.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/font-awesome-ie7.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/font-awesome.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/font-awesome.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/font-awesome.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/scss/font-awesome.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/scss/font-awesome.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/scss/font-awesome.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/fontawesome-icon-list.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/font/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/footer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/footer.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/form-control.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/forms.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/forms.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/js/fr-ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/fr-ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/get-started.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/community/getting-support.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/gl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/glyphicons-test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/glyphicons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/grid.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/grid.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/grunt.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/gulpfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/hero-unit.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/hi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/html5shiv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_layouts/icon.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_plugins/icon_page_generator.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/icons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/icons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/icons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/icons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/icons.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icons.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/id.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tareas/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/cheatsheet/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/community/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/examples/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/get-started/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/adjust/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/adn/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/align-center/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/align-justify/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/align-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/align-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/ambulance/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/anchor/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/android/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/angle-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/angle-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/angle-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/angle-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/apple/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/archive/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/arrow-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/arrow-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/arrow-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/arrow-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/asterisk/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/backward/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/ban-circle/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bar-chart/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/barcode/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/beaker/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/beer/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bell/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bell-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bitbucket/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bitbucket-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bold/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bolt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/book/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bookmark/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bookmark-empty/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/briefcase/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/btc/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bug/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/building/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bullhorn/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/bullseye/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/calendar/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/calendar-empty/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/camera/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/camera-retro/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/caret-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/caret-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/caret-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/caret-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/certificate/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/check/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/check-empty/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/check-minus/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/check-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/chevron-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/chevron-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/chevron-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/chevron-sign-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/chevron-sign-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/chevron-sign-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/chevron-sign-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/chevron-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/circle/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/circle-arrow-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/circle-arrow-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/circle-arrow-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/circle-arrow-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/circle-blank/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/cloud/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/cloud-download/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/cloud-upload/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/cny/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/code/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/code-fork/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/coffee/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/cog/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/cogs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/collapse/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/collapse-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/collapse-top/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/columns/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/comment/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/comment-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/comments/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/comments-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/compass/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/copy/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/credit-card/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/crop/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/css3/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/cut/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/dashboard/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/desktop/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/double-angle-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/double-angle-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/double-angle-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/double-angle-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/download/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/download-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/dribbble/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/dropbox/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/edit/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/edit-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/eject/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/ellipsis-horizontal/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/ellipsis-vertical/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/envelope/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/envelope-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/eraser/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/eur/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/exchange/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/exclamation/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/exclamation-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/expand/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/expand-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/external-link/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/external-link-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/eye-close/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/eye-open/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/facebook/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/facebook-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/facetime-video/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/fast-backward/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/fast-forward/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/female/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/fighter-jet/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/file/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/file-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/file-text/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/file-text-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/film/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/filter/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/fire/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/fire-extinguisher/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/flag/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/flag-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/flag-checkered/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/flickr/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/folder-close/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/folder-close-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/folder-open/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/folder-open-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/font/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/food/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/forward/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/foursquare/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/frown/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/fullscreen/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/gamepad/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/gbp/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/gift/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/github/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/github-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/github-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/gittip/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/glass/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/globe/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/google-plus/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/google-plus-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/group/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/h-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/hand-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/hand-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/hand-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/hand-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/hdd/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/headphones/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/heart/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/heart-empty/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/home/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/hospital/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/html5/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/inbox/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/indent-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/indent-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/info/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/info-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/inr/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/instagram/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/italic/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/jpy/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/key/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/keyboard/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/krw/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/laptop/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/leaf/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/legal/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/lemon/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/level-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/level-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/lightbulb/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/link/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/linkedin/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/linkedin-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/linux/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/list/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/list-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/list-ol/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/list-ul/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/location-arrow/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/lock/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/long-arrow-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/long-arrow-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/long-arrow-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/long-arrow-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/magic/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/magnet/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/mail-reply-all/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/male/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/map-marker/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/maxcdn/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/medkit/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/meh/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/microphone/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/microphone-off/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/minus/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/minus-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/minus-sign-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/mobile-phone/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/money/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/moon/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/move/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/music/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/off/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/ok/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/ok-circle/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/ok-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/paper-clip/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/paste/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/pause/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/pencil/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/phone/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/phone-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/picture/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/pinterest/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/pinterest-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/plane/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/play/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/play-circle/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/play-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/plus/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/plus-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/plus-sign-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/print/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/pushpin/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/puzzle-piece/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/qrcode/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/question/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/question-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/quote-left/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/quote-right/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/random/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/refresh/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/remove/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/remove-circle/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/remove-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/renren/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/reorder/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/repeat/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/reply/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/reply-all/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/resize-full/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/resize-horizontal/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/resize-small/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/resize-vertical/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/retweet/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/road/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/rocket/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/rss/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/rss-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/save/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/screenshot/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/search/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/share/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/share-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/share-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/shield/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/shopping-cart/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sign-blank/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/signal/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/signin/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/signout/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sitemap/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/skype/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/smile/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort-by-alphabet/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort-by-alphabet-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort-by-attributes/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort-by-attributes-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort-by-order/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort-by-order-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sort-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/spinner/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/stackexchange/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/star/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/star-empty/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/star-half/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/star-half-empty/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/step-backward/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/step-forward/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/stethoscope/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/stop/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/strikethrough/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/subscript/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/suitcase/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/sun/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/superscript/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/table/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/tablet/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/tag/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/tags/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/tasks/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/terminal/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/text-height/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/text-width/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/th/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/th-large/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/th-list/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/thumbs-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/thumbs-down-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/thumbs-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/thumbs-up-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/ticket/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/time/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/tint/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/trash/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/trello/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/trophy/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/truck/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/tumblr/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/tumblr-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/twitter/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/twitter-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/umbrella/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/underline/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/undo/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/unlink/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/unlock/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/unlock-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/upload/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/upload-alt/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/usd/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/user/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/user-md/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/vk/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/volume-down/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/volume-off/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/volume-up/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/warning-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/weibo/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/windows/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/wrench/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/xing/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/xing-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/youtube/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/youtube-play/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/youtube-sign/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/zoom-in/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icon/zoom-out/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/icons/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/license/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/test/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/whats-new/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tareas/index2.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/inline.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/input-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/src/nuget/install.ps1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/is.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/jquery-1.10.2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/jquery-1.10.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/jquery-1.10.2.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/jquery-1.7.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/jquery-1.7.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/jumbotron-carousel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/jumbotron-carousel.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/jumbotron.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/jumbotron.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/bootstrap/jumbotron.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ka.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/build/karma-e2e.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/build/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/labels-badges.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/labels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/min/langs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/min/langs.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/larger.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/larger.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/larger.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/layout.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/layouts.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/lazy.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/lazy.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/license-code.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/license.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/list-group.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/list.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/list.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/tareas/listasTareas.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/media.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/media.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/medical.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tareas/partials/mensaje.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ml.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/tareas/modalEditLista.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/tareas/modalLista.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/modals.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/modals.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/min/moment-with-langs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/min/moment-with-langs.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/js/moment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/moment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/min/moment.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/mr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ms-my.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/navbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/bootstrap/navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/navs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/navs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/nb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ne.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/new-features.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/new-naming.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/new-upgrading.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/new.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/dist/ng-bs3-datepicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/css/ng-bs3-datepicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/dist/ng-bs3-datepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/example/js/ng-bs3-datepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/dist/ng-bs3-datepicker.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/ng-phpdebugbar/ng-phpdebugbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/nn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/normalize.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/src/values/options.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap3-datepicker/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-file-upload/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap3-datetimepicker/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/pager.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/pager.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/pagination.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/pagination.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/panels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/path.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/path.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/path.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/popovers.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/popovers.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/css/prettify.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/css/prettify.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/prettify.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/prettify.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/print.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/progress-bars.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/progress-bars.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/community/project-milestones.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/pt-br.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/css/pygments.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/css/pygments.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/community/reporting-bugs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/community/requesting-new-icons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/reset.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/respond.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/responsive-1200px-min.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/responsive-1200px-min.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/responsive-767px-max.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/responsive-767px-max.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/responsive-768px-979px.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/responsive-768px-979px.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/responsive-navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/responsive-navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/responsive-utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/responsive-utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/responsive.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/responsive.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tareas/partials/respuesta.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/tests/rotated-flipped-inside-anchor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/tests/rotated-flipped-inside-btn.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/rotated-flipped.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/tests/rotated-flipped.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/rotated-flipped.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/rotated-flipped.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/scaffolding.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/scaffolding.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/responsive/screen-lg.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/responsive/screen-md.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/responsive/screen-sm.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/responsive/screen-xs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tareas/show.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/partials/sidebar.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/css/site.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/site.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/site.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/site.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_plugins/site.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/sl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/social-buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/spinning.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/spinning.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/spinning.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/sprites.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/sq.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/tests/stacked-inside-anchor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/examples/stacked.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/tests/stacked.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/stacked.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/stacked.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/sticky-footer.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/stripe-ad.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/stripe-ad.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/stripe-social.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/community/submitting-pull-requests.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/tables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/tables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/tareas/tareasController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/tareas/tareasFilters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/tareas/tareasServices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/tell-me-thanks.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/test-2.3.2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/text-editor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/textured-bg.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/th.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/thanks-to.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/theme.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/thumbnails.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/thumbnails.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/tl-ph.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/tooltip.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/tooltip.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/type.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/type.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/bootstrap/type.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/tzm-la.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/tzm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/ui-bootstrap-csp.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/ui-bootstrap-tpls.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/ui-bootstrap-tpls.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/ui-bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/angular-bootstrap/ui-bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/uk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/js/underscore.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/js/underscore.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/uz.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/font-awesome/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/font-awesome/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/bootstrap/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/video-player.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/vn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/icons/web-application.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/3.2.1/assets/less/bootstrap-2.3.2/wells.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/bootstrap-3.0.0/wells.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/assets/less/site/bootstrap/wells.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/whats-new.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/font-awesome/src/_includes/why.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/zh-cn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_resources/momentjs/lang/zh-tw.js" />
+      <change type="DELETED" beforePath="F:\codigo\media\public\bower_resources\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="F:\codigo\media\public\bower_resources\bootstrap\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="F:\codigo\media\public\bower_resources\bootstrap\grunt\bs-glyphicons-data-generator.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\codigo\media\public\bower_resources\bootstrap\grunt\configBridge.json" afterPath="" />
+      <change type="DELETED" beforePath="F:\codigo\media\public\bower_resources\bootstrap\package.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/.bower.json" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/jquery/.bower.json" afterPath="$PROJECT_DIR$/public/bower_resources/jquery/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/.jscsrc" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/.jscsrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_31_195841_create_tareas_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_195841_create_tareas_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/Gruntfile.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/LICENSE" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/README.md" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/affix.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/affix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/alert.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/alert.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/alerts.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/alerts.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/badges.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/badges.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap-theme.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/bower.json" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/jquery/bower.json" afterPath="$PROJECT_DIR$/public/bower_resources/jquery/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/grunt/bs-lessdoc-parser.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/grunt/bs-lessdoc-parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/button-groups.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/button-groups.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/button.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/button.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/buttons.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/buttons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/carousel.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/carousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/carousel.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/carousel.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/close.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/close.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/collapse.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/collapse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/component-animations.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/component-animations.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/jquery/src/core.js" afterPath="$PROJECT_DIR$/public/bower_resources/jquery/src/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/assets/css/custom.css" afterPath="$PROJECT_DIR$/public/css/assets/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/assets/js/custom.js" afterPath="$PROJECT_DIR$/public/css/assets/js/custom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/dropdown.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/dropdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/dropdowns.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/dropdowns.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/footerapp.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/footerapp.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/forms.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/forms.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/glyphicons.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/glyphicons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/mixins/grid-framework.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/mixins/grid-framework.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/headerapp.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/headerapp.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/jquery/dist/jquery.js" afterPath="$PROJECT_DIR$/public/bower_resources/jquery/dist/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/jquery/dist/jquery.min.js" afterPath="$PROJECT_DIR$/public/bower_resources/jquery/dist/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/jquery/dist/jquery.min.map" afterPath="$PROJECT_DIR$/public/bower_resources/jquery/dist/jquery.min.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/jumbotron.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/jumbotron.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/list-group.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/list-group.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/media.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/media.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/partials/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/partials/menu.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/instructor/partials/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/instructor/partials/menu.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/modal.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/modal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/modals.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/modals.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/navbar.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/navbar.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/navs.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/navs.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/package.json" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/panels.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/panels.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/popover.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/popover.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/popovers.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/popovers.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/responsive-embed.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/responsive-embed.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/grunt/sauce_browsers.yml" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/grunt/sauce_browsers.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/scaffolding.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/scaffolding.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/scrollspy.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/scrollspy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/tab.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/tables.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/tables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/theme.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/theme.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/tooltip.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/tooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/tooltip.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/tooltip.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/transition.js" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/js/transition.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/type.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/type.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/utilities.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/utilities.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/variables.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/mixins/vendor-prefixes.less" afterPath="$PROJECT_DIR$/public/bower_resources/bootstrap/less/mixins/vendor-prefixes.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="media.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +1034,7 @@
       <file leaf-file-name="MessageController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MessageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-91.8" vertical-offset="0" max-vertical-offset="3995">
+            <state vertical-scroll-proportion="0.0">
               <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
@@ -48,7 +1046,7 @@
       <file leaf-file-name="2015_06_24_150755_create_mensajes_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2015_06_24_150755_create_mensajes_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="867">
+            <state vertical-scroll-proportion="0.0">
               <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
               <folding />
             </state>
@@ -58,7 +1056,7 @@
       <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.87037" vertical-offset="3023" max-vertical-offset="3927">
+            <state vertical-scroll-proportion="0.0">
               <caret line="206" column="15" selection-start-line="206" selection-start-column="15" selection-end-line="206" selection-end-column="15" />
               <folding />
             </state>
@@ -68,8 +1066,8 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.12" vertical-offset="0" max-vertical-offset="1003">
-              <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -78,7 +1076,7 @@
       <file leaf-file-name="CreateEventoRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateEventoRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.36" vertical-offset="17" max-vertical-offset="1241">
+            <state vertical-scroll-proportion="0.0">
               <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
               <folding />
             </state>
@@ -88,7 +1086,7 @@
       <file leaf-file-name="EditEventoRequest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="322" max-vertical-offset="1479">
+            <state vertical-scroll-proportion="0.0">
               <caret line="37" column="40" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="40" />
               <folding />
             </state>
@@ -98,7 +1096,7 @@
       <file leaf-file-name="EventoRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Repositories/EventoRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1819">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#123#138#0#PHP" expanded="true" />
@@ -110,7 +1108,7 @@
       <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1309">
+            <state vertical-scroll-proportion="0.0">
               <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
               <folding />
             </state>
@@ -120,7 +1118,7 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/messages/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.68" vertical-offset="374" max-vertical-offset="1955">
+            <state vertical-scroll-proportion="0.0">
               <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
               <folding />
             </state>
@@ -130,7 +1128,7 @@
       <file leaf-file-name="Mensaje.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Mensaje.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="459">
+            <state vertical-scroll-proportion="0.0">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
@@ -738,16 +1736,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17857143" sideWeight="0.49837837" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20073763" sideWeight="0.5016216" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -765,26 +1764,26 @@
     </layout>
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16791044" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20073763" sideWeight="0.5016216" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16791044" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17857143" sideWeight="0.49837837" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20073763" sideWeight="0.5016216" order="3" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -811,77 +1810,77 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/partials/fieldscontacto.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1323693" vertical-offset="0" max-vertical-offset="899">
+        <state vertical-scroll-proportion="0.1323693">
           <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/fichas/partials/fields.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.2" vertical-offset="0" max-vertical-offset="816">
+        <state vertical-scroll-proportion="-27.2">
           <caret line="40" column="88" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/admin/FichaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.24" vertical-offset="0" max-vertical-offset="2329">
+        <state vertical-scroll-proportion="-29.24">
           <caret line="51" column="50" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/bower_resources/bootstrap-select/js/i18n/defaults-es_CL.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="924">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/reset.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="7446">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Ie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_04_13_171515_create_fichas_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2946128" vertical-offset="63" max-vertical-offset="1037">
+        <state vertical-scroll-proportion="0.2946128">
           <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Ficha.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/users/partials/table.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.4" vertical-offset="844" max-vertical-offset="2142">
+        <state vertical-scroll-proportion="-25.4">
           <caret line="101" column="36" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="36" />
         </state>
       </provider>
@@ -895,193 +1894,189 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="1275">
+        <state vertical-scroll-proportion="-9.52">
           <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateMessageRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.32" vertical-offset="0" max-vertical-offset="646">
+        <state vertical-scroll-proportion="-16.32">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Evento.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.010158" vertical-offset="3553" max-vertical-offset="6902">
+        <state vertical-scroll-proportion="-4.010158">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.28" vertical-offset="500" max-vertical-offset="4420">
+        <state vertical-scroll-proportion="-28.28">
           <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/instructor/partials/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.44" vertical-offset="103" max-vertical-offset="1292">
+        <state vertical-scroll-proportion="-24.44">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="53" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.52" vertical-offset="187" max-vertical-offset="1547">
+        <state vertical-scroll-proportion="-26.52">
           <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/partials/fields.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.88" vertical-offset="0" max-vertical-offset="714">
+        <state vertical-scroll-proportion="-10.88">
           <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.08" vertical-offset="0" max-vertical-offset="1190">
+        <state vertical-scroll-proportion="-21.08">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/partials/mensaje.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.04" vertical-offset="0" max-vertical-offset="578">
+        <state vertical-scroll-proportion="-19.04">
           <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/partials/respuesta.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.92" vertical-offset="0" max-vertical-offset="493">
+        <state vertical-scroll-proportion="-12.92">
           <caret line="19" column="126" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="126" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/users/partials/delete.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0378198" vertical-offset="0" max-vertical-offset="899">
+        <state vertical-scroll-proportion="0.0378198">
           <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/partials/delete.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="153">
+        <state vertical-scroll-proportion="-0.68">
           <caret line="1" column="178" selection-start-line="1" selection-start-column="178" selection-end-line="1" selection-end-column="178" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/calendar/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24943566" vertical-offset="935" max-vertical-offset="3026">
+        <state vertical-scroll-proportion="0.24943566">
           <caret line="68" column="67" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/queue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.0" vertical-offset="0" max-vertical-offset="1666">
+        <state vertical-scroll-proportion="-34.0">
           <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/Inspire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="924">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.32" vertical-offset="170" max-vertical-offset="1955">
+        <state vertical-scroll-proportion="-16.32">
           <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/emails/message.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="916" max-vertical-offset="1887">
+        <state vertical-scroll-proportion="0.0">
           <caret line="86" column="49" selection-start-line="86" selection-start-column="49" selection-end-line="86" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2482" max-vertical-offset="2907">
+        <state vertical-scroll-proportion="0.0">
           <caret line="150" column="22" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/admin/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="4981">
+        <state vertical-scroll-proportion="0.0">
           <caret line="38" column="34" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="1105">
+        <state vertical-scroll-proportion="0.0">
           <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1683">
+        <state vertical-scroll-proportion="0.0">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1717">
+        <state vertical-scroll-proportion="0.0">
           <caret line="69" column="59" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1071">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EventosController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="10268">
+        <state vertical-scroll-proportion="0.0">
           <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <element signature="e#39#56#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07359307" vertical-offset="0" max-vertical-offset="924">
+        <state vertical-scroll-proportion="0.07359307">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="899">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_06_24_150755_create_mensajes_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="867">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
           <folding />
         </state>
@@ -1089,7 +2084,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Mensaje.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="459">
+        <state vertical-scroll-proportion="0.0">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
@@ -1097,28 +2092,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/users/muro.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="26.12" vertical-offset="1622" max-vertical-offset="2533">
+        <state vertical-scroll-proportion="26.12">
           <caret line="57" column="41" selection-start-line="16" selection-start-column="0" selection-end-line="57" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/assets/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2618" max-vertical-offset="3791">
+        <state vertical-scroll-proportion="0.0">
           <caret line="163" column="2" selection-start-line="163" selection-start-column="0" selection-end-line="199" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/instructor/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73137695" vertical-offset="1630" max-vertical-offset="2516">
+        <state vertical-scroll-proportion="0.73137695">
           <caret line="134" column="52" selection-start-line="134" selection-start-column="52" selection-end-line="134" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1309">
+        <state vertical-scroll-proportion="0.0">
           <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
           <folding />
         </state>
@@ -1126,7 +2121,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.68" vertical-offset="374" max-vertical-offset="1955">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
           <folding />
         </state>
@@ -1134,15 +2129,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/tareas/modalLista.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.12" vertical-offset="0" max-vertical-offset="1003">
+        <state vertical-scroll-proportion="-23.12">
           <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MessageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-91.8" vertical-offset="0" max-vertical-offset="3995">
+        <state vertical-scroll-proportion="0.0">
           <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
@@ -1152,7 +2146,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/EventoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1768">
+        <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#123#138#0#PHP" expanded="true" />
@@ -1162,7 +2156,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateEventoRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.36" vertical-offset="17" max-vertical-offset="1241">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding />
         </state>
@@ -1170,7 +2164,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.87037" vertical-offset="3023" max-vertical-offset="3927">
+        <state vertical-scroll-proportion="0.0">
           <caret line="206" column="15" selection-start-line="206" selection-start-column="15" selection-end-line="206" selection-end-column="15" />
           <folding />
         </state>
@@ -1178,7 +2172,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditEventoRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="322" max-vertical-offset="1479">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="40" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="40" />
           <folding />
         </state>
