@@ -1,21 +1,26 @@
 <table class="table table-striped">
-    <caption>Total registros : {{$totalactividades}} </caption>
+    <caption>Total registros : {{$ciclos->total()}} </caption>
     <thead>
     <tr>
         <th>#</th>
-        <th>Orden</th>
-        <th>Nombre</th>
-        <th>Responsables</th>
+        <th>Ciclo</th>
+        <th>Descripción</th>
+        <th>Ambito</th>
+        <th>Fecha inicio</th>
+        <th>Fecha final</th>
 
     </tr>
     </thead>
     <tbody>
-    @foreach($actividades as $actividad)
-        <tr data-id="{{$actividad->id}}">
-            <th scope="row">{{$actividad->id}}</th>
-            <td>{!!$actividad->orden !!}</td>
-            <td>{!!$actividad->nombre !!}</td>
-            <td>{!!$actividad->responsable !!}</td>
+    @foreach($ciclos as $ciclo)
+        <tr data-id="{{$ciclo->id}}">
+            <th scope="row">{{$ciclo->id}}</th>
+            <td>{!!$ciclo->nombre !!}</td>
+            <td>{!!$ciclo->descripcion !!}</td>
+            <td>{!!$ciclo->ambito->nombre !!}</td>
+            <td>{!!$ciclo->fecha_ini !!}</td>
+            <td>{!!$ciclo->fecha_fin !!}</td>
+
             <td>
                 <div class="panel-group">
                     <div class="dropdown pull-right">
@@ -24,9 +29,8 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.actividades.edit', $actividad) }}"><i class="glyphicon glyphicon-edit"> Editar</i></a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.actividades.show', $actividad) }}"><i class="fa fa-info"> Detalles</i></a></li>
-                            <li role="presentation"><a href="{{ URL::route('files.create','prefijo=AC&codigo='.$actividad->id) }}" class="btn btn-success btn-sm">Agregar archivo</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.ciclos.edit', $ciclo) }}"><i class="fa fa-edit"> Editar</i></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-2" href="{{ route('admin.ciclos.show', $ciclo) }}"><i class="fa fa-info"> Detalles</i></a></li>
                             {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividades?userId=') }}">Documentos</a></li>--}}
                         </ul>
                     </div>

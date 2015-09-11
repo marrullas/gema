@@ -91,7 +91,7 @@ Route::resource('api/files','FilesController');
 Route::get('api/uploadfile','FilesController@upload');
 Route::post('api/uploadfile','FilesController@upload');
 Route::get('api/filesxtarea/{id}','FilesController@filesxtarea');
-
+Route::resource('files','FilesController');
 
 Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' => 'admin'],   function() {
 
@@ -131,13 +131,19 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
 
     Route::resource('procedimientos','ProcedimientoController');
     Route::resource('actividades','ActividadController');
+    Route::resource('ciclos','CicloController');
 
 
 
 });
 
 Route::get('download', function() {
-    return Response::download(Input::get('path'));
+
+    $file = \App\Files::findOrfail(Input::get('file'));
+    $headers = array(
+        "Content-Type:$file->mime",
+    );
+    return Response::download($file->storage_path,$file->filename,$headers);
 });
 Route::resource('users','UserController');
 

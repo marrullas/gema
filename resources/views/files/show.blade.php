@@ -87,7 +87,6 @@
                 </div>
                 <div class="panel-footer">
                     <a href="{{ URL::to('admin/procedimientos',$actividad->procedimiento) }}" class="btn btn-primary btn-sm">Volver</a>
-                    <a href="{{ URL::route('files.create','prefijo=AC&codigo='.$actividad->id) }}" class="btn btn-success btn-sm">Agregar archivo</a>
                         <span class="pull-right">
                             <a class="btn btn-sm btn-warning" href="{{ route('admin.actividades.edit', $actividad) }}"><i class="glyphicon glyphicon-edit"></i></a>
                         </span>
@@ -96,23 +95,6 @@
             </div>
         </div>
     </div>
-    <div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Archivos relacionados</h3>
-    </div>
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1 toppad" >
-            @if(Session::has('message'))
-                <div class="alert alert-warning alert-dismissible fade in" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <strong>{{ Session::get('message') }}</strong>
-                </div>
-
-            @endif
-            @include('files.partials.table')
-        </div>
-    </div><!--row!-->
-        </div>
 </div>
 @endsection
 @section('scripts')

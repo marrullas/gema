@@ -45,7 +45,7 @@
                         <a href="{{ url('/admin/procedimientos/') }}">Procedimeintos</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/actividades/') }}">Actividades</a>
+                        <a href="{{ url('/admin/ciclos/') }}">Ciclos</a>
                     </li>
                 </ul>
             </li>

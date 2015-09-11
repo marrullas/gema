@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Files;
+use App\Tipodocumento;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class FilesController extends Controller
@@ -103,9 +105,16 @@ class FilesController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+
+        $data = $request->all();
+        //dd($data);
+        $prefijo = $data['prefijo'];
+        $codigo = $data['codigo'];
+        $tipodocumentos = Tipodocumento::lists('nombre','id');
+        return view('files.create',compact('prefijo','codigo','tipodocumentos'));
     }
 
     /**
@@ -117,6 +126,53 @@ class FilesController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($this->request->all());
+        $data = $this->request->all();
+
+        // checking file is valid.
+        if (Input::file('file')->isValid()) {
+            /*
+             * Si el archivo es valido entonces creamos el registro en la DB
+             * */
+            $extension = Input::file('file')->getClientOriginalExtension(); // getting image extension
+            $fileName = rand(11111,99999).'.'.$extension; // renameing image
+            $file = new Files();
+            //$file->tarea_id = $data['tarea_id'];
+            $file->prefijo = $data['prefijo'];
+            $file->codigo = $data['codigo'];
+            $file->filename = Input::file('file')->getClientOriginalName();
+            $file->mime = Input::file('file')->getMimeType();
+            $file->size = Input::file('file')->getSize();
+            $file->storage_path = 'uploads/'.$data['prefijo'].'/'.$data['codigo'].'/'.$fileName;
+            $file->status = true;
+            $file->user_id = Auth::user()->id;
+            $file->descripcion =  $data['descripcion'];
+            $file->tipodocumento_id = $data['tipodocumento_id'];
+            $file->save();
+            $destinationPath = 'uploads/'.$data['prefijo'].'/'.$data['codigo']; // upload path
+            Input::file('file')->move($destinationPath,$fileName); // uploading file to given path
+            Session::flash('message','Archivo agregado');
+            // sending back with message
+            //Session::flash('success', 'Upload successfully');
+            //return Redirect::to('upload');
+            //$filelink = array('path'=>$destinationPath.'/'.$fileName);
+            //return $filelink;
+            switch($data['prefijo'])
+            {
+                case 'AC':
+                    return redirect()->route('admin.actividades.show',$data['codigo']);
+            }
+
+
+        }
+        else {
+            // sending back with error message.
+            //Session::flash('error', 'uploaded file is not valid');
+            //return Redirect::to('upload');
+            $respuesta['file'] = null;
+            $respuesta['mensaje'] = "No fue posible eliminar el archivo";
+            return $respuesta;
+        }
     }
 
     /**
@@ -162,9 +218,12 @@ class FilesController extends Controller
     public function destroy($id)
     {
         //
-        $userID = Auth::user()->id;
+        //$userID = Auth::user()->id;
+
+        $data = $this->request->all();
+        //dd($data);
         $file = Files::where('id','=',$id)
-            ->where('user_id','=',$userID)
+            //->where('user_id','=',$userID)
             ->first();
         if(File::exists($file->storage_path))
         {
@@ -174,10 +233,23 @@ class FilesController extends Controller
             $file->delete();
             $respuesta['file'] = $file;
             $respuesta['mensaje'] = "Archivo eliminado";
+            Session::flash('message','Archivo Eliminado');
         }
         else{
             $respuesta['file'] = null;
             $respuesta['mensaje'] = "No fue posible eliminar el archivo";
+        }
+
+        if ($this->request->ajax()) {
+            return $respuesta;
+        }
+        else{
+            switch ($data['desde']){
+                case 'actividad':
+
+                    return redirect()->route('admin.actividades.show',$data['actividad']);
+                break;
+            }
         }
     }
 

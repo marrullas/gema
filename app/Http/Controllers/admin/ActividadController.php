@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Actividad;
+use App\Files;
 use App\Procedimiento;
 use Illuminate\Http\Request;
 
@@ -108,11 +109,14 @@ class ActividadController extends Controller
     public function show($id)
     {
         //
+        $files = Files::where('codigo','=',$id)
+            ->where('prefijo','=','AC')
+            ->get();
         $actividad = Actividad::with('procedimiento')
             ->where('id','=',$id)
             //->where('user_id','=',Auth::user()->id)
             ->first();
-        return view('admin.actividades.show',compact('actividad'));
+        return view('admin.actividades.show',compact('actividad','files'));
     }
 
     /**
@@ -128,11 +132,11 @@ class ActividadController extends Controller
         $actividad = Actividad::findOrfail($id);
         $procedimientoid = $actividad->procedimiento_id;
         $procedimiento = Procedimiento::findOrfail($procedimientoid);
-        $actividades = Actividad::from(DB::raw("(select * from actividades where procedimiento_id = '$procedimientoid' order by id desc limit 3) as T"))
+/*        $actividades = Actividad::from(DB::raw("(select * from actividades where procedimiento_id = '$procedimientoid' order by id desc limit 3) as T"))
             //->whereIn('orden',[$actividad->orden - 1, $actividad->orden, $actividad->orden + 1])
             ->orderBy('id','asc')
             ->take(3)
-            ->get();
+            ->get();*/
         $actividades = Actividad::where('procedimiento_id','=',$procedimientoid)
             ->whereIn('orden',[$actividad->orden - 1, $actividad->orden, $actividad->orden + 1])
             ->orderBy('orden','asc')

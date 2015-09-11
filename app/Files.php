@@ -10,19 +10,31 @@ class Files extends Model
 
     protected $fillable = [
         'id',
-        'tarea_id',
+        //'tarea_id',
         'mime', //tipo de archivo que se sube
         'filename',
         'size',
         'storage_path',
         'status',
-        'descripcion'
+        'descripcion',
+        'prefijo',
+        'codigo',
+        'user_id',
+        'tipodocumento_id'
+
     ];
-    public function tarea()
+/*    public function tarea()
     {
         return $this->belongsTo('\App\Tarea');
+    }*/
+    public function user()
+    {
+        return $this->belongsTo('\App\User');
     }
-
+    public function tipodocumento()
+    {
+        return $this->belongsTo('\App\Tipodocumento','tipodocumento_id','id');
+    }
     /**
      * Funcion para eliminar los archivos que pertenecen a una tarea
      * @param $tarea

@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder {
         $this->call('AreaprogramasTableSeeder');*/
         //$this->call('EmpresasTableSeeder');
         //$this->call('TipodocumentoTableSeeder');
-        $this->call('AreasprogramasTableSeeder');
+        //$this->call('AreasprogramasTableSeeder');
+        $this->call('AmbitosTableSeeder');
 		//$this->call('ListasTableSeeder');
 	}
 
