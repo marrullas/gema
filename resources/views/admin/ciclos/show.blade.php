@@ -40,6 +40,10 @@
                                     <td>Ambito:</td>
                                     <td>{{$ciclo->ambito->nombre}}</td>
                                 </tr>
+                                <tr>
+                                    <td>Procedimiento:</td>
+                                    <td>{{$ciclo->procedimiento->nombre}}</td>
+                                </tr>
 
                                 <tr>
                                 <tr>

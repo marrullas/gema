@@ -8,7 +8,7 @@ class Ciclo extends Model
 {
     //
     protected $table = 'ciclos';
-    protected $fillable = ['id','nombre','descripcion','ambito_id','fecha_ini','fecha_fin','activo'];
+    protected $fillable = ['id','nombre','descripcion','ambito_id','procedimiento_id','fecha_ini','fecha_fin','activo'];
 
     public static function filtroPaginación($nombre)
     {
@@ -27,7 +27,18 @@ class Ciclo extends Model
     {
         return $this->belongsTo('\App\Ambito');
     }
-
+    public function procedimiento()
+    {
+        return $this->belongsTo('\App\Procedimiento');
+    }
+    public function actividades()
+    {
+        return $this->belongsTo('\App\Actividad','procedimiento_id','procedimiento_id');
+    }
+    public function ambitoxciclo()
+    {
+        return $this->hasMany('\App\Ambitosxciclo','ciclo_id','id');
+    }
     public function setFechaIniAttribute($value)
     {
 

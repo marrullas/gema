@@ -52,11 +52,12 @@ class TareaController extends Controller
 /*        $tareas = TareaxUsuario::join('tareas', 'tareas.id', '=', 'tarea_id')
             ->where('tareasxusuario.responsable', '=', $userID)
             ->where('activo', '=', true)
-            ->get();*/
+            ->get();
         $tareas = Tarea::where('responsable','=',$userID)
             ->where('activo','=',true)
 
             ->get();
+*/
 
         return view('tareas.index2');
     }

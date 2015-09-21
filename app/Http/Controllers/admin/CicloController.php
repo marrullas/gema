@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\admin;
 
 
+use App\Ambito;
+use App\Ambitosxciclo;
 use App\Ciclo;
+use App\Entrega;
+use App\Procedimiento;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
@@ -51,11 +56,12 @@ class CicloController extends Controller
     {
         //
         $ambitos = \App\Ambito::lists('nombre','id');
+        $procedimientos = \App\Procedimiento::lists('nombre','id');
         $ciclo = (object) ['fecha_ini' => \Carbon\Carbon::now(),'activo'=>1]; //se inicializan valores por defecto
         //$ciclo = (object) ['fecha_fin' => \Carbon\Carbon::now()];
         $activo = $this->request->get('activo');
-        //dd($ciclo);
-        return view('admin.ciclos.create',compact('ciclo','ambitos','activo'));
+        //dd($ambitos);
+        return view('admin.ciclos.create',compact('ciclo','ambitos','activo','procedimientos'));
     }
 
     /**
@@ -79,6 +85,16 @@ class CicloController extends Controller
         //$ciclo->user_id = $userID;
 
         $ciclo->save();
+        //se crean las entregas para el ciclo
+        $actividades = $ciclo->actividades()->get();
+        foreach($actividades as $actividad)
+        {
+            $entrega = new Entrega();
+            $entrega->actividad_id = $actividad->id;
+            $entrega->ciclo_id = $ciclo->id;
+            $entrega->save();
+        }
+
         return redirect()->route('admin.ciclos.index');
     }
 
@@ -109,10 +125,11 @@ class CicloController extends Controller
         //
         $ciclo = Ciclo::findOrfail($id);
         $ambitos = \App\Ambito::lists('nombre','id');
+        $procedimientos = \App\Procedimiento::lists('nombre','id');
         $activo = $this->request->get('activo');
         //dd($ciclo);
 
-        return view('admin.ciclos.edit',compact('ciclo','ambitos','activo'));
+        return view('admin.ciclos.edit',compact('ciclo','ambitos','activo','procedimientos'));
     }
 
     /**
@@ -129,7 +146,7 @@ class CicloController extends Controller
         $activo = $this->request->get('activo');
         if(empty($activo))
             $ciclo->activo = false;
-        dd($request->all());
+        //dd($request->all());
         $ciclo->save();
 
         return redirect()->action('admin\CicloController@show',compact('id'));
@@ -159,4 +176,106 @@ class CicloController extends Controller
         Session::flash('message',$message);
         return redirect()->route('admin.ciclos.index');
     }
+    public function activar($id)
+    {
+        //
+        $ciclo = Ciclo::findOrfail($id);
+        $ambitos = \App\Ambito::lists('nombre','id');
+        $procedimientos = \App\Procedimiento::lists('nombre','id');
+        $ambitosxcicloactivo = \App\Ambitosxciclo::where('ciclo_id','=',$ciclo->id)
+            ->where('activo','=',true)
+            ->lists('entidad_id');
+        $ambitosxcicloinactivo = \App\Ambitosxciclo::where('ciclo_id','=',$ciclo->id)
+            ->OrWhere('activo','=',false)
+            ->lists('entidad_id');
+        $tabla = $ciclo->ambito->nombre_tabla;
+        $camponombre = $ciclo->ambito->campo_nombre;
+        $idtabla = $ciclo->ambito->campo_id;
+        $iduser = $ciclo->ambito->campo_user;
+
+
+        //dd($ambitosxcicloinactivo);
+/*        $datos = DB::table('fichas')
+            ->whereNotIn('id',$ambitosxciclo)
+            ->lists('full_name','fichas.id');
+        $datos2 = DB::table('fichas')
+            ->whereIn('id',$ambitosxciclo)
+            ->lists('full_name','fichas.id');   */
+        $datos = DB::table($tabla)
+            ->whereNotIn($idtabla,$ambitosxcicloactivo)
+            ->OrWhereIn($idtabla,$ambitosxcicloinactivo)
+            ->lists($camponombre,$idtabla);
+        $datos2 = DB::table($tabla)
+            ->whereIn($idtabla,$ambitosxcicloactivo)
+            ->lists($camponombre,$idtabla);
+
+/*        $datos = DB::table('fichas')
+            ->join('ambitosxciclo', function($join) use($ciclo){
+                $join->on('fichas.id','=','ambitosxciclo.entidad_id')
+                    ->where('ambitosxciclo.ciclo_id','=',$ciclo->id);
+            })
+            ->get();*/
+        //dd($datos);
+            //->lists('full_name','fichas.id');
+
+/*        $datos = DB::table($ciclo->ambito->tabla)
+            ->where
+            ->join('ambitosxciclo',$ciclo->ambito->tabla_nombre.'.'.$ciclo->ambito->tabla_id)
+            ->lists($ciclo->ambito->tabla_nombre,$ciclo->ambito->tabla_id);*/
+
+
+        return view('admin.ciclos.activarciclo',compact('ciclo','ambitos','procedimientos','datos','datos2'));
+    }
+    public function storeambitoxciclo(Request $request)
+    {
+        //
+        //$userID = Auth::user()->id;
+        $data = $request->all();
+        //dd($data);
+        $ambito = Ambito::find($data['ambito_id']);
+        $tablaentidad = $ambito->nombre_tabla;
+        $campouser = $ambito->campo_user;
+        $campoid = $ambito->campo_id;
+        if(!empty($data['entidades']))
+        {
+            //dd($data['entidades']);
+
+            foreach($data['entidades'] as $entidad){
+                $ambitoxciclo = Ambitosxciclo::where('entidad_id','=',$entidad)->first();
+                $userEntidad = DB::table($tablaentidad)->where($campoid,'=',$entidad)->select($campouser)->first();
+                //dd($ambitoxciclo);
+                if(empty($ambitoxciclo)) {
+                    //dd($entidad->user_id);
+                    $ambitoxciclo = new Ambitosxciclo();
+                    $ambitoxciclo->ciclo_id = $data['ciclo_id'];
+                    $ambitoxciclo->ambito_id = $data['ambito_id'];
+                    $ambitoxciclo->entidad_id = $entidad;
+                    $ambitoxciclo->activo = true;
+                    $ambitoxciclo->user_id = $userEntidad->user_id;
+                    $ambitoxciclo->save();
+                }else{
+                    $ambitoxciclo->activo = true;
+                    $ambitoxciclo->save();
+                }
+                $ambitoxciclo = null;
+            }
+        }
+        if(!empty($data['inactivos']))
+        {
+            //dd($data['entidades']);
+            //buscamos si existe registrada alguna entidad para desabilitarla
+            foreach($data['inactivos'] as $entidad){
+                $ambitoxciclo = Ambitosxciclo::where('entidad_id','=',$entidad)->first();
+                if(!empty($ambitoxciclo)) {
+                    $userEntidad = DB::table($tablaentidad)->where($campoid,'=',$entidad)->select($campouser)->first();
+                    $ambitoxciclo->activo = false;
+                    $ambitoxciclo->user_id = $userEntidad->user_id;
+                    $ambitoxciclo->save();
+                }
+            }
+        }
+
+        return redirect()->route('admin.ciclos.activar',$data['ciclo_id']);
+    }
+
 }

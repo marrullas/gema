@@ -20,7 +20,7 @@ class AlterFilesTable extends Migration
             $table->increments('id');
             /**
              * sirve para identificar a que seccion pertenece el archivo
-             * TR = Tarea, PR = Procedimiento, AC = Actividad
+             * TR = Tarea, PR = Procedimiento, AC = Actividad EN = Entrega
              */
             $table->string('prefijo');
             $table->integer('codigo'); //almacena la llave seccion a la que pertenece

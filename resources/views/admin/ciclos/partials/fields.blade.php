@@ -11,6 +11,10 @@
     {!! Form::select('ambito_id', $ambitos, null, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
 </div>
 <div class="form-group">
+    {!! Form::label('procedimiento_id', 'Procedimiento') !!}
+    {!! Form::select('procedimiento_id', $procedimientos, null, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
+</div>
+<div class="form-group">
     {!! Form::label('fecha_ini', 'Fecha inicial') !!}
     <div class="input-group date" id="datetimepicker1">
         {!! Form::text('fecha_ini', null, ['class' => 'form-control']) !!}

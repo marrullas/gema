@@ -31,7 +31,7 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.ciclos.edit', $ciclo) }}"><i class="fa fa-edit"> Editar</i></a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-2" href="{{ route('admin.ciclos.show', $ciclo) }}"><i class="fa fa-info"> Detalles</i></a></li>
-                            {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividades?userId=') }}">Documentos</a></li>--}}
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/admin/ciclos/activar/'.$ciclo->id) }}">Activar ciclo</a></li>
                         </ul>
                     </div>
                 </div>

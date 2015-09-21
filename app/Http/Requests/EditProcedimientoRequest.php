@@ -25,7 +25,7 @@ class EditProcedimientoRequest extends Request
     {
         return [
             //
-            'nombre'    =>'required|unique',
+            'nombre'    =>'required|unique:procedimientos,nombre',
         ];
     }
     public function messages()

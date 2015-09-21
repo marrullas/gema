@@ -48,6 +48,19 @@
     {!! Form::text('mapa', null, [ 'class' => 'form-control', 'disabled','placeholder' => 'Ingrese coordenadas google Maps' ] ) !!}
 </div>
 <div class="form-group">
+    {!! Form::label('usuario', 'Usuario') !!}
+    {!! Form::select('user_id', $usuarios, null, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
+</div>
+<div class="form-group">
     {!! Form::label('detalles', 'Detalles / Observaciones') !!}
     {!! Form::textarea('detalles', null,['class'=>'form-control textarea'])!!}
 </div>
+@section('scripts')
+    {!! HTML::script('/bower_resources/bootstrap-select/js/bootstrap-select.js') !!}
+    {!! HTML::script('/bower_resources/bootstrap-select/js/i18n/defaults-es_CL.js') !!}
+    {!!Html::style('/bower_resources/bootstrap-select/css/bootstrap-select.min.css')!!}
+
+    <script type="application/javascript">
+        $('.selectpicker').selectpicker();
+    </script>
+@endsection

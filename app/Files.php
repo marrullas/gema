@@ -35,6 +35,11 @@ class Files extends Model
     {
         return $this->belongsTo('\App\Tipodocumento','tipodocumento_id','id');
     }
+    //filtro para seleccionar los archivos que pertenecen a una actividad
+    public function scopeFilesactividad($query)
+    {
+        return $query->where('prefijo','=','AC');
+    }
     /**
      * Funcion para eliminar los archivos que pertenecen a una tarea
      * @param $tarea

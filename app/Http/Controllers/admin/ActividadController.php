@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Actividad;
+use App\Ciclo;
+use App\Entrega;
 use App\Files;
 use App\Procedimiento;
 use Illuminate\Http\Request;
@@ -96,6 +98,19 @@ class ActividadController extends Controller
             $actividad->actividad_siguiente = $this->request->get('orden')+1;
 
         $actividad->save();
+
+        //agregar entregas que tenga el codigo de procedimiento
+        $procedimiento = $actividad->procedimiento()->first();
+        $ciclo = Ciclo::where('procedimiento_id','=',$procedimiento->id)->first();
+        //dd($ciclo);
+        if(!empty($ciclo))
+        {
+            $entrega = new Entrega();
+            $entrega->actividad_id = $actividad->id;
+            $entrega->ciclo_id = $ciclo->id;
+            $entrega->save();
+        }
+
         //return redirect()->route('admin.actividades.index');
         return redirect()->route('admin.procedimientos.show',$actividad->procedimiento_id);
     }

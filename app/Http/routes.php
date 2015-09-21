@@ -66,11 +66,22 @@ Route::post('api/terminar/{id}','TareaController@terminar');
 Route::get('api/tareasxlista/{id}','TareaController@tareasxlista');
 Route::get('api/numerotareaxestado/{id}','TareaController@numerotareaxestado');
 
-
+//listas
 Route::resource('api/listas','ListasController');
 Route::resource('listas','ListasController');
 Route::get('api/listastareas','ListasController@lista');
 
+
+//SIGA
+Route::resource('siga','SigaController');
+Route::get('api/siga/lista','SigaController@lista');
+Route::get('api/siga/actividades/{id}','SigaController@actividades');
+
+//procedimientos
+Route::get('api/procedimientos/lista','ProcedimientoController@lista');
+Route::resource('api/procedimientos','ProcedimientoController');
+
+//Route::resource('api/listaprocedimiento','ProcedimientoController');
 
 //Route::resource('calendar','Even')
 Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
@@ -88,6 +99,7 @@ Route::controllers([
 
 //manejo de archivos
 Route::resource('api/files','FilesController');
+Route::get('api/filesentrega/{id}/{en}','FilesController@filesentrega');
 Route::get('api/uploadfile','FilesController@upload');
 Route::post('api/uploadfile','FilesController@upload');
 Route::get('api/filesxtarea/{id}','FilesController@filesxtarea');
@@ -132,6 +144,14 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     Route::resource('procedimientos','ProcedimientoController');
     Route::resource('actividades','ActividadController');
     Route::resource('ciclos','CicloController');
+    Route::get('ciclos/activar/{id}',[
+        'as' => 'admin.ciclos.activar', 'uses' => 'CicloController@activar'
+    ]);
+    Route::post('ciclos/storeambitoxciclo/',[
+        'as' => 'admin.ciclos.storeambitoxciclo', 'uses' => 'CicloController@storeambitoxciclo'
+    ]);
+
+
 
 
 

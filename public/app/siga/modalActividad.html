@@ -1,0 +1,64 @@
+
+<!-- Modal -->
+<div class="modal fade" id="myModalActividad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Actividad</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-user-information">
+                    <tbody>
+                    <tr>
+                        <td>Procedimiento:</td>
+                        <td><% selectedTarea.procedimiento.nombre %></td>
+                    </tr>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td><% selectedTarea.nombre  %></td>
+                    </tr>
+                    <tr>
+                        <td>Archivos</td>
+                        <td>
+                            <div class="form-group" >
+                                <ul class="list-group">
+                                    <li ng-repeat="file in selectedTarea.files" class="list-group-item">
+                                        <a target="_self" href="<% file.storage_path %>" download="<% file.filename %>">
+                                            <% file.filename %></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#collapseActividad" aria-expanded="false" aria-controls="collapseExample">
+                    Mas...
+                </a>
+                <div class="collapse" id="collapseActividad">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>Descripción:</td>
+                            <td><% selectedTarea.descripcion | htmlToPlaintext %> </td>
+                        </tr>
+
+                        <tr>
+                        <tr>
+                            <td>Resposable:</td>
+                            <td><% selectedTarea.responsable | htmlToPlaintext %></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+            </div> <!--fin modalbody -->
+
+
+            <div class="modal-footer">
+                <!--<button class="btn btn-primary btn-md"  ng-click="addLista(lista)" data-dismiss="modal">Agregar</button>-->
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div> <!-- Fin moda -->

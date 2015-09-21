@@ -8,7 +8,7 @@ class Ie extends Model {
     protected $table = 'ies';
 
     protected $fillable = ['nombre','nit','tipo','modalidad','email','ciudad_id','direccion','telefono','nombre_rector',
-                            'email_rector','tel_rector','detalles'];
+                            'email_rector','tel_rector','detalles','user_id'];
 
     public function fichas()
     {

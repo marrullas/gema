@@ -7,7 +7,8 @@ class CreateCiclosTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * son las interaciones operativas donde se aplicar procedimientos sobre ambitos
+     * esta tabla determina que se opera y por consiguiente que se controla
      * @return void
      */
     public function up()
@@ -17,6 +18,7 @@ class CreateCiclosTable extends Migration
             $table->string('nombre');
             $table->text('descripcion');
             $table->integer('ambito_id')->unsigned();
+            $table->integer('procedimiento_id')->unsigned();
             $table->date('fecha_ini');
             $table->date('fecha_fin')->nullable();
             $table->boolean('activo')->default(true);
@@ -24,6 +26,10 @@ class CreateCiclosTable extends Migration
             $table->foreign('ambito_id')
                 ->references('id')
                 ->on('ambitos')
+                ->onDelete('cascade');
+            $table->foreign('procedimiento_id')
+                ->references('id')
+                ->on('procedimientos')
                 ->onDelete('cascade');
         });
     }

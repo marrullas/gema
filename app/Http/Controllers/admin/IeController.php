@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Ie;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -42,9 +43,9 @@ class IeController extends Controller {
 	{
 		//
         $ciudades = Ciudad::lists('full_name','codigo');
+        $usuarios = User::lists('full_name','id');
 
-
-        return view('admin.ies.create',compact('ciudades'));
+        return view('admin.ies.create',compact('ciudades','usuarios'));
 	}
 
     /**
@@ -84,7 +85,8 @@ class IeController extends Controller {
 		//
         $ciudades = Ciudad::lists('full_name','codigo');
         $ie = Ie::findOrFail($id);
-        return view('admin.ies.edit',compact('ie','ciudades'));
+        $usuarios = User::lists('full_name','id');
+        return view('admin.ies.edit',compact('ie','ciudades','usuarios'));
 	}
 
 	/**

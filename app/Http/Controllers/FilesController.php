@@ -56,17 +56,21 @@ class FilesController extends Controller
                 $extension = Input::file('file')->getClientOriginalExtension(); // getting image extension
                 $fileName = rand(11111,99999).'.'.$extension; // renameing image
                 $file = new Files();
-                $file->tarea_id = $data['tarea_id'];
+                //$file->tarea_id = $data['tarea_id'];
+                $file->prefijo = $data['prefijo'];
+                $file->codigo = $data['codigo'];
                 $file->filename = Input::file('file')->getClientOriginalName();
                 $file->mime = Input::file('file')->getMimeType();
                 $file->size = Input::file('file')->getSize();
-                $file->storage_path = 'uploads/'.$data['tarea_id'].'/'.$fileName;
+                //$file->storage_path = 'uploads/'.$data['tarea_id'].'/'.$fileName;
+                $file->storage_path = 'uploads/'.$data['prefijo'].'/'.$data['codigo'].'/'.$fileName;
                 $file->status = true;
                 $file->user_id = Auth::user()->id;
                 $file->descripcion =  $data['descripcion'];
-                $file->tipo = $data['tipo'];
+                $file->tipodocumento_id = $data['tipodocumento_id'];
                 $file->save();
-                $destinationPath = 'uploads/'.$data['tarea_id']; // upload path
+                //$destinationPath = 'uploads/'.$data['tarea_id']; // upload path
+                $destinationPath = 'uploads/'.$data['prefijo'].'/'.$data['codigo']; // upload path
                 Input::file('file')->move($destinationPath,$fileName); // uploading file to given path
                 // sending back with message
                 //Session::flash('success', 'Upload successfully');
@@ -74,7 +78,7 @@ class FilesController extends Controller
                 //$filelink = array('path'=>$destinationPath.'/'.$fileName);
                 //return $filelink;
                 $respuesta['file'] = $file;
-                $respuesta['mensaje'] = "Archivo eliminado";
+                $respuesta['mensaje'] = "Archivo subido";
                 return $respuesta;
             }
             else {
@@ -82,7 +86,7 @@ class FilesController extends Controller
                 //Session::flash('error', 'uploaded file is not valid');
                 //return Redirect::to('upload');
                 $respuesta['file'] = null;
-                $respuesta['mensaje'] = "No fue posible eliminar el archivo";
+                $respuesta['mensaje'] = "No fue posible subir el archivo";
                 return $respuesta;
             }
         //}
@@ -97,7 +101,24 @@ class FilesController extends Controller
     public function index()
     {
         //
+        //$data = $this->request->all();
+        //dd($id);
         return Files::all();
+    }
+
+    /**
+     * devuelve los archivos que pertenecen a una entrega
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function filesentrega($id,$prefijo)
+    {
+        //
+        // $data = $this->request->all();
+        //dd($prefijo);
+        return Files::where('codigo','=',(integer)$id)
+            ->where('prefijo','=',$prefijo)
+            ->get();
     }
 
     /**
@@ -170,7 +191,7 @@ class FilesController extends Controller
             //Session::flash('error', 'uploaded file is not valid');
             //return Redirect::to('upload');
             $respuesta['file'] = null;
-            $respuesta['mensaje'] = "No fue posible eliminar el archivo";
+            $respuesta['mensaje'] = "No fue posible subir el archivo";
             return $respuesta;
         }
     }
@@ -217,7 +238,7 @@ class FilesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //validar que el archivo pertenezca al usuario o sea un ADMIN
         //$userID = Auth::user()->id;
 
         $data = $this->request->all();

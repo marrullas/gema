@@ -14,20 +14,26 @@ class AreasprogramasTableSeeder extends Seeder
         //
         \DB::table('areasprogramas')->insert(array(
 
-            'nombre'=>'Formaci髇 titulada',
-            'descripcion'=>'Formaci髇 en centros SENA',
+            'nombre'=>'GENERAL',
+            'descripcion'=>'Usuarios sin area definida',
             //'empresa_id'=> 1,
         ));
         \DB::table('areasprogramas')->insert(array(
 
-            'nombre'=>'Integraci髇 con la media t閏nica',
-            'descripcion'=>'Formaci髇 t閏nica en las I.E publicas y privadas articualadas con el SENA',
+            'nombre'=>'Formaci贸n titulada',
+            'descripcion'=>'Formaci贸n en centros SENA',
+            //'empresa_id'=> 1,
+        ));
+        \DB::table('areasprogramas')->insert(array(
+
+            'nombre'=>'Integraci贸n con la media t茅cnica',
+            'descripcion'=>'Formaci贸n t茅cnica en las I.E publicas y privadas articualadas con el SENA',
             //'empresa_id'=> 1,
         ));
         \DB::table('areasprogramas')->insert(array(
 
             'nombre'=>'Jovenes rurales',
-            'descripcion'=>'Formaci髇 formaci髇 para el trabajo con el SENA',
+            'descripcion'=>'Formaci贸n formaci贸n para el trabajo con el SENA',
             //'empresa_id'=> 1,
         ));
     }

@@ -1,0 +1,81 @@
+<!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->
+
+<div class="col-md-3 col-sm-6 col-xs-6">
+    <!--COMPLETED ACTIONS DONUTS CHART-->
+
+    <accordion close-others="false">
+        <accordion-group heading="Detalles" is-open="true">
+            <accordion-heading>Detalles de la actividad
+                <span class="glyphicon glyphicon-folder-close"></span>
+            </accordion-heading>
+            <h3 ng-cloak><% selectedTarea.actividad.nombre %></h3>
+    <!-- formulario -->
+
+
+        <div class="form-group">
+            <label for="nombre">Fecha entrega</label>
+            <h3><% selectedTarea.fecha | dateFormat%></h3>
+<!--            <div class="input-group date" id="datetimepicker2">
+                <ng-bs3-datepicker id="date2" data-ng-model="selectedTarea.entrega" datetime="dd/MM/yyyy hh:mm" language="es" date-format="DD/MM/YYYY HH:mm"/>
+                <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>
+            </div>-->
+
+            <button class="btn btn-block btn-info btn-lg" data-toggle="modal" data-target="#myModalActividad"><i class="fa fa-info"></i></i> </button>
+        </div>
+
+<!--        <div class="form-group">
+            <button type="submit" class="btn btn-info" ng-click="updateTarea()">Guardar
+            </button>
+            <button type="submit" class="btn btn-danger " ng-click="deleteTarea()">
+                <i class="fa fa-trash"></i>
+            </button>
+
+        </div>-->
+
+
+        </accordion-group>
+        <!-- archivos -->
+        <accordion-group heading="Archivos">
+                <accordion-heading>Archivos
+                    <span class="fa fa-files-o"></span>
+                    <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
+                </accordion-heading>
+        <div class="form-group" ng-show="!loading">
+            <ul class="list-group">
+
+                <li ng-repeat="file in files | filter:{codigo:selectedTarea.id}" class="list-group-item">
+                    <a target="_self" href="<% file.storage_path %>" download="<% file.filename %>">
+                        <% file.filename %></a>
+                        <button class="btn btn-danger btn-sm" ng-click="deleteFile(file)">
+                            <i class="fa fa-remove"></i>
+                        </button>
+
+
+                </li>
+            </ul>
+        </div>
+        <div class="form-group" ng-show="cargarfiles">
+        <input type="file" nv-file-select uploader="uploader"/><br/>
+            <ul>
+                <li ng-repeat="item in uploader.queue">
+                    Name: <span ng-bind="item.file.name"></span><br/>
+                    <button ng-click="item.upload()">Subir</button>
+                    <div class="progress" style="">
+                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }" style="width: 0%;"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </accordion-group>
+        <accordion-group heading="Comentarios">
+                <accordion-heading>Comentarios
+                    <span class="fa fa-comments"></span>
+                </accordion-heading>
+        </accordion-group>
+    </accordion>
+
+
+
+</div><!-- /col-lg-3 -->
