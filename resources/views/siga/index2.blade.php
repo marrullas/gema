@@ -31,7 +31,7 @@
                         <div class="panel-body">
                             @include('admin.partials.messages')
 
-                            <p ng-show="mensaje.length > 0" class="alert-success"><% mensaje %></p>
+                            <p ng-show="mensaje.length > 0" class="alert-success" ng-cloak><% mensaje %></p>
                             <div class="row">
                             </div>
                             <div class="row">
@@ -40,7 +40,7 @@
                             <table class="table table-condensed table-hover" ng-cloak>
                                 <thead>
                                 <tr>
-                                    <th class="span1"><input type="checkbox"></th>
+                                    <th class="span1"><b>Actividades</b></th>
                                     <th class="span9"><% tarea.ciclo.procedimiento.nombre %></th>
                                     <th class="span2"></th>
                                     <th class="span2"></th>
@@ -49,13 +49,13 @@
                                 </thead>
                                 <tbody>
                                 <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
-                                <tr ng-repeat="tarea in tareas | orderBy : 'id'"
+                                <tr ng-repeat="tarea in tareas | orderBy : ['actividad_id','id']"
                                     ng-class="{'selected':$index == selectedRow}"
                                     ng-click="setClickedRow($index,tarea)">
-                                    <td><input type="checkbox" ng-model ="tarea.hecho" ng-change="terminarTarea(tarea)"
+{{--                                    <td><input type="checkbox" ng-model ="tarea.hecho" ng-change="terminarTarea(tarea)"
                                                ng-true-value="1" ng-false-value="0">
-                                    </td>
-                                    <td><% tarea.actividad.nombre %>
+                                    </td>--}}
+                                    <td><% tarea.nombre %>
                                         <span ng-if="tarea.prioridad === 'normal'" class="badge alert-warning"><i class="fa fa-clock-o"></i></span>
                                     </td>
 
@@ -67,46 +67,6 @@
                             </table>
                           </div>
 
-                                    <div class="col-md-6 pull-right">
-                            <a class="btn btn-primary btn-xs" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                Tareas terminadas
-                            </a>
-                            <div class="collapse" id="collapseExample">
-                                <div class="well">
-                                    <div class="panel-group ">
-                                        <table class="table table-condensed table-hover">
-                                            <thead>
-                                            <tr>
-                                                <th class="span1"><input type="checkbox"></th>
-                                                <th class="span9">Tarea</th>
-                                                <th class="span2"></th>
-                                                <th class="span2"></th>
-                                                <th class="span2"></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
-                                            <tr ng-repeat="terminada in tareas | orderBy : 'id'  | hechoLista:selectedLista.id:1"
-                                                ng-class="{'selected':$index == selectedRow}"
-                                                ng-click="setClickedRow($index,terminada)">
-                                                <td><input type="checkbox" ng-model ="terminada.hecho" ng-change="terminarTarea(terminada)"
-                                                           ng-true-value="1" ng-false-value="0">
-                                                </td>
-                                                <td><% terminada.nombre %>
-                                                    <span ng-if="terminada.prioridad === 'normal'" class="badge alert-warning"><i class="fa fa-clock-o"></i></span>
-                                                </td>
-
-                                                <td></td>
-                                            </tr>
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                </div>
-
-                            </div>
                             </div> <!-- fin row tabla 1!-->
                         </div>
 

@@ -8,5 +8,5 @@ class Ambito extends Model
 {
     //
     protected $table = 'ambitos';
-    protected $fillable = ['nombre','tabla','tabla_id','tabla_nombre'];
+    protected $fillable = ['id','nombre','tabla','tabla_id','tabla_nombre'];
 }

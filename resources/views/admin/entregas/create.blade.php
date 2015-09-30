@@ -7,14 +7,14 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Nueva Actividad</div>
+                    <div class="panel-heading">Nueva Entrega</div>
 
                     <div class="panel-body">
                         @include('admin.partials.messages')
-                        {!! Form::open(['route'=> 'admin.actividades.store', 'method' => 'POST' ]) !!}
-                        @include('admin.actividades.partials.fields')
+                        {!! Form::open(['route'=> 'admin.entregas.store', 'method' => 'POST' ]) !!}
+                        @include('admin.entregas.partials.fieldscreate')
 
-                        <button type="submit" class="btn btn-default">Crear actividad
+                        <button type="submit" class="btn btn-default">Crear entrega
                         </button>
                         {!! Form::close() !!}
                     </div>

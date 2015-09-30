@@ -20,7 +20,8 @@ class Files extends Model
         'prefijo',
         'codigo',
         'user_id',
-        'tipodocumento_id'
+        'tipodocumento_id',
+        'ambitosxciclo_id'
 
     ];
 /*    public function tarea()

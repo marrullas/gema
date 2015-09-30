@@ -10,6 +10,7 @@ class Actividad extends Model
     protected $fillable = [
         'id','procedimiento_id','nombre','descripcion','responsable','obligatorio','orden',
         'condicional','aprobo','actividad_siguiente','entrega','numeroarchivos',
+        'evidencia','digital','fisica','periodica','documento_id'
     ];
 
     public function procedimiento()

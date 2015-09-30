@@ -1399,16 +1399,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "0.11.0",
+            "version": "0.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "1af805de706b10705dea159a7ba927c4def2c0a1"
+                "reference": "38551450ca8a065f5caa5f5fc64a777b3630bef2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/1af805de706b10705dea159a7ba927c4def2c0a1",
-                "reference": "1af805de706b10705dea159a7ba927c4def2c0a1",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/38551450ca8a065f5caa5f5fc64a777b3630bef2",
+                "reference": "38551450ca8a065f5caa5f5fc64a777b3630bef2",
                 "shasum": ""
             },
             "require": {
@@ -1428,6 +1428,9 @@
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "symfony/finder": "~2.3"
             },
+            "bin": [
+                "bin/commonmark"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1458,20 +1461,20 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-09-19 15:04:43"
+            "time": "2015-09-22 12:05:57"
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.13",
+            "version": "1.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "76caed01a57527599b55919f0746104f288b3d56"
+                "reference": "202c7775d959f377e2e302d93e7127c47604438a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/76caed01a57527599b55919f0746104f288b3d56",
-                "reference": "76caed01a57527599b55919f0746104f288b3d56",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/202c7775d959f377e2e302d93e7127c47604438a",
+                "reference": "202c7775d959f377e2e302d93e7127c47604438a",
                 "shasum": ""
             },
             "require": {
@@ -1542,7 +1545,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-09-20 13:05:34"
+            "time": "2015-09-22 19:18:28"
         },
         {
             "name": "maatwebsite/excel",
@@ -2324,16 +2327,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.8",
+            "version": "4.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "521720279261e5b14799cf1bb895d4b55e516f26"
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/521720279261e5b14799cf1bb895d4b55e516f26",
-                "reference": "521720279261e5b14799cf1bb895d4b55e516f26",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
                 "shasum": ""
             },
             "require": {
@@ -2392,7 +2395,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-19 05:44:37"
+            "time": "2015-09-20 12:56:44"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

@@ -7,16 +7,18 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Editar procedimiento</div></h3>
+                    <div class="panel-heading"><h3>Editar Entrega</div></h3>
 
                     <div class="panel-body">
                         @include('admin.partials.messages')
-                        {!! Form::model($actividad,['route'=> ['admin.actividades.update', $actividad], 'method' => 'PUT' ]) !!}
-                        @include('admin.actividades.partials.fields')
-                        <button type="submit" class="btn btn-primary">Actualizar actividad
+                        {!! Form::model($entrega,['route'=> ['admin.entregas.update', $entrega], 'method' => 'PUT' ]) !!}
+                        @include('admin.entregas.partials.fields')
+                        <div class="form-group" data-toggle="buttons">
+                        <button type="submit" class="btn btn-primary">Actualizar entrega
                         </button>
                         {!! Form::close() !!}
-                        @include('admin.actividades.partials.delete')
+                        @include('admin.entregas.partials.delete')
+                            </div>
 
 
                     </div>

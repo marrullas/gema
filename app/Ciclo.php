@@ -37,7 +37,30 @@ class Ciclo extends Model
     }
     public function ambitoxciclo()
     {
-        return $this->hasMany('\App\Ambitosxciclo','ciclo_id','id');
+        return $this->hasMany('\App\Ambitosxciclo');
+    }
+    public function ambitoxciclouser()
+    {
+        return $this->ambitoxciclo()->selectRaw('users.full_name, users.id')
+            ->join('users','ambitosxciclo.user_id','=','users.id')
+            ->groupBy('users.id');
+            //->where('users.id = ambitosxciclo.user_id');
+}
+    public function entregas()
+    {
+        return $this->hasMany('\App\Entrega');
+    }
+    public function entregasCount()
+    {
+        return $this->entregas()->selectRaw('entregas.ciclo_id, count(*) as count')->groupBy('entregas.ciclo_id');
+    }
+
+    public function filesEntregasCount()
+    {
+        return $this->entregas()->selectRaw('entregas.ciclo_id, count(*) as count')
+            ->join('files','files.codigo','=','entregas.id')
+            ->where('files.prefijo','=','EN')
+            ->groupBy('entregas.ciclo_id');
     }
     public function setFechaIniAttribute($value)
     {

@@ -26,10 +26,19 @@
                 <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Calendario</a>
             </li>
             <li>
-                <a  href="{{ url('/siga') }}"><i class="fa fa-table fa-3x"></i> SIGA</a>
+                <a href="#"><i class="fa fa-sitemap fa-3x"></i> SIGA<span class="fa arrow"></span></a>
+
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a  href="{{ url('/siga') }}"><i class="fa fa-list-ul fa-3x"></i> Procedimientos</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/siga/resumen') }}"><i class="fa fa-list fa-3x"></i>resumen</a>
+                    </li>
+                </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-sitemap fa-3x"></i> Informes<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-file-text fa-3x"></i> Informes<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
                     <li>
@@ -44,7 +53,7 @@
                 </ul>
             </li>
             <li>
-                <a  href="{{ url('/forum') }}"><i class="fa fa-table fa-3x"></i> Foro</a>
+                <a  href="{{ url('/forum') }}"><i class="fa fa-group fa-3x"></i> Foro</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
@@ -59,7 +68,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Actas<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-archive fa-3x"></i> Actas<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
                     <li>
@@ -69,7 +78,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Tareas<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-tasks fa-3x"></i> Tareas<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
                     <li>

@@ -42,15 +42,21 @@
 
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ url('/admin/procedimientos/') }}">Procedimeintos</a>
+                        <a href="{{ url('/admin/procedimientos/') }}"><i class="fa fa-list-ul fa-3x"></i>Procedimientos</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/ciclos/') }}">Ciclos</a>
+                        <a href="{{ url('/admin/ciclos/') }}"><i class="fa fa-refresh fa-3x"></i>Ciclos</a>
+                    </li>
+{{--                    <li>
+                        <a href="{{ url('/admin/entregas/') }}">Entregas</a>
+                    </li>--}}
+                    <li>
+                        <a href="{{ url('/admin/siga/resumen/') }}"><i class="fa fa-list fa-3x"></i>Resumen x usuario</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Actas<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-archive fa-3x"></i> Actas<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
                     <li>
@@ -69,10 +75,10 @@
 
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ url('/message/') }}">Bandeja</a>
+                        <a href="{{ url('/message/') }}"><i class="fa fa-inbox fa-3x"></i>Bandeja</a>
                     </li>
                     <li>
-                        <a href="{{ url('/message/create') }}">Crear</a>
+                        <a href="{{ url('/message/create') }}"><i class="fa fa-file-text fa-3x"></i>Crear</a>
                     </li>
                 </ul>
             </li>
@@ -83,39 +89,41 @@
                 <a  href="{{ url('/admin/muro') }}"><i class="fa fa-comment fa-3x"></i> Muro / Anuncios</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Tareas<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-tasks fa-3x"></i> Tareas<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ url('/tareas/') }}">Lista</a>
+                        <a href="{{ url('/tareas/') }}"><i class="fa fa-list-ol fa-3x"></i>Lista</a>
                     </li>
                     <li>
-                        <a href="{{ url('/tareas/create') }}">Crear</a>
+                        <a href="{{ url('/tareas/create') }}"><i class="fa fa-file-o fa-3x"></i>Crear</a>
                     </li>
                 </ul>
             </li>
+{{--
             <li  >
                 <a  href="#"><i class="fa fa-edit fa-3x"></i> Documentos </a>
             </li>
+--}}
 
 
             <li>
                 <a href="#"><i class="fa fa-sitemap fa-3x"></i> Gestion de catálogos<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ url('/admin/ies') }}">I.E's</a>
+                        <a href="{{ url('/admin/ies') }}"><i class="fa fa-building-o fa-3x"></i>I.E's</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/fichas') }}">Fichas</a>
+                        <a href="{{ url('/admin/fichas') }}"><i class="fa fa-puzzle-piece fa-3x"></i>Fichas</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/programas') }}">Programas</a>
+                        <a href="{{ url('/admin/programas') }}"><i class="fa fa-cog fa-3x"></i>Programas</a>
                     </li>
                 </ul>
             </li>
-            <li >
+{{--            <li >
                 <a  href="#"><i class="fa fa-square-o fa-3x"></i> Notas</a>
-            </li>
+            </li>--}}
         </ul>
 
     </div>

@@ -7,7 +7,9 @@ use App\Ambito;
 use App\Ambitosxciclo;
 use App\Ciclo;
 use App\Entrega;
+use App\Files;
 use App\Procedimiento;
+use App\Repositories\SigaRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -241,7 +243,9 @@ class CicloController extends Controller
             //dd($data['entidades']);
 
             foreach($data['entidades'] as $entidad){
-                $ambitoxciclo = Ambitosxciclo::where('entidad_id','=',$entidad)->first();
+                $ambitoxciclo = Ambitosxciclo::where('entidad_id','=',$entidad)
+                    ->where('ambito_id','=',$data['ambito_id'])
+                    ->first();
                 $userEntidad = DB::table($tablaentidad)->where($campoid,'=',$entidad)->select($campouser)->first();
                 //dd($ambitoxciclo);
                 if(empty($ambitoxciclo)) {
@@ -265,7 +269,9 @@ class CicloController extends Controller
             //dd($data['entidades']);
             //buscamos si existe registrada alguna entidad para desabilitarla
             foreach($data['inactivos'] as $entidad){
-                $ambitoxciclo = Ambitosxciclo::where('entidad_id','=',$entidad)->first();
+                $ambitoxciclo = Ambitosxciclo::where('entidad_id','=',$entidad)
+                    ->where('ambito_id','=',$data['ambito_id'])
+                    ->first();
                 if(!empty($ambitoxciclo)) {
                     $userEntidad = DB::table($tablaentidad)->where($campoid,'=',$entidad)->select($campouser)->first();
                     $ambitoxciclo->activo = false;
@@ -276,6 +282,35 @@ class CicloController extends Controller
         }
 
         return redirect()->route('admin.ciclos.activar',$data['ciclo_id']);
+    }
+
+    /**
+     *carga la vista de usuarios con ciclos activos
+     */
+    public function sigausuarios()
+    {
+
+        $ambitosxciclo = SigaRepository::UsuarioscicloxambitosxcicloTodos();
+
+        return view('admin.siga.resumen',compact('ambitosxciclo'));
+    }
+    /**
+     *carga la vista de usuarios con ciclos activos
+     */
+    public function sigaambitoxciclo($ambito)
+    {
+        $sigarepo = new SigaRepository();
+        $ambitoxciclo = $sigarepo->cicloxambitosxcicloId($ambito);
+
+        $lista = $sigarepo->cargalistasentidades($ambitoxciclo);
+
+        $entregas =  $sigarepo->cargarcientregasxambitoxciclo($lista[0]->ambitosxciclo_id);
+            $files = Files::where('ambitosxciclo_id','=',$lista[0]->ambitosxciclo_id)
+                ->where('prefijo','=','EN')
+                ->get();
+        //dd($files->count());
+
+        return view('admin.siga.timeline',compact('entregas','files'));
     }
 
 }

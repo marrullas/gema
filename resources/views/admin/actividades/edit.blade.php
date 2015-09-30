@@ -13,10 +13,18 @@
                         @include('admin.partials.messages')
                         {!! Form::model($actividad,['route'=> ['admin.actividades.update', $actividad], 'method' => 'PUT' ]) !!}
                         @include('admin.actividades.partials.fields')
-                        <button type="submit" class="btn btn-primary">Actualizar actividad
+                        <div class="panel-footer">
+                            <span class="pull-right">
+                            <a href="{{ URL::to('admin/procedimientos',$actividad->procedimiento) }}" class="btn btn-primary btn-sm"><< Volver</a>
+                         </span>
+
+                        <button type="submit" class="btn btn-primary btn-sm">Actualizar actividad
                         </button>
+
                         {!! Form::close() !!}
                         @include('admin.actividades.partials.delete')
+
+                        </div>
 
 
                     </div>

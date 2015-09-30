@@ -2,11 +2,13 @@
     <tbody>
     <tr>
         <td>Actividad:</td>
-        <td>{!! $entrega->actividad->nombre !!}</td>
+        <td>{!! $actividad->nombre !!}</td>
+        {!! Form::hidden('actividad_id',$actividad->id) !!}
     </tr>
     <tr>
         <td>ciclo:</td>
-        <td>{!! $entrega->ciclo->nombre !!}</td>
+        <td>{!! $ciclo->nombre !!}</td>
+        {!! Form::hidden('ciclo_id',$ciclo->id) !!}
     </tr>
     </tbody>
 </table>
@@ -16,7 +18,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('numeroarchivos', 'Numero archivos') !!}
-    {!! Form::text('numeroarchivos', null, ['placeholder' => 'Digite numero numero archivos' ] ) !!}
+    {!! Form::text('numeroarchivos', null, ['class' => 'form-control','placeholder' => 'Digite numero numero archivos' ] ) !!}
 </div>
 <div class="form-group">
     {!! Form::label('fecha', 'Fecha entrega') !!}
@@ -46,8 +48,7 @@
                 locale: 'es',
                 format: 'DD/MM/YYYY',
                 sideBySide:true,
-                showClear:true,
-                date: '{{$entrega->fecha}}'
+                showClear:true
 
             });
 

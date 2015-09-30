@@ -18,6 +18,11 @@ class AddColumnsActividadesTable extends Migration
             $table->boolean('digital')->default(true)->after('evidencia'); //requiere evidencia digital
             $table->boolean('fisica')->default(false)->after('digital'); //requiere evidencia fisica
             $table->boolean('periodico')->default(false)->after('fisica'); //se repite en el tiempo (no usado aun)
+            $table->integer('documento_id')->unsigned()->nullable()->after('periodico'); //documento default(tabla) que se espera como evidencia
+            $table->foreign('documento_id')
+                ->references('id')
+                ->on('documentos')
+                ->onDelete('cascade');
 
         });
     }
@@ -31,6 +36,12 @@ class AddColumnsActividadesTable extends Migration
     {
         Schema::table('actividades', function (Blueprint $table) {
             //
+            $table->dropColumn('evidencia');
+            $table->dropColumn('digital');
+            $table->dropColumn('fisica');
+            $table->dropColumn('periodico');
+            $table->dropForeign('documento_id');
+            $table->dropColumn('documento_id');
         });
     }
 }

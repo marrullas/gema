@@ -53,7 +53,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany('\App\Ficha');
     }
-
+    public function ambitosxciclo()
+    {
+        return $this->hasMany('\App\Ambitosxciclo');
+    }
     public function getEmail2() {
         return $this->email2;
     }

@@ -163,8 +163,8 @@ app.service('sigaService',function($http,$q){
                 this.tareas = data;
                 deferred.resolve(data);
 
-                //console.log(this.tareas);
-                //console.log('los datos');
+                console.log(this.tareas);
+                console.log('los datos');
                 //this.this.envio = new Date(this.this.envio).toISOString();
                 //this.loading = false;
 
@@ -200,9 +200,9 @@ app.service('sigaService',function($http,$q){
     };
 
     //retorna todos los archivos de una entrega
-    this.getfilesxentrega = function(entrega){
+    this.getfilesxentrega = function(entrega,ambitosxciclo){
         var deferred = $q.defer();
-        $http.get('/api/filesentrega/'+entrega+'/EN').
+        $http.get('/api/filesentrega/'+entrega+'/'+ambitosxciclo+'/EN').
             success(function(data, status, headers, config){
                 this.files = data;
                 deferred.resolve(data);

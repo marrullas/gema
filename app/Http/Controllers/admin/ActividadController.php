@@ -58,6 +58,7 @@ class ActividadController extends Controller
 
         $procedimientoid = $this->request->get('procedimiento');
         $procedimiento = Procedimiento::findOrfail($procedimientoid);
+        //carga las actividades anterior y siguiente
         $actividades = Actividad::from(DB::raw("(select * from actividades where procedimiento_id = '$procedimientoid' order by orden desc limit 3) as T"))
             ->orderBy('orden','asc')
             ->take(3)
@@ -186,6 +187,7 @@ class ActividadController extends Controller
     public function update(Requests\EditActividadRequest $request, $id)
     {
         //
+
         $actividad = Actividad::findOrfail($id);
         $actividad->fill($request->all());
         $actividad->save();

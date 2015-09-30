@@ -12,7 +12,7 @@
                     <tbody>
                     <tr>
                         <td>Procedimiento:</td>
-                        <td><% selectedTarea.procedimiento.nombre %></td>
+                        <td><% selectedTarea.ciclo.procedimiento.nombre %></td>
                     </tr>
                     <tr>
                         <td>Nombre:</td>
@@ -23,7 +23,7 @@
                         <td>
                             <div class="form-group" >
                                 <ul class="list-group">
-                                    <li ng-repeat="file in selectedTarea.files" class="list-group-item">
+                                    <li ng-repeat="file in selectedTarea.actividad.files" class="list-group-item">
                                         <a target="_self" href="<% file.storage_path %>" download="<% file.filename %>">
                                             <% file.filename %></a>
                                     </li>

@@ -68,6 +68,7 @@ class FilesController extends Controller
                 $file->user_id = Auth::user()->id;
                 $file->descripcion =  $data['descripcion'];
                 $file->tipodocumento_id = $data['tipodocumento_id'];
+                $file->ambitosxciclo_id = $data['ambitosxciclo_id'];
                 $file->save();
                 //$destinationPath = 'uploads/'.$data['tarea_id']; // upload path
                 $destinationPath = 'uploads/'.$data['prefijo'].'/'.$data['codigo']; // upload path
@@ -106,18 +107,21 @@ class FilesController extends Controller
         return Files::all();
     }
 
+
     /**
-     * devuelve los archivos que pertenecen a una entrega
-     * @param $id
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @param $id codigo del archivo (depende de la entidad)
+     * @param $axcid codigo de la tabla ambitosxciclo
+     * @param $prefijo prefijo del archivo
+     * @return mixed
      */
-    public function filesentrega($id,$prefijo)
+    public function filesentrega($id,$axcid,$prefijo)
     {
         //
         // $data = $this->request->all();
         //dd($prefijo);
         return Files::where('codigo','=',(integer)$id)
             ->where('prefijo','=',$prefijo)
+            ->where('ambitosxciclo_id','=',$axcid)
             ->get();
     }
 
@@ -169,6 +173,7 @@ class FilesController extends Controller
             $file->user_id = Auth::user()->id;
             $file->descripcion =  $data['descripcion'];
             $file->tipodocumento_id = $data['tipodocumento_id'];
+            //$file->ambitosxciclo_id = $data['ambitosxciclo_id'];
             $file->save();
             $destinationPath = 'uploads/'.$data['prefijo'].'/'.$data['codigo']; // upload path
             Input::file('file')->move($destinationPath,$fileName); // uploading file to given path

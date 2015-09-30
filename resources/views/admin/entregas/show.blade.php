@@ -18,7 +18,7 @@
 
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">DATOS DE LA ACTIVIDAD</h3>
+                    <h3 class="panel-title">DATOS DE LA ENTREGA</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -41,11 +41,11 @@
                                 <tbody>
                                 <tr>
                                     <td>Procedimiento:</td>
-                                    <td>{!! $actividad->procedimiento->nombre !!}</td>
+                                    <td>{!! $entrega->actividad->procedimiento->nombre !!}</td>
                                 </tr>
                                 <tr>
-                                    <td>Nombre:</td>
-                                    <td>{!! $actividad->nombre  !!}</td>
+                                    <td>Actividad:</td>
+                                    <td>{!! $entrega->actividad->nombre  !!}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -57,25 +57,20 @@
                                         <tbody>
                                 <tr>
                                     <td>Descripción:</td>
-                                    <td>{!! $actividad->descripcion  !!}</td>
+                                    <td>{!! $entrega->descripcion  !!}</td>
                                 </tr>
 
                                 <tr>
                                 <tr>
-                                    <td>Resposable:</td>
-                                    <td>{!!$actividad->responsable!!}</td>
+                                    <td>numero de archivos:</td>
+                                    <td>{!!$entrega->numeroarchivos!!}</td>
                                 </tr>
                                 <tr>
-                                    <td>Orden:</td>
-                                    <td>{!!$actividad->orden!!}</td>
+                                    <td>Documento:</td>
+                                    @if(!empty($entrega->documento->nombre))
+                                        <td>{!!$entrega->documento->nombre!!}</td>
+                                    @endif
                                 </tr>
-                                <tr>
-                                    <td>Actividad siguiente:</td>
-                                    <td>{!!$actividad->actividad_siguiente!!}</td>
-                                </tr>
-
-
-
 
                                 </tbody>
                             </table>
@@ -86,33 +81,16 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <a href="{{ URL::to('admin/procedimientos',$actividad->procedimiento) }}" class="btn btn-primary btn-sm">Volver</a>
-                    <a href="{{ URL::route('files.create','prefijo=AC&codigo='.$actividad->id) }}" class="btn btn-success btn-sm">Agregar archivo</a>
+                    <a href="{{ URL::to('admin/ciclos') }}" class="btn btn-success btn-sm">Ciclos</a>
+                    <a href="{{ URL::to('admin/ciclos',$entrega->ciclo_id) }}" class="btn btn-primary btn-sm"> << Volver</a>
                         <span class="pull-right">
-                            <a class="btn btn-sm btn-warning" href="{{ route('admin.actividades.edit', $actividad) }}"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a class="btn btn-sm btn-warning" href="{{ route('admin.entregas.edit', $entrega) }}"><i class="glyphicon glyphicon-edit"></i></a>
                         </span>
                 </div>
 
             </div>
         </div>
     </div>
-    <div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Archivos relacionados</h3>
-    </div>
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1 toppad" >
-            @if(Session::has('message'))
-                <div class="alert alert-warning alert-dismissible fade in" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <strong>{{ Session::get('message') }}</strong>
-                </div>
-
-            @endif
-            @include('files.partials.table')
-        </div>
-    </div><!--row!-->
-        </div>
 </div>
 @endsection
 @section('scripts')

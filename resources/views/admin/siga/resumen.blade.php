@@ -1,7 +1,13 @@
 @extends('app')
 @section('menu')
-    @include('admin.partials.menu')
-@endsection
+    @if(Session::get('tipouser')== 'user' || Session::get('tipouser')== 'instructor')
+
+        @include('instructor.partials.menu')
+    @else
+
+        @include('admin.partials.menu')
+
+    @endif
 @section('content')
     <div id="page-wrapper">
         <div class="row">
@@ -11,8 +17,8 @@
                     @if(Session::has('message'))
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif
-                    <div class="panel-body">
-                        {!! Form::model(['name'=>$name,'type'=>$type],['action'=> 'admin\UserController@resumen', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
+{{--                    <div class="panel-body">
+                        {!! Form::model(['name'=>$name,'type'=>$type],['action'=> 'SigaController@indexusuarios', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
 
                             <div class="form-group">
                                 <div class="form-control">
@@ -37,16 +43,16 @@
                         <a class="btn btn-success btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/admin/resumen/excel') }}">Exportar excel</a>
                         {!! Form::close() !!}
 
-                    </div>
+                    </div>--}}
                 </div>
-        @include('admin.users.partials.resumentable')
+        @include('admin.siga.partials.tableuser')
 
-        {!! $users->appends(['name'=>$name,'type'=>$type])->render() !!}
+        {{--{!! $users->appends(['name'=>$name,'type'=>$type])->render() !!}--}}
             </div>||
         </div>
     </div>
-    {!! Form::open(['route'=> ['admin.users.destroy',':USER_ID'], 'method' => 'DELETE', 'id'=>'form-delete' ]) !!}
-    {!! Form::close() !!}
+{{--    {!! Form::open(['route'=> ['admin.users.destroy',':USER_ID'], 'method' => 'DELETE', 'id'=>'form-delete' ]) !!}
+    {!! Form::close() !!}--}}
 
 @endsection
 

@@ -13,11 +13,15 @@
                         @include('admin.partials.messages')
                         {!! Form::model($ciclo,['route'=> ['admin.ciclos.update', $ciclo], 'method' => 'PUT' ]) !!}
                         @include('admin.ciclos.partials.fields')
+                        <div class="panel-footer">
+                            <span class="pull-right">
+                            <a href="{{ URL::to('admin/ciclos/'.$ciclo->id) }}" class="btn btn-primary btn-sm"><< Volver</a>
+                         </span>
                         <button type="submit" class="btn btn-primary">Actualizar ciclo
                         </button>
                         {!! Form::close() !!}
                         @include('admin.ciclos.partials.delete')
-
+                        </div>
 
                     </div>
                 </div>

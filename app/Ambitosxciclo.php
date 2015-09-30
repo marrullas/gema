@@ -22,4 +22,29 @@ class Ambitosxciclo extends Model
     {
         return $this->belongsTo('\App\Ambito');
     }
+    public function entidad()
+    {
+        $ambito = $this->ambito()->get();
+        //dd($ambito);
+        return $this->ambito('\App\Ambito');
+    }
+    public function entregas()
+    {
+        return $this->hasMany('\App\Entrega','ciclo_id','ciclo_id');
+    }
+    public function entregasCount()
+    {
+        return $this->entregas()->selectRaw('entregas.ciclo_id, sum(numeroarchivos) as count')
+            ->whereRaw('entregas.actividad_id in (select id from actividades where evidencia = 1)')
+            ->groupBy('entregas.ciclo_id');
+    }
+    public function files()
+    {
+        return $this->hasMany('\App\Files','codigo','id')->where('files.prefijo','=','EN');
+    }
+    public function filesCount()
+    {
+        return $this->files()->selectRaw('count(*) as count')
+            ->where('files.prefijo','=','EN');
+    }
 }

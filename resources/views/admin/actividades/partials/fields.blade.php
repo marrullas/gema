@@ -51,17 +51,41 @@
     {!! Form::label('actividad_siguiente', 'Actividad Siguiente') !!}
     {!! Form::text('actividad_siguiente', null, ['placeholder' => 'Digite numero de la actividad que continua en caso de aprobar' ] ) !!}
 </div>
+
+
+
 <div class="form-group">
     {!! Form::label('obligatorio', 'Obligatorio') !!}
     {!! Form::checkbox('obligatorio', null,$obligatorio) !!}
-</div>
-<div class="form-group">
+
+{{--
     {!! Form::label('condicional', 'Condicional') !!}
     {!! Form::checkbox('condicional', null,$condicional) !!}
-</div>
-<div class="form-group">
+
     {!! Form::label('aprobo', 'Aprobo') !!}
     {!! Form::checkbox('aprobo', null,$aprobo) !!}
+--}}
+
+
+
+</div>
+
+
+
+        <div class="form-group">
+            {!! Form::label('evidencia', 'Requiere evidencia') !!}
+            {!! Form::checkbox('evidencia', 1, $actividad->evidencia) !!}
+
+    {!! Form::label('digital', 'Evidencia digital') !!}
+    {!! Form::checkbox('digital', 1, $actividad->digital) !!}
+
+    {!! Form::label('fisica', 'Evidencia fisica') !!}
+    {!! Form::checkbox('fisica', 1, $actividad->fisica) !!}
+
+
+{{--    {!! Form::label('periodico', 'Actividad periodica') !!}
+    {!! Form::checkbox('periodica', null, $actividad->periodica) !!}--}}
+
 </div>
 
 

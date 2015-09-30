@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Documento;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -9,6 +10,16 @@ use App\Http\Controllers\Controller;
 
 class DocumentoController extends Controller
 {
+
+
+    protected $request;
+
+    function __construct(\Illuminate\Http\Request $request)
+    {
+        // TODO: Implement __construct() method.
+        $this->request = $request;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +28,10 @@ class DocumentoController extends Controller
     public function index()
     {
         //
+        $nombre = $this->request->get('nombre');
+        $page = $this->request->get('page');
+        $ies = Documento::filtroPaginación($nombre);
+        return view('admin.documentos.index',compact('nombre','page','ies'));
     }
 
     /**

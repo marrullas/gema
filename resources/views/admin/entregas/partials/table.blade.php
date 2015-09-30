@@ -1,21 +1,32 @@
 <table class="table table-striped">
-    <caption>Total registros : {{$totalactividades}} </caption>
+    <caption>Total registros : {{$totalentregas}} </caption>
     <thead>
     <tr>
         <th>#</th>
-        <th>Orden</th>
-        <th>Nombre</th>
-        <th>Responsables</th>
+        <th>Actividad</th>
+        <th>Ciclo</th>
+        <th>Documento</th>
+        <th>Numero evidencias</th>
+        <th>Fecha</th>
+
 
     </tr>
     </thead>
     <tbody>
-    @foreach($actividades as $actividad)
-        <tr data-id="{{$actividad->id}}">
-            <th scope="row">{{$actividad->id}}</th>
-            <td>{!!$actividad->orden !!}</td>
-            <td>{!!$actividad->nombre !!}</td>
-            <td>{!!$actividad->responsable !!}</td>
+    @foreach($entregas as $entrega)
+        <tr data-id="{{$entrega->id}}">
+            <th scope="row">{{$entrega->id}}</th>
+            <td>{!!$entrega->actividad->nombre !!}</td>
+            <td>{!!$entrega->numeroarchivos !!}</td>
+            <td>{!!$entrega->ciclo->nombre !!}</td>
+            @if(!empty($entrega->documento))
+            <td>{!!$entrega->documento->nombre !!}</td>
+            @else
+                <td>N/A</td>
+            @endif
+
+            <td>{!!$entrega->fecha !!}</td>
+
             <td>
                 <div class="panel-group">
                     <div class="dropdown pull-right">
@@ -24,9 +35,11 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.actividades.edit', $actividad) }}"><i class="glyphicon glyphicon-edit"> Editar</i></a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.actividades.show', $actividad) }}"><i class="fa fa-info"> Detalles</i></a></li>
-                            <li role="presentation"><a href="{{ URL::route('files.create','prefijo=AC&codigo='.$actividad->id) }}" class="btn btn-success btn-sm">Agregar archivo</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.entregas.edit', $entrega) }}"><i class="glyphicon glyphicon-edit"> Editar</i></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.entregas.show', $entrega) }}"><i class="fa fa-info"> Detalles</i></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/admin/entregas/create/'.$ciclo.'/'.$entrega->actividad_id) }}"><i class="fa fa-info"> Agrega Entrega</i></a></li>
+
+                            {{--<li role="presentation"><a href="{{ URL::route('files.create','prefijo=AC&codigo='.$entrega->id) }}" class="btn btn-success btn-sm">Agregar archivo</a></li>--}}
                             {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividades?userId=') }}">Documentos</a></li>--}}
                         </ul>
                     </div>

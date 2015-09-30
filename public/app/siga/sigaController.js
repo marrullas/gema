@@ -37,6 +37,7 @@ app.controller('sigaController', ['$scope', '$log', '$modal','sigaService','File
 
         $scope.loading = true;
         sigaService.getProcedimientos().then(function (data) { //retorna lista de procedimientos
+            console.log(data);
             //se asigna los datos del primer procedmiento
             $scope.listaProcedimientos = data;
             $scope.selectedProcedimiento = data[0];
@@ -56,14 +57,16 @@ app.controller('sigaController', ['$scope', '$log', '$modal','sigaService','File
         $scope.selectedRow = index;
         $scope.selectedTarea = tarea;
         $scope.loading = true;
-        sigaService.getfilesxentrega($scope.selectedTarea.id).then(function(data){
+
+        sigaService.getfilesxentrega($scope.selectedTarea.id,$scope.selectedProcedimiento.ambitosxciclo_id).then(function(data){
             $scope.files = data;
             $scope.validarnumerofiles();
         });
 
         $scope.template = {name:'detallesTareaView.html', url:'app/siga/detallesTareaView.html'}
         $scope.loading = false;
-        //console.log($scope.selectedTarea.id);
+
+        console.log($scope.selectedTarea.ciclo.ambito_id);
 /*        tareasService.getfilesxtarea($scope.selectedTarea.id).then(function(data){
            $scope.files = data;
         });*/
@@ -74,6 +77,7 @@ app.controller('sigaController', ['$scope', '$log', '$modal','sigaService','File
         $scope.loading = true;
         $scope.selectedRowProcedimiento = index;
         $scope.selectedProcedimiento = lista;
+        console.log('selecciona lista');
         $scope.getActividadesLista();
         $scope.template = null;
         $scope.loading = false;
@@ -82,7 +86,7 @@ app.controller('sigaController', ['$scope', '$log', '$modal','sigaService','File
     };
 
     $scope.getActividadesLista = function () {
-        //console.log($scope.selectedProcedimiento);
+        console.log($scope.selectedProcedimiento);
        sigaService.getActividadesLista($scope.selectedProcedimiento.cicloid).then(function(data){
            //console.log(data);
             $scope.tareas = data;
@@ -193,15 +197,18 @@ app.controller('sigaController', ['$scope', '$log', '$modal','sigaService','File
     });
 
     uploader.onAfterAddingFile = function(fileItem) {
+        console.log($scope.selectedProcedimiento.ambitosxciclo_id);
         fileItem.formData.push({
             codigo: $scope.selectedTarea.id,
             descripcion: 'N/A',
             tipodocumento_id: '3',
-            prefijo:'EN'
+            prefijo:'EN',
+            ambitosxciclo_id:$scope.selectedProcedimiento.ambitosxciclo_id
         });
         //console.info('onAfterAddingFile', fileItem);
     };
     uploader.onCompleteItem = function(fileItem, response, status, headers) {
+        $scope.cargarfiles = false;
         //console.info('onCompleteItem', fileItem, response, status, headers);
        // console.info('onCompleteItem', response.file);
         $scope.files.push(response.file);
@@ -210,6 +217,7 @@ app.controller('sigaController', ['$scope', '$log', '$modal','sigaService','File
     };
 
     $scope.deleteFile = function(file){
+        $scope.cargarfiles = false;
         sigaService.deletefile(file).then(function(data){
            $scope.mensaje = data.mensaje;
             $scope.validarnumerofiles();

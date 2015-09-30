@@ -73,13 +73,21 @@ Route::get('api/listastareas','ListasController@lista');
 
 
 //SIGA
+Route::get('siga/timeline/{id}','SigaController@sigaambitoxciclo');
+Route::get('siga/resumen','SigaController@sigausuario');
+Route::get('admin/siga/timeline/{id}','SigaController@sigaambitoxciclo');
+Route::get('admin/siga/resumen','SigaController@sigausuario');
 Route::resource('siga','SigaController');
+
 Route::get('api/siga/lista','SigaController@lista');
+
 Route::get('api/siga/actividades/{id}','SigaController@actividades');
+
 
 //procedimientos
 Route::get('api/procedimientos/lista','ProcedimientoController@lista');
 Route::resource('api/procedimientos','ProcedimientoController');
+
 
 //Route::resource('api/listaprocedimiento','ProcedimientoController');
 
@@ -99,7 +107,7 @@ Route::controllers([
 
 //manejo de archivos
 Route::resource('api/files','FilesController');
-Route::get('api/filesentrega/{id}/{en}','FilesController@filesentrega');
+Route::get('api/filesentrega/{id}/{axcid}/{en}','FilesController@filesentrega');
 Route::get('api/uploadfile','FilesController@upload');
 Route::post('api/uploadfile','FilesController@upload');
 Route::get('api/filesxtarea/{id}','FilesController@filesxtarea');
@@ -150,6 +158,22 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     Route::post('ciclos/storeambitoxciclo/',[
         'as' => 'admin.ciclos.storeambitoxciclo', 'uses' => 'CicloController@storeambitoxciclo'
     ]);
+
+    //entregas
+    Route::resource('entregas','EntregasController');
+    Route::get('entregas/ciclo/{id}',[
+        'as'=> 'admin.entregas.ciclo','uses'=>'EntregasController@ciclo'
+    ]);
+    Route::get('entregas/create/{id}/{id2}',[
+        'as'=> 'admin.create.actividad','uses'=>'EntregasController@create'
+    ]);
+    //siga
+/*    Route::get('siga/sigausuarios/',[
+        'as' => 'siga.sigausuarios', 'uses' => 'SigaController@sigausuarios'
+    ]);
+    Route::get('siga/timeline/{id}',[
+        'as' => 'siga.timeline', 'uses' => 'SigaController@sigaambitoxciclo'
+    ]);*/
 
 
 

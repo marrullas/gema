@@ -16,13 +16,13 @@ class CreateDocumentosTable extends Migration
             $table->increments('id');
             $table->string('nombre'); //por defecto sera el nombre del archivo
             $table->text('descripcion')->nullable();
-            $table->integer('procedimiento_id')->unsigned();//llave table procedimiento
-            $table->integer('actividad_id')->unsigned();//llave table actividades
+            //$table->integer('procedimiento_id')->unsigned();//llave table procedimiento
+            //$table->integer('actividad_id')->unsigned();//llave table actividades
             $table->integer('tipo')->unsigned(); //llave foranea tipo_docuentos (apoyo, registro/evidencia, formato)
             $table->enum('retencion',['fisico','digital','mixto'])->default('digital');
             $table->string('formato')->nullable(); //formato/documento para descargar
             $table->timestamps();
-            $table->foreign('procedimiento_id')
+/*            $table->foreign('procedimiento_id')
                 ->references('id')
                 ->on('procedimientos')
                 ->onDelete('cascade');
@@ -30,7 +30,7 @@ class CreateDocumentosTable extends Migration
             $table->foreign('actividad_id')
                 ->references('id')
                 ->on('actividades')
-                ->onDelete('cascade');
+                ->onDelete('cascade');*/
 
         });
     }
