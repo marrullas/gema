@@ -70,11 +70,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function setPasswordAttribute($value)
     {
+        //dd($value);
         /** @var TYPE_NAME $value */
         if(!empty($value)) {
             if (Hash::needsRehash($value)) {//valida aun no este encriptada
+                //dd($value);
                 $this->attributes['password'] = bcrypt($value);
             }
+            else{
+                $this->attributes['password'] = $value;
+            }
+        //dd('por aca');
 
         }
     }
