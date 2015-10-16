@@ -21,7 +21,10 @@ class Files extends Model
         'codigo',
         'user_id',
         'tipodocumento_id',
-        'ambitosxciclo_id'
+        'ambitosxciclo_id',
+        'revisado',
+        'auditor'
+
 
     ];
 /*    public function tarea()

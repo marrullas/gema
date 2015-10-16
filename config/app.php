@@ -66,7 +66,7 @@ return [
 	|
 	*/
 
-	'fallback_locale' => 'en',
+	'fallback_locale' => 'es',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -79,7 +79,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', 'CAmb1emosalgoPoracahaberquepa2'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -160,6 +160,10 @@ return [
 		/* foro */
 		'Socieboy\Forum\Providers\ForumServiceProvider',
 
+		'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
+
+		'Barryvdh\Cors\ServiceProvider',
+
 
 	],
 
@@ -223,6 +227,10 @@ return [
         'PDF' => 'Barryvdh\Snappy\Facades\SnappyPdf',
         'Image' => 'Barryvdh\Snappy\Facades\SnappyImage',
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+
+		'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+		'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
+
 
 
 

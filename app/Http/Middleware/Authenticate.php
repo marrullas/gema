@@ -45,6 +45,11 @@ class Authenticate {
 		}
 
         \Session::put('tipouser', \Auth::User()->type);
+
+		if(!\Auth::User()->active)
+		{
+			return response('Unauthorized.', 401);
+		}
         //dd(\Session::all());
         //dd(\Auth::User()->type);
 

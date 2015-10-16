@@ -201,7 +201,7 @@ class SigaController extends Controller
         return view('admin.siga.resumen',compact('ambitosxciclo'));
     }
     /**
-     *carga la vista de usuarios con ciclos activos
+     *carga la vista de usuarios con ciclos activos (TIMELINE)
      */
     public function sigaambitoxciclo($ambito)
     {

@@ -104,6 +104,12 @@
                                                         <a href="{{ url('download?file='.$file->id) }}" download="{!!$file->filename !!}">
                                                             {{ $file->filename }}
                                                         </a>
+                                                        {{$file->revisado}}
+                                                        @if($file->revisado == false && \Auth::user()->isAdminOrLider())
+                                                            <label for="fancy-checkbox-info" class="[ btn btn-default active ]">
+                                                                Info Checkbox
+                                                            </label>
+                                                        @endif
                                                     </ul>
                                                         @endif
                                                     @endforeach
@@ -136,7 +142,11 @@
                                                                 <a href="{{ url('download?file='.$file->id) }}" download="{!!$file->filename !!}">
                                                                     {{ $file->filename }}
                                                                 </a>
+                                                                @if($file->revisado == false && \Auth::user()->isAdminOrLider())
 
+                                                                    <label for="default" class="btn btn-default">Default <input type="checkbox" id="default" class="badgebox"><span class="badge">&check;</span></label>
+
+                                                                @endif
                                                             </li>
 
                                                         @endif

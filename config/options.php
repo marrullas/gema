@@ -9,7 +9,11 @@ return array(
         'user'      => 'Usuario',
         'instructor'=> 'Instructor',
         'ie'        => 'Funcionario I.E.',
-        'lider'     => 'Lider'
+        'lider'     => 'Lider',
+        'auditor'     => 'Auditor',
+        'coordinador'     => 'Coordinador',
+        'pedagogo'     => 'Pedagogo',
+        'apoyo'     => 'Apoyo',
     ],
     'tiposie' =>
     [

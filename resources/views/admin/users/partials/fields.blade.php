@@ -53,23 +53,28 @@
     {!! Form::label('ciudad', 'Ciudad') !!}
     {!! Form::select('ciudad', $ciudades, null, [ 'class' => 'form-control'] ) !!}
 </div>
-
+@if(Auth::User()->isAdminOrLider())
 <div class="form-group">
     {!! Form::label('passwprd', 'Contraseña ') !!}
     {!! Form::password('password', [ 'class' => 'form-control', 'placeholder' => 'Ingrese su contraseña' ] ) !!}
 </div>
-@if(Auth::User()->isAdminOrLider())
+
 <div class="form-group">
     {!! Form::label('type', 'Tipo de usuario ') !!}
     {!! Form::select('type',config('options.types'), null, [ 'class' => 'form-control', 'placeholder' => 'Escoja el tipo de usuario' ] ) !!}
 
 </div>
-@else
+
+<div class="form-group">
+    {!! Form::label('active', 'Activo') !!}
+    {!! Form::checkbox('active', 1, $active) !!}
+</div>
+{{--@else
     <div class="form-group">
         {!! Form::label('type', 'Tipo de usuario ') !!}
         {!! Form::select('type',config('options.types'), null, [ 'class' => 'form-control', 'disabled', 'placeholder' => 'Escoja el tipo de usuario' ] ) !!}
         {!! Form::hidden('type',null) !!}
-    </div>
+    </div>--}}
 
 @endif
 

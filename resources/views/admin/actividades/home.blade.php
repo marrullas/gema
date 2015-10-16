@@ -1,6 +1,6 @@
 @extends('app')
 @section('menu')
-    @include('admin.partials.menu')
+    @include('menu.menu')
 @endsection
 @section('content')
         <!-- /. NAV SIDE  -->

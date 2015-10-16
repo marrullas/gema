@@ -147,10 +147,11 @@ class UserController extends Controller {
 	 */
 	public function edit($id)
 	{
+        $active = $this->request->get('active');
 		$user = User::findOrfail($id);
         $ciudades = Ciudad::lists('full_name','codigo');
 
-        return view('admin.users.edit',compact('user','ciudades'));
+        return view('admin.users.edit',compact('user','ciudades','active'));
 	}
 
 	/**
@@ -162,9 +163,12 @@ class UserController extends Controller {
 	public function update(EditUserRequest $request,$id)
 	{
         //dd($request->all());
+        $active = $request->get('active');
         $user = User::findOrfail($id);
         $user->full_name =  "$user->first_name $user->last_name";
         $user->fill(Request::all());
+        if(empty($active))
+            $user->active = false;
         $user->save();
 
         return redirect()->back();

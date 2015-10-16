@@ -1,10 +1,7 @@
 @extends('app')
 @section('menu')
-    @if($user->isAdminOrLider())
-        @include('admin.partials.menu')
-    @else
-        @include('instructor.partials.menu')
-    @endif
+    @include('menu.menu')
+@endif
 @endsection
 @section('content')
     <div id="page-wrapper">
