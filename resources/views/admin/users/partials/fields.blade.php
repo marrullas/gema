@@ -54,11 +54,12 @@
     {!! Form::select('ciudad', $ciudades, null, [ 'class' => 'form-control'] ) !!}
 </div>
 
-{{--<div class="form-group">
-    {!! Form::label('passwprd', 'Contraseña ') !!}
-    {!! Form::password('password', [ 'class' => 'form-control', 'placeholder' => 'Ingrese su contraseña' ] ) !!}
-</div>--}}
 @if(Auth::User()->isAdminOrLider())
+<div class="form-group">
+    {!! Form::label('password', 'Contraseña ') !!}
+    {!! Form::password('password', [ 'class' => 'form-control', 'placeholder' => 'Ingrese su contraseña' ] ) !!}
+</div>
+
 <div class="form-group">
     {!! Form::label('type', 'Tipo de usuario ') !!}
     {!! Form::select('type',config('options.types'), null, [ 'class' => 'form-control', 'placeholder' => 'Escoja el tipo de usuario' ] ) !!}
