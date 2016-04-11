@@ -1,5 +1,9 @@
 /vendor
 /node_modules
+Homestead.yaml
+Homestead.json
 .env
-.idea
+.idea/
+.DS_Store
 /storage/debugbar
+/public/uploads
