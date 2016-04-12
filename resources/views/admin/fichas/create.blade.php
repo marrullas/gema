@@ -7,14 +7,14 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Nueva Acta</div>
+                    <div class="panel-heading">Nueva Ficha</div>
 
                     <div class="panel-body">
                         @include('admin.partials.messages')
                         {!! Form::open(['route'=> 'admin.fichas.store', 'method' => 'POST' ]) !!}
                         @include('admin.fichas.partials.fields')
 
-                        <button type="submit" class="btn btn-default">Crear acta
+                        <button type="submit" class="btn btn-default">Crear Ficha
                         </button>
                         {!! Form::close() !!}
                     </div>

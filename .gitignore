@@ -1,9 +1,8 @@
-/storage/debugbar/
-.idea
 /vendor
+/node_modules
 Homestead.yaml
 Homestead.json
 .env
-/node_modules
 .idea/
 .DS_Store
+/storage/debugbar
