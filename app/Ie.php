@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Ie extends Model {
 
@@ -35,5 +36,22 @@ class Ie extends Model {
 
     }
 
+    public static function filtroPaginaciónidpropias($nombre)
+    {
 
+        return Ie::nombre($nombre)
+            ->whereIn('ies.id', function ($q){
+                $q->select('fichas.ie_id')
+                    ->from('fichas')
+                    ->where('fichas.user_id','=',Auth::user()->id);
+            })
+            ->paginate();
+        return Ie::nombre($nombre)
+            ->leftjoin('fichas','ies.id','=','fichas.ie_id')
+            ->where('fichas.user_id','=',Auth::user()->id)
+            ->orderBy('ies.id','ASC')
+            ->distinct('ies.nombre')
+            ->paginate();
+        //return Programa::paginate();
+    }
 }

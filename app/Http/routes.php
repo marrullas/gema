@@ -37,6 +37,9 @@ Route::get('eventos/acumuladoxfichaexcel','EventosController@acumuladoxfichaexce
 Route::get('eventos/actividadesexcel','EventosController@actividadesexcel');
 Route::get('eventos/actividadesexcel/{id}','EventosController@actividadesexcel');
 
+
+//Route::get('ies/updateie/{id}','UserController@updateie');
+
 //Route::get('eventos/destroy/{id}','EventosController@destroy');
 
 Route::post('muro/crearmuro/','MuroController@crearmuro');
@@ -110,4 +113,13 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
+
+Route::post('ies/updateie/{id}','UserController@updateie');
+/*Route::post('ies/updateie', [
+    'as' => 'ies/updateie', 'uses' => 'UserController@updateie'
+]);*/
+Route::get('ies/actualizaries','UserController@actualizaries');
+Route::get('ies/editie/{id}','UserController@editie');
+
+
 
