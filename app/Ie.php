@@ -15,7 +15,10 @@ class Ie extends Model {
     {
         return $this->hasMany('\App\Ficha','ie_id','id');
     }
-
+    public function funcionarios()
+    {
+        return $this->hasMany('\App\Funcionariosie','ie_id','id');
+    }
     public function ciudad()
     {
         return $this->belongsTo('\App\ciudad','ciudad_id','codigo');

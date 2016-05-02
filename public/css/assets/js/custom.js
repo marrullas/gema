@@ -212,6 +212,9 @@
 
     $(document).ready(function () {
         mainApp.main_fun();
+
+
+            $('#formfuncionarios').parsley();
     });
 
 }(jQuery));

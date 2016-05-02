@@ -31,7 +31,7 @@
     {!! Form::label('telefono', 'Teléfono') !!}
     {!! Form::text('telefono', null, [ 'class' => 'form-control', 'placeholder' => 'Ingrese Telefono' ] ) !!}
 </div>
-<div class="form-group">
+{{--<div class="form-group">
     {!! Form::label('nombre_rector', 'Nombre rector I.E') !!}
     {!! Form::text('nombre_rector', null, [ 'class' => 'form-control', 'placeholder' => 'Ingrese nombre rector' ] ) !!}
 </div>
@@ -42,7 +42,7 @@
 <div class="form-group">
     {!! Form::label('tel_rector', 'Teléfono rector I.E') !!}
     {!! Form::text('tel_rector', null, [ 'class' => 'form-control', 'placeholder' => 'Ingrese teléfono rector' ] ) !!}
-</div>
+</div>--}}
 <div class="form-group">
     {!! Form::label('mapa', 'Mapa') !!}
     {!! Form::text('mapa', null, [ 'class' => 'form-control', 'disabled','placeholder' => 'Ingrese coordenadas google Maps' ] ) !!}

@@ -15,19 +15,16 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Editar IE 2</h3></div>
-                    @if(Session::has('message'))
-                        <p class="alert-success">{{ Session::get('message') }}</p>
-                    @endif
+                    <div class="panel-heading"><h3>Editar datos funcionario</div></h3>
+
                     <div class="panel-body">
                         @include('admin.partials.messages')
-                        {!! Form::model($ie,['url'=> ['ies/updateie',$ie]]) !!}
-
-                        @include('users.ies.partials.fields')
-                        <button type="submit" class="btn btn-primary">Actualizar IE
+                        {!! Form::model($funcionario,['route'=> ['funcionarios.update', $funcionario], 'method' => 'PUT', 'id' =>'formfuncionarios' ]) !!}
+                        @include('funcionarios.partials.fields')
+                        <button type="submit" class="btn btn-primary">Actualizar datos
                         </button>
                         {!! Form::close() !!}
-                        {{--@include('admin.ies.partials.delete')--}}
+                        @include('funcionarios.partials.delete')
 
 
                     </div>
@@ -36,11 +33,4 @@
             </div>
         </div>
     </div>
-@endsection
-@section("scripts")
-
-
-    {!! HTML::script('/css/assets/js/custom.js') !!}
-
-
 @endsection

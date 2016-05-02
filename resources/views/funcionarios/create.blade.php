@@ -15,32 +15,19 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Editar IE 2</h3></div>
-                    @if(Session::has('message'))
-                        <p class="alert-success">{{ Session::get('message') }}</p>
-                    @endif
+                    <div class="panel-heading"><h3>Agregar Funcionario de la IE: <b>{{$ie->nombre}}</b></h3></div>
+
                     <div class="panel-body">
                         @include('admin.partials.messages')
-                        {!! Form::model($ie,['url'=> ['ies/updateie',$ie]]) !!}
+                        {!! Form::open(['route'=> 'funcionarios.store', 'method' => 'POST', 'id' =>'formfuncionarios' ]) !!}
+                        @include('funcionarios.partials.fields')
 
-                        @include('users.ies.partials.fields')
-                        <button type="submit" class="btn btn-primary">Actualizar IE
+                        <button type="submit" class="btn btn-default">Crear programa
                         </button>
                         {!! Form::close() !!}
-                        {{--@include('admin.ies.partials.delete')--}}
-
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-@endsection
-@section("scripts")
-
-
-    {!! HTML::script('/css/assets/js/custom.js') !!}
-
-
 @endsection

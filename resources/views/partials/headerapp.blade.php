@@ -11,7 +11,7 @@
     {!!Html::style('/css/assets/css/font-awesome.css')!!}
     {!!Html::style('/css/assets/js/morris/morris-0.4.3.min.css')!!}
     {!!Html::style('/css/assets/css/custom.css')!!}
-
+    <link rel="stylesheet" href="{{ asset('css/assets/css/parsley.css') }}" />
 
     <!-- Fonts -->
 

@@ -100,12 +100,21 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     Route::resource('fichas', 'FichaController');
 
 
+
+
 });
 
 Route::get('download', function() {
     return Response::download(Input::get('path'));
 });
 Route::resource('users','UserController');
+Route::get('funcionarios/{id}','FuncionarioController@index');
+Route::get('funcionarios/create/{id}','FuncionarioController@create');
+Route::resource('funcionarios', 'FuncionarioController');
+
+/*Route::get('listafuncionarios/{$id}',
+    ['as'=>'listafuncionarios','uses'=>'FuncionarioController@index']);*/
+
 
 Route::controllers([
     'eventos' => 'EventosController',
