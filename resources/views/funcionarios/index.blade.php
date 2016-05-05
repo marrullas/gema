@@ -26,7 +26,7 @@
                             </div>
                             <button type="submit" class="btn btn-default">Buscar</button>
                         {!! Form::close() !!}
-                        <p> <a class="btn btn-info" href="{{ url('funcionarios/create',$ie) }}" role="button">Crear funcionario</a></p>
+                        <p> <a class="btn btn-info" href="{{ url('funcionarios/create',$ie) }}" role="button">Agregar funcionario</a></p>
 
                     </div>
                 </div>
