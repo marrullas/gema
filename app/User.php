@@ -115,13 +115,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 ->paginate();
         }
 
-        //dd($result);
         return $result;
     }
     public static function resumen($name, $type, $periodo,$programacion)
     {
+        if(empty($programacion)) { //bug - funciona solo cuando han buscado en el formulario de resumen
 
-        if(empty($programacion)) {
             $result = User::name($name)->with('eventos')
                 ->type($type)
                 ->periodo($periodo)
