@@ -58,6 +58,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->email2;
     }
 
+    public function getFullname()
+    {
+        return $this->first_name + $this->last_name;
+    }
+
 // inhabilitado interfiere cuando se intenta mostar el nombre en formulario ficha
 /*    public function getFullNameAttribute()
     {

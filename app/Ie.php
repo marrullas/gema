@@ -49,12 +49,12 @@ class Ie extends Model {
                     ->where('fichas.user_id','=',Auth::user()->id);
             })
             ->paginate();
-        return Ie::nombre($nombre)
+/*        return Ie::nombre($nombre)
             ->leftjoin('fichas','ies.id','=','fichas.ie_id')
             ->where('fichas.user_id','=',Auth::user()->id)
             ->orderBy('ies.id','ASC')
             ->distinct('ies.nombre')
-            ->paginate();
+            ->paginate();*/
         //return Programa::paginate();
     }
 }

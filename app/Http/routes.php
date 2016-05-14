@@ -99,6 +99,8 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
 
     Route::resource('fichas', 'FichaController');
 
+    Route::resource('seguimientos', 'SeguimientoController');
+
 
 
 
