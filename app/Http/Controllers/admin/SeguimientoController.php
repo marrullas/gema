@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Auth;
 
 class SeguimientoController extends Controller
 {
+
+    protected $request;
+
+    function __construct(\Illuminate\Http\Request $request)
+    {
+        // TODO: Implement __construct() method.
+        $this->request = $request;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,11 +30,12 @@ class SeguimientoController extends Controller
     public function index()
     {
         //
-        $nombre = '';
-        $seguimientos = Seguimiento::filtroPaginación();
+        $nombre = $this->request->get('nombre');
+        $page = $this->request->get('page');
+        $seguimientos = Seguimiento::filtroPaginación($nombre);
 
         //dd($seguimientos);
-        return view('admin.seguimientos.index',compact('seguimientos','nombre'));
+        return view('admin.seguimientos.index',compact('seguimientos','nombre','page'));
     }
 
     /**
@@ -83,6 +92,11 @@ class SeguimientoController extends Controller
     public function edit($id)
     {
         //
+        $usuarios = User::lists('full_name','id');
+        $estadoseguimiento = Estadoseguimiento::lists('nombre','id');
+        $seguimiento = Seguimiento::findOrFail($id);
+        return view('admin.seguimientos.edit',compact('seguimiento','usuarios','estadoseguimiento'));
+
     }
 
     /**
@@ -95,6 +109,11 @@ class SeguimientoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
+        $seguimiento = Seguimiento::findOrFail($id);
+        $seguimiento->fill($request->all());
+        $seguimiento->save();
+        return redirect()->back();
     }
 
     /**

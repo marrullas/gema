@@ -35,8 +35,8 @@
     <td><span class="label pull-left" style="background-color: {{$seguimiento->estadoseguimiento->color}};">{!! $seguimiento->estadoseguimiento->nombre !!}</span></td>
     <td><strong>{{$seguimiento->descripcion}}</strong></td>
     <td><strong>{{$seguimiento->created_at}}</strong></td>
-    <td><strong>{{$seguimiento->Fecha_entrega}}</strong></td>
-    <td><strong>{{($seguimiento->Fecha_entrega)?'compartido':'privado'}}</strong></td>
+    <td><strong>{{$seguimiento->fecha_entrega}}</strong></td>
+    <td><strong>{{($seguimiento->fecha_entrega)?'compartido':'privado'}}</strong></td>
 </tr>
     @endforeach
     </tbody>

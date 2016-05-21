@@ -16,6 +16,8 @@
 
                         <button type="submit" class="btn btn-default">Crear
                         </button>
+                        <a href="{{url('admin/seguimientos')}}" class="btn btn-danger">Cancelar
+                        </a>
                         {!! Form::close() !!}
                     </div>
                 </div>

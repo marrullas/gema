@@ -29,10 +29,24 @@ class Seguimiento extends Model
         return $this->belongsTo('\App\Estadoseguimiento','estadoseguimientos','id');
     }
 
-    public static function filtroPaginación()
+    public static function filtroPaginación($nombre)
     {
         return Seguimiento::with(['usuarioseguimiento', 'estadoseguimiento'])
-            ->orderBy('id', 'ASC')
+            ->nombre($nombre)
+            ->orderBy('seguimientos.id', 'ASC')
             ->paginate();
+    }
+
+    public function  scopeNombre($query, $name)
+    {
+
+        //return $query->where('usuarioseguimientos','full_name','LIKE',"%$name%");
+        if ($name) {
+            return $query->join('users', function ($join) use ($name) {
+
+             $join->on('user_id_seguimiento', '=' , 'users.id')
+                ->where('users.full_name',"LIKE","%$name%");
+            });
+        }
     }
 }

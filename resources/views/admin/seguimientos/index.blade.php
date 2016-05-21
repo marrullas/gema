@@ -24,7 +24,7 @@
                 </div>
         @include('admin.seguimientos.partials.table')
 
-        {{--{!! $seguimientos->appends(['nombre'=>$nombre])->render() !!}--}}
+        {!! $seguimientos->appends(['nombre'=>$nombre])->render() !!}
             </div>||
         </div>
     </div>
