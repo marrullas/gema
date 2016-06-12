@@ -8,11 +8,13 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Requests;
 use App\ciudad;
+use App\Http\Requests\EditIeRequest;
 use App\Http\Requests\EditUserRequest;
 use App\Evento;
 use App\Ficha;
+use App\Ie;
 use App\Muro;
 use App\Tipoactividad;
 use App\User;
@@ -113,7 +115,6 @@ class UserController extends Controller{
         $user->full_name =  "$user->first_name $user->last_name";
         $user->fill($request->all());
         $user->save();
-
         return redirect()->back();
     }
 
@@ -130,6 +131,34 @@ class UserController extends Controller{
         $fichas = $user->fichas()->get();
 
         return view('users.show',compact('user','fichas'));
+    }
+    
+    public function actualizaries()
+    {
+        $nombre = $this->request->get('nombre');
+        $page = $this->request->get('page');
+        $ies = Ie::filtroPaginaciónidpropias($nombre);
+        return view('users.ies.index',compact('nombre','page','ies'));
+    }
+    public function editie($id)
+    {
+        //
+        $ciudades = Ciudad::lists('full_name','codigo');
+        $ie = Ie::findOrFail($id);
+        return view('users.ies.edit',compact('ie','ciudades'));
+    }
+    public function updateie($id)
+    {
+
+
+        $data = $this->request->all();
+        //dd($data);
+        $ie = Ie::findOrfail($id);
+        $ie->fill($data);
+        $ie->save();
+        Session::flash('message','IE Actualizada correctamente!!!');
+        return redirect()->back();
+
     }
 
     public function isadmin()

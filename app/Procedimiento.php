@@ -11,7 +11,7 @@ class Procedimiento extends Model
     protected $fillable = ['id','nombre','objetivo','responsable','alcance','generalidades','user_id','version','codigo'
     ,'vigencia','proceso'];
 
-    public static function filtroPaginación($nombre)
+    public static function filtroPaginacion($nombre)
     {
         return Procedimiento::nombre($nombre)
             ->orderBy('id','ASC')

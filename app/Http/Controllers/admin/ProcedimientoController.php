@@ -36,7 +36,7 @@ class ProcedimientoController extends Controller
         //
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
-        $procedimientos = Procedimiento::filtroPaginación($nombre);
+        $procedimientos = Procedimiento::filtroPaginacion($nombre);
         //dd($procedimientos);
 
         return view('admin.procedimientos.index',compact('nombre','page','procedimientos'));

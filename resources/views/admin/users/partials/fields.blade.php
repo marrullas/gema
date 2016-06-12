@@ -53,9 +53,10 @@
     {!! Form::label('ciudad', 'Ciudad') !!}
     {!! Form::select('ciudad', $ciudades, null, [ 'class' => 'form-control'] ) !!}
 </div>
+
 @if(Auth::User()->isAdminOrLider())
 <div class="form-group">
-    {!! Form::label('passwprd', 'Contraseña ') !!}
+    {!! Form::label('password', 'Contraseña ') !!}
     {!! Form::password('password', [ 'class' => 'form-control', 'placeholder' => 'Ingrese su contraseña' ] ) !!}
 </div>
 

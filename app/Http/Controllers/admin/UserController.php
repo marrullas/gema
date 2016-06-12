@@ -261,11 +261,7 @@ class UserController extends Controller {
      */
     public function resumen($descargar = null){
 
-        //dd('al menos vine');
-        //dd($this->request->get('periodo'));
-
-        //dd($descargar);
-
+        $descargar = $this->request->get('btnexcel');
         $sinprogramacion = $this->request->get('sinprogramacion');
         $periodo = $this->request->get('periodo');
         $name =  $this->request->get('name');
@@ -274,12 +270,9 @@ class UserController extends Controller {
         $users = User::FiltroResumen($name,$type,$periodo,$sinprogramacion);
         $reporte = false;
 
-
-
         if(!empty($descargar)) {
             if ($descargar == 'excel') {
                 $userExcel = User::resumen($name,$type,$periodo,$sinprogramacion);
-                //dd($userExcel);
                 Excel::create('Informe resumen', function ($excel) use($userExcel){
 
                     $excel->sheet('resumen', function ($sheet) use($userExcel){

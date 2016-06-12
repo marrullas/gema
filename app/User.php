@@ -62,6 +62,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->email2;
     }
 
+    public function getFullname()
+    {
+        return $this->first_name + $this->last_name;
+    }
+
 // inhabilitado interfiere cuando se intenta mostar el nombre en formulario ficha
 /*    public function getFullNameAttribute()
     {
@@ -74,11 +79,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function setPasswordAttribute($value)
     {
+        //dd($value);
         /** @var TYPE_NAME $value */
         if(!empty($value)) {
             if (Hash::needsRehash($value)) {//valida aun no este encriptada
+                //dd($value);
                 $this->attributes['password'] = bcrypt($value);
             }
+            else{
+                $this->attributes['password'] = $value;
+            }
+        //dd('por aca');
 
         }
     }
@@ -113,13 +124,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 ->paginate();
         }
 
-        //dd($result);
         return $result;
     }
     public static function resumen($name, $type, $periodo,$programacion)
     {
+        if(empty($programacion)) { //bug - funciona solo cuando han buscado en el formulario de resumen
 
-        if(empty($programacion)) {
             $result = User::name($name)->with('eventos')
                 ->type($type)
                 ->periodo($periodo)

@@ -38,6 +38,7 @@
 
             </li>
             <li>
+
                 <a href="#"><i class="fa fa-gears fa-3x"></i> SIGA<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
@@ -47,16 +48,31 @@
                     <li>
                         <a href="{{ url('/admin/ciclos/') }}"><i class="fa fa-refresh fa-3x"></i>Ciclos</a>
                     </li>
-{{--                    <li>
-                        <a href="{{ url('/admin/entregas/') }}">Entregas</a>
-                    </li>--}}
                     <li>
                         <a href="{{ url('/admin/siga/resumen/') }}"><i class="fa fa-list fa-3x"></i>Resumen x usuario</a>
+                    </li>
+{{--                  <li>
+                        <a href="{{ url('/admin/entregas/') }}">Entregas</a>
+                  </li>--}}
+                </ul>
+             </li>
+            <li>
+
+
+            <a  href="#"><i class="fa fa-users fa-3x"></i> Gestion <span class="fa arrow"></span></a>
+
+                <ul class="nav nav-second-level">
+
+                    <li>
+                        <a href="{{ url('/admin/seguimientos') }}">Seguimientos</a>
+
                     </li>
                 </ul>
             </li>
             <li>
+
                 <a href="#"><i class="fa fa-archive fa-3x"></i> Actas<span class="fa arrow"></span></a>
+
 
                 <ul class="nav nav-second-level">
                     <li>
@@ -91,6 +107,7 @@
             <li>
                 <a href="#"><i class="fa fa-tasks fa-3x"></i> Tareas<span class="fa arrow"></span></a>
 
+
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ url('/tareas/') }}"><i class="fa fa-list-ol fa-3x"></i>Lista</a>
@@ -102,6 +119,9 @@
             </li>
 {{--
             <li  >
+=======
+            <li>
+>>>>>>> master
                 <a  href="#"><i class="fa fa-edit fa-3x"></i> Documentos </a>
             </li>
 --}}

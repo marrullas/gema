@@ -39,6 +39,9 @@ Route::get('eventos/acumuladoxfichaexcel','EventosController@acumuladoxfichaexce
 Route::get('eventos/actividadesexcel','EventosController@actividadesexcel');
 Route::get('eventos/actividadesexcel/{id}','EventosController@actividadesexcel');
 
+
+//Route::get('ies/updateie/{id}','UserController@updateie');
+
 //Route::get('eventos/destroy/{id}','EventosController@destroy');
 
 Route::post('muro/crearmuro/','MuroController@crearmuro');
@@ -149,6 +152,7 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
 
     Route::resource('fichas', 'FichaController');
 
+
     Route::resource('procedimientos','ProcedimientoController');
     Route::resource('actividades','ActividadController');
     Route::resource('ciclos','CicloController');
@@ -176,6 +180,9 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     ]);*/
 
 
+    Route::resource('seguimientos', 'SeguimientoController');
+
+
 
 
 
@@ -190,6 +197,14 @@ Route::get('download', function() {
     return Response::download($file->storage_path,$file->filename,$headers);
 });
 Route::resource('users','UserController');
+Route::get('funcionarios/{id}','FuncionarioController@index');
+Route::get('funcionarios/create/{id}','FuncionarioController@create');
+Route::get('funcionarios/show/{id}','FuncionarioController@show');
+Route::resource('funcionarios', 'FuncionarioController');
+
+/*Route::get('listafuncionarios/{$id}',
+    ['as'=>'listafuncionarios','uses'=>'FuncionarioController@index']);*/
+
 
 Route::controllers([
     'eventos' => 'EventosController',
@@ -198,6 +213,18 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
+
 Route::post('api/register', 'TokenAuthController@register');
 Route::post('api/authenticate', 'TokenAuthController@authenticate');
 Route::get('api/authenticate/user', 'TokenAuthController@getAuthenticatedUser');
+
+Route::post('ies/updateie/{id}','UserController@updateie');
+/*Route::post('ies/updateie', [
+    'as' => 'ies/updateie', 'uses' => 'UserController@updateie'
+]);*/
+Route::get('ies/actualizaries','UserController@actualizaries');
+Route::get('ies/editie/{id}','UserController@editie');
+
+
+
+

@@ -67,9 +67,9 @@
                     </li>
                 </ul>
             </li>
-            <li>
+{{--            <li>
                 <a  href="{{ url('/forum') }}"><i class="fa fa-comments-o fa-3x"></i> Foro</a>
-            </li>
+            </li>--}}
             <li>
                 <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
 
@@ -82,10 +82,10 @@
                     </li>
                 </ul>
             </li>
-            <li  >
+            <li>
                 <a  href="{{ url('/calendar') }}"><i class="fa fa-calendar-o fa-3x"></i> Mi Calendario</a>
             </li>
-            <li  >
+            <li>
                 <a  href="{{ url('/admin/muro') }}"><i class="fa fa-comment fa-3x"></i> Muro / Anuncios</a>
             </li>
             <li>
