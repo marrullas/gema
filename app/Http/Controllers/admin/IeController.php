@@ -132,6 +132,10 @@ class IeController extends Controller {
         Session::flash('message',$message);
         return redirect()->route('admin.ies.index');
 	}
-
+	
+	public function funcionarios($ie)
+	{
+		
+	}
 
 }

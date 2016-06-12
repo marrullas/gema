@@ -112,6 +112,7 @@ Route::get('download', function() {
 Route::resource('users','UserController');
 Route::get('funcionarios/{id}','FuncionarioController@index');
 Route::get('funcionarios/create/{id}','FuncionarioController@create');
+Route::get('funcionarios/show/{id}','FuncionarioController@show');
 Route::resource('funcionarios', 'FuncionarioController');
 
 /*Route::get('listafuncionarios/{$id}',

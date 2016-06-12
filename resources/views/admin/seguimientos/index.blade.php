@@ -14,7 +14,11 @@
                     <div class="panel-body">
                         {!! Form::model(['name'=>$nombre],['route'=> 'admin.seguimientos.index', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
                             <div class="form-group">
-                                {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
+                                {!! Form::text('nombre', $nombre, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('estado_segumiento', 'Estado') !!}
+                                {!! Form::select('estadoseguimientos', $estadoseguimiento, null, [ 'class' => 'form-control'] ) !!}
                             </div>
                             <button type="submit" class="btn btn-default">Buscar</button>
                         {!! Form::close() !!}

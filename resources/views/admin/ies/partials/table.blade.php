@@ -22,8 +22,9 @@
             <td>{{$ie->direccion}}</td>
             <td>{{$ie->telefono}}</td>
             <td>
-                <a class="btn btn-info btn-xs" href="{{ route('admin.ies.edit', $ie) }}">Editar</a>
                 <!--<a href="#!" class="btn btn-danger btn-xs">Eliminar</a> -->
+                <a class="btn btn-info btn-xs" href="{{ route('admin.ies.edit', $ie) }}">Editar</a>
+                <a class="btn btn-warning btn-xs" href="{{ url('/funcionarios/'.$ie->id) }}">Funcionarios IE</a>
 
             </td>
         </tr>

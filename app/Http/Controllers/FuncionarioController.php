@@ -80,6 +80,13 @@ class FuncionarioController extends Controller
     public function show($id)
     {
         //
+        //
+        $funcionario = Funcionariosie::with('tipofuncionario')
+                    ->findOrfail($id);
+        //dd($funcionario);
+        //fichas = $user->fichas()->get();
+
+        return view('funcionarios.show',compact('funcionario'));
     }
 
     /**

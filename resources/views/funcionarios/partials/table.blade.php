@@ -21,6 +21,7 @@
             <td>{{$funcionario->tipofuncionario->nombre}}</td>
             <td>
                 <a class="btn btn-info btn-xs" href="{{ route('funcionarios.edit', $funcionario) }}">Editar</a>
+                <a class="btn btn-success btn-xs" href="{{ url('funcionarios/show', $funcionario) }}">Ver</a>
                 <!--<a href="#!" class="btn btn-danger btn-xs">Eliminar</a> -->
 
             </td>

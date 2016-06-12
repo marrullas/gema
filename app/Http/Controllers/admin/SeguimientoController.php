@@ -30,12 +30,14 @@ class SeguimientoController extends Controller
     public function index()
     {
         //
+        //dd($this->request->all());
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
-        $seguimientos = Seguimiento::filtroPaginación($nombre);
-
+        $estadoseg = $this->request->get('estadoseguimientos');
+        $seguimientos = Seguimiento::filtroPaginación($nombre,$estadoseg);
+        $estadoseguimiento =  [''=>''] + Estadoseguimiento::lists('nombre','id')->all();
         //dd($seguimientos);
-        return view('admin.seguimientos.index',compact('seguimientos','nombre','page'));
+        return view('admin.seguimientos.index',compact('seguimientos','nombre','page','estadoseguimiento'));
     }
 
     /**
