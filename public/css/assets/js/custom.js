@@ -214,7 +214,11 @@
         mainApp.main_fun();
 
 
-            $('#formfuncionarios').parsley();
+        $('#formfuncionarios').parsley();
+
+        $('#listnc').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+        $('#gridnc').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+
     });
 //funcionalidad para el menu listatareas
 

@@ -55,7 +55,14 @@
                                         <td>Inactivo</td>
                                     @endif
                                 </tr>
-
+                                <tr>
+                                    <td>Publico:</td>
+                                    @if($ciclo->publico == 1)
+                                        <td>SI</td>
+                                    @else
+                                        <td>NO</td>
+                                    @endif
+                                </tr>
                                 </tbody>
                             </table>
 

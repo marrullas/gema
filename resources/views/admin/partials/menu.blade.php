@@ -49,16 +49,15 @@
                         <a href="{{ url('/admin/ciclos/') }}"><i class="fa fa-refresh fa-3x"></i>Ciclos</a>
                     </li>
                     <li>
+                    <a href="{{ url('/admin/usuariosxciclo/') }}"><i class="fa fa-refresh fa-3x"></i>Usuarios x ciclo</a>
+                    </li>
+                    <li>
                         <a href="{{ url('/admin/siga/resumen/') }}"><i class="fa fa-list fa-3x"></i>Resumen x usuario</a>
                     </li>
-{{--                  <li>
-                        <a href="{{ url('/admin/entregas/') }}">Entregas</a>
-                  </li>--}}
+
                 </ul>
              </li>
             <li>
-
-
             <a  href="#"><i class="fa fa-users fa-3x"></i> Gestion <span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
@@ -117,16 +116,6 @@
                     </li>
                 </ul>
             </li>
-{{--
-            <li  >
-=======
-            <li>
->>>>>>> master
-                <a  href="#"><i class="fa fa-edit fa-3x"></i> Documentos </a>
-            </li>
---}}
-
-
             <li>
                 <a href="#"><i class="fa fa-sitemap fa-3x"></i> Gestion de catálogos<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -149,3 +138,4 @@
     </div>
 
 </nav>
+</div>

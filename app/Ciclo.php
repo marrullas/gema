@@ -8,9 +8,9 @@ class Ciclo extends Model
 {
     //
     protected $table = 'ciclos';
-    protected $fillable = ['id','nombre','descripcion','ambito_id','procedimiento_id','fecha_ini','fecha_fin','activo'];
+    protected $fillable = ['id','nombre','descripcion','ambito_id','procedimiento_id','fecha_ini','fecha_fin','activo','publico'];
 
-    public static function filtroPaginación($nombre)
+    public static function filtroPaginacion($nombre)
     {
         return Ciclo::nombre($nombre)
             ->orderBy('id','ASC')

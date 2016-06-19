@@ -35,4 +35,9 @@ class Procedimiento extends Model
         $fecha =  \Carbon\carbon::createFromFormat('d/m/Y',$value);
         $this->attributes['vigencia'] = $fecha;
     }
+    
+    public function actividades()
+    {
+        return $this->hasMany('\App\Actividad');
+    }
 }

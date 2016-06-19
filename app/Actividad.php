@@ -22,7 +22,7 @@ class Actividad extends Model
         return $this->hasMany('\App\Files','codigo','id')->Filesactividad();
     }
 
-    public static function filtroPaginación($nombre)
+    public static function filtroPaginacion($nombre)
     {
         return Actividad::nombre($nombre)
             ->orderBy('id','ASC')

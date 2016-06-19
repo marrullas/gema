@@ -4,8 +4,8 @@
     <tr>
         <th>#</th>
         <th>Ciclo</th>
-        <th>Descripción</th>
-        <th>Ambito</th>
+        <th>Estado</th>
+        <th>Publico</th>
         <th>Fecha inicio</th>
         <th>Fecha final</th>
 
@@ -16,8 +16,8 @@
         <tr data-id="{{$ciclo->id}}">
             <th scope="row">{{$ciclo->id}}</th>
             <td>{!!$ciclo->nombre !!}</td>
-            <td>{!!$ciclo->descripcion !!}</td>
-            <td>{!!$ciclo->ambito->nombre !!}</td>
+            <td>{!!($ciclo->activo=='1')?'ACTIVO':'INACTIVO' !!}</td>
+            <td>{!!($ciclo->publico=='1')?'SI':'NO' !!}</td>
             <td>{!!$ciclo->fecha_ini !!}</td>
             <td>{!!$ciclo->fecha_fin !!}</td>
 

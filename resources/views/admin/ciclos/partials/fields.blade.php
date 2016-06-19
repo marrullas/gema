@@ -33,7 +33,10 @@
     {!! Form::label('activo', 'Activo') !!}
     {!! Form::checkbox('activo', 1, $ciclo->activo) !!}
 </div>
-
+<div class="form-group">
+    {!! Form::label('public', 'Publico') !!}
+    {!! Form::checkbox('publico', 1, $ciclo->publico) !!}
+</div>
 @section("scripts")
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.0/moment-with-locales.min.js"></script>
     {!! HTML::script('/bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}

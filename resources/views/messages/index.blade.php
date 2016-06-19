@@ -1,14 +1,6 @@
 @extends('app')
-
 @section('menu')
-    @if(Session::get('tipouser')== 'user' || Session::get('tipouser')== 'instructor')
-
-        @include('instructor.partials.menu')
-    @else
-
-        @include('admin.partials.menu')
-
-    @endif
+    @include('menu.menu')
 @endsection
 @section('content')
     <!-- /. NAV SIDE  -->

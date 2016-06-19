@@ -1,7 +1,6 @@
 @extends('app')
-
 @section('menu')
-    @include('instructor.partials.menu')
+    @include('menu.menu')
 @endsection
 @section('content')
         <!-- /. NAV SIDE  -->

@@ -29,12 +29,12 @@
                 <a href="#"><i class="fa fa-sitemap fa-3x"></i> SIGA<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
-                    <li>
+{{--                    <li>
                         <a  href="{{ url('/siga') }}"><i class="fa fa-list-ul fa-3x"></i> Procedimientos</a>
                     </li>
                     <li>
                         <a href="{{ url('/siga/resumen') }}"><i class="fa fa-list fa-3x"></i>resumen</a>
-                    </li>
+                    </li>--}}
                 </ul>
             </li>
             <li>
@@ -52,9 +52,9 @@
                     </li>
                 </ul>
             </li>
-            <li>
+{{--            <li>
                 <a  href="{{ url('/forum') }}"><i class="fa fa-group fa-3x"></i> Foro</a>
-            </li>
+            </li>--}}
             <li>
                 <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
 
@@ -67,7 +67,7 @@
                     </li>
                 </ul>
             </li>
-            <li>
+{{--            <li>
                 <a href="#"><i class="fa fa-archive fa-3x"></i> Actas<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
@@ -76,8 +76,8 @@
                     </li>
 
                 </ul>
-            </li>
-            <li>
+            </li>--}}
+{{--            <li>
                 <a href="#"><i class="fa fa-tasks fa-3x"></i> Tareas<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
@@ -88,7 +88,7 @@
                         <a href="{{ url('/tareas/create') }}">Crear</a>
                     </li>
                 </ul>
-            </li>
+            </li>--}}
             <li>
                 <a  href="#"><i class="fa fa-users fa-3x"></i> Usuarios <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">

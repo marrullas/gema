@@ -27,7 +27,7 @@ class IsAdmin {
 	public function handle($request, Closure $next)
 	{
 
-        if(!$this->auth->user()->isAdmin())
+        if(!($this->auth->user()->isAdmin() || $this->auth->user()->isAuditor()))
         {
             $this->auth->logout();
             if ($request->ajax())

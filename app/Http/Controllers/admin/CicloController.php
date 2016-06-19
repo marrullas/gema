@@ -44,7 +44,7 @@ class CicloController extends Controller
         //
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
-        $ciclos = Ciclo::filtroPaginación($nombre);
+        $ciclos = Ciclo::filtroPaginacion($nombre);
 
         return view('admin.ciclos.index',compact('nombre','page','ciclos'));
     }
@@ -78,13 +78,16 @@ class CicloController extends Controller
         //$userID = Auth::user()->id;
         $data = $request->all();
         $activo = Input::get('activo');
+        $publico = Input::get('publico');
 
 
         //dd($data);
         $ciclo  = new Ciclo($data);
         if(empty($activo))
             $ciclo->activo = false;
-        //$ciclo->user_id = $userID;
+        if(empty($publico))
+            $ciclo->publico = false;
+
 
         $ciclo->save();
         //se crean las entregas para el ciclo
@@ -146,8 +149,11 @@ class CicloController extends Controller
         $ciclo = Ciclo::findOrfail($id);
         $ciclo->fill($request->all());
         $activo = $this->request->get('activo');
+        $publico = $this->request->get('publico');
         if(empty($activo))
             $ciclo->activo = false;
+        if(empty($publico))
+            $ciclo->publico = false;
         //dd($request->all());
         $ciclo->save();
 

@@ -118,14 +118,6 @@ Route::resource('files','FilesController');
 
 Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' => 'admin'],   function() {
 
-/*    Route::get('users/calendar/{id?}', [
-        'as' => 'calendar', 'uses' => 'UserController@calendar'
-    ]);
-
-    Route::post('users/calendar/', [
-        'as' => 'calendar', 'uses' => 'UserController@calendar'
-    ]);*/
-
     Route::get('users/misevento/{id?}', [
         'as' => 'misevento', 'uses' => 'UserController@misevento'
     ]);
@@ -156,6 +148,26 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     Route::resource('procedimientos','ProcedimientoController');
     Route::resource('actividades','ActividadController');
     Route::resource('ciclos','CicloController');
+    Route::get('auditoria/{id}',[
+        'as' => 'auditoria', 'uses' =>'AuditoriaController@index'
+    ]);
+    Route::get('auditoria/actividad/{actividad}',[
+        'as' => 'auditoria', 'uses' =>'AuditoriaController@auditaractividad'
+    ]);
+    Route::post('auditoria/certificaractividad/{actividad}',[
+        'as' => 'auditoria', 'uses' =>'AuditoriaController@certificaractividad'
+    ]);
+    Route::post('auditoria/quitarcertificacion/{actividad}',[
+        'as' => 'auditoria', 'uses' =>'AuditoriaController@quitarcertificacion'
+    ]);
+    Route::post('auditoria/guardarnc',[
+        'as' => 'auditoria', 'uses' =>'NcsController@store'
+    ]);
+    Route::post('auditoria/devolvernc',[
+        'as' => 'auditoria', 'uses' =>'NcsController@update'
+    ]);
+    Route::resource('auditoria','AuditoriaController');
+    Route::resource('usuariosxciclo','UsuariosxcicloController');
     Route::get('ciclos/activar/{id}',[
         'as' => 'admin.ciclos.activar', 'uses' => 'CicloController@activar'
     ]);
@@ -197,6 +209,7 @@ Route::get('download', function() {
     return Response::download($file->storage_path,$file->filename,$headers);
 });
 Route::resource('users','UserController');
+Route::resource('ncs','NcsController');
 Route::get('funcionarios/{id}','FuncionarioController@index');
 Route::get('funcionarios/create/{id}','FuncionarioController@create');
 Route::get('funcionarios/show/{id}','FuncionarioController@show');

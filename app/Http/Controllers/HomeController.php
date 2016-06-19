@@ -62,6 +62,9 @@ class HomeController extends Controller {
             case 'admin':
                 return view('admin.users.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','mensajes'));
             break;
+            case 'auditor':
+                return view('admin.users.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','mensajes'));
+                break;
             case 'user':
                 return view('user.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas'));
             case 'instructor':

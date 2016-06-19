@@ -4,4 +4,6 @@
     @include('menu.partials.instructor')
 @elseif(\Auth::user()->type == 'user')
     @include('menu.partials.instructor')
+@elseif(\Auth::user()->type == 'auditor')
+    @include('menu.partials.auditor')
 @endif
