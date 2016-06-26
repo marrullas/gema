@@ -52,17 +52,17 @@
                     </div>
                     <div class="panel-footer">
                             <div class="btn-group pull-right">
-                            <a href="{{ url('admin/auditoria',$auditoria->usuariosxciclo_id) }}" class="btn btn-primary btn-sm">Volver </a>
-                                </div>
+                                <a href="{{ url('auditoria/veractividades',$auditoria->usuariosxciclo_id) }}" class="btn btn-primary btn-sm">Volver </a>
+                            </div>
                             @if($auditoria->ncsPendientesCount == 0)
                                 @include('admin.ciclos.auditoria.partials.certificaractividad')
                             @endif
                             @if(Auth::user()->type == 'auditor' || Auth::user()->type == 'admin')
                             @include('admin.ciclos.auditoria.partials.crearnc')
+                                @if(!$auditoria->certificado)
+                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal2">Crear NC</button>
+                                @endif
                             @endif
-                        @if(!$auditoria->certificado)
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal2">Crear NC</button>
-                        @endif
                     </div>
 
 
@@ -72,7 +72,7 @@
         <div class="row"> {{--contenido--}}
             <div class="col-md-10 col-md-offset-1 toppad" >
                 {{--@include('admin.ciclos.auditoria.partials.actividades')--}}
-                @include('admin.ciclos.auditoria.partials.gridncs')
+                @include('auditoria.partials.gridncs')
             </div>
         </div><!--row!-->
     </div>

@@ -54,8 +54,10 @@ class NcsController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        //dd($data);
         $nc = new Ncs();
-        $nc->fill($request->all());
+        $nc->fill($data);
         $nc->auditor = Auth::user()->id;
         $nc->certificador = Auth::user()->id;
         $nc->save();

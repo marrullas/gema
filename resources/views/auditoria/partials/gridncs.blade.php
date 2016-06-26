@@ -17,7 +17,8 @@
                     <div class="nav">
                         @if($nc->estadoncs_id != 3)
                         {{--<button href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-pencil"></i> <strong>Agregar nota</strong></button>--}}
-                            @if($nc->user_id == Auth::user()->id){{--solo se puede devolver una nc de la que se es responsable--}}
+                            {{--solo se puede devolver una nc de la que se es responsable y que este abierta--}}
+                            @if($nc->user_id == Auth::user()->id && $nc->estadoncs_id == 1)
                                 <button href="#" class="btn btn-inverse" data-toggle="modal" data-target="#myModaldevolvernc{{$nc->id}}"><i class="glyphicon glyphicon-backward"></i> <strong>Devolver</strong></button>
                             @endif
                         @endif
@@ -68,8 +69,9 @@
                 </div>
             </div>
         </div>
-            @include('admin.ciclos.auditoria.partials.devolvernc')
-            @include('admin.ciclos.auditoria.partials.cerrarnc')
+        @if($nc->estadoncs_id == 1)
+            @include('auditoria.partials.devolvernc')
+        @endif
         @endforeach
     </div>
 

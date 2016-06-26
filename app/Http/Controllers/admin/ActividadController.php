@@ -41,7 +41,7 @@ class ActividadController extends Controller
 
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
-        $actividades = Actividad::filtroPaginación($nombre);
+        $actividades = Actividad::filtroPaginaciï¿½n($nombre);
         $totalactividades = $actividades->total();
 
         return view('admin.actividades.index',compact('nombre','page','actividades','totalactividades'));

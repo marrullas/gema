@@ -22,9 +22,13 @@
     {!! Form::textarea('medida', null,['class'=>'form-control textarea'])!!}
 </div>
 <div class="form-group">
+    {!! Form::label('usuario', 'Responsable ') !!}
+    {!! Form::select('user_id', $usuarios, null, [ 'class' => 'form-control'] ) !!}
+</div>
+<div class="form-group">
     {!! Form::label('plazo', 'Plazo') !!}
     <div class="input-group date" id="datetimepicker1">
-        {!! Form::text('plazo', null, ['class' => 'form-control']) !!}
+        {!! Form::text('plazo', null, ['class' => 'form-control', 'required'=>'" "']) !!}
         <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>
     </div>
 </div>

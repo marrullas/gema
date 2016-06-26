@@ -7,7 +7,7 @@
 {!! Form::close() !!}
 --}}
 @if($auditoria->certificado == false)
-    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Certificar</button>
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">Cumple</button>
 @elseif($auditoria->certificado == true && Auth::user()->isAdmin())
     {!! Form::open(['url'=> ['admin/auditoria/quitarcertificacion',$auditoria], 'method' => 'PUSH' ]) !!}
         <button type="submit" onclick="return confirm('Esta seguro que quiere quitar certifiación?')" class="btn btn-danger btn-sm">Quitar certificación</button>

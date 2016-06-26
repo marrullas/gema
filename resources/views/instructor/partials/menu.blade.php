@@ -26,7 +26,7 @@
                 <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Calendario</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-sitemap fa-3x"></i> SIGA<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-sitemap fa-3x"></i> AUDITORIA<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
                     <li>

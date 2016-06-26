@@ -8,6 +8,7 @@ use App\Estadosncs;
 use App\Ncs;
 use App\Seguimientoncs;
 use App\Tiposnc;
+use App\User;
 use App\Usuariosxciclo;
 use Illuminate\Http\Request;
 
@@ -44,10 +45,12 @@ class AuditoriaController extends Controller
         $usuariosxciclo =  Usuariosxciclo::findOrfail($id);
         $auditoria = Auditoria::with('ncsResueltasCount','ncsPendientesCount')
         ->where('usuariosxciclo_id','=', $usuariosxciclo->id)->get();
-        $totalauditoria = $auditoria->count();        
+        $totalauditoria = $auditoria->count();
+        $usuarios = User::lists('full_name','id');
         //dd($auditoria);
         //
-        return view('admin.ciclos.auditoria.index',compact('usuariosxciclo', 'auditoria','totalauditoria','nombre','estadoncs','tiposnc'));
+        return view('admin.ciclos.auditoria.index',compact('usuariosxciclo', 'auditoria','totalauditoria','nombre','estadoncs','tiposnc',
+        'usuarios'));
     }
 
     /**
@@ -96,10 +99,11 @@ class AuditoriaController extends Controller
 
         $auditoria = Auditoria::findOrFail($id);
         $ncs = Ncs::where('auditoria_id',$auditoria->id)->get();
+        $usuarios = User::lists('full_name','id');
         //dd($ncs->first()->seguimientos);
 
         //dd($auditoria->usuariosxciclo->user_id);
-        return view('admin.ciclos.auditoria.auditaractividad',compact('auditoria','ncs','estadoncs','tiposnc'));
+        return view('admin.ciclos.auditoria.auditaractividad',compact('auditoria','ncs','estadoncs','tiposnc','usuarios'));
     }
 
     /**

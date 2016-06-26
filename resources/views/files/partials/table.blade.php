@@ -30,7 +30,7 @@
 
             <td>
                 <div class="panel-group">
-
+                    @if(Auth::user()->type=='admin')
                     <div class="dropdown pull-right">
                         <button class="btn btn-default dropdown-toggle btn-xs btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                             Acciones
@@ -46,6 +46,7 @@
                             {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividades?userId=') }}">Documentos</a></li>--}}
                         </ul>
                     </div>
+                    @endif
                 </div>
 
 

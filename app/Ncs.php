@@ -11,6 +11,12 @@ class Ncs extends Model
     protected $fillable = ['auditoria_id','user_id','auditor','certificador',
                             'estadoncs_id','descripcion','tiposnc_id','medida','plazo'];
 
+
+    public function setPlazoAttribute($value)
+    {
+        $fecha =  \Carbon\carbon::createFromFormat('d/m/Y',$value);
+        $this->attributes['plazo'] = $fecha;
+    }
     public function user()
     {
         return $this->belongsTo('\App\User');

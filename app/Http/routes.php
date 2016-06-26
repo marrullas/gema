@@ -115,7 +115,7 @@ Route::get('api/uploadfile','FilesController@upload');
 Route::post('api/uploadfile','FilesController@upload');
 Route::get('api/filesxtarea/{id}','FilesController@filesxtarea');
 Route::resource('files','FilesController');
-
+//ZONA ADMIN
 Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' => 'admin'],   function() {
 
     Route::get('users/misevento/{id?}', [
@@ -160,12 +160,12 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     Route::post('auditoria/quitarcertificacion/{actividad}',[
         'as' => 'auditoria', 'uses' =>'AuditoriaController@quitarcertificacion'
     ]);
-    Route::post('auditoria/guardarnc',[
+/*    Route::post('auditoria/guardarnc',[
         'as' => 'auditoria', 'uses' =>'NcsController@store'
     ]);
     Route::post('auditoria/devolvernc',[
         'as' => 'auditoria', 'uses' =>'NcsController@update'
-    ]);
+    ]);*/
     Route::resource('auditoria','AuditoriaController');
     Route::resource('usuariosxciclo','UsuariosxcicloController');
     Route::get('ciclos/activar/{id}',[
@@ -190,15 +190,29 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     Route::get('siga/timeline/{id}',[
         'as' => 'siga.timeline', 'uses' => 'SigaController@sigaambitoxciclo'
     ]);*/
-
-
     Route::resource('seguimientos', 'SeguimientoController');
-
-
-
-
-
 });
+//FIN ZONA ADMIN
+
+//ZONA AUDITORIA USUARIOS NO ADMIN
+
+Route::get('auditoria',[
+    'as' => 'auditoria', 'uses' => 'AuditoriaController@index'
+]);
+Route::get('auditoria/mostrarncs',[
+    'as' => 'auditoria.mostrarncs', 'uses' => 'AuditoriaController@mostrarncs'
+]);
+Route::get('auditoria/veractividades/{id}',[
+    'as' => 'auditoria.veractividades', 'uses' => 'AuditoriaController@veractividades'
+]);
+Route::get('auditoria/auditaractividad/{id}',[
+    'as' => 'auditoria.auditaractividad', 'uses' => 'AuditoriaController@auditaractividad'
+]);
+Route::get('auditoria/showactividad/{id}',[
+    'as' => 'auditoria.showactividad', 'uses' => 'AuditoriaController@showactividad'
+]);
+
+
 
 Route::get('download', function() {
 

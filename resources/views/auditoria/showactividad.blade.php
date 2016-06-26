@@ -46,18 +46,6 @@
                                     <td>Resposable:</td>
                                     <td>{!!$actividad->responsable!!}</td>
                                 </tr>
-                                <tr>
-                                    <td>Orden:</td>
-                                    <td>{!!$actividad->orden!!}</td>
-                                </tr>
-                                <tr>
-                                    <td>Actividad siguiente:</td>
-                                    <td>{!!$actividad->actividad_siguiente!!}</td>
-                                </tr>
-
-
-
-
                                 </tbody>
                             </table>
                         </div>
@@ -67,11 +55,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <a href="{{ URL::to('admin/procedimientos',$actividad->procedimiento) }}" class="btn btn-primary btn-sm">Volver</a>
-                    <a href="{{ URL::route('files.create','prefijo=AC&codigo='.$actividad->id) }}" class="btn btn-success btn-sm">Agregar archivo</a>
-                        <span class="pull-right">
-                            <a class="btn btn-sm btn-warning" href="{{ route('admin.actividades.edit', $actividad) }}"><i class="glyphicon glyphicon-edit"></i></a>
-                        </span>
+                    <a href="{{ URL::to('auditoria/mostrarncs') }}" class="btn btn-primary btn-sm">Volver</a>
                 </div>
 
             </div>
