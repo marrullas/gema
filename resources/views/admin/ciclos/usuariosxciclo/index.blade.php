@@ -22,8 +22,18 @@
 
                     </div>
                 </div>
+            </div>
                 @include('admin.ciclos.usuariosxciclo.partials.table')
-
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Resumen auditorias activas
+                    </div>
+                    <div class="panel-body">
+                        <div id="donut-example"></div>
+                    </div>
+                </div>
+            </div>
                 {{--{!! $usuariosxciclo->appends(['nombre'=>$nombre])->render() !!}--}}
             </div>||
         </div>
@@ -58,7 +68,17 @@
 
 
             });
+            Morris.Donut({
+                element: 'donut-example',
+                data: [
+                    {label: "Download Sales", value: 12},
+                    {label: "In-Store Sales", value: 30},
+                    {label: "Mail-Order Sales", value: 20}
+                ]
+            });
 
         });
+
+
     </script>
 @endsection

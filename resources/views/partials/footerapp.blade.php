@@ -18,7 +18,7 @@
                 html:false
             }
         });
-
+        @if(Auth::check())
         //opciones menu auditoria
         $.get('/devolverncsajax', function(data){
             var $ulsub = $("#ulpendientes");
@@ -43,6 +43,7 @@
             @endif
             //console.log(data);
         });
+        @endif
     });
 
     function GetTime(date) {
@@ -71,10 +72,12 @@
 <script src="{{ asset('css/assets/js/parsley/parsley.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('css/assets/js/parsley/es.js') }}" type="text/javascript"></script>
 {!! HTML::script('/css/assets/js/jquery.metisMenu.js') !!}
-{!! HTML::script('/css/assets/js/morris/raphael-2.1.0.min.js') !!}
-{{--{!! HTML::script('/css/assets/js/morris/morris.js') !!}--}}
-
-{!! HTML::script('/css/assets/js/custom.js') !!}
+{{--{!! HTML::script('/css/assets/js/morris/raphael-2.1.0.min.js') !!}
+{!! HTML::script('/css/assets/js/morris/morris.js') !!}--}}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+{{--{!! HTML::script('/css/assets/js/custom.js') !!}--}}
 
 
 
