@@ -57,34 +57,3 @@ font-size: 16px;">
     </div>
 </div>
 @endif
-@section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $.get('/devolverncsajax', function(data){
-                var $ulsub = $("#ulpendientes");
-                $("#ncspendientescount").html(data.ncspendientes.length);
-                $.each(data.ncspendientes, function (i, item) {
-                    console.log(item);
-                    $ulsub.append( // append directly here
-                            '<li data-grid-id="' + item.id +
-                            '"><a href="{{ url('auditoria/auditaractividad') }}/'+item.auditoria_id+'">' + item.descripcion
-                            );
-                })
-                @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor'))
-                var $ulsub = $("#uldevueltas");
-                $("#ncsdevueltascount").html(data.ncsdevueltas.length);
-                $.each(data.ncsdevueltas, function (i, item) {
-                    //console.log(item);
-                    $ulsub.append( // append directly here
-                            '<li data-grid-id="' + item.id +
-                            '"><a href="{{ url('admin/auditoria') }}/'+item.auditoria_id+'/edit">' + item.descripcion
-                    );
-                })
-                @endif
-                console.log(data);
-            });
-
-        });
-    </script>
-@endsection

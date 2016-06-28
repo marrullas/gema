@@ -78,6 +78,16 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="fa fa-envelope-o fa-3x"></i> IEs<span class="fa arrow"></span></a>
+
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('/ies/actualizaries') }}">Actualizar datos IE </a>
+                        </li>
+
+                    </ul>
+                </li>
             </ul>
 
         </div>
