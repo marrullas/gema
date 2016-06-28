@@ -17,13 +17,17 @@
                     <div class="nav">
                         @if($nc->estadoncs_id != 3)
                         {{--<button href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-pencil"></i> <strong>Agregar nota</strong></button>--}}
-                            @if($nc->user_id == Auth::user()->id){{--solo se puede devolver una nc de la que se es responsable--}}
+                            @if($nc->user_id == Auth::user()->id && ($nc->estadoncs_id != 3 || $nc->estadoncs_id != 2)){{--solo se puede devolver una nc de la que se es responsable--}}
                                 <button href="#" class="btn btn-inverse" data-toggle="modal" data-target="#myModaldevolvernc{{$nc->id}}"><i class="glyphicon glyphicon-backward"></i> <strong>Devolver</strong></button>
                             @endif
                         @endif
                         @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor') && $nc->estadoncs_id != 3)
                         <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalcerrarnc{{$nc->id}}"><i class="glyphicon glyphicon-ok-sign"></i> <strong>Cerrar</strong></button>
                         @endif
+                        @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor') && ($nc->estadoncs_id == 2))
+                            <button href="#" class="btn btn-warning" data-toggle="modal" data-target="#myModalreabrirnc{{$nc->id}}"><i class="glyphicon glyphicon-forward"></i> <strong>Reabrir</strong></button>
+                        @endif
+
                         @if($nc->estadoncs->nombre == 'Abierta')
                             <span class="label label-warning pull-right">Estado: Abierto</span>
                         @elseif($nc->estadoncs->nombre == 'Devuelta')
@@ -70,6 +74,7 @@
         </div>
             @include('admin.ciclos.auditoria.partials.devolvernc')
             @include('admin.ciclos.auditoria.partials.cerrarnc')
+            @include('admin.ciclos.auditoria.partials.reabrirnc')
         @endforeach
     </div>
 

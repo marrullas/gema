@@ -104,10 +104,13 @@ class NcsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //dd($request->all());
         $detalles = $request->get('detalles');
         $ncs = Ncs::findOrfail($id);
         $ncs->fill($request->all());
 
+        if ($request->get('estadoncs_id')==1)
+            $text = "<em>Usuario ".Auth::user()->full_name. " Reabre el hallazgo para su adecuado tramite</em><br>";
         if ($request->get('estadoncs_id')==2)
             $text = "<em>Usuario ".Auth::user()->full_name. " devuelve para ser revisada</em><br>";
         if ($request->get('estadoncs_id')==3) {
@@ -157,5 +160,17 @@ class NcsController extends Controller
         $nc->save();
 
         return redirect()->route('admin.auditoria.edit',[$this->request->all()['auditoria_id']]);
+    }
+
+    public function devolverncsajax()
+    {
+        $ncspendientes = Ncs::where('user_id',Auth::user()->id)
+            ->where('estadoncs_id','<>', 3)->get();
+        $ncsdevueltas = Ncs::where('estadoncs_id','2')
+        ->where('auditor',Auth::user()->id)->get()
+        ;
+        //dd($ncspendientes);
+
+        return response()->json(['success' => true,'ncspendientes'=>$ncspendientes,'ncsdevueltas'=>$ncsdevueltas]);
     }
 }

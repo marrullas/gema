@@ -59,6 +59,7 @@ class AuditoriaController extends Controller
 
         $auditoria = Auditoria::findOrFail($id);
         $ncs = Ncs::where('auditoria_id',$auditoria->id)->get();
+
         $usuarios = User::lists('full_name','id');
         //dd($ncs->first()->seguimientos);
 
@@ -70,7 +71,8 @@ class AuditoriaController extends Controller
     {
         //dd('las ncs pendientes');
         $nombre = $this->request->get('nombre');
-        $ncs = Ncs::where('user_id',Auth::user()->id)->get();
+        $ncs = Ncs::where('user_id',Auth::user()->id)
+            ->where('estadoncs_id','<>', 3)->get();
         //dd($ncs);
         return view('auditoria.mostrarncs',compact('nombre','ncs'));
     }

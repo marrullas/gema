@@ -34,11 +34,15 @@
                     </div>
                    {{-- <p>{!! $nc->descripcion !!}</p>--}}
                     <p><b> ÚLTIMA MODIFICACIÓN: </b> <em>{{$nc->updated_at}}</em></p>
-                    <a href="" class="btn btn-success btn-sm">Devolver</a>
+                    {{--<a href="" class="btn btn-success btn-sm">Devolver</a>--}}
+                    @if($nc->user_id == Auth::user()->id && ($nc->estadoncs_id == 1)){{--solo se puede devolver una nc de la que se es responsable--}}
+                    <button href="#" class="btn btn-inverse" data-toggle="modal" data-target="#myModaldevolvernc{{$nc->id}}"><i class="glyphicon glyphicon-backward"></i> <strong>Devolver</strong></button>
+                    @endif
                     <a href="{{url('auditoria/showactividad/'.$nc->auditoria->actividad->id)}}" class="btn btn-info btn-sm">Info. Actividad</a>
                 </div>
             </div>
         </div>
+            @include('admin.ciclos.auditoria.partials.devolvernc');
         @endforeach
 
 {{--        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

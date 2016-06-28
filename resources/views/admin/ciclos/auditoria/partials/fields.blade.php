@@ -23,7 +23,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('usuario', 'Responsable ') !!}
-    {!! Form::select('user_id', $usuarios, null, [ 'class' => 'form-control'] ) !!}
+    {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control'] ) !!}
 </div>
 <div class="form-group">
     {!! Form::label('plazo', 'Plazo') !!}

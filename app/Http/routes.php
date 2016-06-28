@@ -212,8 +212,6 @@ Route::get('auditoria/showactividad/{id}',[
     'as' => 'auditoria.showactividad', 'uses' => 'AuditoriaController@showactividad'
 ]);
 
-
-
 Route::get('download', function() {
 
     $file = \App\Files::findOrfail(Input::get('file'));
@@ -223,7 +221,12 @@ Route::get('download', function() {
     return Response::download($file->storage_path,$file->filename,$headers);
 });
 Route::resource('users','UserController');
+
 Route::resource('ncs','NcsController');
+Route::get('devolverncsajax',[
+    'as' => 'devolverncsajax', 'uses' => 'NcsController@devolverncsajax'
+]);
+
 Route::get('funcionarios/{id}','FuncionarioController@index');
 Route::get('funcionarios/create/{id}','FuncionarioController@create');
 Route::get('funcionarios/show/{id}','FuncionarioController@show');
