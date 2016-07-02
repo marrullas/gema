@@ -26,7 +26,22 @@
                 <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Calendario</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-sitemap fa-3x"></i> AUDITORIA<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-file-text fa-3x"></i> Informes<span class="fa arrow"></span></a>
+
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('/eventos/agenda') }}">Agenda</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/eventos/actividades') }}">Actividades</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/eventos/acumuladoxficha') }}">Acumulado x ficha</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-sitemap fa-3x"></i> Auditoria<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
 {{--                    <li>
@@ -40,21 +55,6 @@
                     </li>
                     <li>
                         <a href="{{ url('/auditoria/mostrarncs') }}"><i class="fa fa-list fa-3x"></i>Ncs pendientes</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-file-text fa-3x"></i> Informes<span class="fa arrow"></span></a>
-
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="{{ url('/eventos/agenda') }}">Agenda</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/eventos/actividades') }}">Actividades</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/eventos/acumuladoxficha') }}">Acumulado x ficha</a>
                     </li>
                 </ul>
             </li>

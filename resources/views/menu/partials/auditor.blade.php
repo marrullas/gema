@@ -23,30 +23,7 @@
                     <a class="active-menu"  href="{{ url('/home') }}"><i class="fa fa-dashboard fa-3x"></i> Panel de control</a>
                 </li>
                 <li>
-
-                    <a href="#"><i class="fa fa-gears fa-3x"></i> SIGA<span class="fa arrow"></span></a>
-
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="{{ url('/admin/usuariosxciclo/') }}"><i class="fa fa-refresh fa-3x"></i>Usuarios x ciclo</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
-
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="{{ url('/message/') }}"><i class="fa fa-inbox fa-3x"></i>Bandeja</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/message/create') }}"><i class="fa fa-file-text fa-3x"></i>Crear</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a  href="{{ url('/calendar') }}"><i class="fa fa-calendar-o fa-3x"></i> Mi Calendario</a>
+                    <a  href="{{ url('/calendar') }}"><i class="fa fa-table fa-3x"></i> Calendario</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-file-text fa-3x"></i> Informes<span class="fa arrow"></span></a>
@@ -60,6 +37,47 @@
                         </li>
                         <li>
                             <a href="{{ url('/eventos/acumuladoxficha') }}">Acumulado x ficha</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+
+                    <a href="#"><i class="fa fa-gears fa-3x"></i> SIGA<span class="fa arrow"></span></a>
+
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('/admin/usuariosxciclo/') }}"><i class="fa fa-refresh fa-3x"></i>Usuarios x ciclo</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap fa-3x"></i> Auditoria<span class="fa arrow"></span></a>
+
+                    <ul class="nav nav-second-level">
+                        {{--                    <li>
+                                                <a  href="{{ url('/siga') }}"><i class="fa fa-list-ul fa-3x"></i> Procedimientos</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/siga/resumen') }}"><i class="fa fa-list fa-3x"></i>resumen</a>
+                                            </li>--}}
+                        <li>
+                            <a href="{{ url('/auditoria/') }}"><i class="fa fa-list fa-3x"></i>Auditoria</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/auditoria/mostrarncs') }}"><i class="fa fa-list fa-3x"></i>Ncs pendientes</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-envelope-o fa-3x"></i> Mensajeria<span class="fa arrow"></span></a>
+
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('/message/') }}"><i class="fa fa-inbox fa-3x"></i>Bandeja</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/message/create') }}"><i class="fa fa-file-text fa-3x"></i>Crear</a>
                         </li>
                     </ul>
                 </li>

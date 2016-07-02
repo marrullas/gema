@@ -24,13 +24,23 @@
                 </div>
             </div>
                 @include('admin.ciclos.usuariosxciclo.partials.table')
-            <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="col-md-4 col-sm-12 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Resumen auditorias activas
+                        Resumen total ciclos auditorias activas
                     </div>
                     <div class="panel-body">
                         <div id="donut-example"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Resumen total hallazgos auditorias
+                    </div>
+                    <div class="panel-body">
+                        <div id="bar-example"></div>
                     </div>
                 </div>
             </div>
@@ -68,13 +78,33 @@
 
 
             });
+            var colors_array= ["#d9534f", "#f0ad4e", "#5cb85c"];
             Morris.Donut({
                 element: 'donut-example',
+                colors: colors_array,
                 data: [
-                    {label: "Download Sales", value: 12},
-                    {label: "In-Store Sales", value: 30},
-                    {label: "Mail-Order Sales", value: 20}
+                    {label: "Nc's abiertas", value: + "{{$resumenciclos[0]->abiertas}}"},
+                    {label: "Nc's devueltas", value: + "{{$resumenciclos[0]->devueltas}}"},
+                    {label: "Nc's cerradas", value: + "{{$resumenciclos[0]->cerradas}}"}
                 ]
+            });
+            Morris.Bar({
+                element: 'bar-example',
+                data: [
+                    @foreach($totalncsxciclo as $total)
+                    { y: '{!! $total->nombre !!}', a: '{{$total->conteo}}' },
+                    @endforeach
+{{--                    { y: '2006', a: 100, b: 90 },
+                    { y: '2007', a: 75,  b: 65 },
+                    { y: '2008', a: 50,  b: 40 },
+                    { y: '2009', a: 75,  b: 65 },
+                    { y: '2010', a: 50,  b: 40 },
+                    { y: '2011', a: 75,  b: 65 },
+                    { y: '2012', a: 100, b: 90 }--}}
+                ],
+                xkey: 'y',
+                ykeys: ['a'],
+                labels: ['# hallazgos'],
             });
 
         });

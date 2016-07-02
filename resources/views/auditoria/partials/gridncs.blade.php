@@ -22,7 +22,7 @@
                                 <button href="#" class="btn btn-inverse" data-toggle="modal" data-target="#myModaldevolvernc{{$nc->id}}"><i class="glyphicon glyphicon-backward"></i> <strong>Devolver</strong></button>
                             @endif
                         @endif
-                        @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor') && $nc->estadoncs_id != 3)
+                        @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor') && $nc->estadoncs_id != 3 && $nc->user_id != Auth::user()->id)
                         <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalcerrarnc{{$nc->id}}"><i class="glyphicon glyphicon-ok-sign"></i> <strong>Cerrar</strong></button>
                         @endif
                         @if($nc->estadoncs->nombre == 'Abierta')

@@ -43,6 +43,9 @@ class AuditoriaController extends Controller
         $tiposnc = Tiposnc::lists('id','hallazgo');
         //$nombre = $this->request->get('nombre');
         $usuariosxciclo =  Usuariosxciclo::findOrfail($id);
+        /*$usuariosxciclo =  Usuariosxciclo::where('id',$id)
+                            ->where('user_id1','<>',Auth::user()->id)->get();*/
+        //dd($usuariosxciclo);
         $auditoria = Auditoria::with('ncsResueltasCount','ncsPendientesCount')
         ->where('usuariosxciclo_id','=', $usuariosxciclo->id)->get();
         $totalauditoria = $auditoria->count();

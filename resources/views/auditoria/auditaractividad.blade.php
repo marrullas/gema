@@ -10,7 +10,7 @@
 
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">DATOS DE LA ACTIVIDAD A AUDITAR</h3>
+                        <h3 class="panel-title">DATOS DE LA ACTIVIDAD A AUDITAR - CICLO: {{$auditoria->usuariosxciclo->ciclo->nombre}}</h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -54,15 +54,15 @@
                             <div class="btn-group pull-right">
                                 <a href="{{ url('auditoria/veractividades',$auditoria->usuariosxciclo_id) }}" class="btn btn-primary btn-sm">Volver </a>
                             </div>
-                            @if($auditoria->ncsPendientesCount == 0)
+{{--                            @if($auditoria->ncsPendientesCount == 0)
                                 @include('admin.ciclos.auditoria.partials.certificaractividad')
-                            @endif
-                            @if(Auth::user()->type == 'auditor' || Auth::user()->type == 'admin')
+                            @endif--}}
+{{--                            @if(Auth::user()->type == 'auditor' || Auth::user()->type == 'admin')
                             @include('admin.ciclos.auditoria.partials.crearnc')
                                 @if(!$auditoria->certificado)
                                     <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal2">Crear NC</button>
                                 @endif
-                            @endif
+                            @endif--}}
                     </div>
 
 

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class UsuariosxcicloController extends Controller
 {
@@ -37,9 +38,16 @@ class UsuariosxcicloController extends Controller
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
         //$ciclos = Ciclo::filtroPaginacion($nombre);
-        $usuariosxciclo = Usuariosxciclo::all();
+        //$usuariosxciclo = Usuariosxciclo::all();
+        $usuariosxciclo = Usuariosxciclo::with('ncsPendientesSum')
+            ->where('user_id','<>',Auth::user()->id)
+            ->get();
+        //dd($usuariosxciclo->first()->auditoria->first()->ncs->where('estadoncs_id',3));
         //dd($usuariosxciclo);
-        return view('admin.ciclos.usuariosxciclo.index',compact('usuariosxciclo','nombre','page','ciclos'));
+        $resumenciclos = Usuariosxciclo::resumenciclos();
+        $totalncsxciclo = Usuariosxciclo::totalncsxciclo();
+        //dd($totalncsxciclo);
+        return view('admin.ciclos.usuariosxciclo.index',compact('usuariosxciclo','nombre','page','ciclos','resumenciclos','totalncsxciclo'));
     }
 
     /**

@@ -6,6 +6,7 @@
         <th>Ciclo</th>
         <th>Descripción</th>
         <th>Usuario</th>
+        <th>Nc's Pendientes</th>
         <th>Fecha inicio</th>
         <th>Fecha final</th>
 
@@ -18,6 +19,7 @@
             <td>{!!$ciclo->ciclo->nombre !!}</td>
             <td>{!!$ciclo->descripcion !!}</td>
             <td>{!!$ciclo->user->full_name !!}</td>
+            <td>{!! $ciclo->ncsPendientesSum !!}</td>
             <td>{!!$ciclo->fecha_ini !!}</td>
             <td>{!!$ciclo->fecha_fin !!}</td>
 

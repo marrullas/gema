@@ -27,12 +27,6 @@ class Auditoria extends Model
     {
         return $this->hasMany('\App\Ncs');
     }
-
-/*    public function ncsResueltasCount(){
-        return $this->ncs()->selectRaw('auditoria_id,count(*) as conteo')
-            ->where('estadoncs_id','=','3')
-            ->groupBy('auditoria_id');
-    }*/
     public function ncsResueltasCount(){
         return $this->hasOne('\App\Ncs')
             ->selectRaw('auditoria_id,count(*) as conteo')
@@ -49,11 +43,7 @@ class Auditoria extends Model
         // then return the count directly
         return ($related) ? (int) $related->conteo : 0;
     }
-/*    public function ncsPendientesCount(){
-        return $this->ncs()->selectRaw('auditoria_id,count(*) as conteo')
-            ->whereIn('estadoncs_id',[1,2])
-            ->groupBy('auditoria_id');
-    }*/
+
     public function ncsPendientesCount(){
         return $this->hasOne('\App\Ncs')
             ->selectRaw('auditoria_id,count(*) as conteo')
@@ -70,4 +60,5 @@ class Auditoria extends Model
         // then return the count directly
         return ($related) ? (int) $related->conteo : 0;
     }
+
 }

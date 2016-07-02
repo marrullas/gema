@@ -53,7 +53,7 @@ class EditUserRequest extends Request {
             'email' => 'required|unique:users,email,' . $user,
             'email2' => 'required|unique:users,email2,' . $user,
             'password' => '',
-            'type' => 'required|in:user,admin,instructor,ie,lider'
+            'type' => 'required|in:user,admin,instructor,ie,lider,auditor'
         ];
 	}
 
