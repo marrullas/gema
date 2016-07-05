@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Actividad;
 use App\Auditoria;
+use App\Caracterizarncs;
 use App\Estadosncs;
 use App\Ncs;
 use App\Seguimientoncs;
@@ -39,7 +40,8 @@ class AuditoriaController extends Controller
      */
     public function index($id)
     {
-        $estadoncs = Estadosncs::lists('id','nombre');
+        //$estadoncs = Estadosncs::lists('id','nombre');
+        $caracterizarnc = Caracterizarncs::lists('id','nombre');
         $tiposnc = Tiposnc::lists('id','hallazgo');
         //$nombre = $this->request->get('nombre');
         $usuariosxciclo =  Usuariosxciclo::findOrfail($id);
@@ -52,7 +54,7 @@ class AuditoriaController extends Controller
         $usuarios = User::lists('full_name','id');
         //dd($auditoria);
         //
-        return view('admin.ciclos.auditoria.index',compact('usuariosxciclo', 'auditoria','totalauditoria','nombre','estadoncs','tiposnc',
+        return view('admin.ciclos.auditoria.index',compact('usuariosxciclo', 'auditoria','totalauditoria','nombre','caracterizarnc','tiposnc',
         'usuarios'));
     }
 
@@ -98,6 +100,7 @@ class AuditoriaController extends Controller
     {
         //
         $estadoncs = Estadosncs::lists('nombre','id');
+        $caracterizarnc = Caracterizarncs::lists('nombre','id');
         $tiposnc = Tiposnc::lists('hallazgo','id');
 
         $auditoria = Auditoria::findOrFail($id);
@@ -106,7 +109,7 @@ class AuditoriaController extends Controller
         //dd($ncs->first()->seguimientos);
 
         //dd($auditoria->usuariosxciclo->user_id);
-        return view('admin.ciclos.auditoria.auditaractividad',compact('auditoria','ncs','estadoncs','tiposnc','usuarios'));
+        return view('admin.ciclos.auditoria.auditaractividad',compact('auditoria','ncs','estadoncs','tiposnc','usuarios','caracterizarnc'));
     }
 
     /**

@@ -1,14 +1,14 @@
 
-    <div class="well well-sm">
-        <strong>Cambiar vista</strong>
-        <div class="btn-group">
-            <a href="#" id="listnc" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+<div class="well well-sm">
+    <strong>Cambiar vista</strong>
+    <div class="btn-group">
+        <a href="#" id="listnc" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
             </span>List</a> <a href="#" id="gridnc" class="btn btn-default btn-sm"><span
-                        class="glyphicon glyphicon-th"></span>Grid</a>
-        </div>
+                    class="glyphicon glyphicon-th"></span>Grid</a>
     </div>
-    <div id="products" class="row list-group">
-        @foreach($ncs as $nc)
+</div>
+<div id="products" class="row list-group">
+    @foreach($ncs as $nc)
         <div class="item  col-xs-4 col-lg-4 list-group-item">
             <div><b>Responsable:</b><h3>{{$nc->user->full_name}}</h3></div>
             <div class="thumbnail">
@@ -16,14 +16,14 @@
                 <div class="caption">
                     <div class="nav">
                         @if($nc->estadoncs_id != 3)
-                        {{--<button href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-pencil"></i> <strong>Agregar nota</strong></button>--}}
+                            {{--<button href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-pencil"></i> <strong>Agregar nota</strong></button>--}}
                             {{--solo se puede devolver una nc de la que se es responsable y que este abierta--}}
                             @if($nc->user_id == Auth::user()->id && $nc->estadoncs_id == 1)
                                 <button href="#" class="btn btn-inverse" data-toggle="modal" data-target="#myModaldevolvernc{{$nc->id}}"><i class="glyphicon glyphicon-backward"></i> <strong>Devolver</strong></button>
                             @endif
                         @endif
                         @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor') && $nc->estadoncs_id != 3 && $nc->user_id != Auth::user()->id)
-                        <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalcerrarnc{{$nc->id}}"><i class="glyphicon glyphicon-ok-sign"></i> <strong>Cerrar</strong></button>
+                            <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalcerrarnc{{$nc->id}}"><i class="glyphicon glyphicon-ok-sign"></i> <strong>Cerrar</strong></button>
                         @endif
                         @if($nc->estadoncs->nombre == 'Abierta')
                             <span class="label label-warning pull-right">Estado: Abierto</span>
@@ -72,8 +72,8 @@
         @if($nc->estadoncs_id == 1)
             @include('auditoria.partials.devolvernc')
         @endif
-        @endforeach
-    </div>
+    @endforeach
+</div>
 
 @section('scripts')
     <script type="text/javascript">

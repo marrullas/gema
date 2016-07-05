@@ -9,7 +9,7 @@ class Ncs extends Model
     //
     protected $table = 'ncs';
     protected $fillable = ['auditoria_id','user_id','auditor','certificador',
-                            'estadoncs_id','descripcion','tiposnc_id','medida','plazo'];
+                            'estadoncs_id','descripcion','tiposnc_id','medida','plazo','caracterizarncs_id'];
 
 
     public function setPlazoAttribute($value)
@@ -45,7 +45,10 @@ class Ncs extends Model
     {
         return $this->hasMany('\App\Seguimientoncs');
     }
-
+    public function caracterizacion()
+    {
+        return $this->belongsTo('\App\Caracterizarncs','caracterizarncs_id','id');
+    }
 
     public function scopeNcsresueltas($query)
     {

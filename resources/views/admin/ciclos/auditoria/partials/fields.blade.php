@@ -6,8 +6,8 @@
     {{--{!! Form::select('title',null,null,['class'=> 'form-control', 'placeholder' => 'Escoja tipo de actividad' ])!!}--}}
 </div>
 <div class="form-group">
-    {!! Form::label('estancs', 'Estado') !!}
-    {!! Form::select('estadoncs_id',$estadoncs,null,['class'=> 'form-control', 'placeholder' => 'Escoja tipo de actividad' ])!!}
+    {!! Form::label('caracterizacion', 'Caraterización') !!}
+    {!! Form::select('caracterizarncs_id',$caracterizarnc,null,['class'=> 'form-control', 'placeholder' => 'Escoja caracterizacion' ])!!}
 </div>
 <div class="form-group">
     {!! Form::label('descripcion', 'Descripción') !!}
@@ -38,11 +38,15 @@
     {!!Html::style('/bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')!!}
     <script type="text/javascript">
         $(function () {
-
+            var plazo = null;
+            @if(isset($nc))
+                plazo = '{{$nc->plazo}}';
+            @endif
             $('#datetimepicker1').datetimepicker({
                 locale: 'es',
                 format: 'DD/MM/YYYY',
-                sideBySide: true
+                sideBySide: true,
+                date: plazo
 
             });
         });

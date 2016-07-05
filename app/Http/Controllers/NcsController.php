@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Auditoria;
+use App\Caracterizarncs;
 use App\Ncs;
 use App\Seguimientoncs;
+use App\Tiposnc;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -58,6 +62,7 @@ class NcsController extends Controller
         //dd($data);
         $nc = new Ncs();
         $nc->fill($data);
+        $nc->estadoncs_id = 1;
         $nc->auditor = Auth::user()->id;
         $nc->certificador = Auth::user()->id;
         $nc->save();
@@ -92,6 +97,14 @@ class NcsController extends Controller
     public function edit($id)
     {
         //
+        $nc = Ncs::findOrfail($id);
+        //dd($nc);
+        $caracterizarnc = Caracterizarncs::lists('nombre','id');
+        $tiposnc = Tiposnc::lists('hallazgo','id');
+        $usuarios = User::lists('full_name','id');
+        $auditoria = Auditoria::findOrFail($nc->auditoria_id);
+        return view('admin.ciclos.auditoria.partials.editarnc',compact('nc','nombre','caracterizarnc','tiposnc',
+            'usuarios','auditoria'));
     }
 
     /**
