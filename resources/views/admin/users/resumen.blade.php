@@ -35,7 +35,7 @@
                             </div>
                             <button type="submit" class="btn btn-default">Buscar</button>
                             <button name = "btnexcel" type="submit" class="btn btn-default" value="excel">Exportar Excel</button>
-                        <a class="btn btn-success btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/admin/resumen/excel') }}">Exportar excel</a>
+                        {{--<a class="btn btn-success btn-xs" href="{{  \Illuminate\Support\Facades\URL::to('/admin/resumen/excel') }}">Exportar excel</a>--}}
                         {!! Form::close() !!}
 
                     </div>
