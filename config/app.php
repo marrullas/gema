@@ -158,7 +158,7 @@ return [
         'Barryvdh\Debugbar\ServiceProvider',
 
 		/* foro */
-		'Socieboy\Forum\Providers\ForumServiceProvider',
+//		'Socieboy\Forum\Providers\ForumServiceProvider',
 
 		'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
 

@@ -57,12 +57,13 @@ class CicloController extends Controller
     public function create()
     {
         //
+        //$publico = Input::get('publico');
         $ambitos = \App\Ambito::lists('nombre','id');
         $procedimientos = \App\Procedimiento::lists('nombre','id');
-        $ciclo = (object) ['fecha_ini' => \Carbon\Carbon::now(),'activo'=>1]; //se inicializan valores por defecto
+        $ciclo = (object) ['fecha_ini' => \Carbon\Carbon::now(),'activo'=>1,'publico'=>1]; //se inicializan valores por defecto
         //$ciclo = (object) ['fecha_fin' => \Carbon\Carbon::now()];
         $activo = $this->request->get('activo');
-        //dd($ambitos);
+        //dd($ciclo);
         return view('admin.ciclos.create',compact('ciclo','ambitos','activo','procedimientos'));
     }
 
