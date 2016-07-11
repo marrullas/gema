@@ -85,7 +85,7 @@ class ProcedimientoController extends Controller
         //
         $procedimiento = Procedimiento::with('user')
             ->where('id','=',$id)
-            ->where('user_id','=',Auth::user()->id)
+            //->where('user_id','=',Auth::user()->id)
             ->first();
         $actividades = Actividad::where('procedimiento_id','=',$procedimiento->id)
             ->orderBy('orden')
