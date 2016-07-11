@@ -37,6 +37,7 @@ class AuditoriaController extends Controller
      *
      * @param $id codigo del registro del usuariosxciclo
      * @return \Illuminate\Http\Response
+     * url: http://gema.app/admin/auditoria/13
      */
     public function index($id)
     {

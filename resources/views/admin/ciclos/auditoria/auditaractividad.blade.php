@@ -47,6 +47,17 @@
                                 <a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Mas...
                                 </a>
+                                <div class="collapse" id="collapseExample">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                        <tr>
+                                            <td>Descripción:</td>
+                                            <td>{!!$auditoria->actividad->descripcion!!}</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

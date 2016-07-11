@@ -11,114 +11,114 @@
     @endif
 @endsection
 @section('content')
-<div id="page-wrapper">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1 toppad" >
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 toppad" >
 
 
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">DATOS DEL PROCEDIMIENTO</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://www.faisanesdelmundo.com/img/read.jpg" class="img-circle img-responsive"> </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">DATOS DEL PROCEDIMIENTO</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://www.faisanesdelmundo.com/img/read.jpg" class="img-circle img-responsive"> </div>
 
 
-                        <div class=" col-md-9 col-lg-9 ">
-                            <table class="table table-user-information">
-                                <tbody>
-                                <tr>
-                                    <td>Procedimiento:</td>
-                                    <td>{{$procedimiento->nombre}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Versión:</td>
-                                    <td>{{$procedimiento->version}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Codigo:</td>
-                                    <td>{{$procedimiento->codigo}}</td>
-                                </tr>
+                            <div class=" col-md-9 col-lg-9 ">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                    <tr>
+                                        <td>Procedimiento:</td>
+                                        <td>{{$procedimiento->nombre}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Versión:</td>
+                                        <td>{{$procedimiento->version}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Codigo:</td>
+                                        <td>{{$procedimiento->codigo}}</td>
+                                    </tr>
 
-                                <tr>
-                                <tr>
-                                    <td>Proceso:</td>
-                                    <td>{!!$procedimiento->proceso!!}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                Mas...
-                            </a>
-                            <div class="collapse" id="collapseExample">
-                            <table class="table table-user-information">
-                                <tbody>
-                                <tr>
-                                    <td>Vigencia:</td>
-                                    <td>{!!$procedimiento->vigencia!!}</td>
-                                </tr>
-                                <tr>
-                                    <td>Objetivo:</td>
-                                    <td>{!!$procedimiento->objetivo!!}</td>
-                                </tr>
-                                <tr>
-                                    <td>Responsable:</td>
-                                    <td>{!!$procedimiento->responsable!!}</td>
-                                </tr>
-                                <tr>
-                                    <td>Alcance:</td>
-                                    <td>{!!$procedimiento->alcance!!}</td>
-                                </tr>
-                                <tr>
-                                    <td>Generalidades:</td>
-                                    <td>{!!$procedimiento->generalidades!!}</td>
-                                </tr>                                
-                                <tr>
-                                    <td>Archivo:</td>
-                                    <td>
-                                    <a href="{{ url('download?path='.$procedimiento->archivo) }}">
-                                        {{ $procedimiento->archivo }}
-                                    </a>
-                                    </td>
+                                    <tr>
+                                    <tr>
+                                        <td>Proceso:</td>
+                                        <td>{!!$procedimiento->proceso!!}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    Mas...
+                                </a>
+                                <div class="collapse" id="collapseExample">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                        <tr>
+                                            <td>Vigencia:</td>
+                                            <td>{!!$procedimiento->vigencia!!}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Objetivo:</td>
+                                            <td>{!!$procedimiento->objetivo!!}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Responsable:</td>
+                                            <td>{!!$procedimiento->responsable!!}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alcance:</td>
+                                            <td>{!!$procedimiento->alcance!!}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Generalidades:</td>
+                                            <td>{!!$procedimiento->generalidades!!}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Archivo:</td>
+                                            <td>
+                                                <a href="{{ url('download?path='.$procedimiento->archivo) }}">
+                                                    {{ $procedimiento->archivo }}
+                                                </a>
+                                            </td>
 
-                                </tr>
-                                <tr>
-                                    <td>Creador:</td>
-                                    <td>{{$procedimiento->user->full_name}}</td>
-                                </tr>                                
-{{--                                <td>Phone Number</td>
-                                <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                                </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Creador:</td>
+                                            <td>{{$procedimiento->user->full_name}}</td>
+                                        </tr>
+                                        {{--                                <td>Phone Number</td>
+                                                                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                                                                        </td>
 
-                                </tr>--}}
+                                                                        </tr>--}}
 
-                                </tbody>
-                            </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
                             </div>
-
-
                         </div>
                     </div>
-                </div>
-                <div class="panel-footer">
-                    <a href="{{ URL::route('admin.procedimientos.index') }}" class="btn btn-primary btn-sm">Volver
-                        <a href="{{ URL::route('admin.actividades.create','procedimiento='.$procedimiento->id) }}" class="btn btn-success btn-sm">Agregar actividad</a>
+                    <div class="panel-footer">
+                        <a href="{{ URL::route('admin.procedimientos.index') }}" class="btn btn-primary btn-sm">Volver
+                            <a href="{{ URL::route('admin.actividades.create','procedimiento='.$procedimiento->id) }}" class="btn btn-success btn-sm">Agregar actividad</a>
                         <span class="pull-right">
                             <a class="btn btn-sm btn-warning" href="{{ route('admin.procedimientos.edit', $procedimiento) }}"><i class="glyphicon glyphicon-edit"></i></a>
                         </span>
 
-                </div>
+                    </div>
 
+                </div>
             </div>
-        </div>
-    </div> <!--row!-->
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1 toppad" >
-            @include('admin.actividades.partials.table')
-        </div>
-    </div><!--row!-->
-</div>
+        </div> <!--row!-->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 toppad" >
+                @include('admin.actividades.partials.table')
+            </div>
+        </div><!--row!-->
+    </div>
 @endsection
 @section('scripts')
     {!! HTML::script('/css/assets/js/custom.js') !!}

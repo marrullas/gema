@@ -29,8 +29,10 @@
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.auditoria.edit', $actividad) }}"><i class="glyphicon glyphicon-edit">Auditar-Actividad</i></a></li>
+                            @if(Auth::user()->isAdmin())
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.actividades.edit', $actividad) }}"><i class="glyphicon glyphicon-edit"> Editar</i></a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.actividades.show', $actividad) }}"><i class="fa fa-info"> Detalles</i></a></li>
+                            @endif
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.actividades.show', $actividad->actividad_id) }}"><i class="fa fa-info"> Detalles</i></a></li>
                             {{--<li role="presentation"><a href="{{ URL::route('files.create','prefijo=AC&codigo='.$actividad->id) }}" class="btn btn-success btn-sm">Agregar archivo</a></li>--}}
                             {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividades?userId=') }}">Documentos</a></li>--}}
                         </ul>
