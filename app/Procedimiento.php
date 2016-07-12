@@ -38,6 +38,6 @@ class Procedimiento extends Model
     
     public function actividades()
     {
-        return $this->hasMany('\App\Actividad');
+        return $this->hasMany('\App\Actividad')->orderBy('orden');
     }
 }

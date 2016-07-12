@@ -2,7 +2,7 @@
     <caption>Total registros : {{$totalactividades}} </caption>
     <thead>
     <tr>
-        <th>#</th>
+        {{--<th>#</th>--}}
         <th>Orden</th>
         <th>Nombre</th>
         <th>Responsables</th>
@@ -12,7 +12,7 @@
     <tbody>
     @foreach($actividades as $actividad)
         <tr data-id="{{$actividad->id}}">
-            <th scope="row">{{$actividad->id}}</th>
+            {{--<th scope="row">{{$actividad->id}}</th>--}}
             <td>{!!$actividad->orden !!}</td>
             <td>{!!$actividad->nombre !!}</td>
             <td>{!!$actividad->responsable !!}</td>

@@ -2,7 +2,7 @@
     <caption>Total registros : {{$procedimientos->total()}} </caption>
     <thead>
     <tr>
-        <th>#</th>
+        {{--<th>#</th>--}}
         <th>Procedimiento</th>
         <th>Version</th>
         <th>Codigo</th>
@@ -13,7 +13,7 @@
     <tbody>
     @foreach($procedimientos as $procedimiento)
         <tr data-id="{{$procedimiento->id}}">
-            <th scope="row">{{$procedimiento->id}}</th>
+            {{--<th scope="row">{{$procedimiento->id}}</th>--}}
             <td>{!!$procedimiento->nombre !!}</td>
             <td>{!!$procedimiento->version !!}</td>
             <td>{!!$procedimiento->codigo !!}</td>
