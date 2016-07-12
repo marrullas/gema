@@ -168,7 +168,7 @@ class ProcedimientoController extends Controller
         $newprocedimiento->user_id = $procedimiento->user_id;
         $newprocedimiento->save();
 
-        $actividades = Actividad::where('procedimiento_id',$procedimiento->id)->get();
+        $actividades = Actividad::where('procedimiento_id',$procedimiento->id)->orderBy('orden')->get();
         //dd($actividades);
 
         foreach ($actividades as $actividad)
