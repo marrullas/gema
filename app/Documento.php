@@ -21,7 +21,7 @@ class Documento extends Model
     {
         return $this->belongsTo('\App\Actividad');
     }
-    public static function filtroPaginación($nombre)
+    public static function filtroPaginacion($nombre)
     {
         return Documento::nombre($nombre)
             ->orderBy('id','ASC')

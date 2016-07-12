@@ -29,6 +29,7 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.procedimientos.edit', $procedimiento) }}"><i class="fa fa-edit"> Editar</i></a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-2" href="{{ route('admin.procedimientos.show', $procedimiento) }}"><i class="fa fa-info"> Detalles</i></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-2" href="{{ url('admin/procedimientos/duplicar', $procedimiento) }}"><i class="fa fa-copy"> Duplicar</i></a></li>
                             {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="{{  \Illuminate\Support\Facades\URL::to('/eventos/actividades?userId=') }}">Documentos</a></li>--}}
                         </ul>
                     </div>

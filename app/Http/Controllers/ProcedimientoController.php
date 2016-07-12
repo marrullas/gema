@@ -38,7 +38,7 @@ class ProcedimientoController extends Controller
         //
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
-        $procedimientos = Procedimiento::filtroPaginación($nombre);
+        $procedimientos = Procedimiento::filtroPaginacion($nombre);
 
         return view('admin.procedimientos.index',compact('nombre','page','procedimientos'));
     }
@@ -159,5 +159,52 @@ class ProcedimientoController extends Controller
             ->get();
 
         return $listaprocedimientos;
+    }
+
+    public function duplicar($id)
+    {
+        dd('tess'.$id);
+        $procedimiento = Procedimiento::findOrFail($id);
+
+        $newprocedimiento = new Procedimiento();
+        $newprocedimiento->nombre = "Copia(".substr(md5(rand()), 0, 4)+")".$procedimiento->nombre;
+        $newprocedimiento->version = $procedimiento->version;
+        $newprocedimiento->codigo = $procedimiento->codigo;
+        $newprocedimiento->vigencia = $procedimiento->vigencia;
+        $newprocedimiento->proceso = $procedimiento->proceso;
+        $newprocedimiento->objetivo = $procedimiento->objetivo;
+        $newprocedimiento->responsable = $procedimiento->responsable;
+        $newprocedimiento->alcance = $procedimiento->alcance;
+        $newprocedimiento->generalidades = $procedimiento->generalidades;
+        $newprocedimiento->archivo = $procedimiento->archivo;
+        $newprocedimiento->user_id = $procedimiento->user_id;
+        $newprocedimiento->save();
+        
+        $actividades = $procedimiento->actividades();
+
+        foreach ($actividades as $actividad)
+        {
+            $newactividad = new Actividad();
+
+            $newactividad->procedimiento_id = $newprocedimiento->id;
+            $newactividad->nombre = $actividad->nombre;
+            $newactividad->desccripcion = $actividad->desccripcion;
+            $newactividad->responsable = $actividad->responsable;
+            $newactividad->obligatorio = $actividad->obligatorio;
+            $newactividad->orden = $actividad->orden;
+            $newactividad->condicional = $actividad->condicional;
+            $newactividad->aprobo = $actividad->aprobo;
+            $newactividad->actividad_siguiente = $actividad->actividad_siguiente;
+            $newactividad->evidencia = $actividad->evidencia;
+            $newactividad->digital = $actividad->digital;
+            $newactividad->fisica = $actividad->fisica;
+            $newactividad->periodico = $actividad->periodico;
+            $newactividad->documento_id = $actividad->documento_id;
+
+            $newactividad->save();
+
+        }
+        return redirect()->route('admin.procedimientos.index');
+
     }
 }

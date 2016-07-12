@@ -2,7 +2,7 @@
     <caption>Total registros : {{$totalauditoria}} </caption>
     <thead>
     <tr>
-        <th>#</th>
+        {{--<th>#</th>--}}
         <th>Nombre</th>
         <th>Nc's pendientes</th>
         <th>Nc's Resueltas</th>
@@ -12,7 +12,7 @@
     </thead>
     <tbody>
     @foreach($auditoria as $actividad)
-        <tr data-id="{{$actividad->id}}">
+        {{--<tr data-id="{{$actividad->id}}">--}}
             <th scope="row">{{$actividad->id}}</th>
             <td>{!!$actividad->actividad->nombre !!}</td>
             <td>{!! $actividad->ncsPendientesCount !!}</td>

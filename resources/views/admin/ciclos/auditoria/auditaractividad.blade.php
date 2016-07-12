@@ -37,7 +37,7 @@
                                         <td>{!! ($auditoria->certificado ? 'SI':'NO')  !!}</td>
                                     </tr>
                                     <tr>
-                                        <td>Detalles certificacioón:</td>
+                                        <td>Detalles certificación:</td>
                                         <td>{!! $auditoria->detalles  !!}</td>
                                     </tr>
 

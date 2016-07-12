@@ -30,7 +30,7 @@ class DocumentoController extends Controller
         //
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
-        $ies = Documento::filtroPaginación($nombre);
+        $ies = Documento::filtroPaginacion($nombre);
         return view('admin.documentos.index',compact('nombre','page','ies'));
     }
 

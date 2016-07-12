@@ -146,6 +146,9 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
 
 
     Route::resource('procedimientos','ProcedimientoController');
+    Route::get('procedimientos/duplicar/{id}',[
+        'as' => 'admin.procedimientos.duplicar', 'uses' =>'ProcedimientoController@duplicar'
+    ]);
     Route::resource('actividades','ActividadController');
     Route::resource('ciclos','CicloController');
     Route::get('auditoria/{id}',[
