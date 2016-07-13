@@ -180,7 +180,8 @@ class CicloController extends Controller
                 'message'=>$message
             ]);
         }
-
+        //Eliminar las actividades de la tabla auditoria que estan relacionadas con
+        //este ciclo.
         //User::destroy($id); eliminar directamente
         Session::flash('message',$message);
         return redirect()->route('admin.ciclos.index');

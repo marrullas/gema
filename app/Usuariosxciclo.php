@@ -77,5 +77,34 @@ class Usuariosxciclo extends Model
         // then return the count directly
         return ($related) ? (int) $related->conteo : 0;
     }
+    public static function filtroPaginacion($userId,$nombre,$ciclo,$page)
+    {
+        return Usuariosxciclo::with('ncsPendientesSum')
+            ->where('user_id','<>',$userId)
+            ->nombre($nombre)
+            ->ciclo($ciclo)
+            ->get();
 
+      /*  return Ficha::with(['user', 'ie', 'programa'])->codigo($codigo)
+            ->ie($ie)
+            ->orderBy('codigo', 'ASC')
+            ->paginate();*/
+    }
+
+
+    public function scopeNombre($query, $nombre)
+    {
+        if (!empty($nombre)) {
+            $query->join('users','users.id','=','usuariosxciclo.user_id')
+                ->where('full_name', "LIKE","%$nombre%");
+        }
+    }
+
+    public function scopeCiclo($query, $ciclo)
+    {
+        if(!empty($ciclo))
+        {
+            $query->where('ciclo_id', "=", $ciclo);
+        }
+    }
 }

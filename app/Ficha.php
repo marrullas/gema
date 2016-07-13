@@ -68,11 +68,6 @@ class Ficha extends Model
             ->paginate();
     }
 
-    /*    public function getUserName()
-        {
-            return
-        }*/
-
 
     public function scopeCodigo($query, $codigo)
     {

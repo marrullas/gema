@@ -12,9 +12,12 @@
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif
                     <div class="panel-body">
-                        {!! Form::model(['name'=>$nombre],['route'=> 'admin.usuariosxciclo.index', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
+                        {!! Form::model(['name'=>$nombre,'ciclo'=>$ciclo],['route'=> 'admin.usuariosxciclo.index', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
                         <div class="form-group">
-                            {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
+                            {!! Form::text('nombre', $nombre, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::select('ciclo', $ciclos, $ciclo, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
                         </div>
                         <button type="submit" class="btn btn-default">Buscar</button>
                         {!! Form::close() !!}

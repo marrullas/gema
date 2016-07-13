@@ -36,18 +36,17 @@ class UsuariosxcicloController extends Controller
     {
         //
         $nombre = $this->request->get('nombre');
+        $ciclo = $this->request->get('ciclo');
         $page = $this->request->get('page');
-        //$ciclos = Ciclo::filtroPaginacion($nombre);
+        $ciclos = [''=>''] + Ciclo::lists('nombre','id')->all();
         //$usuariosxciclo = Usuariosxciclo::all();
-        $usuariosxciclo = Usuariosxciclo::with('ncsPendientesSum')
-            ->where('user_id','<>',Auth::user()->id)
-            ->get();
+        $usuariosxciclo = Usuariosxciclo::filtroPaginacion(Auth::user()->id,$nombre,$ciclo,$page);
         //dd($usuariosxciclo->first()->auditoria->first()->ncs->where('estadoncs_id',3));
         //dd($usuariosxciclo);
         $resumenciclos = Usuariosxciclo::resumenciclos();
         $totalncsxciclo = Usuariosxciclo::totalncsxciclo();
         //dd($totalncsxciclo);
-        return view('admin.ciclos.usuariosxciclo.index',compact('usuariosxciclo','nombre','page','ciclos','resumenciclos','totalncsxciclo'));
+        return view('admin.ciclos.usuariosxciclo.index',compact('usuariosxciclo','nombre','ciclo','page','ciclos','resumenciclos','totalncsxciclo','ciclos'));
     }
 
     /**
