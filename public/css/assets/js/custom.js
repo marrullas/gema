@@ -219,6 +219,7 @@
         $('#listnc').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
         $('#gridnc').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
 
+        $('[data-toggle="popover"]').popover();
     });
 //funcionalidad para el menu listatareas
 

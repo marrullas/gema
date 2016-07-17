@@ -72,7 +72,7 @@ class NcsController extends Controller
         $seguimientonc->user_id = Auth::user()->id;
         $seguimientonc->detalle = $text;
         $seguimientonc->save();
-        if(Auth::user()->isAdmin())
+        if(Auth::user()->isAdmin() || Auth::user()->isAuditor())
         return redirect()->route('admin.auditoria.edit',[$this->request->all()['auditoria_id']]);
 
     }
@@ -121,7 +121,8 @@ class NcsController extends Controller
         $detalles = $request->get('detalles');
         $ncs = Ncs::findOrfail($id);
         $ncs->fill($request->all());
-
+        //dd($detalles);
+        $text = '';
         if ($request->get('estadoncs_id')==1)
             $text = "<em>Usuario ".Auth::user()->full_name. " Reabre el hallazgo para su adecuado tramite</em><br>";
         if ($request->get('estadoncs_id')==2)
@@ -134,6 +135,7 @@ class NcsController extends Controller
 
         if (!empty($detalles))
             $text = $text.$detalles;
+
         $seguimientonc = new Seguimientoncs();
         $seguimientonc->ncs_id = $ncs->id;
         $seguimientonc->user_id = Auth::user()->id;

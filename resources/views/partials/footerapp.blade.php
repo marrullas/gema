@@ -26,8 +26,8 @@
             $.each(data.ncspendientes, function (i, item) {
                 //console.log(item);
                 $ulsub.append( // append directly here
-                        '<li data-grid-id="' + item.id +
-                        '"><a href="{{ url('auditoria/auditaractividad') }}/'+item.auditoria_id+'">' + item.descripcion
+                        '<hr><li data-grid-id="' + item.id +
+                        '"><a href="{{ url('auditoria/auditaractividad') }}/'+item.auditoria_id+'">' +item.descripcion
                 );
             })
             @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor'))
@@ -36,7 +36,7 @@
             $.each(data.ncsdevueltas, function (i, item) {
                 //console.log(item);
                 $ulsub.append( // append directly here
-                        '<li data-grid-id="' + item.id +
+                        '<hr><li data-grid-id="' + item.id +
                         '"><a href="{{ url('admin/auditoria') }}/'+item.auditoria_id+'/edit">' + item.descripcion
                 );
             })
@@ -77,6 +77,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
 {{--{!! HTML::script('/css/assets/js/custom.js') !!}--}}
 
 

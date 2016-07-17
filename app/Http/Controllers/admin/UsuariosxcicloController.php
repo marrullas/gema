@@ -43,10 +43,9 @@ class UsuariosxcicloController extends Controller
         $usuariosxciclo = Usuariosxciclo::filtroPaginacion(Auth::user()->id,$nombre,$ciclo,$page);
         //dd($usuariosxciclo->first()->auditoria->first()->ncs->where('estadoncs_id',3));
         //dd($usuariosxciclo);
-        $resumenciclos = Usuariosxciclo::resumenciclos();
-        $totalncsxciclo = Usuariosxciclo::totalncsxciclo();
+
         //dd($totalncsxciclo);
-        return view('admin.ciclos.usuariosxciclo.index',compact('usuariosxciclo','nombre','ciclo','page','ciclos','resumenciclos','totalncsxciclo','ciclos'));
+        return view('admin.ciclos.usuariosxciclo.index',compact('usuariosxciclo','nombre','ciclo','page','ciclos','ciclos'));
     }
 
     /**

@@ -22,7 +22,7 @@
                     <i class="fa fa-envelope-o"></i>
                 </span>
                             <div class="text-box" >
-                                <p class="main-text">12 Nuevos</p>
+                                <p class="main-text">13 Nuevos</p>
                                 <p class="text-muted">Mensajes</p>
                             </div>
                         </div>

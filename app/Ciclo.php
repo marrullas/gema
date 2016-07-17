@@ -31,6 +31,10 @@ class Ciclo extends Model
     {
         return $this->belongsTo('\App\Procedimiento');
     }
+    public function usuariosxciclo()
+    {
+        return $this->hasMany('\App\Usuariosxciclo');
+    }
     public function actividades()
     {
         return $this->belongsTo('\App\Actividad','procedimiento_id','procedimiento_id');

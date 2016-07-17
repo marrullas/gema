@@ -37,13 +37,13 @@
                                     <tr>
                                     </tbody>
                                 </table>
-                                <a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                               {{-- <a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Mas...
                                 </a>
                                 <div class="collapse" id="collapseExample">
                                     <table class="table table-user-information">
                                         <tbody>
-                                       {{-- <tr>
+                                        <tr>
                                             <td>Vigencia:</td>
                                             <td>{!!$procedimiento->vigencia!!}</td>
                                         </tr>
@@ -75,16 +75,16 @@
                                         <tr>
                                             <td>Creador:</td>
                                             <td>{{$procedimiento->user->full_name}}</td>
-                                        </tr>--}}
-                                        {{--                                <td>Phone Number</td>
+                                        </tr>
+                                                                        <td>Phone Number</td>
                                                                         <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
                                                                         </td>
 
-                                                                        </tr>--}}
+                                                                        </tr>
 
                                         </tbody>
                                     </table>
-                                </div>
+                                </div>--}}
 
 
                             </div>

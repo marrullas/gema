@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Actividad;
 use App\Auditoria;
+use App\Ciclo;
 use App\Estadosncs;
 use App\Files;
 use App\Ncs;
+use App\Seguimiento;
+use App\Seguimientoncs;
 use App\Tiposnc;
 use App\User;
 use App\Usuariosxciclo;
@@ -32,10 +35,11 @@ class AuditoriaController extends Controller
     {
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
-        //$ciclos = Ciclo::filtroPaginacion($nombre);
-        $usuariosxciclo = Usuariosxciclo::where('user_id',Auth::user()->id)->get();
+        $usuariosxciclo = Usuariosxciclo::usuariosxcicloactivo(Auth::user()->id);
         //dd($usuariosxciclo);
-        return view('auditoria.index',compact('usuariosxciclo','nombre','page','ciclos'));
+        $resumenciclos = Usuariosxciclo::resumenciclosxusuario(Auth::user()->id);
+        $totalncsxciclo = Usuariosxciclo::totalncsxcicloxusuario(Auth::user()->id);
+        return view('auditoria.index',compact('usuariosxciclo','nombre','page','ciclos','resumenciclos', 'totalncsxciclo'));
     }
     public function veractividades($id)
     {
@@ -88,5 +92,16 @@ class AuditoriaController extends Controller
             ->first();
         return view('auditoria.showactividad',compact('actividad','files'));
     }
-    
+    public function agregarseguimiento($ncId)
+    {
+        $text = "<em>Usuario ".Auth::user()->full_name. " Agrego: </em><br>";
+        $ncs = Ncs::findOrFail($ncId);
+        $text = $text.$this->request->get('texto');
+        $seguimientonc = new Seguimientoncs();
+        $seguimientonc->ncs_id = $ncs->id;
+        $seguimientonc->user_id = Auth::user()->id;
+        $seguimientonc->detalle = $text;
+        $seguimientonc->save();
+        return redirect()->back();
+    }
 }

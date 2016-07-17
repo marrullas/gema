@@ -7,7 +7,27 @@
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Resumen de hallazgos para auditor.
+                            </div>
+                            <div class="panel-body">
+                                <div id="donut-example"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Resumen nc's instructor
+                            </div>
+                            <div class="panel-body">
+                                <div id="donut-resumenciclosxusuario"></div>
+                            </div>
+                        </div>
+                    </div>
+                   {{-- <div class="col-md-12">
                         <h2>Panel de control Administrador</h2>
                         <h5>Bienvenido Instructor</h5>
                     </div>
@@ -21,7 +41,7 @@
                     <i class="fa fa-envelope-o"></i>
                 </span>
                             <div class="text-box" >
-                                <p class="main-text">12 Nuevos</p>
+                                <p class="main-text">13 Nuevos</p>
                                 <p class="text-muted">Mensajes</p>
                             </div>
                         </div>
@@ -58,7 +78,7 @@
                                 <p class="text-muted">Pendientes</p>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
                 <!-- /. ROW  -->
                 <hr />
@@ -426,8 +446,31 @@
 @endsection
 
 @section("scripts")
+    <script>
+    $(document).ready(function () {
+        var colors_array= ["#d9534f", "#f0ad4e", "#5cb85c"];
+        Morris.Donut({
+        element: 'donut-example',
+        colors: colors_array,
+        data: [
+        {label: "Nc's abiertas", value: + "{{$resumenciclos[0]->abiertas}}"},
+        {label: "Nc's devueltas", value: + "{{$resumenciclos[0]->devueltas}}"},
+        {label: "Nc's cerradas", value: + "{{$resumenciclos[0]->cerradas}}"}
+        ]
+        });
+        Morris.Donut({
+        element: 'donut-resumenciclosxusuario',
+        colors: colors_array,
+        data: [
+        {label: "Nc's abiertas", value: + "{{$resumenciclosxusuario[0]->abiertas}}"},
+        {label: "Nc's devueltas", value: + "{{$resumenciclosxusuario[0]->devueltas}}"},
+        {label: "Nc's cerradas", value: + "{{$resumenciclosxusuario[0]->cerradas}}"}
+        ]
+        });
 
 
+    });
+    </script>
     {!! HTML::script('/css/assets/js/custom.js') !!}
 
 

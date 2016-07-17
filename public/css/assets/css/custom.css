@@ -943,3 +943,9 @@ body
 .success strong {
     color: #2b542c;
 }
+
+/*Grafico de barras*/
+.graph_container{
+    display:block;
+    width:800px;
+}

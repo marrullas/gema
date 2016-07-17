@@ -41,7 +41,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-sitemap fa-3x"></i> Auditoria<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-sitemap fa-3x"></i> SIGA<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
 {{--                    <li>

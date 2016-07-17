@@ -51,8 +51,11 @@
                         <a href="{{ url('/admin/usuariosxciclo/') }}"><i class="fa fa-refresh fa-3x"></i>Usuarios x ciclo</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/siga/resumen/') }}"><i class="fa fa-list fa-3x"></i>Resumen x usuario</a>
+                        <a href="{{ url('/admin/ciclos/reporteciclos') }}"><i class="fa fa-refresh fa-3x"></i>Gráficos</a>
                     </li>
+  {{--                  <li>
+                        <a href="{{ url('/admin/siga/resumen/') }}"><i class="fa fa-list fa-3x"></i>Resumen x usuario</a>
+                    </li>--}}
                 </ul>
             </li>
             <li>

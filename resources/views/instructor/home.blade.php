@@ -19,13 +19,14 @@
                 <span class="icon-box bg-color-red set-icon">
                     <i class="fa fa-envelope-o"></i>
                 </span>
-                            <div class="text-box" >
+                            <div class="text-box">
                                 <p class="main-text">{{$mensajes}} Nuevos</p>
                                 <p class="text-muted">Mensajes</p>
                             </div>
                         </div>
                     </div>
-                    </div>
+
+                </div>
 
                 <!-- /. ROW  -->
                 <hr />
@@ -93,7 +94,17 @@
                 <!-- /. ROW  -->
 
                         <div class="row" >
-                            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Resumen nc's instructor
+                                    </div>
+                                    <div class="panel-body">
+                                        <div id="donut-resumenciclosxusuario"></div>
+                                    </div>
+                                </div>
+                            </div>
+{{--                            <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="chat-panel panel chat-boder chat-panel-head panel-primary text-center no-boder">
                                     <div class="panel-heading bg-color-green">
                                         <i class="fa fa-comments-o fa-5x"></i>
@@ -116,7 +127,7 @@
 
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                         <!-- /. ROW  -->
             <!-- /. PAGE INNER  -->
@@ -130,7 +141,22 @@
 
 @section("scripts")
 
+                <script>
+                    $(document).ready(function () {
+                        var colors_array= ["#d9534f", "#f0ad4e", "#5cb85c"];
+                        Morris.Donut({
+                            element: 'donut-resumenciclosxusuario',
+                            colors: colors_array,
+                            data: [
+                                {label: "Nc's abiertas", value: + "{{$resumenciclosxusuario[0]->abiertas}}"},
+                                {label: "Nc's devueltas", value: + "{{$resumenciclosxusuario[0]->devueltas}}"},
+                                {label: "Nc's cerradas", value: + "{{$resumenciclosxusuario[0]->cerradas}}"}
+                            ]
+                        });
 
+
+                    });
+                </script>
     {!! HTML::script('/css/assets/js/custom.js') !!}
    {{-- {!! HTML::script('/bower_resources/wysihtml5x/dist/wysihtml5x-toolbar.min.js') !!}--}}
 

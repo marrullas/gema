@@ -6,6 +6,7 @@ use App\Mensaje;
 use App\Muro;
 use App\Repositories\EventoRepository;
 use App\User;
+use App\Usuariosxciclo;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -53,22 +54,27 @@ class HomeController extends Controller {
         $entradasMuro = Muro::getEntradas();
         $anunciosMuro = Muro::getAnuncios();
         $user = \Auth::user();
+        $resumenciclos = Usuariosxciclo::resumenciclosxauditor($user->id);
+        $resumenciclosxusuario = Usuariosxciclo::resumenciclosxusuario($user->id);
         $fichasasignadas = $this->eventosRepository->acumuladoxficha($user);
         $horasUser = $this->eventosRepository->HorasAcumuladas($user);
         $totalhorasmes = ($horasUser->first()) ? $horasUser->first()->horas : 0;
-
+        //dd($resumenciclos);
         switch($user->type)
         {
             case 'admin':
-                return view('admin.users.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','mensajes'));
+                return view('admin.users.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','mensajes',
+                'resumenciclos','resumenciclosxusuario'));
             break;
             case 'auditor':
-                return view('admin.users.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','mensajes'));
+                return view('admin.users.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','mensajes',
+                    'resumenciclos','resumenciclosxusuario'));
                 break;
             case 'user':
                 return view('user.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas'));
             case 'instructor':
-                return view('instructor.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas','totalhorasmes','mensajes'));
+                return view('instructor.home',compact('entradasMuro','anunciosMuro','user','fichasasignadas',
+                    'totalhorasmes','mensajes','resumenciclosxusuario'));
             default:
                  return view('auth.login');
 

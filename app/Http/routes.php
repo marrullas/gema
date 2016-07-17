@@ -150,7 +150,7 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
         'as' => 'admin.procedimientos.duplicar', 'uses' =>'ProcedimientoController@duplicar'
     ]);
     Route::resource('actividades','ActividadController');
-    Route::resource('ciclos','CicloController');
+
     Route::get('auditoria/{id}',[
         'as' => 'auditoria', 'uses' =>'AuditoriaController@index'
     ]);
@@ -171,13 +171,18 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['auth','is_admin'],'namespace' 
     ]);*/
     Route::resource('auditoria','AuditoriaController');
     Route::resource('usuariosxciclo','UsuariosxcicloController');
+    //CICLOS
+
     Route::get('ciclos/activar/{id}',[
         'as' => 'admin.ciclos.activar', 'uses' => 'CicloController@activar'
     ]);
     Route::post('ciclos/storeambitoxciclo/',[
         'as' => 'admin.ciclos.storeambitoxciclo', 'uses' => 'CicloController@storeambitoxciclo'
     ]);
-
+    Route::get('ciclos/reporteciclos/',[
+        'as' => 'admin.ciclos.reporteciclos', 'uses' => 'ReportesController@ciclosgral'
+    ]);
+    Route::resource('ciclos','CicloController');
     //entregas
     Route::resource('entregas','EntregasController');
     Route::get('entregas/ciclo/{id}',[
@@ -213,6 +218,9 @@ Route::get('auditoria/auditaractividad/{id}',[
 ]);
 Route::get('auditoria/showactividad/{id}',[
     'as' => 'auditoria.showactividad', 'uses' => 'AuditoriaController@showactividad'
+]);
+Route::post('auditoria/agregarseguimiento/{id}',[
+    'as' => 'auditoria.agregarseguimiento', 'uses' => 'AuditoriaController@agregarseguimiento'
 ]);
 
 Route::get('download', function() {
