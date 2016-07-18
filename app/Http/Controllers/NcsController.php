@@ -123,13 +123,18 @@ class NcsController extends Controller
         $ncs->fill($request->all());
         //dd($detalles);
         $text = '';
-        if ($request->get('estadoncs_id')==1)
-            $text = "<em>Usuario ".Auth::user()->full_name. " Reabre el hallazgo para su adecuado tramite</em><br>";
-        if ($request->get('estadoncs_id')==2)
-            $text = "<em>Usuario ".Auth::user()->full_name. " devuelve para ser revisada</em><br>";
+        $estadoncsId = 1;
+        if ($request->get('estadoncs_id')==1) {
+            $text = "<em>Usuario " . Auth::user()->full_name . " Reabre el hallazgo para su adecuado tramite</em><br>";
+        }
+        if ($request->get('estadoncs_id')==2) {
+            $text = "<em>Usuario " . Auth::user()->full_name . " devuelve para ser revisada</em><br>";
+            $estadoncsId = 2;
+        }
         if ($request->get('estadoncs_id')==3) {
             $text = "<em>Usuario Auditor Cierra</em><br>";
             $ncs->certificador = Auth::user()->id; //el que cierra la nc
+            $estadoncsId = 3;
         }
         $ncs->save();
 
@@ -140,6 +145,7 @@ class NcsController extends Controller
         $seguimientonc->ncs_id = $ncs->id;
         $seguimientonc->user_id = Auth::user()->id;
         $seguimientonc->detalle = $text;
+        $seguimientonc->estadoncs_id = $estadoncsId;
         $seguimientonc->save();
         return redirect()->back();
     }

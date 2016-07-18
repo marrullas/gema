@@ -10,7 +10,8 @@
 
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">DATOS DE LA ACTIVIDAD A AUDITAR - CICLO: {{$auditoria->usuariosxciclo->ciclo->nombre}}</h3>
+                        {{--<h3 class="panel-title">DATOS DE LA ACTIVIDAD A AUDITAR - CICLO: {{$auditoria->usuariosxciclo->ciclo->nombre}}</h3>--}}
+                        <h3 class="panel-title">DATOS DE LA ACTIVIDAD A AUDITAR: [Ciclo: <b>{{$auditoria->usuariosxciclo->ciclo->nombre}}</b>] [Usuario: <b>{{$auditoria->usuariosxciclo->user->full_name}}</b>]</h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">

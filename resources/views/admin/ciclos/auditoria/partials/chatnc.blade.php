@@ -23,6 +23,7 @@
                             </div>
                         </li>
                         @endforeach
+                        @if($nc->estadoncs_id != 3)
                         <li>
                             {!! Form::open(['url'=> ['auditoria/agregarseguimiento',$nc], 'method' => 'POST'] ) !!}
                             <div class="input-group">
@@ -36,20 +37,9 @@
                             </div>
                             {!! Form::close() !!}
                         </li>
+                        @endif
                     </ul>
-               {{-- </div>--}}
-{{--                <div class="panel-footer">
-                    {!! Form::open(['url'=> ['admin/auditoria/crearnota',$nc], 'method' => 'POST','files' => true ] ) !!}
-                    <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-large" placeholder="Escribir nota aqui" />
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-warning btn-sm" id="btn-chat">
-                                Enviar</button>
-                        </span>
 
-                    </div>
-                    {!! Form::close() !!}
-                </div>--}}
             </div>
         </div>
     </div>

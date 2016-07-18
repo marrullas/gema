@@ -8,7 +8,7 @@ class Seguimientoncs extends Model
 {
     //
     protected $table = 'seguimientoncs';
-    protected $fillable = ['ncs_id','user_id','detalle'];
+    protected $fillable = ['ncs_id','user_id','detalle','estadoncs_id'];
 
     public function ncs()
     {

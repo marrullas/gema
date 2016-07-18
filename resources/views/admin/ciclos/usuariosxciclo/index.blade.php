@@ -21,7 +21,9 @@
                         </div>
                         <button type="submit" class="btn btn-default">Buscar</button>
                         {!! Form::close() !!}
-                        <p> <a class="btn btn-info" href="{{ route('admin.usuariosxciclo.create') }}" role="button">Relacionar ciclo</a></p>
+                        @if(Auth::user()->isAdmin())
+                            <p> <a class="btn btn-info" href="{{ route('admin.usuariosxciclo.create') }}" role="button">Relacionar ciclo</a></p>
+                        @endif
 
                     </div>
                 </div>

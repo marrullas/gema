@@ -12,7 +12,7 @@
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif
                     <div class="panel-body">
-                        {!! Form::model(['name'=>$nombre],['url'=> 'auditoria', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
+                        {!! Form::model(['name'=>$nombre],['url'=> 'auditoria/mostrarncs', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
                         <div class="form-group">
                             {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Buscar por ciclo']) !!}
                         </div>

@@ -14,7 +14,11 @@
     @foreach($auditoria as $actividad)
         <tr data-id="{{$actividad->id}}">
             {{--<th scope="row">{{$actividad->id}}</th>--}}
-            <td>{!!$actividad->actividad->nombre !!}</td>
+            {{--<td>{!!$actividad->actividad->nombre !!}</td>--}}
+            <td data-toggle="popover" data-placement="left" title="Tips"
+                data-content="{{ $actividad->actividad->descripcion }}"
+                data-container="body" data-html="true" data-trigger="hover">
+            {!!$actividad->actividad->nombre !!}
             <td>{!! $actividad->ncsPendientesCount !!}</td>
             <td>{!! $actividad->ncsResueltasCount !!}</td>
             <td>{!! ($actividad->certificado ? 'SI':'NO')  !!}</td>

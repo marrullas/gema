@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class AuditoriaController extends Controller
@@ -65,7 +66,8 @@ class AuditoriaController extends Controller
         $ncs = Ncs::where('auditoria_id',$auditoria->id)->get();
 
         $usuarios = User::lists('full_name','id');
-        //dd($ncs->first()->seguimientos);
+        if($auditoria->usuariosxciclo->user_id != Auth::user()->id) //si no es su ciclo sale error
+            App::abort(403, 'Access denied');
 
         //dd($auditoria->usuariosxciclo->user_id);
         return view('auditoria.auditaractividad',compact('auditoria','ncs','estadoncs','tiposnc','usuarios'));
