@@ -105,9 +105,9 @@
             </div>
         </div> <!--row!-->
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 toppad" >
+            {{--<div class="col-md-12 col-md-offset-1 toppad" >--}}
                 @include('admin.ciclos.auditoria.partials.actividades')
-            </div>
+            {{--</div>--}}
         </div><!--row!-->
     </div>
 @endsection

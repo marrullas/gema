@@ -47,7 +47,7 @@ class Auditoria extends Model
     public function ncsPendientesCount(){
         return $this->hasOne('\App\Ncs')
             ->selectRaw('auditoria_id,count(*) as conteo')
-            ->whereIn('estadoncs_id',[1,2])
+            ->whereIn('estadoncs_id',[1])
             ->groupBy('auditoria_id');
     }
     public function getNcsPendientesCountAttribute()
@@ -56,6 +56,22 @@ class Auditoria extends Model
             $this->load('ncsPendientesCount');
 
         $related = $this->getRelation('ncsPendientesCount');
+
+        // then return the count directly
+        return ($related) ? (int) $related->conteo : 0;
+    }
+    public function ncsDevueltasCount(){
+        return $this->hasOne('\App\Ncs')
+            ->selectRaw('auditoria_id,count(*) as conteo')
+            ->whereIn('estadoncs_id',[2])
+            ->groupBy('auditoria_id');
+    }
+    public function getNcsDevueltasCountAttribute()
+    {
+        if ( ! array_key_exists('ncsDevueltasCount', $this->relations))
+            $this->load('ncsDevueltasCount');
+
+        $related = $this->getRelation('ncsDevueltasCount');
 
         // then return the count directly
         return ($related) ? (int) $related->conteo : 0;

@@ -5,7 +5,8 @@
         {{--<th>#</th>--}}
         <th>Nombre</th>
         <th>Nc's pendientes</th>
-        <th>Nc's Resueltas</th>
+        <th>Nc's devueltas</th>
+        <th>Nc's Cerradas</th>
         <th>Cumple</th>
         <th>Verifico</th>
     </tr>
@@ -15,11 +16,12 @@
         <tr data-id="{{$actividad->id}}">
             {{--<th scope="row">{{$actividad->id}}</th>--}}
             {{--<td>{!!$actividad->actividad->nombre !!}</td>--}}
-            <td data-toggle="popover" data-placement="left" title="Tips"
+            <td data-toggle="popover" data-placement="rigth" title="Tips"
                 data-content="{{ $actividad->actividad->descripcion }}"
                 data-container="body" data-html="true" data-trigger="hover">
             {!!$actividad->actividad->nombre !!}
             <td>{!! $actividad->ncsPendientesCount !!}</td>
+            <td>{!! $actividad->ncsDevueltasCount !!}</td>
             <td>{!! $actividad->ncsResueltasCount !!}</td>
             <td>{!! ($actividad->certificado ? 'SI':'NO')  !!}</td>
             <td>{!! $actividad->userCertificador['full_name'] !!}</td>

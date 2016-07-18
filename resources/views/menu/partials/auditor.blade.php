@@ -42,17 +42,17 @@
                 </li>
                 <li>
 
-                    <a href="#"><i class="fa fa-gears fa-3x"></i> SIGA<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-gears fa-3x"></i> SIGA(Auditor)<span class="fa arrow"></span></a>
 
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="{{ url('/admin/usuariosxciclo/') }}"><i class="fa fa-refresh fa-3x"></i>Usuarios x ciclo</a>
+                            <a href="{{ url('/admin/usuariosxciclo/') }}"><i class="fa fa-list-ol fa-3x"></i>Revisión por usuario</a>
                         </li>
 
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-sitemap fa-3x"></i> Auditoria<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sitemap fa-3x"></i> SIGA(Instructor)<span class="fa arrow"></span></a>
 
                     <ul class="nav nav-second-level">
                         {{--                    <li>
@@ -62,7 +62,7 @@
                                                 <a href="{{ url('/siga/resumen') }}"><i class="fa fa-list fa-3x"></i>resumen</a>
                                             </li>--}}
                         <li>
-                            <a href="{{ url('/auditoria/') }}"><i class="fa fa-list fa-3x"></i>Auditoria</a>
+                            <a href="{{ url('/auditoria/') }}"><i class="fa fa-list fa-3x"></i>Revisiones</a>
                         </li>
                         <li>
                             <a href="{{ url('/auditoria/mostrarncs') }}"><i class="fa fa-list fa-3x"></i>Ncs pendientes</a>
@@ -84,7 +84,7 @@
                 <li>
                     <a  href="{{ url('/admin/muro') }}"><i class="fa fa-comment fa-3x"></i> Muro / Anuncios</a>
                 </li>
-                <li>
+{{--                <li>
                     <a href="#"><i class="fa fa-tasks fa-3x"></i> Tareas<span class="fa arrow"></span></a>
 
                     <ul class="nav nav-second-level">
@@ -95,6 +95,15 @@
                             <a href="{{ url('/tareas/create') }}"><i class="fa fa-file-o fa-3x"></i>Crear</a>
                         </li>
                     </ul>
+                </li>--}}
+                <li>
+                    <a  href="#"><i class="fa fa-users fa-3x"></i> Usuarios <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a  href="{{ url('/users/') }}"><i class="fa fa-users fa-3x"></i> Consultar Usuarios</a>
+                        </li>
+                    </ul>
+
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-envelope-o fa-3x"></i> IEs<span class="fa arrow"></span></a>

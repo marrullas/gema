@@ -51,7 +51,7 @@
                         <a href="{{ url('/siga/resumen') }}"><i class="fa fa-list fa-3x"></i>resumen</a>
                     </li>--}}
                     <li>
-                        <a href="{{ url('/auditoria/') }}"><i class="fa fa-list fa-3x"></i>Auditoria</a>
+                        <a href="{{ url('/auditoria/') }}"><i class="fa fa-list fa-3x"></i>Revisiones</a>
                     </li>
                     <li>
                         <a href="{{ url('/auditoria/mostrarncs') }}"><i class="fa fa-list fa-3x"></i>Ncs pendientes</a>

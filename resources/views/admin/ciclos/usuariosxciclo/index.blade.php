@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Usuarios x Ciclos</div>
+                    <div class="panel-heading">Revisión de usuarios</div>
                     @if(Session::has('message'))
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif

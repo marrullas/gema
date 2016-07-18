@@ -144,7 +144,9 @@ class Usuariosxciclo extends Model
         return $this->hasOne('\App\Auditoria')
             ->selectRaw('usuariosxciclo_id,auditoria_id,count(ncs.id) as conteo')
             ->join('ncs','ncs.auditoria_id','=','auditoria.id')
-            ->whereIn('estadoncs_id',[1,2])
+            //->join('usuariosxciclo','usuariosxciclo.id','=','auditoria.usuariosxciclo_id')
+            //->where('usuariosxciclo.user_id','=','ncs.user_id')
+            ->whereIn('estadoncs_id',[1])
             ->groupBy('usuariosxciclo_id');
     }
     public function getNcsPendientesSumAttribute()
@@ -153,6 +155,23 @@ class Usuariosxciclo extends Model
             $this->load('ncsPendientesSum');
 
         $related = $this->getRelation('ncsPendientesSum');
+
+        // then return the count directly
+        return ($related) ? (int) $related->conteo : 0;
+    }
+    public function ncsDevueltasSum(){
+        return $this->hasOne('\App\Auditoria')
+            ->selectRaw('usuariosxciclo_id,auditoria_id,count(ncs.id) as conteo')
+            ->join('ncs','ncs.auditoria_id','=','auditoria.id')
+            ->whereIn('estadoncs_id',[2])
+            ->groupBy('usuariosxciclo_id');
+    }
+    public function getNcsDevueltasSumAttribute()
+    {
+        if ( ! array_key_exists('ncsDevueltasSum', $this->relations))
+            $this->load('ncsDevueltasSum');
+
+        $related = $this->getRelation('ncsDevueltasSum');
 
         // then return the count directly
         return ($related) ? (int) $related->conteo : 0;
