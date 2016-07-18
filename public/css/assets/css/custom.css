@@ -949,3 +949,7 @@ body
     display:block;
     width:800px;
 }
+
+.popover{
+    max-width: 50%;
+}

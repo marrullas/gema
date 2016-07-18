@@ -5,8 +5,9 @@
     <tr>
         {{--<th>#</th>--}}
         <th>Nombre</th>
-        <th>Nc's pendientes</th>
-        <th>Nc's Resueltas</th>
+        <th>Nc's Abiertas</th>
+        <th>Nc's Devueltas</th>
+        <th>Nc's Cerradas</th>
         <th>Cumple</th>
         <th>Verifico</th>
     </tr>
@@ -15,12 +16,13 @@
     @foreach($auditoria as $actividad)
         <tr data-id="{{$actividad->id}}">
             {{--<th scope="row">{{$actividad->id}}</th>--}}
-            <td data-toggle="popover" data-placement="left" title="Tips"
+            <td data-toggle="popover" data-placement="rigth" title="Tips"
                 data-content="{{ $actividad->actividad->descripcion }}"
                 data-container="body" data-html="true" data-trigger="hover">
                 {!!$actividad->actividad->nombre !!}
             </td>
             <td>{!! $actividad->ncsPendientesCount !!}</td>
+            <td>{!! $actividad->ncsDevueltasCount !!}</td>
             <td>{!! $actividad->ncsResueltasCount !!}</td>
             <td >{!! ($actividad->certificado ? '<span class="label label-success">SI</span>':'<span class="label label-warning">NO</span>')  !!}</td>
             <td>{!! $actividad->userCertificador['full_name'] !!}</td>

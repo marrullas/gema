@@ -11,7 +11,7 @@
 
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">ACTIVIDADES QUE SE AUDITAN PARA: {{Auth::user()->full_name}} </h3>
+                        <h3 class="panel-title">ACTIVIDADES QUE SE REVISAN PARA: <b>{{Auth::user()->full_name}}</b> </h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -106,9 +106,9 @@
             </div>
         </div> <!--row!-->
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 toppad" >
+            {{--<div class="col-md-10 col-md-offset-1 toppad" >--}}
                 @include('auditoria.partials.tableactividadesauditar')
-            </div>
+            {{--</div>--}}
         </div><!--row!-->
     </div>
 @endsection
