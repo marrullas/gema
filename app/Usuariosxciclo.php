@@ -178,8 +178,7 @@ class Usuariosxciclo extends Model
     }
     public static function filtroPaginacion($userId,$nombre,$ciclo,$page)
     {
-        return Usuariosxciclo::with('ncsPendientesSum')
-            ->where('user_id','<>',$userId)
+        return Usuariosxciclo::where('user_id','<>',$userId)
             ->nombre($nombre)
             ->ciclo($ciclo)
             //->get();
@@ -195,8 +194,15 @@ class Usuariosxciclo extends Model
     public function scopeNombre($query, $nombre)
     {
         if (!empty($nombre)) {
-            $query->join('users','users.id','=','usuariosxciclo.user_id')
-                ->where('full_name', "LIKE","%$nombre%");
+
+            $query->whereRaw('user_id in (select id from users where full_name like "%'.$nombre.'%")');
+       /*  $user = User::where('full_name', "LIKE","%$nombre%")
+                ->select('id')
+                ->get();
+            dd($user);
+            $query->whereIn('user_id',[$user->id->toArray()]);*/
+            /*$query->join('users','users.id','=','usuariosxciclo.user_id')
+                ->where('full_name', "LIKE","%$nombre%");*/
         }
     }
 
