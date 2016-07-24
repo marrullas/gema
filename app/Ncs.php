@@ -21,9 +21,9 @@ class Ncs extends Model
     {
         return $this->belongsTo('\App\User');
     }
-    public function auditor()
+    public function revisor()
     {
-        return $this->belongsTo('\App\User');
+        return $this->belongsTo('\App\User','auditor','id');
     }
     public function certificador()
     {

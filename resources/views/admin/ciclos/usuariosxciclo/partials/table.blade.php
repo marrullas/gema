@@ -35,6 +35,7 @@
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url('admin/auditoria', $ciclo) }}"><i class="fa fa-edit"> Auditar</i></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url('ncs/exportarncs', $ciclo) }}"><i class="fa fa-edit"> Exporta Nc's</i></a></li>
                             @if(Auth::user()->isAdmin())
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.usuariosxciclo.edit', $ciclo) }}"><i class="fa fa-edit"> Editar</i></a></li>
                             @endif

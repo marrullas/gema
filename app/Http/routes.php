@@ -213,6 +213,7 @@ Route::get('auditoria/mostrarncs',[
 Route::get('auditoria/veractividades/{id}',[
     'as' => 'auditoria.veractividades', 'uses' => 'AuditoriaController@veractividades'
 ]);
+
 Route::get('auditoria/auditaractividad/{id}',[
     'as' => 'auditoria.auditaractividad', 'uses' => 'AuditoriaController@auditaractividad'
 ]);
@@ -233,10 +234,18 @@ Route::get('download', function() {
 });
 Route::resource('users','UserController');
 
+Route::get('ncs/exportarncs/{id?}/{ver?}',[
+    'uses' => 'NcsController@exportarncs'
+]);
+Route::get('ncs/exportartodasncs/',[
+    'uses' => 'NcsController@exportarncs'
+]);
+
 Route::resource('ncs','NcsController');
 Route::get('devolverncsajax',[
     'as' => 'devolverncsajax', 'uses' => 'NcsController@devolverncsajax'
 ]);
+
 
 Route::get('funcionarios/{id}','FuncionarioController@index');
 Route::get('funcionarios/create/{id}','FuncionarioController@create');

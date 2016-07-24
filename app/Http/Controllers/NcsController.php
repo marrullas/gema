@@ -8,11 +8,13 @@ use App\Ncs;
 use App\Seguimientoncs;
 use App\Tiposnc;
 use App\User;
+use App\Usuariosxciclo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class NcsController extends Controller
 {
@@ -193,5 +195,66 @@ class NcsController extends Controller
         //dd($ncspendientes);
 
         return response()->json(['success' => true,'ncspendientes'=>$ncspendientes,'ncsdevueltas'=>$ncsdevueltas]);
+    }
+
+    public function exportarncs($id = null, $ver = false)
+    {
+
+        /*MEJORA PARA REALIZAR: QUE SOLO DEVUELVA LAS NCS DE CICLOS ACTIVOS*/
+        $idauditoria = [];
+        if(empty($id))
+            abort(403, 'Unauthorized action.');
+
+
+        $usuariosxciclo = Usuariosxciclo::usuariosxcicloactivoid($id);
+        //dd($usuariosxciclo);
+        $auditoria = Auditoria::select('id')->where('usuariosxciclo_id', '=', $usuariosxciclo->id)->get();
+        foreach ($auditoria as $idauditoria) {
+             $idsauditoria[] = $idauditoria->id;
+        }
+        //SOLO LOS ADMIN O AUDITORES PUEDEN EXPORTAR NCS DE OTROS USUARIOS
+        if(Auth::user()->isAdmin() || Auth::user()->isAuditor()) {
+            $ncs = Ncs::whereIn('auditoria_id', $idsauditoria)
+                //->where('user_id', '=', Auth::user()->id)
+                ->get();
+        }else
+        {
+            $ncs = Ncs::whereIn('auditoria_id', $idsauditoria)
+                ->where('user_id', '=', Auth::user()->id)
+                ->get();
+        }
+        if($ver)
+            return view('auditoria.partials.tablencsxauditoria',compact('ncs'));
+
+        Excel::create('reporte hallazgos', function($excel) use($ncs){
+
+            $excel->sheet('ncs', function($sheet) use($ncs){
+
+                $sheet->loadView('auditoria.partials.tablencsxauditoria',['ncs'=>$ncs]);
+
+            });
+
+        })->export('xls');
+
+    }
+    public function exportartodasncs()
+    {
+        /*MEJORA PARA REALIZAR: QUE SOLO DEVUELVA LAS NCS DE CICLOS ACTIVOS Y QUE NO PERMITA DESCARGAR NCS DE OTROS USER*/
+        if(Auth::user()->isadmin())
+            abort(403, 'Unauthorized action.');
+
+        $ncs = Ncs::all();
+        return view('auditoria.partials.tablencsxauditoria',compact('ncs'));
+
+        Excel::create('reporte hallazgos', function($excel) use($ncs){
+
+            $excel->sheet('ncs', function($sheet) use($ncs){
+
+                $sheet->loadView('auditoria.partials.tablencsxauditoria',['ncs'=>$ncs]);
+
+            });
+
+        })->export('xls');
+
     }
 }

@@ -230,4 +230,21 @@ class Usuariosxciclo extends Model
 
 
     }
+    /*
+ * Esta funcion devuelve el listado de usuariosxciclo donde el ciclo al que pertenece esa activo
+ */
+    public static function usuariosxcicloactivoid($id)
+    {
+        return Usuariosxciclo::with('ciclo')
+            ->where('id',$id)
+            ->whereIn('ciclo_id',function($queyry)
+            {
+                $queyry->select(DB::raw('id'))
+                    ->from('ciclos')
+                    ->whereRaw('activo = 1');
+            })
+            ->first();
+
+
+    }
 }

@@ -31,6 +31,7 @@
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url('auditoria/veractividades', $ciclo) }}"><i class="fa fa-edit"> Auditar</i></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url('ncs/exportarncs', [$ciclo]) }}"><i class="fa fa-edit"> Exportar Nc's</i></a></li>
                             {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('admin.usuariosxciclo.edit', $ciclo) }}"><i class="fa fa-edit"> Editar</i></a></li>--}}
                             {{--<li role="presentation"><a role="menuitem" tabindex="-2" href="{{ route('admin.usuariosxciclo.show', $ciclo) }}"><i class="fa fa-info"> Detalles</i></a></li>--}}
 {{--

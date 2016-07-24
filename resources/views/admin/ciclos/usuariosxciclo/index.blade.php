@@ -23,6 +23,7 @@
                         {!! Form::close() !!}
                         @if(Auth::user()->isAdmin())
                             <p> <a class="btn btn-info" href="{{ route('admin.usuariosxciclo.create') }}" role="button">Relacionar ciclo</a></p>
+                            <p> <a class="btn btn-success" href="{{ url('ncs/exportartodasncs') }}" role="button">Descargar NCs</a></p>
                         @endif
 
                     </div>
