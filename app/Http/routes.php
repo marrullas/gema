@@ -237,8 +237,8 @@ Route::resource('users','UserController');
 Route::get('ncs/exportarncs/{id?}/{ver?}',[
     'uses' => 'NcsController@exportarncs'
 ]);
-Route::get('ncs/exportartodasncs/',[
-    'uses' => 'NcsController@exportarncs'
+Route::get('ncs/exportartodasncs/{ver?}',[
+    'uses' => 'NcsController@exportartodasncs'
 ]);
 
 Route::resource('ncs','NcsController');

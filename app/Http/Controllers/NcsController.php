@@ -237,13 +237,16 @@ class NcsController extends Controller
         })->export('xls');
 
     }
-    public function exportartodasncs()
+    public function exportartodasncs($ver = null)
     {
+
         /*MEJORA PARA REALIZAR: QUE SOLO DEVUELVA LAS NCS DE CICLOS ACTIVOS Y QUE NO PERMITA DESCARGAR NCS DE OTROS USER*/
-        if(Auth::user()->isadmin())
+        if(!Auth::user()->isAdmin())
             abort(403, 'Unauthorized action.');
 
         $ncs = Ncs::all();
+
+        if($ver)
         return view('auditoria.partials.tablencsxauditoria',compact('ncs'));
 
         Excel::create('reporte hallazgos', function($excel) use($ncs){
