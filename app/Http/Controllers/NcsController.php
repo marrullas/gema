@@ -124,7 +124,7 @@ class NcsController extends Controller
         $ncs = Ncs::findOrfail($id);
         $ncs->fill($request->all());
         //dd($detalles);
-        $text = '';
+        $text = "<em>Usuario " . Auth::user()->full_name . " Actualizo la NC</em><br>";
         $estadoncsId = 1;
         if ($request->get('estadoncs_id')==1) {
             $text = "<em>Usuario " . Auth::user()->full_name . " Reabre el hallazgo para su adecuado tramite</em><br>";

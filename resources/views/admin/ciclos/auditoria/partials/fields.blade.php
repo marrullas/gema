@@ -23,7 +23,19 @@
 </div>
 <div class="form-group">
     {!! Form::label('usuario', 'Responsable ') !!}
-    {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control', 'disabled'=>'disabled'] ) !!}
+    @if(!Auth::user()->isAdmin())
+        {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control', 'disabled'=>'disabled'] ) !!}
+    @else
+        {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control'] ) !!}
+    @endif
+</div>
+<div class="form-group">
+    {!! Form::label('auditor', 'Auditor ') !!}
+    @if(!Auth::user()->isAdmin())
+        {!! Form::select('auditor', $usuarios, $auditoria->auditor, [ 'class' => 'form-control', 'disabled'=>'disabled'] ) !!}
+    @else
+        {!! Form::select('auditor', $usuarios, $auditoria->auditor, [ 'class' => 'form-control'] ) !!}
+    @endif
 </div>
 <div class="form-group">
     {!! Form::label('plazo', 'Plazo') !!}
@@ -32,6 +44,12 @@
         <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>
     </div>
 </div>
+<div class="form-group">
+    {!! Form::label('detalles', 'Detalles del motivo de actualización (opcional)') !!}
+    {!! Form::textarea('detalles', null,['class'=>'form-control textarea'])!!}
+
+</div>
+
 @section('scripts')
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.0/moment-with-locales.min.js"></script>
     {!! HTML::script('/bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}
