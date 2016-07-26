@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Ncs extends Model
 {
@@ -57,5 +58,27 @@ class Ncs extends Model
     public function scopeNcspendientes($query)
     {
         return $query->estadoncs()->where('nombre','=','Abierta');
+    }
+
+    public static function ncsxuaditor($auditor = null)
+    {
+        $ncs = null;
+        if (empty($auditor))
+        {
+            $ncs = Ncs::select(DB::raw('count(*) as numeroncs, auditor, users.full_name'))
+                ->join('users','users.id','=','ncs.auditor')
+                ->groupBy('ncs.auditor')
+                ->get();
+
+        }else{
+            $ncs = Ncs::select(DB::raw('count(*) as numeroncs, auditor, users.full_name'))
+                ->join('users','users.id','=','ncs.auditor')
+                ->where('ncs.auditor',$auditor)
+                ->groupBy('ncs.auditor')
+                ->get();
+
+        }
+
+        return $ncs;
     }
 }

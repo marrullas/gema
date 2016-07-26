@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Ncs;
 use App\Usuariosxciclo;
 use Illuminate\Http\Request;
 
@@ -19,8 +20,9 @@ class ReportesController extends Controller
         $resumenciclos = Usuariosxciclo::resumenciclos();
         $totalncsxciclo = Usuariosxciclo::totalncsxciclo();
         $resumenncxusuario = Usuariosxciclo::resumenncsxusuario();
-        //dd($resumenncxusuario);
-        return view('admin.ciclos.reportes.home',compact('resumenciclos','totalncsxciclo','resumenncxusuario'));
+        $ncsxauditor = Ncs::ncsxuaditor();
+        //dd($ncsxauditor);
+        return view('admin.ciclos.reportes.home',compact('resumenciclos','totalncsxciclo','resumenncxusuario','ncsxauditor'));
     }
 
 }
