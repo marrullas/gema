@@ -69,7 +69,7 @@
                             @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor') && ($nc->estadoncs_id == 2))
                                 <button href="#" class="btn btn-warning" data-toggle="modal" data-target="#myModalreabrirnc{{$nc->id}}"><i class="glyphicon glyphicon-edit"></i> <strong>Reabrir</strong></button>
                             @endif
-                            @if(((Auth::user()->type == 'admin') || ($nc->auditor == Auth::user()->id)) && ($nc->estadoncs_id != 3) )
+                            @if(((Auth::user()->type == 'admin') || ($nc->auditor == Auth::user()->id && $nc->estadoncs_id != 3) ))
                                 <a href="{{route('ncs.edit',$nc)}}" class="btn btn-info"><i class="glyphicon glyphicon-ok-sign"></i> <strong>Editar</strong></a>
                             @endif
                         </td>
