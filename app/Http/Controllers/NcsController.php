@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 use Maatwebsite\Excel\Facades\Excel;
 
 class NcsController extends Controller
@@ -99,6 +100,7 @@ class NcsController extends Controller
     public function edit($id)
     {
         //
+        //dd(URL::previous());
         $nc = Ncs::findOrfail($id);
         //dd($nc);
         $caracterizarnc = Caracterizarncs::lists('nombre','id');
@@ -161,6 +163,21 @@ class NcsController extends Controller
     public function destroy($id)
     {
         //
+        $ncs = Ncs::findOrfail($id);
+        $ncs->delete();
+        $message = trans('validation.attributes.userdelete').' : '.$ncs->id;
+        if($this->request->ajax()){
+
+            return response()->json([
+                'id'=>$ncs->id,
+                'message'=>$message
+            ]);
+        }
+        //Eliminar las actividades de la tabla auditoria que estan relacionadas con
+        //este ciclo.
+        //User::destroy($id); eliminar directamente
+        //Session::flash('message',$message);
+        return redirect()->route('admin.auditoria.edit', $ncs->auditoria_id);
     }
 
     public function guardarnc(){
@@ -259,5 +276,20 @@ class NcsController extends Controller
 
         })->export('xls');
 
+    }
+
+    public function listarncsxauditor(){
+        $nombre = $this->request->get('nombre');
+        $ncs = Ncs::where('auditor',Auth::user()->id)->get();
+        return view('auditoria.listarncs',compact('ncs','nombre'));
+    }
+
+    public function listarncsxauditores($auditor = null){
+        $nombre = $this->request->get('nombre');
+        if(!empty($auditor))
+            $ncs = Ncs::where('auditor',$auditor)->get();
+        else
+            $ncs = Ncs::all();
+        return view('auditoria.listarncs',compact('ncs','nombre'));
     }
 }

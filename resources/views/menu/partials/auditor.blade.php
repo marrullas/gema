@@ -48,6 +48,9 @@
                         <li>
                             <a href="{{ url('/admin/usuariosxciclo/') }}"><i class="fa fa-list-ol fa-3x"></i>Revisión por usuario</a>
                         </li>
+                        <li>
+                            <a href="{{ url('/auditoria/listarncsxauditor/') }}"><i class="fa fa-list-ol fa-3x"></i>Listado Ncs</a>
+                        </li>
 
                     </ul>
                 </li>

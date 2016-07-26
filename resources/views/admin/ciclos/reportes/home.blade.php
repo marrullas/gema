@@ -433,7 +433,7 @@
             @foreach($ncsxauditor as $data)
 
 
-            nombres.push("{{$data->full_name}}");
+            nombres.push("{!! $data->full_name !!}");
             datos1.push({{$data->numeroncs}});
 
 

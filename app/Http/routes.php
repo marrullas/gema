@@ -223,6 +223,12 @@ Route::get('auditoria/showactividad/{id}',[
 Route::post('auditoria/agregarseguimiento/{id}',[
     'as' => 'auditoria.agregarseguimiento', 'uses' => 'AuditoriaController@agregarseguimiento'
 ]);
+Route::get('auditoria/listarncsxauditor',[
+    'as' => 'auditoria.listarncsxauditor', 'uses' => 'NcsController@listarncsxauditor'
+]);
+Route::get('auditoria/listarncsxauditores/{auditor?}',[
+    'as' => 'auditoria.listarncsxauditores', 'uses' => 'NcsController@listarncsxauditores'
+]);
 
 Route::get('download', function() {
 

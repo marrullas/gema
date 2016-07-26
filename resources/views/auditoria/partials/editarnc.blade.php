@@ -20,7 +20,7 @@
                         <button type="submit" class="btn btn-primary">Editar NC</button>
                     </div>
                     {!! Form::close() !!}
-                    @if((Auth::user()->type == 'admin'))
+                    @if((Auth::user()->type == 'admin') || $nc->auditor == Auth::user()->id )
                         @include('admin.ciclos.auditoria.partials.deletencs')
                     @endif
 
