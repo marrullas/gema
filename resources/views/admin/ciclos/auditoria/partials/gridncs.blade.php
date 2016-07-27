@@ -63,10 +63,10 @@
                                 <button href="#" class="btn btn-inverse" data-toggle="modal" data-target="#myModaldevolvernc{{$nc->id}}"><i class="glyphicon glyphicon-backward"></i> <strong>Devolver</strong></button>
                                 @endif
                             @endif
-                            @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor') && $nc->estadoncs_id != 3)
+                                @if(((Auth::user()->type == 'admin') || ($nc->auditor == Auth::user()->id && $nc->estadoncs_id == 2) )) {{--solo cierra admin o el auditor cuando la nc este devuelta--}}
                                 <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalcerrarnc{{$nc->id}}"><i class="glyphicon glyphicon-ok-sign"></i> <strong>Cerrar</strong></button>
                             @endif
-                            @if((Auth::user()->type == 'admin' || Auth::user()->type == 'auditor') && ($nc->estadoncs_id == 2))
+                                @if(((Auth::user()->type == 'admin') || ($nc->auditor == Auth::user()->id && $nc->estadoncs_id == 2) )) {{--Solo reabre admin o auditor que la creo y no este devuelta--}}
                                 <button href="#" class="btn btn-warning" data-toggle="modal" data-target="#myModalreabrirnc{{$nc->id}}"><i class="glyphicon glyphicon-edit"></i> <strong>Reabrir</strong></button>
                             @endif
                             @if(((Auth::user()->type == 'admin') || ($nc->auditor == Auth::user()->id && $nc->estadoncs_id != 3) ))
