@@ -18,6 +18,7 @@
                     <tr>
                         <th colspan="12">
                             <div align="center">
+                                <span class="label label-info pull-right">#: {{$nc->id}}</span>
                                 Responsable: <span class="label label-info">{{$nc->user->full_name}}</span> /
                                 Plazo resolución: <span class="label label-warning">{{($nc->plazo!='0000-00-00')?$nc->plazo:'No defindo'}}</span>
                             </div>

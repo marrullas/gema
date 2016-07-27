@@ -13,9 +13,9 @@
                     @endif
                     <div class="panel-body">
                         {!! Form::model(['name'=>$nombre,'usuario'=>$usuario],['route'=> 'auditoria.listarncsxauditores', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
-         {{--               <div class="form-group">
-                            {!! Form::text('nombre', $nombre, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
-                        </div>--}}
+                        <div class="form-group">
+                            {!! Form::text('id', $id, ['class' => 'form-control', 'placeholder'=>'Buscar por Buscar x numero']) !!}
+                        </div>
                         <div class="form-group">
                             {!! Form::label('estado_segumiento', 'Auditor') !!}
                             {!! Form::select('auditor', $auditores, $auditor, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}

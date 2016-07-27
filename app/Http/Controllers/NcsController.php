@@ -282,11 +282,20 @@ class NcsController extends Controller
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
         $usuario = $this->request->get('usuario');
-        $IdUser = Auth::user()->id;
-        $usuariosnc = [''=>''] + Ncs::usuariosncdeauditor($IdUser);
+        $id = $this->request->get('id');
+        $auditor = Auth::user()->id;
+        $usuariosnc = [''=>''] + Ncs::usuariosncdeauditor($auditor);
         //dd($usuariosnc);
-        $ncs = Ncs::ncsxusuarioxauditor($IdUser,$usuario,$page);
-        return view('auditoria.listarncs',compact('ncs','nombre','usuariosnc','usuario','page'));
+        if(!empty($id))
+        {
+            $datos = preg_split("/[\s,]+/", $id);
+            $ncs = Ncs::whereIn('id', $datos)
+                ->where('auditor',$auditor)
+                ->paginate();
+            return view('auditoria.listarncs',compact('ncs','nombre','usuario','page','usuariosnc','id'));
+        }
+        $ncs = Ncs::ncsxusuarioxauditor($auditor,$usuario,$page);
+        return view('auditoria.listarncs',compact('ncs','nombre','usuariosnc','usuario','page','id'));
     }
 
     public function listarncsxauditores(){
@@ -295,16 +304,25 @@ class NcsController extends Controller
         $page = $this->request->get('page');
         $usuario = $this->request->get('usuario');
         $auditor = $this->request->get('auditor');
+        $id = $this->request->get('id');
         $usuariosnc = [''=>''] + Ncs::usuariosncdeauditor($auditor);
         $auditores = [''=>''] + User::where('type','auditor')->lists('full_name','id')->all();
-        //$ciclos = [''=>''] + Ciclo::lists('nombre','id')->all();
-        //dd($auditores);
+        //dd($id);
+        if(!empty($id))
+        {
+            //dd($id);
+            $datos = preg_split("/[\s,]+/", $id);
+            //dd($datos);
+            $ncs = Ncs::whereIn('id', $datos)->paginate();
+            //dd($ncs);
+            return view('auditoria.listarncsadmin',compact('ncs','nombre','usuario','page','usuariosnc','auditores','auditor','id'));
+        }
         if(!empty($auditor) || !empty($usuario)) {
             //$ncs = Ncs::where('auditor', $auditor)->paginate();
             $ncs = Ncs::ncsxusuarioxauditor($auditor,$usuario,$page);
         }
         else
             $ncs = Ncs::paginate();
-        return view('auditoria.listarncsadmin',compact('ncs','nombre','usuario','page','usuariosnc','auditores','auditor'));
+        return view('auditoria.listarncsadmin',compact('ncs','nombre','usuario','page','usuariosnc','auditores','auditor','id'));
     }
 }

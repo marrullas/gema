@@ -1,3 +1,4 @@
+{{--ESTA VISTA ES PARA CONSULTA DEL AUDITOR DE LAS NCS QUE EL HA CREADO--}}
 @extends('app')
 @section('menu')
     @include('menu.menu')
@@ -13,9 +14,9 @@
                     @endif
                     <div class="panel-body">
                         {!! Form::model(['name'=>$nombre,'usuario'=>$usuario],['route'=> 'auditoria.listarncsxauditor', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
-         {{--               <div class="form-group">
-                            {!! Form::text('nombre', $nombre, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
-                        </div>--}}
+                        <div class="form-group">
+                            {!! Form::text('id', $id, ['class' => 'form-control', 'placeholder'=>'Buscar por Buscar x numero']) !!}
+                        </div>
                         <div class="form-group">
                             {!! Form::select('usuario', $usuariosnc, null, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
                         </div>

@@ -94,6 +94,11 @@ class Ncs extends Model
                         ->from('ncs')
                         ->whereRaw('auditor = ' . $auditor)
                         ->whereRaw('user_id = ' . $usuario);;
+                }elseif (!empty($auditor))
+                {
+                    $queyry->select(DB::raw('user_id'))
+                        ->from('ncs')
+                        ->whereRaw('auditor = ' . $auditor);
                 }
                 else{
                     if(!empty($usuario)) {
