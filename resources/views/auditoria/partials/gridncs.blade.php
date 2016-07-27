@@ -25,16 +25,16 @@
                     </tr>
                     <tr>
                         <th width="10%"><b>Detalles</b></th>
-                        <th width="22%"><b>Descripcion</b></th>
+                        <th width="30%"><b>Descripcion</b></th>
                         <th width="22%"><b>Medida</b></th>
-                        <th width="70%"><b>Seguimiento</b></th>
+                        <th width="60%"><b>Seguimiento</b></th>
                         <th width="10%"><b>Acciones</b></th>
                     </tr>
                     </thead>
                     <tbody>
 
                     <tr class="text-centered">
-                    <td>
+                    <td ROWSPAN=2>
                         @if($nc->estadoncs->nombre == 'Abierta')
                             <span class="label label-warning pull-right">Estado: Abierto</span>
                         @elseif($nc->estadoncs->nombre == 'Devuelta')
@@ -51,24 +51,17 @@
                             <span class="label label-info pull-right">Prioridad: Baja</span>
                         @endif
                             <span class="label label-danger pull-right">Auditor:<br> {!! $nc->revisor->full_name !!}</span>
+                            <hr>
+                            <p>
+                            <span class="label label-primary">Actividad:</span>
+                                {!! $nc->auditoria->actividad->nombre !!}</p>
+
+
                     </td>
                         <td>{!! $nc->descripcion!!}</td>
                         <td>{!! $nc->medida!!}</td>
                         <td>
-                            {{--Домашнее задание.На 26 мая (8 урок)
-                            <div class="attachments">
-                                <ul class="fa-ul attachments-ul">
-                                    <li><a><i class="fa fa-li fa-file"></i> Файл.txt</a></li>
-                                    <li><a><i class="fa fa-li fa-file-excel-o"></i> Файл.excel</a></li>
-                                    <li><i class="fa fa-li fa-file-pdf-o"></i> Файл.pdf</li>
-                                    <li><i class="fa fa-li fa-file-audio-o"></i> Файл.mp3</li>
-                                    <li><i class="fa fa-li fa-file-word-o"></i> Файл.docx</li>
-                                    <li><i class="fa fa-li fa-file-image-o"></i> Файл.png</li>
-                                    <li><i class="fa fa-li fa-file-zip-o"></i> Файл.zip</li>
-                                    <li><i class="fa fa-li fa-file-powerpoint-o"></i> Файл.pptx</li>
-                                    <li><i class="fa fa-li fa-file-video-o"></i> Файл.mp4</li>
-                                </ul>
-                            </div>--}}
+
                             @include('admin.ciclos.auditoria.partials.chatnc')
                         </td>
                         <td class="text-centered">

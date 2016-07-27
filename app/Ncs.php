@@ -81,4 +81,42 @@ class Ncs extends Model
 
         return $ncs;
     }
+
+    /*
+ * Esta funcion devuelve el listado de usuarios que tienen nc creado por un auditor
+ */
+    public static function usuariosncdeauditor($auditor = null)
+    {
+        return User::whereIn('id',function($queyry) use ($auditor)
+            {
+                if(!empty($auditor)) {
+                    $queyry->select(DB::raw('user_id'))
+                        ->from('ncs')
+                        ->whereRaw('auditor = ' . $auditor);
+                }
+                else{
+                    $queyry->select(DB::raw('user_id'))
+                        ->from('ncs');
+                }
+            })
+            ->lists('full_name','id')->all();
+            //->get();
+
+    }
+
+    public static function ncsxusuarioxauditor($auditor,$user, $page)
+    {
+        return Ncs::where('auditor',$auditor)
+            ->usuario($user)
+            ->paginate();
+    }
+
+    public function scopeUsuario($query, $user)
+    {
+        if(!empty($user))
+        {
+            $query->where('user_id', "=", $user);
+        }
+    }
+
 }

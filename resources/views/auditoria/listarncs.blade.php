@@ -12,12 +12,12 @@
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif
                     <div class="panel-body">
-                        {!! Form::model(['name'=>$nombre/*,'ciclo'=>$ciclo*/],['route'=> 'admin.usuariosxciclo.index', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
-                        <div class="form-group">
+                        {!! Form::model(['name'=>$nombre,'usuario'=>$usuario],['route'=> 'auditoria.listarncsxauditor', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
+         {{--               <div class="form-group">
                             {!! Form::text('nombre', $nombre, ['class' => 'form-control', 'placeholder'=>'Buscar por nombre']) !!}
-                        </div>
+                        </div>--}}
                         <div class="form-group">
-                            {{--{!! Form::select('ciclo', $ciclos, $ciclo, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}--}}
+                            {!! Form::select('usuario', $usuariosnc, null, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
                         </div>
                         <button type="submit" class="btn btn-default">Buscar</button>
                         {!! Form::close() !!}
@@ -28,6 +28,7 @@
                 <div class="col-md-10 col-md-offset-1 toppad" >
                     {{--@include('admin.ciclos.auditoria.partials.actividades')--}}
                     @include('auditoria.partials.gridncs')
+                    {!! $ncs->appends(['nombre'=>$nombre,'usuario'=>$usuario])->render() !!}
                 </div>
             </div><!--row!-->
 {{--            {!! $usuariosxciclo->appends(['nombre'=>$nombre,'ciclo'=>$ciclo])->render() !!}--}}

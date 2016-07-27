@@ -280,16 +280,24 @@ class NcsController extends Controller
 
     public function listarncsxauditor(){
         $nombre = $this->request->get('nombre');
-        $ncs = Ncs::where('auditor',Auth::user()->id)->get();
-        return view('auditoria.listarncs',compact('ncs','nombre'));
+        $page = $this->request->get('page');
+        $usuario = $this->request->get('usuario');
+        $IdUser = Auth::user()->id;
+        $usuariosnc = [''=>''] + Ncs::usuariosncdeauditor($IdUser);
+        //dd($usuariosnc);
+        $ncs = Ncs::ncsxusuarioxauditor($IdUser,$usuario,$page);
+        return view('auditoria.listarncs',compact('ncs','nombre','usuariosnc','usuario','page'));
     }
 
     public function listarncsxauditores($auditor = null){
         $nombre = $this->request->get('nombre');
+        $page = $this->request->get('page');
+        $usuario = $this->request->get('usuario');
+        $usuariosnc = [''=>''] + Ncs::usuariosncdeauditor($auditor);
         if(!empty($auditor))
-            $ncs = Ncs::where('auditor',$auditor)->get();
+            $ncs = Ncs::where('auditor',$auditor)->paginate();
         else
-            $ncs = Ncs::all();
-        return view('auditoria.listarncs',compact('ncs','nombre'));
+            $ncs = Ncs::paginate();
+        return view('auditoria.listarncs',compact('ncs','nombre','usuario','page','usuariosnc'));
     }
 }
