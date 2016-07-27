@@ -85,18 +85,27 @@ class Ncs extends Model
     /*
  * Esta funcion devuelve el listado de usuarios que tienen nc creado por un auditor
  */
-    public static function usuariosncdeauditor($auditor = null)
+    public static function usuariosncdeauditor($auditor = null,$usuario= null)
     {
-        return User::whereIn('id',function($queyry) use ($auditor)
+        return User::whereIn('id',function($queyry) use ($auditor,$usuario)
             {
-                if(!empty($auditor)) {
+                if(!empty($auditor) && !empty($usuario)) {
                     $queyry->select(DB::raw('user_id'))
                         ->from('ncs')
-                        ->whereRaw('auditor = ' . $auditor);
+                        ->whereRaw('auditor = ' . $auditor)
+                        ->whereRaw('user_id = ' . $usuario);;
                 }
                 else{
-                    $queyry->select(DB::raw('user_id'))
-                        ->from('ncs');
+                    if(!empty($usuario)) {
+                        $queyry->select(DB::raw('user_id'))
+                            ->from('ncs')
+                            ->whereRaw('user_id = ' . $usuario);
+                    }
+                    else
+                    {
+                        $queyry->select(DB::raw('user_id'))
+                            ->from('ncs');
+                    }
                 }
             })
             ->lists('full_name','id')->all();
@@ -106,8 +115,8 @@ class Ncs extends Model
 
     public static function ncsxusuarioxauditor($auditor,$user, $page)
     {
-        return Ncs::where('auditor',$auditor)
-            ->usuario($user)
+        return Ncs::usuario($user)
+            ->auditor($auditor)
             ->paginate();
     }
 
@@ -118,5 +127,13 @@ class Ncs extends Model
             $query->where('user_id', "=", $user);
         }
     }
+    public function scopeAuditor($query, $auditor)
+    {
+        if(!empty($auditor))
+        {
+            $query->where('auditor', "=", $auditor);
+        }
+    }
+
 
 }

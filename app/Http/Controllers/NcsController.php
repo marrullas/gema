@@ -289,15 +289,22 @@ class NcsController extends Controller
         return view('auditoria.listarncs',compact('ncs','nombre','usuariosnc','usuario','page'));
     }
 
-    public function listarncsxauditores($auditor = null){
+    public function listarncsxauditores(){
+        //dd($auditor);
         $nombre = $this->request->get('nombre');
         $page = $this->request->get('page');
         $usuario = $this->request->get('usuario');
+        $auditor = $this->request->get('auditor');
         $usuariosnc = [''=>''] + Ncs::usuariosncdeauditor($auditor);
-        if(!empty($auditor))
-            $ncs = Ncs::where('auditor',$auditor)->paginate();
+        $auditores = [''=>''] + User::where('type','auditor')->lists('full_name','id')->all();
+        //$ciclos = [''=>''] + Ciclo::lists('nombre','id')->all();
+        //dd($auditores);
+        if(!empty($auditor) || !empty($usuario)) {
+            //$ncs = Ncs::where('auditor', $auditor)->paginate();
+            $ncs = Ncs::ncsxusuarioxauditor($auditor,$usuario,$page);
+        }
         else
             $ncs = Ncs::paginate();
-        return view('auditoria.listarncs',compact('ncs','nombre','usuario','page','usuariosnc'));
+        return view('auditoria.listarncsadmin',compact('ncs','nombre','usuario','page','usuariosnc','auditores','auditor'));
     }
 }
