@@ -15,7 +15,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('tiponcs', 'Tipo') !!}
-    {!! Form::select('tiposnc_id',$tiposnc,null,['class'=> 'form-control', 'placeholder' => 'Escoja tipo de actividad','name'=>'tiponcs' ])!!}
+    {!! Form::select('tiposnc_id',$tiposnc,null,['class'=> 'form-control', 'placeholder' => 'Escoja tipo de actividad','name'=>'tiposnc_id' ])!!}
 </div>
 <div class="form-group">
     {!! Form::label('medida', 'Medida de acción') !!}
@@ -24,7 +24,7 @@
 <div class="form-group">
     {!! Form::label('usuario', 'Responsable ') !!}
     @if(!Auth::user()->isAdmin())
-        {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control', 'disabled'=>'disabled','name'=>'usuario'] ) !!}
+        {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control', 'disabled'=>'disabled','name'=>'user_id'] ) !!}
     @else
         {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control','name'=>'user_id'] ) !!}
     @endif

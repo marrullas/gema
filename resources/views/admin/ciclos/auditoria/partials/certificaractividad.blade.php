@@ -32,7 +32,7 @@
                     </div>--}}
                     <div class="form-group">
                         {!! Form::label('descripcion', 'Nota certificación') !!}
-                        {!! Form::textarea('detalles', null,['class'=>'form-control textarea'])!!}
+                        {!! Form::textarea('detalles', null,['class'=>'form-control textarea','name'=>'detalles'])!!}
                     </div>
 
 {{--
