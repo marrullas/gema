@@ -251,7 +251,7 @@ class NcsController extends Controller
 
             });
 
-        })->export('xls');
+        })->download('xlsx');
 
     }
     public function exportartodasncs($ver = null)

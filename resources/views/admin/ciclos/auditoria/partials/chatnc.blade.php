@@ -25,9 +25,9 @@
                         @endforeach
                         @if($nc->estadoncs_id != 3)
                         <li>
-                            {!! Form::open(['url'=> ['auditoria/agregarseguimiento',$nc], 'method' => 'POST'] ) !!}
+                            {!! Form::open(['url'=> ['auditoria/agregarseguimiento',$nc], 'method' => 'POST','data-parsley-validate'] ) !!}
                             <div class="input-group">
-                                {!! Form::text('texto', null, ['class' => 'form-control', 'placeholder'=>'Ingresar texto']) !!}
+                                {!! Form::text('texto', null, ['class' => 'form-control', 'placeholder'=>'Ingresar texto','required'=>'" "','name'=>'textoseguimiento']) !!}
                                 {{--<input id="btn-input" type="text" class="form-control input-large" placeholder="Escribir nota aqui" />--}}
                                 <span class="input-group-btn">
                             <button type="submit" class="btn btn-success btn-sm" id="btn-chat">

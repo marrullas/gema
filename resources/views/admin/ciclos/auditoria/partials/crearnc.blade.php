@@ -19,7 +19,7 @@
                 <h4 class="modal-title" id="myModalLabel">Agregar Hallazgo</h4>
             </div>
             <div class="modal-body">
-            {!! Form::open(['route'  => 'ncs.store', 'method' => 'POST','class'=>'form']) !!}
+            {!! Form::open(['route'  => 'ncs.store', 'method' => 'POST','class'=>'form','data-parsley-validate']) !!}
             @include('admin.ciclos.auditoria.partials.fields')
             </div>
             <div class="modal-footer">

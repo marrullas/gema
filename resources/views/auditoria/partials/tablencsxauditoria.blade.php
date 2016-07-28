@@ -11,7 +11,7 @@
    {{-- <caption>Total registros : {{$totalregistros}} </caption>--}}
     <thead>
     <tr>
-        {{--<th>#</th>--}}
+        <th>#</th>
         <th>Ciclo</th>
         <th>Usuario</th>
         <th>Actividad</th>
@@ -27,10 +27,11 @@
     <tbody>
     @foreach($ncs as $nc)
         <tr data-id="{{ $nc->id }}">
-           <th scope="row">{{$nc->auditoria->usuariosxciclo->ciclo->nombre}}</th>
+            <th scope="row">{{$nc->id}}</th>
+            <td>{{$nc->auditoria->usuariosxciclo->ciclo->nombre}}</td>
             <td>{!! $nc->user->full_name !!}</td>
             <td>{!! $nc->auditoria->actividad->nombre !!}</td>
-            <td>{!! $nc->descripcion !!} </td>
+            <td><p>{!! strip_tags($nc->descripcion,'<br>') !!}</p> </td>
             <td>{!! $nc->medida !!} </td>
             <td>{!! $nc->plazo !!} </td>
             <td>{!! $nc->estadoncs->nombre !!} </td>

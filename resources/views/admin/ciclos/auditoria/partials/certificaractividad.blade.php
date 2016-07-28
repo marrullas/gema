@@ -23,7 +23,7 @@
             </div>
             <div class="modal-body">
 
-                {!! Form::open(['url'=> ['admin/auditoria/certificaractividad',$auditoria], 'method' => 'POST','files' => true ] ) !!}
+                {!! Form::open(['url'=> ['admin/auditoria/certificaractividad',$auditoria], 'method' => 'POST','files' => true,'data-parsley-validate' ] ) !!}
 {{--                    <div class="form-group">
                         {!! Form::label('Evidencia') !!}
                         {!! Form::file('file', null) !!}

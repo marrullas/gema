@@ -69,7 +69,8 @@
         return time;
     }
 </script>
-<script src="{{ asset('css/assets/js/parsley/parsley.min.js') }}" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.4.3/parsley.min.js"></script>
+{{--<script src="{{ asset('css/assets/js/parsley/parsley.min.js') }}" type="text/javascript"></script>--}}
 <script src="{{ asset('css/assets/js/parsley/es.js') }}" type="text/javascript"></script>
 {!! HTML::script('/css/assets/js/jquery.metisMenu.js') !!}
 {{--{!! HTML::script('/css/assets/js/morris/raphael-2.1.0.min.js') !!}

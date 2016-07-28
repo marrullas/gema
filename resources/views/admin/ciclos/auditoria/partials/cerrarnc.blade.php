@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
 
-                {!! Form::open(['route'=> ['ncs.update',$nc], 'method' => 'PUT','files' => true ] ) !!}
+                {!! Form::open(['route'=> ['ncs.update',$nc], 'method' => 'PUT','files' => true,'data-parsley-validate' ] ) !!}
 {{--                    <div class="form-group">
                         {!! Form::label('Evidencia') !!}
                         {!! Form::file('file', null) !!}
@@ -19,7 +19,7 @@
                     <div class="form-group">
                         {!! Form::hidden('estadoncs_id', 3) !!}
                         {!! Form::label('devolucion', 'Nota para cerrar') !!}
-                        {!! Form::textarea('detalles', null,['class'=>'form-control textarea'])!!}
+                        {!! Form::textarea('detalles', null,['class'=>'form-control textarea','name'=>'detalles'])!!}
                     </div>
 
 {{--
