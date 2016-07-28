@@ -15,7 +15,9 @@
         //$(".textarea").Editor();
         $('.textarea').wysihtml5({
             toolbar : {
-                html:false
+                html:true,
+                image:false,
+                link:false
             }
         });
         @if(Auth::check())

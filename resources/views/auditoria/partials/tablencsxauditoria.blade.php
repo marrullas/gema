@@ -31,7 +31,7 @@
             <td>{{$nc->auditoria->usuariosxciclo->ciclo->nombre}}</td>
             <td>{!! $nc->user->full_name !!}</td>
             <td>{!! $nc->auditoria->actividad->nombre !!}</td>
-            <td><p>{!! strip_tags($nc->descripcion,'<br>') !!}</p> </td>
+            <td>{!! strip_tags($nc->descripcion,'<br><b>') !!}</td>
             <td>{!! $nc->medida !!} </td>
             <td>{!! $nc->plazo !!} </td>
             <td>{!! $nc->estadoncs->nombre !!} </td>

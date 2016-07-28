@@ -950,6 +950,12 @@ body
     width:800px;
 }
 
+/*agregar scroll al modal*/
+.modal .modal-body {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
 .popover{
     max-width: 50%;
 }
