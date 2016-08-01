@@ -299,8 +299,10 @@ class NcsController extends Controller
     }
 
     public function listarncsxauditores(){
-        //dd($auditor);
+       //dd($this->request->all());
         $nombre = $this->request->get('nombre');
+        $exportar = $this->request->get('exportar');
+        $vencida = $this->request->get('vencida');
         $page = $this->request->get('page');
         $usuario = $this->request->get('usuario');
         $auditor = $this->request->get('auditor');
@@ -315,14 +317,33 @@ class NcsController extends Controller
             //dd($datos);
             $ncs = Ncs::whereIn('id', $datos)->paginate();
             //dd($ncs);
-            return view('auditoria.listarncsadmin',compact('ncs','nombre','usuario','page','usuariosnc','auditores','auditor','id'));
+            if(!empty($exportar))
+                $this->exportancsaexcel($ncs);
+            else
+            return view('auditoria.listarncsadmin',compact('ncs','nombre','usuario','page','usuariosnc','auditores','auditor','id','vencida'));
         }
-        if(!empty($auditor) || !empty($usuario)) {
+        if(!empty($auditor) || !empty($usuario) || !empty($vencida)) {
             //$ncs = Ncs::where('auditor', $auditor)->paginate();
-            $ncs = Ncs::ncsxusuarioxauditor($auditor,$usuario,$page);
+            $ncs = Ncs::ncsxusuarioxauditor($auditor,$usuario,$vencida,$page);
         }
         else
             $ncs = Ncs::paginate();
-        return view('auditoria.listarncsadmin',compact('ncs','nombre','usuario','page','usuariosnc','auditores','auditor','id'));
+        if(!empty($exportar))
+            $this->exportancsaexcel($ncs);
+        else
+        return view('auditoria.listarncsadmin',compact('ncs','nombre','usuario','page','usuariosnc','auditores','auditor','id','vencida'));
+    }
+
+
+    private function exportancsaexcel($ncs){
+        Excel::create('reporte hallazgos', function($excel) use($ncs){
+
+            $excel->sheet('ncs', function($sheet) use($ncs){
+
+                $sheet->loadView('auditoria.partials.tablencsxauditoria',['ncs'=>$ncs]);
+
+            });
+
+        })->download('xlsx');
     }
 }

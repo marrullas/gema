@@ -5,9 +5,9 @@
 @section('content')
     <div id="page-wrapper">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+
                 <div class="panel panel-default">
-                    <div class="panel-heading">Revisión de usuarios</div>
+                    <div class="panel-heading">Revisión ncs de usuarios</div>
                     @if(Session::has('message'))
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif
@@ -24,16 +24,22 @@
                             {!! Form::label('estado_segumiento', 'Instructor') !!}
                             {!! Form::select('usuario', $usuariosnc, $usuario, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('vencida', 'Vencidas') !!}
+                            {!! Form::checkbox('vencida', null,$vencida, [ 'class' => 'form-control'] ) !!}
+                        </div>
+                        <hr>
                         <button type="submit" class="btn btn-default">Buscar</button>
+                        <button type="submit" name ="exportar" value="1" class="btn btn-success">Exportar</button>
                         {!! Form::close() !!}
                     </div>
                 </div>
-            </div>
+
             <div class="row"> {{--contenido--}}
                 <div class="col-md-10 col-md-offset-1 toppad" >
                     {{--@include('admin.ciclos.auditoria.partials.actividades')--}}
                     @include('auditoria.partials.gridncs')
-                    {!! $ncs->appends(['nombre'=>$nombre,'usuario'=>$usuario])->render() !!}
+                    {!! $ncs->appends(['id'=>$id,'auditor'=>$auditor,'usuario'=>$usuario,'vencida'=>$vencida])->render() !!}
                 </div>
             </div><!--row!-->
 {{--            {!! $usuariosxciclo->appends(['nombre'=>$nombre,'ciclo'=>$ciclo])->render() !!}--}}

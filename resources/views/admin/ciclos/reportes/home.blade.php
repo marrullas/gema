@@ -5,36 +5,34 @@
 @section('content')
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
-        <div id="page-inner">
-            <div class="panel panel-info">
+        <div class="row">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">PARAMETROS DE BUSQUEDA</h3>
                 </div>
+
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="panel-body">
-                            {!! Form::model(['usuario'=>$usuario],['route'=> 'admin.ciclos.reporteciclos', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
-                            <div class="form-group">
-                                {!! Form::label('ciclo_id', 'Ciclo') !!}
-                                {!! Form::select('ciclo', $ciclos, $ciclo, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::label('estado_segumiento', 'Auditor') !!}
-                                {!! Form::select('auditor', $auditores, $auditor, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::label('estado_segumiento', 'Instructor') !!}
-                                {!! Form::select('usuario', $usuariosnc, $usuario, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
-                            </div>
-                            <hr>
-                            <div class="fc-button-group">
-                            <button type="submit" class="btn btn-default">Buscar</button>
-                            {!! Form::close() !!}
-                            </div>
-                        </div>
-                        </div>
+                    {!! Form::model(['usuario'=>$usuario],['route'=> 'admin.ciclos.reporteciclos', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
+                    <div class="form-group">
+                        {!! Form::label('ciclo_id', 'Ciclo') !!}
+                        {!! Form::select('ciclo', $ciclos, $ciclo, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
                     </div>
+                    <div class="form-group">
+                        {!! Form::label('estado_segumiento', 'Auditor') !!}
+                        {!! Form::select('auditor', $auditores, $auditor, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('estado_segumiento', 'Instructor') !!}
+                        {!! Form::select('usuario', $usuariosnc, $usuario, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-default">Buscar</button>
+                    {!! Form::close() !!}
+
                 </div>
+            </div>
+        </div>
+        <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h2>Panel de Graficos y reportes</h2>

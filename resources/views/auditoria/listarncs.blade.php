@@ -6,9 +6,9 @@
 @section('content')
     <div id="page-wrapper">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+
                 <div class="panel panel-default">
-                    <div class="panel-heading">Revisión de usuarios</div>
+                    <div class="panel-heading">Revisión de ncs usuarios</div>
                     @if(Session::has('message'))
                         <p class="alert-success">{{ Session::get('message') }}</p>
                     @endif
@@ -20,11 +20,12 @@
                         <div class="form-group">
                             {!! Form::select('usuario', $usuariosnc, null, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
                         </div>
+                        <hr>
                         <button type="submit" class="btn btn-default">Buscar</button>
                         {!! Form::close() !!}
                     </div>
                 </div>
-            </div>
+
             <div class="row"> {{--contenido--}}
                 <div class="col-md-10 col-md-offset-1 toppad" >
                     {{--@include('admin.ciclos.auditoria.partials.actividades')--}}

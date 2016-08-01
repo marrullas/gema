@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -165,10 +166,11 @@ class Ncs extends Model
 
     }
 
-    public static function ncsxusuarioxauditor($auditor,$user, $page)
+    public static function ncsxusuarioxauditor($auditor,$user,$vencida=null, $page)
     {
         return Ncs::usuario($user)
             ->auditor($auditor)
+            ->vencida($vencida)
             ->paginate();
     }
     public function scopeCiclo($query, $ciclo)
@@ -196,6 +198,17 @@ class Ncs extends Model
         if(!empty($auditor))
         {
             $query->where('ncs.auditor', "=", $auditor);
+        }
+    }
+
+    public function scopeVencida($query, $vencida)
+    {
+        if(!empty($vencida))
+        {
+             $hoy = Carbon::today();
+            //dd($hoy);
+            $query->where('ncs.plazo', "<", $hoy)
+            ->whereIn('estadoncs_id',[1,2]);
         }
     }
 
