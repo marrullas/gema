@@ -8,8 +8,10 @@ use App\Ambitosxciclo;
 use App\Ciclo;
 use App\Entrega;
 use App\Files;
+use App\Ncs;
 use App\Procedimiento;
 use App\Repositories\SigaRepository;
+use App\Usuariosxciclo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -113,11 +115,18 @@ class CicloController extends Controller
     public function show($id)
     {
         //
+
+        $resumenciclos = Usuariosxciclo::resumenciclos($id);
+        $totalncsxciclo = Usuariosxciclo::totalncsxciclo($id);
+        $resumenncxusuario = Usuariosxciclo::resumenncsxusuario($id);
+        $ncsxauditor = Ncs::ncsxuaditorxciclo($id);
+        $ncsxactividadxciclo  = Ncs::ncsxactividadxciclo($id);
         $ciclo = Ciclo::where('id','=',$id)
             //->where('user_id','=',Auth::user()->id)
             ->first();
 
-        return view('admin.ciclos.show',compact('ciclo'));
+        return view('admin.ciclos.show',compact('ciclo','resumenciclos','totalncsxciclo','resumenncxusuario',
+            'ncsxauditor','ncsxactividadxciclo'));
     }
 
     /**

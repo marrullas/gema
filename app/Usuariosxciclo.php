@@ -25,9 +25,10 @@ class Usuariosxciclo extends Model
         return $this->hasMany('\App\Auditoria');
     }
 
-    public static function resumenciclos()
+    public static function resumenciclos($ciclo = null)
     {
-        $resumen = DB::select(DB::raw("select (select count(*) as 'ncs_abiertas' from ncs  
+        if(empty($ciclo)) {
+            $resumen = DB::select(DB::raw("select (select count(*) as 'ncs_abiertas' from ncs  
         inner join auditoria on auditoria_id = auditoria.id
         inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id
         inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1
@@ -42,6 +43,25 @@ class Usuariosxciclo extends Model
         inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id
         inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1
         where estadoncs_id = 3) as cerradas"));
+        }else{
+            $resumen = DB::select(DB::raw("select (select count(*) as 'ncs_abiertas' from ncs  
+        inner join auditoria on auditoria_id = auditoria.id
+        inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id
+        inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1 and ciclos.id = ".$ciclo."
+        where estadoncs_id = 1) as abiertas,        
+        (select count(*) as 'ncs_devueltas' from ncs  
+        inner join auditoria on auditoria_id = auditoria.id
+        inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id
+        inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1 and ciclos.id = ".$ciclo."
+        where estadoncs_id = 2) as devueltas,        
+        (select count(*) as 'ncs_cerradas' from ncs  
+        inner join auditoria on auditoria_id = auditoria.id
+        inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id
+        inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1 and ciclos.id = ".$ciclo."
+        where estadoncs_id = 3) as cerradas"));
+        }
+
+
         return $resumen;
     }
     public static function resumenciclosxauditor($auditor_id)
@@ -88,9 +108,11 @@ class Usuariosxciclo extends Model
      * el ciclo de auditoria (usuariosxciclo) no sea suyo. Esto debe usar para el caso de implementar las
      * nc donde el responsable sea un tercero.
      */
-    public static function resumenncsxusuario()
+    public static function resumenncsxusuario($ciclo = null)
     {
-        $resumen = DB::select(DB::raw("select users.id,users.full_name,(select count(*) as 'ncs_abiertas' from ncs  
+        //
+        if(empty($ciclo)) {
+            $resumen = DB::select(DB::raw("select users.id,users.full_name,(select count(*) as 'ncs_abiertas' from ncs  
         inner join auditoria on auditoria_id = auditoria.id
         inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id and ncs.user_id = usuariosxciclo.user_id
         inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1
@@ -112,18 +134,52 @@ class Usuariosxciclo extends Model
         where ncs.user_id = users.id) as total
         from users having total > 0
         "
-
-        ));
+            ));
+        }else{
+            $resumen = DB::select(DB::raw("select users.id,users.full_name,(select count(*) as 'ncs_abiertas' from ncs  
+        inner join auditoria on auditoria_id = auditoria.id
+        inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id and ncs.user_id = usuariosxciclo.user_id
+        inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1 and ciclos.id = ".$ciclo."
+        where estadoncs_id = 1 and ncs.user_id = users.id) as abiertas,        
+        (select count(*) as 'ncs_devueltas' from ncs  
+        inner join auditoria on auditoria_id = auditoria.id
+        inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id and ncs.user_id = usuariosxciclo.user_id
+        inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1 and ciclos.id = ".$ciclo."
+        where estadoncs_id = 2 and ncs.user_id = users.id) as devueltas,        
+        (select count(*) as 'ncs_cerradas' from ncs  
+        inner join auditoria on auditoria_id = auditoria.id
+        inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id and ncs.user_id = usuariosxciclo.user_id
+        inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1 and ciclos.id = ".$ciclo."
+        where estadoncs_id = 3 and ncs.user_id = users.id) as cerradas,
+        (select count(*) as 'ncs_cerradas' from ncs  
+        inner join auditoria on auditoria_id = auditoria.id
+        inner join usuariosxciclo on usuariosxciclo_id = usuariosxciclo.id and ncs.user_id = usuariosxciclo.user_id
+        inner join ciclos on ciclos.id = ciclo_id and ciclos.activo = 1 and ciclos.id = ".$ciclo."
+        where ncs.user_id = users.id) as total
+        from users having total > 0
+        "
+            ));
+        }
         return $resumen;
     }
-    public static function totalncsxciclo()
+    public static function totalncsxciclo($ciclo = null)
     {
-        return DB::select(DB::raw("select ciclos.nombre,count(*) as conteo from ncs 
+        if(empty($ciclo)) {
+            return DB::select(DB::raw("select ciclos.nombre,count(*) as conteo from ncs 
           join auditoria on ncs.auditoria_id = auditoria.id
           join usuariosxciclo on auditoria.usuariosxciclo_id = usuariosxciclo.id
           join ciclos on usuariosxciclo.ciclo_id = ciclos.id
            group by(ciclos.nombre)
         "));
+        }else{
+            return DB::select(DB::raw("select ciclos.nombre,count(*) as conteo from ncs 
+          join auditoria on ncs.auditoria_id = auditoria.id
+          join usuariosxciclo on auditoria.usuariosxciclo_id = usuariosxciclo.id
+          join ciclos on usuariosxciclo.ciclo_id = ciclos.id and ciclos.id = ".$ciclo."
+           group by(ciclos.nombre)
+        "));
+
+        }
     }
     public static function totalncsxcicloxusuario($user_id)
     {

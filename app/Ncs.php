@@ -81,7 +81,37 @@ class Ncs extends Model
 
         return $ncs;
     }
+    public static function ncsxuaditorxciclo($ciclo = null)
+    {
+        $ncs = null;
 
+        $ncs = DB::select(DB::raw("select count(*) as numeroncs, auditor, users.full_name from ncs 
+          join users on users.id = ncs.auditor
+          join auditoria on ncs.auditoria_id = auditoria.id
+          join usuariosxciclo on auditoria.usuariosxciclo_id = usuariosxciclo.id
+          join ciclos on usuariosxciclo.ciclo_id = ciclos.id and ciclos.id = ".$ciclo."
+           group by(ciclos.nombre)
+           "));
+        return $ncs;
+    }
+    /*
+     * Funcion retorna el numero de ncs x activdad para un ciclo
+     */
+    public static function ncsxactividadxciclo($ciclo = null)
+    {
+        $ncs = null;
+
+        $ncs = DB::select(DB::raw("select count(*) as numeroncs, actividad_id, actividades.nombre from ncs          
+          join auditoria on ncs.auditoria_id = auditoria.id
+          join actividades on actividades.id = auditoria.actividad_id
+          join usuariosxciclo on auditoria.usuariosxciclo_id = usuariosxciclo.id
+          join ciclos on usuariosxciclo.ciclo_id = ciclos.id and ciclos.id = ".$ciclo."
+           group by(actividad_id)
+           "));
+
+        //dd($ncs);
+        return $ncs;
+    }
     /*
  * Esta funcion devuelve el listado de usuarios que tienen nc creado por un auditor
  */

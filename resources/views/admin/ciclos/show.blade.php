@@ -85,6 +85,7 @@
             </div>
         </div>
     </div> <!--row!-->
+    @include('admin.ciclos.reportes.ciclos')
 {{-- se deja por si sirve para mostar los elementos que deben estar en el ciclo
     <div class="row">
         <div class="col-md-10 col-md-offset-1 toppad" >

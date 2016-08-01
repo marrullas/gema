@@ -64,7 +64,8 @@
                 locale: 'es',
                 format: 'DD/MM/YYYY',
                 sideBySide: true,
-                date: plazo
+                date: plazo,
+                minDate: moment()
 
             });
         });
