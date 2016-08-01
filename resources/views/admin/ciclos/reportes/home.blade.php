@@ -6,6 +6,32 @@
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
         <div id="page-inner">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">DATOS DEL CICLO</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="panel-body">
+                            {!! Form::model(['usuario'=>$usuario],['route'=> 'admin.ciclos.reporteciclos', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
+                            <div class="form-group">
+                                {!! Form::label('ciclo_id', 'Ciclo') !!}
+                                {!! Form::select('ciclo', $ciclos, $ciclo, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('estado_segumiento', 'Auditor') !!}
+                                {!! Form::select('auditor', $auditores, $auditor, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('estado_segumiento', 'Instructor') !!}
+                                {!! Form::select('usuario', $usuariosnc, $usuario, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
+                            </div>
+                            <button type="submit" class="btn btn-default">Buscar</button>
+                            {!! Form::close() !!}
+                        </div>
+                        </div>
+                    </div>
+                </div>
             <div class="row">
                 <div class="col-md-12">
                     <h2>Panel de Graficos y reportes</h2>
@@ -14,6 +40,22 @@
             </div>
             <!-- /. ROW  -->
             <hr/>
+            @if(count($ncsxactividadxciclo)>0)
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Resumen total hallazgos x acitivdad
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <canvas id="myChartActivdad"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
             <div class="row">
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="panel panel-default">
@@ -461,7 +503,45 @@
                 options: barOptions_stacked,
             });
 
+            var ctx = document.getElementById("myChartActivdad");
+            var nombres = [];
+            var datos1 = [];
+
+            @foreach($ncsxactividadxciclo as $data)
+
+
+            nombres.push("{!! $data->nombre !!}");
+            datos1.push({{$data->numeroncs}});
+
+
+                    @endforeach
+
+            var data = {
+                        labels: nombres,
+                        datasets: [{
+                            label: "Ncs creadas",
+                            backgroundColor: "rgba(66,139,202,1)",
+                            borderColor: "rgba(66,139,202,1)",
+                            borderWidth: 1,
+                            hoverBackgroundColor: "rgba(66,139,202,0.4)",
+                            hoverBorderColor: "rgba(255,99,132,1)",
+                            data: datos1,
+                        }
+                        ]
+                    };
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                barShowStroke: true,
+                responsive: true,
+                data: data,
+
+                options: barOptions_stacked,
+            });
+
+
         });
+
+
 
 
     </script>

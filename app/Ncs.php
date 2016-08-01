@@ -60,27 +60,27 @@ class Ncs extends Model
         return $query->estadoncs()->where('nombre','=','Abierta');
     }
 
-    public static function ncsxuaditor($auditor = null)
+    public static function ncsxuaditor($ciclo = null, $auditor = null, $usuario =  null)
     {
         $ncs = null;
-        if (empty($auditor))
-        {
-            $ncs = Ncs::select(DB::raw('count(*) as numeroncs, auditor, users.full_name'))
+          $ncs = Ncs::select(DB::raw('count(*) as numeroncs, auditor, users.full_name'))
                 ->join('users','users.id','=','ncs.auditor')
+                ->ciclo($ciclo)
+                ->auditor($auditor)
+                ->usuario($usuario)
                 ->groupBy('ncs.auditor')
                 ->get();
-
-        }else{
-            $ncs = Ncs::select(DB::raw('count(*) as numeroncs, auditor, users.full_name'))
-                ->join('users','users.id','=','ncs.auditor')
-                ->where('ncs.auditor',$auditor)
-                ->groupBy('ncs.auditor')
-                ->get();
-
-        }
 
         return $ncs;
     }
+
+/*    public function scopeAuditor($query,$auditor)
+    {
+        if (!empty($auditor))
+            return $query->where('ncs.auditor',$auditor)
+    }*/
+
+
     public static function ncsxuaditorxciclo($ciclo = null)
     {
         $ncs = null;
@@ -89,26 +89,43 @@ class Ncs extends Model
           join users on users.id = ncs.auditor
           join auditoria on ncs.auditoria_id = auditoria.id
           join usuariosxciclo on auditoria.usuariosxciclo_id = usuariosxciclo.id
-          join ciclos on usuariosxciclo.ciclo_id = ciclos.id and ciclos.id = ".$ciclo."
-           group by(ciclos.nombre)
+          join ciclos on usuariosxciclo.ciclo_id = ciclos.id and ciclos.activo = 1 and ciclos.id = ".$ciclo."
+           group by(users.full_name)
            "));
         return $ncs;
     }
     /*
      * Funcion retorna el numero de ncs x activdad para un ciclo
      */
-    public static function ncsxactividadxciclo($ciclo = null)
+    public static function ncsxactividadxciclo($ciclo = null, $auditor = null, $usuario = null)
     {
-        $ncs = null;
+        $ncs = [];
+        if(!empty($ciclo)) {
 
-        $ncs = DB::select(DB::raw("select count(*) as numeroncs, actividad_id, actividades.nombre from ncs          
+            $query = "select count(*) as numeroncs, actividad_id, actividades.nombre from ncs          
           join auditoria on ncs.auditoria_id = auditoria.id
           join actividades on actividades.id = auditoria.actividad_id
           join usuariosxciclo on auditoria.usuariosxciclo_id = usuariosxciclo.id
-          join ciclos on usuariosxciclo.ciclo_id = ciclos.id and ciclos.id = ".$ciclo."
-           group by(actividad_id)
-           "));
+          join ciclos on usuariosxciclo.ciclo_id = ciclos.id and ciclos.activo = 1 and ciclos.id = '$ciclo' ";
 
+            if(!empty($auditor))
+                $query .= " where auditor = '$auditor'";
+
+            if(!empty($usuario) && !empty($auditor))
+                $query .= " and ncs.user_id = '$usuario'";
+            elseif (!empty($usuario))
+                $query .= " where ncs.user_id = '$usuario'";
+/*            $ncs = DB::select(DB::raw("select count(*) as numeroncs, actividad_id, actividades.nombre from ncs
+          join auditoria on ncs.auditoria_id = auditoria.id
+          join actividades on actividades.id = auditoria.actividad_id
+          join usuariosxciclo on auditoria.usuariosxciclo_id = usuariosxciclo.id
+          join ciclos on usuariosxciclo.ciclo_id = ciclos.id and ciclos.id = " . $ciclo . "
+           group by(actividad_id)
+           "));*/
+
+            $query .= " group by(actividad_id)";
+            $ncs = DB::select(DB::raw($query));
+        }
         //dd($ncs);
         return $ncs;
     }
@@ -154,19 +171,31 @@ class Ncs extends Model
             ->auditor($auditor)
             ->paginate();
     }
+    public function scopeCiclo($query, $ciclo)
+    {
+        if(!empty($ciclo))
+        {
+            $query->join('auditoria','ncs.auditoria_id','=','auditoria.id')
+                ->join('usuariosxciclo','auditoria.usuariosxciclo_id','=','usuariosxciclo.id')
+                ->join('ciclos', function($join) use ($ciclo) {
+                $join->on('ciclos.id','=','usuariosxciclo.ciclo_id')
+                    ->where('ciclos.id','=',$ciclo);
+            });
 
+        }
+    }
     public function scopeUsuario($query, $user)
     {
         if(!empty($user))
         {
-            $query->where('user_id', "=", $user);
+            $query->where('ncs.user_id', "=", $user);
         }
     }
     public function scopeAuditor($query, $auditor)
     {
         if(!empty($auditor))
         {
-            $query->where('auditor', "=", $auditor);
+            $query->where('ncs.auditor', "=", $auditor);
         }
     }
 
