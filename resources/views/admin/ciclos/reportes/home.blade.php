@@ -302,9 +302,9 @@
         <!-- /. ROW  -->
     </div>
     <!-- /. PAGE INNER  -->
-    </div>
+    {{--</div>--}}
     <!-- /. PAGE WRAPPER  -->
-    </div>
+    {{--</div>--}}
     <!-- /. WRAPPER  -->
 @endsection
 
@@ -505,7 +505,7 @@
 
                 options: barOptions_stacked,
             });
-
+            @if(count($ncsxactividadxciclo)>0)
             var ctx = document.getElementById("myChartActivdad");
             var nombres = [];
             var datos1 = [];
@@ -541,7 +541,7 @@
                 options: barOptions_stacked,
             });
 
-
+            @endif
         });
 
 
