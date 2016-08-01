@@ -8,7 +8,7 @@
         <div id="page-inner">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">DATOS DEL CICLO</h3>
+                    <h3 class="panel-title">PARAMETROS DE BUSQUEDA</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -26,8 +26,11 @@
                                 {!! Form::label('estado_segumiento', 'Instructor') !!}
                                 {!! Form::select('usuario', $usuariosnc, $usuario, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
                             </div>
+                            <hr>
+                            <div class="fc-button-group">
                             <button type="submit" class="btn btn-default">Buscar</button>
                             {!! Form::close() !!}
+                            </div>
                         </div>
                         </div>
                     </div>
