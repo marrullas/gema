@@ -75,12 +75,23 @@ class AuditoriaController extends Controller
     }
     public function mostrarncs()
     {
+        //dd($this->request->all());
         //dd('las ncs pendientes');
+        $estadonc = $this->request->get('estadonc');
+        //dd($estadonc);
+        $estadosncs = [''=>''] + Estadosncs::lists('nombre','id')->all();
+
         $nombre = $this->request->get('nombre');
-        $ncs = Ncs::where('user_id',Auth::user()->id)
-            ->where('estadoncs_id','<>', 3)->get();
+
+        if(!empty($estadonc)){
+            $ncs = Ncs::where('user_id', Auth::user()->id)
+                ->where('estadoncs_id', '=', $estadonc)->get();
+        }else {
+            $ncs = Ncs::where('user_id', Auth::user()->id)
+                ->where('estadoncs_id', '<>', 3)->get();
+        }
         //dd($ncs);
-        return view('auditoria.mostrarncs',compact('nombre','ncs'));
+        return view('auditoria.mostrarncs',compact('nombre','ncs','estadosncs','estadonc'));
     }
 
     public function showactividad($id)

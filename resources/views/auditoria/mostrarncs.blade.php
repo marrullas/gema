@@ -14,8 +14,12 @@
                     <div class="panel-body">
                         {!! Form::model(['name'=>$nombre],['url'=> 'auditoria/mostrarncs', 'method'=>'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search' ]) !!}
                         <div class="form-group">
-                            {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Buscar por ciclo']) !!}
+                            {!! Form::label('estado_nc', 'Estado') !!}
+                            {!! Form::select('estadonc', $estadosncs, $estadonc, [ 'class' => 'form-control selectpicker','data-live-search="true"'] ) !!}
                         </div>
+{{--                        <div class="form-group">
+                            {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Buscar por ciclo']) !!}
+                        </div>--}}
                         <button type="submit" class="btn btn-default">Buscar</button>
                         {!! Form::close() !!}
                         {{--<p> <a class="btn btn-info" href="{{ route('admin.usuariosxciclo.create') }}" role="button">Relacionar ciclo</a></p>--}}

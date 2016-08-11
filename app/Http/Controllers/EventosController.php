@@ -296,6 +296,10 @@ class EventosController extends Controller {
                 //return view('admin.users.home',compact('user','fichasasignadas'));
                 return view('instructor.eventos',compact('user','fichasasignadas','totalhorasmes','reporte'));
                 break;
+            case 'auditor':
+                //return view('admin.users.home',compact('user','fichasasignadas'));
+                return view('instructor.eventos',compact('user','fichasasignadas','totalhorasmes','reporte'));
+                break;
             case 'user':
                 return view('user.home',compact('user','fichasasignadas'));
             case 'instructor':
@@ -382,6 +386,10 @@ class EventosController extends Controller {
         switch($user->type)
         {
             case 'admin':
+            //return view('admin.users.home',compact('user','fichasasignadas'));
+            return view('instructor.actividades',compact('user','actividades','actividadestotal','totalhorasmes','reporte','start','end'));
+            break;
+            case 'auditor':
                 //return view('admin.users.home',compact('user','fichasasignadas'));
                 return view('instructor.actividades',compact('user','actividades','actividadestotal','totalhorasmes','reporte','start','end'));
                 break;
@@ -493,6 +501,10 @@ class EventosController extends Controller {
         switch($user->type)
         {
             case 'admin':
+                //return view('admin.users.home',compact('user','fichasasignadas'));
+                return view('instructor.acumuladoxficha',compact('user','fichasasignadas','totalhorasmes','reporte','start','end'));
+                break;
+            case 'auditor':
                 //return view('admin.users.home',compact('user','fichasasignadas'));
                 return view('instructor.acumuladoxficha',compact('user','fichasasignadas','totalhorasmes','reporte','start','end'));
                 break;
