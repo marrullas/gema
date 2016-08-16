@@ -87,7 +87,7 @@
                         </div>
                         <div class="panel-body">
                             <div>
-                                <canvas id="myChart" height="200"></canvas>
+                                <canvas id="myChart" width="400" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                             </div>
                             <div class="panel-body">
                                 <div>
-                                    <canvas id="ncsxauditorChart"></canvas>
+                                    <canvas id="ncsxauditorChart" width="400" height="400"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -406,6 +406,12 @@
             };
 
             var ctx = document.getElementById("myChart");
+            Object.assign(
+                    Chart.defaults.global,
+                    {
+                        maintainAspectRatio: false,
+                    }
+            )
             var nombres = [];
             var datos1 = [];
             var datos2 = [];
@@ -465,7 +471,6 @@
                 barShowStroke: true,
                 responsive: true,
                 data: data,
-
                 options: barOptions_stacked,
             });
 
@@ -499,7 +504,7 @@
                 type: 'horizontalBar',
                 barShowStroke: true,
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
                 data: data,
 
                 options: barOptions_stacked,
