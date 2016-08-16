@@ -87,7 +87,7 @@
                         </div>
                         <div class="panel-body">
                             <div>
-                                <canvas id="myChart"></canvas>
+                                <canvas id="myChart" height="{{count($resumenncxusuario)*1.5 + 100}}"></canvas>
                             </div>
                         </div>
                     </div>
