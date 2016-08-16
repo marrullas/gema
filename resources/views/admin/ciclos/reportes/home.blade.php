@@ -87,7 +87,7 @@
                         </div>
                         <div class="panel-body">
                             <div>
-                                <canvas id="myChart" width="400" height="400"></canvas>
+                                <canvas id="myChart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                             </div>
                             <div class="panel-body">
                                 <div>
-                                    <canvas id="ncsxauditorChart" width="400" height="400"></canvas>
+                                    <canvas id="ncsxauditorChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -409,7 +409,7 @@
             Object.assign(
                     Chart.defaults.global,
                     {
-                        maintainAspectRatio: false,
+                        maintainAspectRatio: true,
                     }
             )
             var nombres = [];
@@ -469,7 +469,6 @@
             var myChart = new Chart(ctx, {
                 type: 'horizontalBar',
                 barShowStroke: true,
-                responsive: true,
                 data: data,
                 options: barOptions_stacked,
             });
@@ -504,7 +503,6 @@
                 type: 'horizontalBar',
                 barShowStroke: true,
                 responsive: true,
-                maintainAspectRatio: true,
                 data: data,
 
                 options: barOptions_stacked,
