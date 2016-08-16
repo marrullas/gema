@@ -87,7 +87,7 @@
                         </div>
                         <div class="panel-body">
                             <div>
-                                <canvas id="myChart"></canvas>
+                                <canvas id="myChart" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -499,6 +499,7 @@
                 type: 'horizontalBar',
                 barShowStroke: true,
                 responsive: true,
+                maintainAspectRatio: false,
                 data: data,
 
                 options: barOptions_stacked,
