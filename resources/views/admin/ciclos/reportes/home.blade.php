@@ -87,7 +87,7 @@
                         </div>
                         <div class="panel-body">
                             <div>
-                                <canvas id="myChart" height="400"></canvas>
+                                <canvas id="myChart" height="200"></canvas>
                             </div>
                         </div>
                     </div>
