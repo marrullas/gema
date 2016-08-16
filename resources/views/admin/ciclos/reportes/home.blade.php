@@ -406,12 +406,7 @@
             };
 
             var ctx = document.getElementById("myChart");
-            Object.assign(
-                    Chart.defaults.global,
-                    {
-                        maintainAspectRatio: true,
-                    }
-            )
+
             var nombres = [];
             var datos1 = [];
             var datos2 = [];
