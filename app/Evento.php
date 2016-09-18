@@ -267,7 +267,8 @@ class Evento extends Model implements Event
                                 //alert( 'the messageis ' +  id.ficha.ie.ciudad.nombre);
                                 $('#actividad').text(id.actividad);
                                 $('#ficha').text(id.ficha.codigo);
-                                $('#horas').text(id.horas);
+                                /*$('#horas').text(id.horas);*/
+                                $('#horas').text('...');
                                 $('#ciudad').text(id.ficha.ie.ciudad.nombre);
                                 $('#ie').text(id.ficha.ie.nombre);
                                 var fDate = new Date(id.start)

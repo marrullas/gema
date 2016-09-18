@@ -140,6 +140,7 @@ class NcsController extends Controller
             $ncs->certificador = Auth::user()->id; //el que cierra la nc
             $estadoncsId = 3;
         }
+        //si cambia de responsable hay que buscar el coedigo de auditoria del nuevo responsable para actualizar tambien
         $ncs->save();
 
         if (!empty($detalles))

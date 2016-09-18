@@ -13,7 +13,7 @@
                         @include('admin.partials.messages')
                         {!! Form::model($nc,['route'=> ['ncs.update', $nc], 'method' => 'PUT' ]) !!}
                         {{--{!! Form::open(['route'  => 'ncs.update', 'method' => 'PUT','class'=>'form']) !!}--}}
-                        @include('admin.ciclos.auditoria.partials.fields')
+                        @include('auditoria.partials.fields')
                     </div>
                     <div class="modal-footer">
                         <a type="button" class="btn btn-default" href="{{ route('admin.auditoria.edit', $nc->auditoria_id) }}">Volver</a>

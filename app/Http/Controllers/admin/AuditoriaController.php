@@ -100,6 +100,7 @@ class AuditoriaController extends Controller
     public function edit($id)
     {
         //
+        //dd('hola');
         $estadoncs = Estadosncs::lists('nombre','id');
         $caracterizarnc = Caracterizarncs::lists('nombre','id');
         $tiposnc = Tiposnc::lists('hallazgo','id');

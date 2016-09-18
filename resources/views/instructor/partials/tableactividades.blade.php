@@ -9,7 +9,7 @@
         <th>Ficha</th>
         <th>Actividad</th>
         <th>Ciudad</th>
-        <th>Horas </th>
+        {{--<th>Horas </th>--}}
     </tr>
     </thead>
     <tbody>
@@ -23,7 +23,7 @@
             <td>{{$actividad->ficha->codigo}}</td>
             <td>{{$actividad->actividad}}</td>
             <td>{{$actividad->ficha->ie->ciudad->nombre    }}</td>
-                <td>{{$actividad->horas   }}</td>
+                {{--<td>{{$actividad->horas   }}</td>--}}
         </tr>
     @endforeach
 
@@ -34,8 +34,8 @@
         <td></td>
         <td></td>
 
-    <td><b>Total de horas periodo</b></td>
-        <td><b>{{$totalhorasmes}}</b></td>
+{{--    <td><b>Total de horas periodo</b></td>
+        <td><b>{{$totalhorasmes}}</b></td>--}}
 
     </tr>
     </tbody>

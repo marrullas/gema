@@ -24,9 +24,9 @@
 <div class="form-group">
     {!! Form::label('usuario', 'Responsable ') !!}
     @if(!Auth::user()->isAdmin())
-        {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control', 'disabled'=>'disabled','name'=>'user_id'] ) !!}
+        {!! Form::select('user_id', $usuarios, $nc->user_id, [ 'class' => 'form-control', 'disabled'=>'disabled','name'=>'user_id'] ) !!}
     @else
-        {!! Form::select('user_id', $usuarios, $auditoria->usuariosxciclo->user_id, [ 'class' => 'form-control','name'=>'user_id'] ) !!}
+        {!! Form::select('user_id', $usuarios, $nc->user_id, [ 'class' => 'form-control','name'=>'user_id'] ) !!}
     @endif
 </div>
 <div class="form-group">

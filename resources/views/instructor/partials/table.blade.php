@@ -7,7 +7,7 @@
         <th>Programa</th>
         <th>Grado</th>
         <th>Ciudad</th>
-        <th>Horas </th>
+        {{--<th>Horas </th>--}}
         {{--<th>Fecha evento</th>--}}
     </tr>
     </thead>
@@ -21,7 +21,7 @@
             <td>{{$ficha->ficha->grado}}</td>
             <td>{{$ficha->ficha->ie->ciudad->nombre    }}</td>
                 {{--<td>{{$ficha->ficha->horas_acumuladas->first()['horas']   }}</td>--}}
-                <td>{{$ficha->horas   }}</td>
+                {{--<td>{{$ficha->horas   }}</td>--}}
                 {{--<td>{{ \Carbon\Carbon::parse($ficha->start)->format('Y/m/d')   }}</td>--}}
 
             <td>
@@ -39,9 +39,9 @@
         <td></td>
         <td></td>
 
-    <td><b>Total de horas mes</b></td>
+{{--    <td><b>Total de horas mes</b></td>
         <td><b>{{$totalhorasmes}}</b></td>
 
-    </tr>
+    </tr>--}}
     </tbody>
 </table>

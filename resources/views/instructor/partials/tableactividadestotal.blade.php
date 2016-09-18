@@ -4,7 +4,7 @@
     <tr>
 
         <th>Actividad</th>
-        <th>Horas </th>
+        {{--<th>Horas </th>--}}
 
     </tr>
     </thead>
@@ -14,15 +14,15 @@
 
             <tr data-id="{{$actividad->id}}">
             <td>{{$actividad->actividad}}</td>
-            <td>{{$actividad->horas   }}</td>
+            {{--<td>{{$actividad->horas   }}</td>--}}
 
         </tr>
     @endforeach
 
-    <tr>
+{{--    <tr>
     <td><b>Total de horas periodo</b></td>
         <td><b>{{$totalhorasmes}}</b></td>
 
-    </tr>
+    </tr>--}}
     </tbody>
 </table>

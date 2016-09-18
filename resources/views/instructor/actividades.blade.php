@@ -48,10 +48,10 @@
                         {!! Form::close() !!}
                         @include('instructor.partials.tableactividades')
                     </div>
-                    <div class="panel-heading"><h3>Acumulado por actividades:</h3></div>
+   {{--                 <div class="panel-heading"><h3>Acumulado por actividades:</h3></div>
                     <div class="panel-body">
                         @include('instructor.partials.tableactividadestotal')
-                    </div>
+                    </div>--}}
 
                 </div>
 

@@ -9,7 +9,7 @@
         <th>Ciudad</th>
         <th>Inicio</th>
         <th>Fin</th>
-        <th>Horas </th>
+        {{--<th>Horas </th>--}}
         <th>Fecha evento</th>
     </tr>
     </thead>
@@ -25,7 +25,7 @@
             <td>{{ \Carbon\Carbon::parse($ficha->start)->format('h:i')   }}</td>
             <td>{{ \Carbon\Carbon::parse($ficha->end)->format('h:i')   }}</td>
                 {{--<td>{{$ficha->ficha->horas_acumuladas->first()['horas']   }}</td>--}}
-                <td>{{$ficha->horas   }}</td>
+                {{--<td>{{$ficha->horas   }}</td>--}}
                 <td>{{ \Carbon\Carbon::parse($ficha->start)->format('Y/m/d')   }}</td>
 
             <td>
@@ -42,14 +42,12 @@
     @endforeach
 
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
 
+
+{{--
     <td><b>Total de horas mes</b></td>
         <td><b>{{$totalhorasmes}}</b></td>
+--}}
 
     </tr>
     </tbody>
